@@ -9,7 +9,7 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Capa Fisica", "Capa Fisica\
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Capa Logica", "Capa Logica\Capa Logica.vbproj", "{3BC8757B-1568-46DB-97A1-17D93317FDE7}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Capa Usuario", "Capa Usuario\Capa Usuario.vbproj", "{135B6A58-5962-4B4E-95C2-A80012430AC6}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CapaPaciente", "CapaPaciente\CapaPaciente.vbproj", "{5ABED6A3-FB30-4400-96AA-F776CD22CAA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{3BC8757B-1568-46DB-97A1-17D93317FDE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BC8757B-1568-46DB-97A1-17D93317FDE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BC8757B-1568-46DB-97A1-17D93317FDE7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{135B6A58-5962-4B4E-95C2-A80012430AC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{135B6A58-5962-4B4E-95C2-A80012430AC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{135B6A58-5962-4B4E-95C2-A80012430AC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{135B6A58-5962-4B4E-95C2-A80012430AC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ABED6A3-FB30-4400-96AA-F776CD22CAA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ABED6A3-FB30-4400-96AA-F776CD22CAA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ABED6A3-FB30-4400-96AA-F776CD22CAA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ABED6A3-FB30-4400-96AA-F776CD22CAA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
