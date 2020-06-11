@@ -24,7 +24,8 @@ Partial Class SeleccionSintoma
     Private Sub InitializeComponent()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.btnConfirmar = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblSeleccionDeSintomas = New System.Windows.Forms.Label()
+        Me.btmSolicitar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'ListBox1
@@ -37,29 +38,41 @@ Partial Class SeleccionSintoma
         '
         'btnConfirmar
         '
+        Me.btnConfirmar.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnConfirmar.Location = New System.Drawing.Point(39, 426)
         Me.btnConfirmar.Name = "btnConfirmar"
         Me.btnConfirmar.Size = New System.Drawing.Size(316, 23)
         Me.btnConfirmar.TabIndex = 1
         Me.btnConfirmar.Text = "Confirmar"
-        Me.btnConfirmar.UseVisualStyleBackColor = True
+        Me.btnConfirmar.UseVisualStyleBackColor = False
         '
-        'Label1
+        'lblSeleccionDeSintomas
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(34, 25)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(227, 28)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Sección de sintomas"
+        Me.lblSeleccionDeSintomas.AutoSize = True
+        Me.lblSeleccionDeSintomas.Font = New System.Drawing.Font("Microsoft YaHei UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSeleccionDeSintomas.Location = New System.Drawing.Point(34, 25)
+        Me.lblSeleccionDeSintomas.Name = "lblSeleccionDeSintomas"
+        Me.lblSeleccionDeSintomas.Size = New System.Drawing.Size(227, 28)
+        Me.lblSeleccionDeSintomas.TabIndex = 2
+        Me.lblSeleccionDeSintomas.Text = "Sección de sintomas"
+        '
+        'btmSolicitar
+        '
+        Me.btmSolicitar.Location = New System.Drawing.Point(391, 426)
+        Me.btmSolicitar.Name = "btmSolicitar"
+        Me.btmSolicitar.Size = New System.Drawing.Size(101, 23)
+        Me.btmSolicitar.TabIndex = 3
+        Me.btmSolicitar.Text = "Solicitar chat"
+        Me.btmSolicitar.UseVisualStyleBackColor = True
         '
         'SeleccionSintoma
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.LightCyan
         Me.ClientSize = New System.Drawing.Size(1140, 493)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.btmSolicitar)
+        Me.Controls.Add(Me.lblSeleccionDeSintomas)
         Me.Controls.Add(Me.btnConfirmar)
         Me.Controls.Add(Me.ListBox1)
         Me.Name = "SeleccionSintoma"
@@ -71,5 +84,6 @@ Partial Class SeleccionSintoma
 
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents btnConfirmar As Button
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblSeleccionDeSintomas As Label
+    Friend WithEvents btmSolicitar As Button
 End Class
