@@ -73,11 +73,17 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="SeleccionSintoma.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="SeleccionSintoma.Designer.vb">
+      <DependentUpon>SeleccionSintoma.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IngresoPersona.Designer.vb">
+      <DependentUpon>IngresoPersona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IngresoPersona.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -97,6 +103,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="SeleccionSintoma.resx">
+      <DependentUpon>SeleccionSintoma.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IngresoPersona.resx">
+      <DependentUpon>IngresoPersona.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
