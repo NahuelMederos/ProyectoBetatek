@@ -22,19 +22,19 @@ Partial Class SeleccionSintoma
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.lstSintomas = New System.Windows.Forms.ListBox()
         Me.btnConfirmar = New System.Windows.Forms.Button()
         Me.lblSeleccionDeSintomas = New System.Windows.Forms.Label()
         Me.btmSolicitar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'ListBox1
+        'lstSintomas
         '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(39, 56)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(316, 355)
-        Me.ListBox1.TabIndex = 0
+        Me.lstSintomas.FormattingEnabled = True
+        Me.lstSintomas.Location = New System.Drawing.Point(39, 56)
+        Me.lstSintomas.Name = "lstSintomas"
+        Me.lstSintomas.Size = New System.Drawing.Size(316, 355)
+        Me.lstSintomas.TabIndex = 0
         '
         'btnConfirmar
         '
@@ -74,7 +74,7 @@ Partial Class SeleccionSintoma
         Me.Controls.Add(Me.btmSolicitar)
         Me.Controls.Add(Me.lblSeleccionDeSintomas)
         Me.Controls.Add(Me.btnConfirmar)
-        Me.Controls.Add(Me.ListBox1)
+        Me.Controls.Add(Me.lstSintomas)
         Me.Name = "SeleccionSintoma"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
@@ -82,7 +82,7 @@ Partial Class SeleccionSintoma
 
     End Sub
 
-    Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents lstSintomas As ListBox
     Friend WithEvents btnConfirmar As Button
     Friend WithEvents lblSeleccionDeSintomas As Label
     Friend WithEvents btmSolicitar As Button
