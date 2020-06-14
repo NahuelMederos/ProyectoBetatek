@@ -64,8 +64,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Diagnostico.vb" />
-    <Compile Include="Medico.vb" />
+    <Compile Include="ModeloConexion.vb" />
+    <Compile Include="Modelos\Diagnostico.vb" />
+    <Compile Include="Modelos\Medico.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -81,9 +82,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Patologia.vb" />
-    <Compile Include="Persona.vb" />
-    <Compile Include="Sintoma.vb" />
+    <Compile Include="Modelos\Patologia.vb" />
+    <Compile Include="Modelos\Persona.vb" />
+    <Compile Include="Modelos\Sintoma.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
