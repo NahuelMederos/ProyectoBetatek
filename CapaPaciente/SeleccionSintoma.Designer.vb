@@ -26,6 +26,7 @@ Partial Class SeleccionSintoma
         Me.btnConfirmar = New System.Windows.Forms.Button()
         Me.lblSeleccionDeSintomas = New System.Windows.Forms.Label()
         Me.btmSolicitar = New System.Windows.Forms.Button()
+        Me.lstPatologiasAsociadas = New System.Windows.Forms.ListBox()
         Me.SuspendLayout()
         '
         'lstSintomas
@@ -65,12 +66,21 @@ Partial Class SeleccionSintoma
         Me.btmSolicitar.Text = "Solicitar chat"
         Me.btmSolicitar.UseVisualStyleBackColor = True
         '
+        'lstPatologiasAsociadas
+        '
+        Me.lstPatologiasAsociadas.FormattingEnabled = True
+        Me.lstPatologiasAsociadas.Location = New System.Drawing.Point(408, 60)
+        Me.lstPatologiasAsociadas.Name = "lstPatologiasAsociadas"
+        Me.lstPatologiasAsociadas.Size = New System.Drawing.Size(127, 108)
+        Me.lstPatologiasAsociadas.TabIndex = 4
+        '
         'SeleccionSintoma
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightCyan
         Me.ClientSize = New System.Drawing.Size(1140, 493)
+        Me.Controls.Add(Me.lstPatologiasAsociadas)
         Me.Controls.Add(Me.btmSolicitar)
         Me.Controls.Add(Me.lblSeleccionDeSintomas)
         Me.Controls.Add(Me.btnConfirmar)
@@ -86,4 +96,5 @@ Partial Class SeleccionSintoma
     Friend WithEvents btnConfirmar As Button
     Friend WithEvents lblSeleccionDeSintomas As Label
     Friend WithEvents btmSolicitar As Button
+    Friend WithEvents lstPatologiasAsociadas As ListBox
 End Class
