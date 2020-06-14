@@ -17,6 +17,16 @@
 
     End Sub
 
+    Public Function obtenerDiagnostico()
+
+        Comando.CommandText = "SELECT * FROM GENERA WHERE CI_PERSONA = " + Me.Ci
+
+
+        Reader = Comando.ExecuteReader()
+        Return Reader
+
+    End Function
+
 
 
 
