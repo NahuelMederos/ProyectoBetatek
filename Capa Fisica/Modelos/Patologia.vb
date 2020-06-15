@@ -17,14 +17,14 @@ Public Class Patologia
 
     End Function
 
-    Public Sub AltaSintoma()
+    Public Sub AltaPatologia()
         Comando.CommandText = "INSERT INTO Patologia VALUES(" + Me.IdPatologia + ",'" + Me.Nombre + "','" + Me.Prioridad + "')"
 
         Comando.ExecuteNonQuery()
 
     End Sub
 
-    Public Sub BajaSintoma()
+    Public Sub BajaPatologia()
         Comando.CommandText = "DELETED FROM PATOLOGIA WHERE IdPatologia = " + Me.IdPatologia
 
         Comando.ExecuteNonQuery()
