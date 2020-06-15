@@ -16,6 +16,27 @@
 
     End Function
 
+    Public Sub AltaSintoma()
+        Comando.CommandText = "INSERT INTO Persona VALUES(" + Me.IdSintoma + ",'" + Me.Nombre + "','" + Me.Prioriad + "')"
+
+        Comando.ExecuteNonQuery()
+
+    End Sub
+
+    Public Sub Borrar()
+        Comando.CommandText = "DELETED FROM SINTOMA WHERE IdSintoma = " + Me.IdSintoma
+
+        Comando.ExecuteNonQuery()
+
+    End Sub
+
+    Public Sub Modificar()
+
+        Comando.CommandText = "UPDATE Sintoma SET nombre = '" + Me.Nombre + "', PRIORIDAD ='" + Me.Prioriad + "' WHERE IdSintoma = " + Me.IdSintoma
+        Comando.ExecuteNonQuery()
+    End Sub
+
+
 
 
 

@@ -11,7 +11,7 @@
     Public Mail As String
 
     Public Sub AltaPersona()
-        Comando.CommandText = "INSERT INTO Persona (" + Me.Ci + ",'" + Me.Nombre + "','" + Me.Apellido + "','" + Me.Calle + "','" + Me.Esquina + "'," + Me.Numero + "," + Me.Edad + ",'" + Me.Mail + "')"
+        Comando.CommandText = "INSERT INTO Persona VALUES(" + Me.Ci + ",'" + Me.Nombre + "','" + Me.Apellido + "','" + Me.Calle + "','" + Me.Esquina + "'," + Me.Numero + "," + Me.Edad + ",'" + Me.Mail + "')"
 
         Comando.ExecuteNonQuery()
 
@@ -20,12 +20,12 @@
     Public Function obtenerDiagnostico()
 
         Comando.CommandText = "SELECT * FROM GENERA WHERE CI_PERSONA = " + Me.Ci
-
-
         Reader = Comando.ExecuteReader()
         Return Reader
 
     End Function
+
+
 
 
 
