@@ -17,7 +17,7 @@
     End Function
 
     Public Sub AltaSintoma()
-        Comando.CommandText = "INSERT INTO Persona VALUES(" + Me.IdSintoma + ",'" + Me.Nombre + "','" + Me.Prioriad + "')"
+        Comando.CommandText = "INSERT INTO SINTOMA VALUES(" + Me.IdSintoma + ",'" + Me.Nombre + "','" + Me.Prioriad + "')"
 
         Comando.ExecuteNonQuery()
 
