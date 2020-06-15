@@ -1,4 +1,5 @@
-﻿Imports System.Data.Odbc
+﻿Imports Capa_Logica
+Imports System.Data.Odbc
 Public Class FormLogin
 
     Dim pass As String

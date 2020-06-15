@@ -1,6 +1,5 @@
-﻿
-
 Public Class Patologia
+  
     Inherits ModeloConexion
 
     Public IdPatologia As String

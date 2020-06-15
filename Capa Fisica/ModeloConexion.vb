@@ -1,29 +1,28 @@
 ﻿Imports System.Data.Odbc
 
-
 Public MustInherit Class ModeloConexion
 
-    Public DbDriver As String = "MySQL ODBC 8.0 ANSI Driver"
+    Public DbDriver As String = "MySQL ODBC 8.0 UNICODE Driver"
     Public DbUser As String = "root"
-    Public dbPassword As String = ""
-    Public DbName As String = ""
-    Public dbHost As String = "LocalHost"
+    Public DbPassword As String = "servidorbetatek2020"
+    Public DbPort As String = "3306"
+    Public DbName As String = "betatek"
+    Public DbHost As String = "localhost"
 
-    Public Conexion As New OdbcConnection("DRIVER =" + Me.DbDriver +
-                                           ";UID = " + Me.DbUser +
-                                           ";PWD = " + Me.dbPassword +
-                                           ";DATABASE = " + Me.DbName +
-                                           ";SERVER = " + Me.dbHost)
+    Public Conexion As New OdbcConnection("DRIVER=" + Me.DbDriver +
+                                          ";UID=" + Me.DbUser +
+                                          ";PWD=" + Me.DbPassword +
+                                          ";PORT=" + Me.DbPort +
+                                          ";DATABASE=" + Me.DbName +
+                                          ";SERVER=" + Me.DbHost)
 
     Public Comando As New OdbcCommand
     Public Reader As OdbcDataReader
 
-
     Public Sub New()
-        Me.conexion.Open()
+        Me.Conexion.Open()
         Me.Comando.Connection = Me.Conexion
 
     End Sub
-
 
 End Class
