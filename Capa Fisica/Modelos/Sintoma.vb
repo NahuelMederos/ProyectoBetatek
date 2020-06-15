@@ -1,4 +1,4 @@
-﻿Public Class Sintoma
+Public Class Sintoma
     Inherits ModeloConexion
 
 
