@@ -101,6 +101,12 @@
     <Compile Include="VentanaGestion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="VentanaSintomas.Designer.vb">
+      <DependentUpon>VentanaSintomas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaSintomas.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
@@ -115,6 +121,9 @@
     <EmbeddedResource Include="VentanaGestion.resx">
       <DependentUpon>VentanaGestion.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VentanaSintomas.resx">
+      <DependentUpon>VentanaSintomas.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">
@@ -127,6 +136,12 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Capa Logica\Capa Logica.vbproj">
+      <Project>{3bc8757b-1568-46db-97a1-17d93317fde7}</Project>
+      <Name>Capa Logica</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
