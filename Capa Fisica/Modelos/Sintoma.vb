@@ -7,7 +7,7 @@
     Public Prioriad As String
 
 
-    Public Function obtenerSintomas()
+    Public Function ObtenerSintomas()
 
         Comando.CommandText = "SELECT * from SINTOMA"
 
@@ -23,7 +23,7 @@
 
     End Sub
 
-    Public Sub Borrar()
+    Public Sub BajaSintoma()
         Comando.CommandText = "DELETED FROM SINTOMA WHERE IdSintoma = " + Me.IdSintoma
 
         Comando.ExecuteNonQuery()
