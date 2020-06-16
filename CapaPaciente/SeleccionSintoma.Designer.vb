@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class SeleccionSintoma
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class SeleccionSintoma
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.btnListarSintomas = New System.Windows.Forms.Button()
         Me.lblSeleccionDeSintomas = New System.Windows.Forms.Label()
@@ -32,11 +32,8 @@ Partial Class SeleccionSintoma
         Me.GrillaSintomas = New System.Windows.Forms.DataGridView()
         Me.GrillaPatologias = New System.Windows.Forms.DataGridView()
         Me.btnSeleccionarSintoma = New System.Windows.Forms.Button()
-        Me.GrillaSintomaDePaciente = New System.Windows.Forms.DataGridView()
-        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.GrillaSintomas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GrillaPatologias, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GrillaSintomaDePaciente, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnListarSintomas
@@ -122,30 +119,12 @@ Partial Class SeleccionSintoma
         '
         'btnSeleccionarSintoma
         '
-        Me.btnSeleccionarSintoma.Location = New System.Drawing.Point(361, 377)
+        Me.btnSeleccionarSintoma.Location = New System.Drawing.Point(361, 393)
         Me.btnSeleccionarSintoma.Name = "btnSeleccionarSintoma"
-        Me.btnSeleccionarSintoma.Size = New System.Drawing.Size(82, 39)
+        Me.btnSeleccionarSintoma.Size = New System.Drawing.Size(113, 27)
         Me.btnSeleccionarSintoma.TabIndex = 12
-        Me.btnSeleccionarSintoma.Text = " Seleccionar"
+        Me.btnSeleccionarSintoma.Text = "Seleccionar"
         Me.btnSeleccionarSintoma.UseVisualStyleBackColor = True
-        '
-        'GrillaSintomaDePaciente
-        '
-        Me.GrillaSintomaDePaciente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.GrillaSintomaDePaciente.Location = New System.Drawing.Point(492, 69)
-        Me.GrillaSintomaDePaciente.Name = "GrillaSintomaDePaciente"
-        Me.GrillaSintomaDePaciente.Size = New System.Drawing.Size(251, 351)
-        Me.GrillaSintomaDePaciente.TabIndex = 13
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft YaHei UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(487, 25)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(151, 28)
-        Me.Label5.TabIndex = 14
-        Me.Label5.Text = "Sus sintomas"
         '
         'SeleccionSintoma
         '
@@ -153,8 +132,6 @@ Partial Class SeleccionSintoma
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightCyan
         Me.ClientSize = New System.Drawing.Size(1126, 489)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.GrillaSintomaDePaciente)
         Me.Controls.Add(Me.btnSeleccionarSintoma)
         Me.Controls.Add(Me.GrillaPatologias)
         Me.Controls.Add(Me.GrillaSintomas)
@@ -169,7 +146,6 @@ Partial Class SeleccionSintoma
         Me.Text = "Form1"
         CType(Me.GrillaSintomas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GrillaPatologias, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GrillaSintomaDePaciente, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -184,6 +160,4 @@ Partial Class SeleccionSintoma
     Friend WithEvents GrillaSintomas As DataGridView
     Friend WithEvents GrillaPatologias As DataGridView
     Friend WithEvents btnSeleccionarSintoma As Button
-    Friend WithEvents GrillaSintomaDePaciente As DataGridView
-    Friend WithEvents Label5 As Label
 End Class

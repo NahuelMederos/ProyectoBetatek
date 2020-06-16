@@ -10,10 +10,20 @@ Public Class SeleccionSintoma
         GrillaSintomas.DataSource = tabla
     End Sub
 
-    Private Sub btnSeleccionarSintoma_Click(sender As Object, e As EventArgs) Handles btnSeleccionarSintoma.Click
+    Private Sub btnSeleccionarSintoma_Click(sender As Object, e As EventArgs)
+
         Dim i As Integer
         i = GrillaSintomas.CurrentRow.Index
 
-        GrillaSintomaDePaciente.DataSource = GrillaSintomas.Item(0, i).Value()
+        Dim id As String
+        Dim nombre As String
+        Dim prioridad As String
+
+        id = GrillaSintomas.Item(0, i).Value()
+        nombre = GrillaSintomas.Item(1, i).Value()
+        prioridad = GrillaSintomas.Item(2, i).Value()
+
     End Sub
+
+
 End Class
