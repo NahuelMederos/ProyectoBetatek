@@ -128,5 +128,11 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Capa Logica\Capa Logica.vbproj">
+      <Project>{3BC8757B-1568-46DB-97A1-17D93317FDE7}</Project>
+      <Name>Capa Logica</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
