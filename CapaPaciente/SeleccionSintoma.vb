@@ -21,10 +21,12 @@ Public Class SeleccionSintoma
         Dim prioridad As String
 
         id = GrillaSintomas.Item(0, i).Value()
-        nombre = GrillaSintomas.Item(0, i).ToString()
+        nombre = (Convert.ToString(GrillaSintomas.Item(1, i).Value()))
 
 
+        MsgBox(nombre)
         MsgBox(id)
+
 
     End Sub
 End Class
