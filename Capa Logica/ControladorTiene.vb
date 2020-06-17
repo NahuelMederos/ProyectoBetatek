@@ -1,7 +1,7 @@
 ﻿
 Imports Capa_Fisica
 
-Module ControladorTiene
+Public Module ControladorTiene
 
     Public Sub GuardarSintomasPersona(ci As String, idSintoma As String)
         Dim p As New Tiene

@@ -1,7 +1,7 @@
 ﻿Imports Capa_Fisica
 
 
-Module ControladorPersona
+Public Module ControladorPersona
 
 
     Public Sub DarAlta(ci As String, nombre As String, apellido As String, calle As String, esquina As String, numero As String, edad As String, mail As String)
