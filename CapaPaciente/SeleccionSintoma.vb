@@ -16,16 +16,17 @@ Public Class SeleccionSintoma
         Dim i As Integer
         i = GrillaSintomas.CurrentRow.Index
 
-        Dim id As String
-        Dim nombre As String
-        Dim prioridad As String
-
-        id = GrillaSintomas.Item(0, i).Value()
-        nombre = (Convert.ToString(GrillaSintomas.Item(1, i).Value()))
+        Dim idSintoma As String
+        Dim ciPersona As String = txtPideCI.Text
 
 
-        MsgBox(nombre)
-        MsgBox(id)
+
+        idSintoma = GrillaSintomas.Item(0, i).Value()
+        'nombre = (Convert.ToString(GrillaSintomas.Item(1, i).Value()))
+
+        MsgBox(idSintoma)
+
+        GuardarSintomasPersona(ciPersona, idSintoma)
 
 
     End Sub

@@ -8,9 +8,15 @@
 
 
     Public Sub GuardarSintomasDePersona()
-        Comando.CommandText = "INSERT INTO TIENE VALUES(" + Me.CiPersona + ",'" + Me.IdSintoma + "')"
+        Try
+            Comando.CommandText = "INSERT INTO TIENE VALUES(" + Me.CiPersona + ",'" + Me.IdSintoma + "')"
 
-        Comando.ExecuteNonQuery()
+            Comando.ExecuteNonQuery()
+        Catch ex As Exception
+            MsgBox("Error")
+
+        End Try
+
     End Sub
 
 End Class

@@ -18,6 +18,10 @@ Public Module ControladorPersona
         p.AltaPersona()
     End Sub
 
+    Public Function PasarIdPersona()
+
+    End Function
+
 
 
 

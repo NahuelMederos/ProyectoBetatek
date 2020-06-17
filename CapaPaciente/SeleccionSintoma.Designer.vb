@@ -33,6 +33,8 @@ Partial Class SeleccionSintoma
         Me.GrillaPatologias = New System.Windows.Forms.DataGridView()
         Me.btnSeleccionarSintoma = New System.Windows.Forms.Button()
         Me.btnPlanilla = New System.Windows.Forms.Button()
+        Me.txtPideCI = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.GrillaSintomas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GrillaPatologias, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -129,12 +131,30 @@ Partial Class SeleccionSintoma
         '
         'btnPlanilla
         '
-        Me.btnPlanilla.Location = New System.Drawing.Point(533, 397)
+        Me.btnPlanilla.Location = New System.Drawing.Point(516, 395)
         Me.btnPlanilla.Name = "btnPlanilla"
         Me.btnPlanilla.Size = New System.Drawing.Size(75, 23)
         Me.btnPlanilla.TabIndex = 13
         Me.btnPlanilla.Text = "Planilla"
         Me.btnPlanilla.UseVisualStyleBackColor = True
+        '
+        'txtPideCI
+        '
+        Me.txtPideCI.Location = New System.Drawing.Point(361, 362)
+        Me.txtPideCI.Name = "txtPideCI"
+        Me.txtPideCI.Size = New System.Drawing.Size(91, 20)
+        Me.txtPideCI.TabIndex = 14
+        '
+        'Label5
+        '
+        Me.Label5.AllowDrop = True
+        Me.Label5.AutoEllipsis = True
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(361, 346)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(61, 13)
+        Me.Label5.TabIndex = 15
+        Me.Label5.Text = "Digite su CI"
         '
         'SeleccionSintoma
         '
@@ -142,6 +162,8 @@ Partial Class SeleccionSintoma
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightCyan
         Me.ClientSize = New System.Drawing.Size(1126, 489)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.txtPideCI)
         Me.Controls.Add(Me.btnPlanilla)
         Me.Controls.Add(Me.btnSeleccionarSintoma)
         Me.Controls.Add(Me.GrillaPatologias)
@@ -172,4 +194,6 @@ Partial Class SeleccionSintoma
     Friend WithEvents GrillaPatologias As DataGridView
     Friend WithEvents btnSeleccionarSintoma As Button
     Friend WithEvents btnPlanilla As Button
+    Friend WithEvents txtPideCI As TextBox
+    Friend WithEvents Label5 As Label
 End Class
