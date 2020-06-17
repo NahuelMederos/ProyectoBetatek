@@ -17,6 +17,20 @@
 
     End Sub
 
+
+    Public Sub Borrar()
+        Comando.CommandText = "DELETE FROM Persona WHERE Ci = " + Me.Ci
+        Comando.ExecuteNonQuery()
+
+    End Sub
+
+    Public Sub listar()
+
+    End Sub
+
+
+
+
     Public Function obtenerDiagnostico()
 
         Comando.CommandText = "SELECT * FROM GENERA WHERE CI_PERSONA = " + Me.Ci

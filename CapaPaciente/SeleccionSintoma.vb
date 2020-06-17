@@ -29,4 +29,10 @@ Public Class SeleccionSintoma
 
 
     End Sub
+
+    Private Sub btnPlanilla_Click(sender As Object, e As EventArgs) Handles btnPlanilla.Click
+        Dim vent = New IngresoPersona
+        vent.Show()
+
+    End Sub
 End Class
