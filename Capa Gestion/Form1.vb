@@ -12,7 +12,7 @@ Public Class FormLogin
             Dim conexion As New OdbcConnection("DRIVER=MySQL ODBC 8.0 UNICODE Driver;UID=" + user + ";PWD=" + pass + ";PORT=3306;DATABASE=betatek;SERVER=localhost")
             conexion.Open()
             MsgBox("Se logro la conexion")
-            FormGestion.Visible = True
+            VentanaGestion.Visible = True
             Me.Hide()
         Catch
             MsgBox("Contraseña incorrecta")

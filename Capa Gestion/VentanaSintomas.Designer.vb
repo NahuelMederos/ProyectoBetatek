@@ -33,6 +33,7 @@ Partial Class VentanaSintomas
         Me.BtnBorrar = New System.Windows.Forms.Button()
         Me.TablaDeSintomas = New System.Windows.Forms.DataGridView()
         Me.Listar = New System.Windows.Forms.Button()
+        Me.btnVolver = New System.Windows.Forms.Button()
         CType(Me.TablaDeSintomas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -131,11 +132,21 @@ Partial Class VentanaSintomas
         Me.Listar.Text = "Listar"
         Me.Listar.UseVisualStyleBackColor = True
         '
+        'btnVolver
+        '
+        Me.btnVolver.Location = New System.Drawing.Point(419, 333)
+        Me.btnVolver.Name = "btnVolver"
+        Me.btnVolver.Size = New System.Drawing.Size(45, 23)
+        Me.btnVolver.TabIndex = 24
+        Me.btnVolver.Text = "Volver"
+        Me.btnVolver.UseVisualStyleBackColor = True
+        '
         'VentanaSintomas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(474, 361)
+        Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.Listar)
         Me.Controls.Add(Me.TablaDeSintomas)
         Me.Controls.Add(Me.BtnBorrar)
@@ -166,4 +177,5 @@ Partial Class VentanaSintomas
     Friend WithEvents BtnBorrar As Button
     Friend WithEvents TablaDeSintomas As DataGridView
     Friend WithEvents Listar As Button
+    Friend WithEvents btnVolver As Button
 End Class

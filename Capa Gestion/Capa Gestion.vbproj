@@ -95,6 +95,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="VentanaAsociar.Designer.vb">
+      <DependentUpon>VentanaAsociar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaAsociar.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="VentanaGestion.Designer.vb">
       <DependentUpon>VentanaGestion.vb</DependentUpon>
     </Compile>
@@ -113,6 +119,12 @@
     <Compile Include="VentanaSintomas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="VentanaVerAsociaciones.Designer.vb">
+      <DependentUpon>VentanaVerAsociaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaVerAsociaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
@@ -124,6 +136,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="VentanaAsociar.resx">
+      <DependentUpon>VentanaAsociar.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentanaGestion.resx">
       <DependentUpon>VentanaGestion.vb</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaSintomas.resx">
       <DependentUpon>VentanaSintomas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaVerAsociaciones.resx">
+      <DependentUpon>VentanaVerAsociaciones.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

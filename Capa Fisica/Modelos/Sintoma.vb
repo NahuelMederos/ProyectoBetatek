@@ -16,6 +16,15 @@ Public Class Sintoma
 
     End Function
 
+    Public Function ObtenerNombreSintomas()
+
+        Comando.CommandText = "SELECT NOMBRE FROM SINTOMA"
+
+        Me.Reader = Comando.ExecuteReader()
+        Return Me.Reader
+
+    End Function
+
     Public Sub GuardarSintoma()
         Comando.CommandText = "INSERT INTO SINTOMA VALUES(" + Me.IdSintoma + ",'" + Me.Nombre + "','" + Me.Prioridad + "')"
 
