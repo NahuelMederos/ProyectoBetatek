@@ -16,6 +16,15 @@ Public Class Patologia
 
     End Function
 
+    Public Function IdyNombrePatologia()
+
+        Comando.CommandText = "SELECT IDPATOLOGIA,NOMBRE FROM PATOLOGIA"
+
+        Reader = Comando.ExecuteReader()
+        Return Reader
+
+    End Function
+
     Public Sub AltaPatologia()
         Comando.CommandText = "INSERT INTO PATOLOGIA VALUES(" + Me.IdPatologia + ",'" + Me.Nombre + "','" + Me.Prioridad + "')"
 
@@ -24,7 +33,7 @@ Public Class Patologia
     End Sub
 
     Public Sub BajaPatologia()
-        Comando.CommandText = "DELETED FROM PATOLOGIA WHERE IDPATOLOGIA = " + Me.IdPatologia
+        Comando.CommandText = "DELETE FROM PATOLOGIA WHERE IDPATOLOGIA = " + Me.IdPatologia
 
         Comando.ExecuteNonQuery()
 

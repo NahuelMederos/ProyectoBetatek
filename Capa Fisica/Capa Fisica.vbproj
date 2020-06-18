@@ -67,6 +67,7 @@
     <Compile Include="ModeloConexion.vb" />
     <Compile Include="Modelos\Diagnostico.vb" />
     <Compile Include="Modelos\Medico.vb" />
+    <Compile Include="Modelos\Patologia_Sintoma.vb" />
     <Compile Include="Modelos\Tiene.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
