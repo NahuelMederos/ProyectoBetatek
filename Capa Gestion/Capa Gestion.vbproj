@@ -101,6 +101,12 @@
     <Compile Include="VentanaGestion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="VentanaPatologia.Designer.vb">
+      <DependentUpon>VentanaPatologia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaPatologia.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="VentanaSintomas.Designer.vb">
       <DependentUpon>VentanaSintomas.vb</DependentUpon>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaGestion.resx">
       <DependentUpon>VentanaGestion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaPatologia.resx">
+      <DependentUpon>VentanaPatologia.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaSintomas.resx">
       <DependentUpon>VentanaSintomas.vb</DependentUpon>
