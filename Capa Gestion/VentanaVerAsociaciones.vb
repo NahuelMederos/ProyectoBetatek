@@ -21,7 +21,7 @@ Public Class VentanaVerAsociaciones
 
     Private Sub btnBorrarAsociacion_Click(sender As Object, e As EventArgs) Handles btnBorrarAsociacion.Click
         ControladorAsociar.BorrarAsociacion(txtIdA.Text, txtSintA.Text)
-        MsgBox("Patologia eliminada")
+        MsgBox("Asociacion eliminada")
         btnListar_Click(sender, e)
 
     End Sub
@@ -29,4 +29,6 @@ Public Class VentanaVerAsociaciones
     Private Sub VentanaVerAsociaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         btnListar_Click(sender, e)
     End Sub
+
+
 End Class

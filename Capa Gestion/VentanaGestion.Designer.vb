@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FormGestion
+Partial Class VentanaGestion
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -65,7 +65,7 @@ Partial Class FormGestion
         Me.Button1.Text = "Asociar Patologias con Sintomas"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'FormGestion
+        'VentanaGestion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -74,7 +74,7 @@ Partial Class FormGestion
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnPatologias)
         Me.Controls.Add(Me.btnSintomas)
-        Me.Name = "FormGestion"
+        Me.Name = "VentanaGestion"
         Me.Text = "Gestion"
         Me.ResumeLayout(False)
         Me.PerformLayout()

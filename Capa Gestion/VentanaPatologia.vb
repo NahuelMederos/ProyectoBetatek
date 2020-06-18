@@ -33,12 +33,14 @@ Public Class VentanaPatologia
     End Sub
 
     Private Sub BtnBorrarPat_Click(sender As Object, e As EventArgs) Handles BtnBorrarPat.Click
-        Try
-            ControladorPatologia.BorrarPatologia(txtIdPatologia.Text)
-            MsgBox("Patologia eliminada")
-            ListarPat_Click(sender, e)
-        Catch ex As Exception
-            MsgBox("Error")
-        End Try
+
+        ControladorPatologia.BorrarPatologia(txtIdPatologia.Text)
+        ListarPat_Click(sender, e)
+
+    End Sub
+
+    Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
+        VentanaGestion.Visible = True
+        Me.Close()
     End Sub
 End Class

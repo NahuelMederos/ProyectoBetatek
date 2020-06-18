@@ -50,4 +50,9 @@ Public Class VentanaAsociar
     Private Sub btnVerAsociaciones_Click(sender As Object, e As EventArgs) Handles btnVerAsociaciones.Click
         VentanaVerAsociaciones.Visible = True
     End Sub
+
+    Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
+        VentanaGestion.Visible = True
+        Me.Close()
+    End Sub
 End Class

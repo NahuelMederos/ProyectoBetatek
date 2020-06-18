@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class VentanaVerAsociaciones
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class VentanaVerAsociaciones
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.TablaAsociaciones = New System.Windows.Forms.DataGridView()
         Me.btnBorrarAsociacion = New System.Windows.Forms.Button()
@@ -37,14 +37,14 @@ Partial Class VentanaVerAsociaciones
         'TablaAsociaciones
         '
         Me.TablaAsociaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.TablaAsociaciones.Location = New System.Drawing.Point(27, 13)
+        Me.TablaAsociaciones.Location = New System.Drawing.Point(24, 12)
         Me.TablaAsociaciones.Name = "TablaAsociaciones"
         Me.TablaAsociaciones.Size = New System.Drawing.Size(356, 293)
         Me.TablaAsociaciones.TabIndex = 0
         '
         'btnBorrarAsociacion
         '
-        Me.btnBorrarAsociacion.Location = New System.Drawing.Point(268, 312)
+        Me.btnBorrarAsociacion.Location = New System.Drawing.Point(265, 311)
         Me.btnBorrarAsociacion.Name = "btnBorrarAsociacion"
         Me.btnBorrarAsociacion.Size = New System.Drawing.Size(75, 42)
         Me.btnBorrarAsociacion.TabIndex = 1
@@ -54,7 +54,7 @@ Partial Class VentanaVerAsociaciones
         'Id
         '
         Me.Id.AutoSize = True
-        Me.Id.Location = New System.Drawing.Point(12, 313)
+        Me.Id.Location = New System.Drawing.Point(9, 312)
         Me.Id.Name = "Id"
         Me.Id.Size = New System.Drawing.Size(16, 13)
         Me.Id.TabIndex = 2
@@ -63,7 +63,7 @@ Partial Class VentanaVerAsociaciones
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(159, 313)
+        Me.Label2.Location = New System.Drawing.Point(156, 312)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(45, 13)
         Me.Label2.TabIndex = 3
@@ -72,7 +72,7 @@ Partial Class VentanaVerAsociaciones
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(47, 313)
+        Me.Label1.Location = New System.Drawing.Point(44, 312)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(51, 13)
         Me.Label1.TabIndex = 4
@@ -80,28 +80,28 @@ Partial Class VentanaVerAsociaciones
         '
         'txtIdA
         '
-        Me.txtIdA.Location = New System.Drawing.Point(15, 329)
+        Me.txtIdA.Location = New System.Drawing.Point(12, 328)
         Me.txtIdA.Name = "txtIdA"
         Me.txtIdA.Size = New System.Drawing.Size(28, 20)
         Me.txtIdA.TabIndex = 5
         '
         'txtSintA
         '
-        Me.txtSintA.Location = New System.Drawing.Point(162, 329)
+        Me.txtSintA.Location = New System.Drawing.Point(159, 328)
         Me.txtSintA.Name = "txtSintA"
         Me.txtSintA.Size = New System.Drawing.Size(100, 20)
         Me.txtSintA.TabIndex = 6
         '
         'txtPatA
         '
-        Me.txtPatA.Location = New System.Drawing.Point(50, 329)
+        Me.txtPatA.Location = New System.Drawing.Point(47, 328)
         Me.txtPatA.Name = "txtPatA"
         Me.txtPatA.Size = New System.Drawing.Size(100, 20)
         Me.txtPatA.TabIndex = 7
         '
         'btnListar
         '
-        Me.btnListar.Location = New System.Drawing.Point(349, 313)
+        Me.btnListar.Location = New System.Drawing.Point(346, 312)
         Me.btnListar.Name = "btnListar"
         Me.btnListar.Size = New System.Drawing.Size(45, 40)
         Me.btnListar.TabIndex = 8

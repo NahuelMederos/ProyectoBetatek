@@ -42,4 +42,9 @@ Public Class VentanaSintomas
             MsgBox("Error")
         End Try
     End Sub
+
+    Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
+        VentanaGestion.Visible = True
+        Me.Close()
+    End Sub
 End Class
