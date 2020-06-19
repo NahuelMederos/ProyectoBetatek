@@ -32,9 +32,9 @@ Partial Class SeleccionSintoma
         Me.GrillaSintomas = New System.Windows.Forms.DataGridView()
         Me.GrillaPatologias = New System.Windows.Forms.DataGridView()
         Me.btnSeleccionarSintoma = New System.Windows.Forms.Button()
-        Me.btnPlanilla = New System.Windows.Forms.Button()
         Me.txtPideCI = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.btnObtenerDiagnosctico = New System.Windows.Forms.Button()
         CType(Me.GrillaSintomas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GrillaPatologias, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -129,15 +129,6 @@ Partial Class SeleccionSintoma
         Me.btnSeleccionarSintoma.Text = "Seleccionar"
         Me.btnSeleccionarSintoma.UseVisualStyleBackColor = True
         '
-        'btnPlanilla
-        '
-        Me.btnPlanilla.Location = New System.Drawing.Point(516, 395)
-        Me.btnPlanilla.Name = "btnPlanilla"
-        Me.btnPlanilla.Size = New System.Drawing.Size(75, 23)
-        Me.btnPlanilla.TabIndex = 13
-        Me.btnPlanilla.Text = "Planilla"
-        Me.btnPlanilla.UseVisualStyleBackColor = True
-        '
         'txtPideCI
         '
         Me.txtPideCI.Location = New System.Drawing.Point(361, 362)
@@ -156,15 +147,24 @@ Partial Class SeleccionSintoma
         Me.Label5.TabIndex = 15
         Me.Label5.Text = "Digite su CI"
         '
+        'btnObtenerDiagnosctico
+        '
+        Me.btnObtenerDiagnosctico.Location = New System.Drawing.Point(364, 426)
+        Me.btnObtenerDiagnosctico.Name = "btnObtenerDiagnosctico"
+        Me.btnObtenerDiagnosctico.Size = New System.Drawing.Size(110, 23)
+        Me.btnObtenerDiagnosctico.TabIndex = 16
+        Me.btnObtenerDiagnosctico.Text = "Obtener diagnosctio"
+        Me.btnObtenerDiagnosctico.UseVisualStyleBackColor = True
+        '
         'SeleccionSintoma
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightCyan
         Me.ClientSize = New System.Drawing.Size(1126, 489)
+        Me.Controls.Add(Me.btnObtenerDiagnosctico)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.txtPideCI)
-        Me.Controls.Add(Me.btnPlanilla)
         Me.Controls.Add(Me.btnSeleccionarSintoma)
         Me.Controls.Add(Me.GrillaPatologias)
         Me.Controls.Add(Me.GrillaSintomas)
@@ -193,7 +193,7 @@ Partial Class SeleccionSintoma
     Friend WithEvents GrillaSintomas As DataGridView
     Friend WithEvents GrillaPatologias As DataGridView
     Friend WithEvents btnSeleccionarSintoma As Button
-    Friend WithEvents btnPlanilla As Button
     Friend WithEvents txtPideCI As TextBox
     Friend WithEvents Label5 As Label
+    Friend WithEvents btnObtenerDiagnosctico As Button
 End Class

@@ -10,4 +10,9 @@ Public Class IngresoPersona
             MsgBox("Hubo un error")
         End Try
     End Sub
+
+    Private Sub btnSiguiente_Click(sender As Object, e As EventArgs) Handles btnSiguiente.Click
+        Dim s = New SeleccionSintoma
+        s.Show()
+    End Sub
 End Class

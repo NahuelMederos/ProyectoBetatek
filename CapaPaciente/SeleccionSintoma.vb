@@ -31,9 +31,11 @@ Public Class SeleccionSintoma
 
     End Sub
 
-    Private Sub btnPlanilla_Click(sender As Object, e As EventArgs) Handles btnPlanilla.Click
-        Dim vent = New IngresoPersona
-        vent.Show()
+    Private Sub SeleccionSintoma_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub btnObtenerDiagnosctico_Click(sender As Object, e As EventArgs) Handles btnObtenerDiagnosctico.Click
 
     End Sub
 End Class

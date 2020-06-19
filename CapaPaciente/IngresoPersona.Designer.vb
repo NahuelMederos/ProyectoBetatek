@@ -42,6 +42,7 @@ Partial Class IngresoPersona
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.btnSiguiente = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'TxtNombre
@@ -207,11 +208,21 @@ Partial Class IngresoPersona
         Me.Label10.TabIndex = 19
         Me.Label10.Text = "Direccion"
         '
+        'btnSiguiente
+        '
+        Me.btnSiguiente.Location = New System.Drawing.Point(577, 322)
+        Me.btnSiguiente.Name = "btnSiguiente"
+        Me.btnSiguiente.Size = New System.Drawing.Size(139, 37)
+        Me.btnSiguiente.TabIndex = 20
+        Me.btnSiguiente.Text = "Siguiente"
+        Me.btnSiguiente.UseVisualStyleBackColor = True
+        '
         'IngresoPersona
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(728, 371)
+        Me.Controls.Add(Me.btnSiguiente)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
@@ -259,4 +270,5 @@ Partial Class IngresoPersona
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
+    Friend WithEvents btnSiguiente As Button
 End Class
