@@ -4,6 +4,7 @@
 
     Public IdPatologia As String
     Public NombreSintoma As String
+    Public ComandoObtenerPatologia As String
 
     Public Sub GuardarAsociacion()
         Comando.CommandText = "INSERT INTO PATOLOGIA_SINTOMAS VALUES(" + Me.IdPatologia + ",'" + Me.NombreSintoma + "')"
@@ -28,4 +29,12 @@
 
     End Sub
 
+    Public Function ObtenerPatologia()
+
+        Comando.CommandText = ComandoObtenerPatologia
+
+        Reader = Comando.ExecuteReader()
+        Return Reader
+
+    End Function
 End Class

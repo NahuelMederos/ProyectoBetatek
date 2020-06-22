@@ -13,4 +13,9 @@
         VentanaAsociar.Visible = True
         Me.Hide()
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnPrueba.Click
+        VentanaObtener.Visible = True
+        Me.Hide()
+    End Sub
 End Class

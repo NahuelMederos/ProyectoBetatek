@@ -40,4 +40,12 @@ Public Module ControladorAsociar
 
     End Sub
 
+
+
+    Public Function ObtenerPatologias(nResult As String)
+        Dim p As New Patologia_Sintoma
+
+        p.ComandoObtenerPatologia = nResult
+        Return p.ObtenerPatologia()
+    End Function
 End Module

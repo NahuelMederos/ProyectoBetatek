@@ -26,6 +26,7 @@ Partial Class VentanaGestion
         Me.btnPatologias = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnPrueba = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnSintomas
@@ -65,11 +66,21 @@ Partial Class VentanaGestion
         Me.Button1.Text = "Asociar Patologias con Sintomas"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'btnPrueba
+        '
+        Me.btnPrueba.Location = New System.Drawing.Point(233, 315)
+        Me.btnPrueba.Name = "btnPrueba"
+        Me.btnPrueba.Size = New System.Drawing.Size(75, 23)
+        Me.btnPrueba.TabIndex = 4
+        Me.btnPrueba.Text = "Prueba"
+        Me.btnPrueba.UseVisualStyleBackColor = True
+        '
         'VentanaGestion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(320, 342)
+        Me.Controls.Add(Me.btnPrueba)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnPatologias)
@@ -85,4 +96,5 @@ Partial Class VentanaGestion
     Friend WithEvents btnPatologias As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Button1 As Button
+    Friend WithEvents btnPrueba As Button
 End Class
