@@ -8,15 +8,14 @@ Public Class VentanaObtener
 
         TablaDeSintomas.DataSource = TablaSintomas
     End Sub
-
     Private nresult As String = "SELECT DISTINCT NOMBRE
 FROM PATOLOGIA_SINTOMAS,PATOLOGIA
 WHERE IDPATOLOGIA_PAT=IDPATOLOGIA AND SINTOMA='Nada'"
-
+    Private contador As Integer = 0
+    Private nombreList(contador)
     Public Sub btnSeleccionar_Click(sender As Object, e As EventArgs) Handles btnSeleccionar.Click
         Dim nombre As String
-        Dim contador As Integer = 0
-        Dim nombreList(contador)
+
 
         For Each selectedItem As DataGridViewRow In TablaDeSintomas.SelectedRows
             nombre = selectedItem.Cells("NOMBRE").Value
@@ -30,7 +29,7 @@ WHERE IDPATOLOGIA_PAT=IDPATOLOGIA AND SINTOMA='Nada'"
 AND SINTOMA='" + elem2 + "'"
         Next
 
-        ControladorAsociar.ObtenerPatologias(nresult)
+        ControladorAsociar.ObtenerPatologias(nombreList)
         txtPrueba.Text = nresult
 
 
@@ -39,7 +38,7 @@ AND SINTOMA='" + elem2 + "'"
 
     Private Sub btnListarPatologias_Click(sender As Object, e As EventArgs) Handles btnListarPatologias.Click
         Dim TablaPatologias As New DataTable
-        TablaPatologias.Load(ControladorAsociar.ObtenerPatologias(nresult))
+        TablaPatologias.Load(ControladorAsociar.ObtenerPatologias(nombreList))
 
         TablaDePatologias.DataSource = TablaPatologias
     End Sub

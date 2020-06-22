@@ -42,10 +42,18 @@ Public Module ControladorAsociar
 
 
 
-    Public Function ObtenerPatologias(nResult As String)
+    Public Function ObtenerPatologias(nombreList As Array)
         Dim p As New Patologia_Sintoma
+        Dim Resultado As String = "SELECT DISTINCT NOMBRE
+FROM PATOLOGIA_SINTOMAS,PATOLOGIA
+WHERE IDPATOLOGIA_PAT=IDPATOLOGIA AND SINTOMA='Nada'"
 
-        p.ComandoObtenerPatologia = nResult
+        For Each elem2 As String In nombreList
+            Resultado &= " OR IDPATOLOGIA_PAT=IDPATOLOGIA
+AND SINTOMA='" + elem2 + "'"
+        Next
+
+        p.ComandoObtenerPatologia = Resultado
         Return p.ObtenerPatologia()
     End Function
 End Module
