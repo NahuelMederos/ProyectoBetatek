@@ -4,6 +4,8 @@
 
     Public IdPatologia As String
     Public NombreSintoma As String
+
+    'String generado en ControladorAsociar'
     Public ComandoObtenerPatologia As String
 
     Public Sub GuardarAsociacion()
@@ -31,6 +33,7 @@
 
     Public Function ObtenerPatologia()
 
+        'Hace la busqueda con el String y devuelve un Reader'
         Comando.CommandText = ComandoObtenerPatologia
 
         Reader = Comando.ExecuteReader()
