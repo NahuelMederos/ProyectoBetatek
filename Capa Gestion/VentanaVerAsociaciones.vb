@@ -20,9 +20,13 @@ Public Class VentanaVerAsociaciones
     End Sub
 
     Private Sub btnBorrarAsociacion_Click(sender As Object, e As EventArgs) Handles btnBorrarAsociacion.Click
-        ControladorAsociar.BorrarAsociacion(txtIdA.Text, txtSintA.Text)
-        MsgBox("Asociacion eliminada")
-        btnListar_Click(sender, e)
+        Try
+            ControladorAsociar.BorrarAsociacion(txtIdA.Text, txtSintA.Text)
+            MsgBox("Asociacion eliminada")
+            btnListar_Click(sender, e)
+        Catch
+            MsgBox("Error")
+        End Try
 
     End Sub
 
