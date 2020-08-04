@@ -64,7 +64,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin.vb" />
     <Compile Include="ControladorAsociar.vb" />
     <Compile Include="ControladorLogin.vb" />
     <Compile Include="ControladorPatologia.vb" />
