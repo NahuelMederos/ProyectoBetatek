@@ -60,4 +60,5 @@ AND SINTOMA='" + elem2 + "'"
 
     End Sub
 
+
 End Class
