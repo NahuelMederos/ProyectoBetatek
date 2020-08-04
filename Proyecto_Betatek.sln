@@ -11,6 +11,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Capa Logica", "Capa Logica\
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CapaPaciente", "CapaPaciente\CapaPaciente.vbproj", "{5ABED6A3-FB30-4400-96AA-F776CD22CAA0}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CapaMedico", "CapaMedico\CapaMedico.vbproj", "{FCC31D75-4C30-4359-B5CC-2C65BD7D0169}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{5ABED6A3-FB30-4400-96AA-F776CD22CAA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5ABED6A3-FB30-4400-96AA-F776CD22CAA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5ABED6A3-FB30-4400-96AA-F776CD22CAA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCC31D75-4C30-4359-B5CC-2C65BD7D0169}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCC31D75-4C30-4359-B5CC-2C65BD7D0169}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCC31D75-4C30-4359-B5CC-2C65BD7D0169}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCC31D75-4C30-4359-B5CC-2C65BD7D0169}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

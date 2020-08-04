@@ -22,9 +22,29 @@ Partial Class TestAltaAdmin
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
+        Me.btnchoto = New System.Windows.Forms.Button()
+        Me.SuspendLayout()
+        '
+        'btnchoto
+        '
+        Me.btnchoto.Location = New System.Drawing.Point(596, 177)
+        Me.btnchoto.Name = "btnchoto"
+        Me.btnchoto.Size = New System.Drawing.Size(75, 23)
+        Me.btnchoto.TabIndex = 0
+        Me.btnchoto.Text = "Button1"
+        Me.btnchoto.UseVisualStyleBackColor = True
+        '
+        'TestAltaAdmin
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btnchoto)
+        Me.Name = "TestAltaAdmin"
         Me.Text = "TestAltaAdmin"
+        Me.ResumeLayout(False)
+
     End Sub
+
+    Friend WithEvents btnchoto As Button
 End Class

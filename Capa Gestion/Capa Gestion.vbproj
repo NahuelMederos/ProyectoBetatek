@@ -101,6 +101,12 @@
     <Compile Include="PruebaObtenerPatologias.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TestAltaAdmin.Designer.vb">
+      <DependentUpon>TestAltaAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TestAltaAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="VentanaAsociar.Designer.vb">
       <DependentUpon>VentanaAsociar.vb</DependentUpon>
     </Compile>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PruebaObtenerPatologias.resx">
       <DependentUpon>PruebaObtenerPatologias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestAltaAdmin.resx">
+      <DependentUpon>TestAltaAdmin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaAsociar.resx">
       <DependentUpon>VentanaAsociar.vb</DependentUpon>
