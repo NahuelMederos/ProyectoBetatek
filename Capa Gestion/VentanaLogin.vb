@@ -9,14 +9,14 @@ Public Class FormLogin
         Try
             pass = txtPassword.Text
             user = txtUsuario.Text
-            Dim conexion As New OdbcConnection("DRIVER=MySQL ODBC 8.0 UNICODE Driver;UID=" + user + ";PWD=" + pass + ";PORT=3306;DATABASE=betatek;SERVER=localhost")
-            conexion.Open()
-            MsgBox("Se logro la conexion")
+            ControladorLogin.Autenticarse(user, pass)
+            MsgBox("El usuario y la contraseña son correctos")
             VentanaGestion.Visible = True
             Me.Hide()
         Catch
-            MsgBox("Contraseña incorrecta")
+            MsgBox("El usuario o la contraseña son incorrectos")
         End Try
+
     End Sub
 
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click

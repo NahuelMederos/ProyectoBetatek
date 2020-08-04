@@ -73,11 +73,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Login.vb">
+    <Compile Include="VentanaLogin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.vb">
-      <DependentUpon>Login.vb</DependentUpon>
+    <Compile Include="VentanaLogin.Designer.vb">
+      <DependentUpon>VentanaLogin.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -94,18 +94,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <Compile Include="PruebaObtenerPatologias.Designer.vb">
-      <DependentUpon>PruebaObtenerPatologias.vb</DependentUpon>
-    </Compile>
-    <Compile Include="PruebaObtenerPatologias.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TestAltaAdmin.Designer.vb">
-      <DependentUpon>TestAltaAdmin.vb</DependentUpon>
-    </Compile>
-    <Compile Include="TestAltaAdmin.vb">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="VentanaAsociar.Designer.vb">
       <DependentUpon>VentanaAsociar.vb</DependentUpon>
@@ -139,20 +127,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.vb</DependentUpon>
+    <EmbeddedResource Include="VentanaLogin.resx">
+      <DependentUpon>VentanaLogin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PruebaObtenerPatologias.resx">
-      <DependentUpon>PruebaObtenerPatologias.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TestAltaAdmin.resx">
-      <DependentUpon>TestAltaAdmin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaAsociar.resx">
       <DependentUpon>VentanaAsociar.vb</DependentUpon>

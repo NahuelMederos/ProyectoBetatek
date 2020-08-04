@@ -47,4 +47,14 @@ Public Class VentanaSintomas
         VentanaGestion.Visible = True
         Me.Close()
     End Sub
+
+    Private Sub TablaDeSintomas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles TablaDeSintomas.CellClick
+        Dim Indice As New Integer
+        Indice = e.RowIndex
+        Dim SSeleccionada As DataGridViewRow
+        SSeleccionada = TablaDeSintomas.Rows(Indice)
+        txtIdSintoma.Text = SSeleccionada.Cells(0).Value.ToString()
+        txtNombreSintoma.Text = SSeleccionada.Cells(1).Value.ToString()
+        cmbSintoma.Text = SSeleccionada.Cells(2).Value.ToString()
+    End Sub
 End Class
