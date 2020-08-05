@@ -107,6 +107,32 @@
         Return Reader
     End Function
 
+    Public Sub ModificarUsuario()
+        Try
+            Comando.CommandText = "SET AUTOCOMMIT = OFF"
+            Comando.ExecuteNonQuery()
+
+            Comando.CommandText = "LOCK TABLES Usuario READ"
+            Comando.ExecuteNonQuery()
+
+            Comando.CommandText = "START TRANSACTION"
+
+            Comando.ExecuteNonQuery()
+            Comando.CommandText = "UPDATE Usuario SET Ci = " + Me.CI + ", Nombre ='" + Me.Nombre + "', Apellido= '" + Me.Apellido + "', Edad = '" + Me.edad + "', Mail ='" + Me.Mail + "',Tipo ='" + Me.Tipo + "',Estado ='" + Me.Estado
+
+            Comando.CommandText = "COMMIT"
+            Comando.ExecuteNonQuery()
+
+        Catch ex As Exception
+
+            Comando.CommandText = "ROLLBACK"
+            Comando.ExecuteNonQuery()
+        End Try
+
+        Comando.CommandText = "UNLOKE TABLES"
+        Comando.ExecuteNonQuery()
+
+    End Sub
 
 
 

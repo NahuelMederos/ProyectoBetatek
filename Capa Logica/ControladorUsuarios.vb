@@ -20,11 +20,11 @@ Public Module ControladorUsuarios
 
     End Sub
 
-    Public Sub AltaAdmin(ci As String, Nombre As String, apellido As String, edad As String, mail As String, tipo As String, estado As String)
+    Public Sub AltaAdmin(ci As String, nombre As String, apellido As String, edad As String, mail As String, tipo As String, estado As String)
         Dim u As New Usuario
 
         u.CI = ci
-        u.Nombre = Nombre
+        u.Nombre = nombre
         u.Apellido = apellido
         u.edad = edad
         u.Mail = mail
@@ -46,5 +46,7 @@ Public Module ControladorUsuarios
         u.CI = ci
 
     End Sub
+
+
 
 End Module
