@@ -47,6 +47,30 @@ Public Module ControladorUsuarios
 
     End Sub
 
+    Public Sub ModificarMedico(ci As String, nombre As String, apellido As String, edad As String, mail As String, tipo As String, estado As String)
+        Dim u As New Usuario
+        u.CI = ci
+        u.Nombre = nombre
+        u.Apellido = apellido
+        u.edad = edad
+        u.Mail = mail
+        u.Tipo = tipo
+        u.Estado = estado
 
+        u.ModificarUsuario()
+
+    End Sub
+    Public Sub ModificarAdmin(ci As String, nombre As String, apellido As String, edad As String, mail As String, tipo As String, estado As String)
+        Dim u As New Usuario
+        u.CI = ci
+        u.Nombre = nombre
+        u.Apellido = apellido
+        u.edad = edad
+        u.Mail = mail
+        u.Tipo = tipo
+        u.Estado = estado
+
+        u.ModificarUsuario()
+    End Sub
 
 End Module
