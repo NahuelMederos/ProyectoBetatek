@@ -7,6 +7,7 @@
     Public Apellido As String
     Public edad As String
     Public Mail As String
+    Public Tipo As String
     Public Estado As String
 
     Public Sub AltaUsuario()
@@ -97,19 +98,20 @@
         Comando.ExecuteNonQuery()
     End Sub
 
-    'Public Function listarMedicos()
-
-    '    Comando.CommandText = "SELECT * FROM Usuario where Estado =" + Me.Estado
-    '    Comando.ExecuteReader()
-
-    '    Comando.CommandText = "SELECT IdMedico FROM Medico"
-    '    Comando.ExecuteScalar.ToString()
+    Public Function listar()
+        'listar de acuerdo al tipo y al estado, Puedes listar, solo admins, solo medicos y determinar su baja o alta.
+        Comando.CommandText = "SELECT * FROM Usuario where Tipo ='" + Me.Tipo + "' AND Estado = " + Me.Estado
+        Comando.ExecuteReader()
 
 
+        Return Reader
+    End Function
 
-    '    Return -1
-    'End Function
+
+
+
+
 
 End Class
 
-End Class
+
