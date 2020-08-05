@@ -94,11 +94,31 @@
 
 
     Public Sub BajaUsuario(ci As String)
-        Comando.CommandText = "UPDATE Usuario SET Estado = " + Me.Estado + "WHERE CI =" + ci
-        Comando.ExecuteNonQuery()
+        Try
+            Comando.CommandText = "SET AUTOCOMMIT = OFF"
+            Comando.ExecuteNonQuery()
+
+            Comando.CommandText = "LOCK TABLES Usuario READ"
+            Comando.ExecuteNonQuery()
+
+            Comando.CommandText = "START TRANSACTION"
+
+            Comando.CommandText = "UPDATE Usuario SET Estado = " + Me.Estado + "WHERE CI =" + ci
+            Comando.ExecuteNonQuery()
+
+            Comando.CommandText = "COMMIT"
+            Comando.ExecuteNonQuery()
+        Catch ex As Exception
+            Comando.CommandText = "ROLLBACK"
+            Comando.ExecuteNonQuery()
+        End Try
+
+        Comando.CommandText = "UNLOKE TABLES"
+
     End Sub
 
     Public Function listar()
+
         'listar de acuerdo al tipo y al estado, Puedes listar, solo admins, solo medicos y determinar su baja o alta.
         Comando.CommandText = "SELECT * FROM Usuario where Tipo ='" + Me.Tipo + "' AND Estado = " + Me.Estado
         Comando.ExecuteReader()
