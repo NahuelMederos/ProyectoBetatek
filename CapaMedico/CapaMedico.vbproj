@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FCC31D75-4C30-4359-B5CC-2C65BD7D0169}</ProjectGuid>
+    <ProjectGuid>{936E1C96-F351-4D06-806C-476A529F488A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <StartupObject>CapaMedico.My.MyApplication</StartupObject>
     <RootNamespace>CapaMedico</RootNamespace>
