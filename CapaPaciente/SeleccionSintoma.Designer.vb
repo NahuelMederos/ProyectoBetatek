@@ -150,7 +150,7 @@ Partial Class SeleccionSintoma
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightCyan
-        Me.ClientSize = New System.Drawing.Size(694, 468)
+        Me.ClientSize = New System.Drawing.Size(703, 460)
         Me.Controls.Add(Me.txtPatologias)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.txtPideCI)

@@ -49,7 +49,7 @@
 
 
         End Try
-        Comando.CommandText = "UNLOKE TABLES"
+        Comando.CommandText = "UNLOCK TABLES"
         Comando.ExecuteNonQuery()
 
     End Sub
@@ -71,7 +71,7 @@
 
             Comando.ExecuteNonQuery()
 
-            Me.IdUsuario = Comando.CommandText() = "SELECT IdUsuario FROM USUARIO WEHRE CI =" + Me.CI
+            Me.IdUsuario = Comando.CommandText() = "SELECT IdUsuario FROM USUARIO WHERE CI =" + Me.CI
 
             Comando.ExecuteNonQuery()
 
@@ -88,7 +88,7 @@
 
 
         End Try
-        Comando.CommandText = "UNLOKE TABLES"
+        Comando.CommandText = "UNLOCK TABLES"
         Comando.ExecuteNonQuery()
     End Sub
 
@@ -113,7 +113,7 @@
             Comando.ExecuteNonQuery()
         End Try
 
-        Comando.CommandText = "UNLOKE TABLES"
+        Comando.CommandText = "UNLOCK TABLES"
 
     End Sub
 
@@ -149,7 +149,7 @@
             Comando.ExecuteNonQuery()
         End Try
 
-        Comando.CommandText = "UNLOKE TABLES"
+        Comando.CommandText = "UNLOCK TABLES"
         Comando.ExecuteNonQuery()
 
     End Sub
