@@ -139,7 +139,7 @@ Partial Class SeleccionSintoma
         '
         'txtPatologias
         '
-        Me.txtPatologias.Location = New System.Drawing.Point(522, 66)
+        Me.txtPatologias.Location = New System.Drawing.Point(512, 69)
         Me.txtPatologias.Name = "txtPatologias"
         Me.txtPatologias.Size = New System.Drawing.Size(147, 159)
         Me.txtPatologias.TabIndex = 17
@@ -150,7 +150,7 @@ Partial Class SeleccionSintoma
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightCyan
-        Me.ClientSize = New System.Drawing.Size(1126, 489)
+        Me.ClientSize = New System.Drawing.Size(694, 468)
         Me.Controls.Add(Me.txtPatologias)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.txtPideCI)

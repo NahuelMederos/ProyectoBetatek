@@ -25,14 +25,14 @@ Public Class SeleccionSintoma
         '---------------------------------------------------------------
         'Guarda en la tabla "TIENE" LA ASOCIACION DE SINTOMA CON EL USUARIO
         'ES A FUTURO PARA CUANDO TRABAJE CON LA APLICACION DE MEDICO
-        Dim i As Integer
-        i = GrillaSintomas.CurrentRow.Index
+        'Dim i As Integer
+        'i = GrillaSintomas.CurrentRow.Index
 
-        Dim idSintoma As String
-        Dim ciPersona As String = txtPideCI.Text
+        'Dim idSintoma As String
+        'Dim ciPersona As String = txtPideCI.Text
 
-        idSintoma = GrillaSintomas.Item(0, i).Value()
-        GuardarSintomasPersona(ciPersona, idSintoma)
+        'idSintoma = GrillaSintomas.Item(0, i).Value()
+        'GuardarSintomasPersona(ciPersona, idSintoma)
 
         '---------------------------------------------------------------
 
@@ -60,5 +60,7 @@ AND SINTOMA='" + elem2 + "'"
 
     End Sub
 
+    Private Sub SeleccionSintoma_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
 End Class
