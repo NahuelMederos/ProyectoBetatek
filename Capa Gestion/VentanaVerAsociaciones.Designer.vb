@@ -89,6 +89,7 @@ Partial Class VentanaVerAsociaciones
         '
         Me.txtSintA.Location = New System.Drawing.Point(159, 328)
         Me.txtSintA.Name = "txtSintA"
+        Me.txtSintA.ReadOnly = True
         Me.txtSintA.Size = New System.Drawing.Size(100, 20)
         Me.txtSintA.TabIndex = 6
         '
@@ -96,6 +97,7 @@ Partial Class VentanaVerAsociaciones
         '
         Me.txtPatA.Location = New System.Drawing.Point(47, 328)
         Me.txtPatA.Name = "txtPatA"
+        Me.txtPatA.ReadOnly = True
         Me.txtPatA.Size = New System.Drawing.Size(100, 20)
         Me.txtPatA.TabIndex = 7
         '

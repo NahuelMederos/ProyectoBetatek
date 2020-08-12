@@ -3,7 +3,7 @@
 Public Class VentanaPatologia
     Private Sub btnAgregarPatologia_Click(sender As Object, e As EventArgs) Handles btnAgregarPatologia.Click
         Try
-            ControladorPatologia.CrearPatologia(txtIdPatologia.Text, txtNombrePatologia.Text, cmbPatologia.SelectedItem)
+            ControladorPatologia.CrearPatologia(txtNombrePatologia.Text, cmbPatologia.SelectedItem)
             MsgBox("Patologia creada")
             ListarPat_Click(sender, e)
         Catch

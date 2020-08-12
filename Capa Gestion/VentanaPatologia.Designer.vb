@@ -120,6 +120,7 @@ Partial Class VentanaPatologia
         '
         Me.txtIdPatologia.Location = New System.Drawing.Point(377, 207)
         Me.txtIdPatologia.Name = "txtIdPatologia"
+        Me.txtIdPatologia.ReadOnly = True
         Me.txtIdPatologia.Size = New System.Drawing.Size(52, 20)
         Me.txtIdPatologia.TabIndex = 13
         '

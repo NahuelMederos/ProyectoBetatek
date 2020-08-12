@@ -2,9 +2,8 @@
 
 Public Module ControladorSintoma
 
-    Public Sub CrearSintoma(Id As String, Nombre As String, Prioridad As String)
+    Public Sub CrearSintoma(Nombre As String, Prioridad As String)
         Dim s As New Sintoma
-        s.IdSintoma = Id
         s.Nombre = Nombre
         s.Prioridad = Prioridad
 

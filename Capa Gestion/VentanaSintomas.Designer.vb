@@ -50,6 +50,7 @@ Partial Class VentanaSintomas
         '
         Me.txtIdSintoma.Location = New System.Drawing.Point(378, 211)
         Me.txtIdSintoma.Name = "txtIdSintoma"
+        Me.txtIdSintoma.ReadOnly = True
         Me.txtIdSintoma.Size = New System.Drawing.Size(52, 20)
         Me.txtIdSintoma.TabIndex = 1
         '

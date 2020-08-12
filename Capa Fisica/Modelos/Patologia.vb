@@ -29,7 +29,7 @@ Public Class Patologia
     End Function
 
     Public Sub AltaPatologia()
-        Comando.CommandText = "INSERT INTO PATOLOGIA VALUES(" + Me.IdPatologia + ",'" + Me.Nombre + "','" + Me.Prioridad + "')"
+        Comando.CommandText = "INSERT INTO PATOLOGIA VALUES(LAST_INSERT_ID(),'" + Me.Nombre + "','" + Me.Prioridad + "')"
 
         Comando.ExecuteNonQuery()
 

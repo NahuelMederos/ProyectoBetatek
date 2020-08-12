@@ -74,6 +74,7 @@ Partial Class VentanaAsociar
         '
         Me.txtNombrePatologia.Location = New System.Drawing.Point(276, 155)
         Me.txtNombrePatologia.Name = "txtNombrePatologia"
+        Me.txtNombrePatologia.ReadOnly = True
         Me.txtNombrePatologia.Size = New System.Drawing.Size(100, 20)
         Me.txtNombrePatologia.TabIndex = 5
         '
@@ -81,6 +82,7 @@ Partial Class VentanaAsociar
         '
         Me.txtNombreSintoma.Location = New System.Drawing.Point(276, 285)
         Me.txtNombreSintoma.Name = "txtNombreSintoma"
+        Me.txtNombreSintoma.ReadOnly = True
         Me.txtNombreSintoma.Size = New System.Drawing.Size(100, 20)
         Me.txtNombreSintoma.TabIndex = 6
         '

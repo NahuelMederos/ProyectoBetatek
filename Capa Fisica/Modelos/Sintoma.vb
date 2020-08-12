@@ -26,7 +26,7 @@ Public Class Sintoma
     End Function
 
     Public Sub GuardarSintoma()
-        Comando.CommandText = "INSERT INTO SINTOMA VALUES(" + Me.IdSintoma + ",'" + Me.Nombre + "','" + Me.Prioridad + "')"
+        Comando.CommandText = "INSERT INTO SINTOMA VALUES(LAST_INSERT_ID(),'" + Me.Nombre + "','" + Me.Prioridad + "')"
 
         Comando.ExecuteNonQuery()
 

@@ -2,9 +2,8 @@
 
 Public Module ControladorPatologia
 
-    Public Sub CrearPatologia(Id As String, Nombre As String, Prioridad As String)
+    Public Sub CrearPatologia(Nombre As String, Prioridad As String)
         Dim p As New Patologia
-        p.IdPatologia = Id
         p.Nombre = Nombre
         p.Prioridad = Prioridad
 

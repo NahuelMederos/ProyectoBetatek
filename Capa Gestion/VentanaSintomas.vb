@@ -3,12 +3,14 @@
 Public Class VentanaSintomas
     Private Sub btnAgregarSintoma_Click(sender As Object, e As EventArgs) Handles btnAgregarSintoma.Click
         Try
-            ControladorSintoma.CrearSintoma(txtIdSintoma.Text, txtNombreSintoma.Text, cmbSintoma.SelectedItem)
+            ControladorSintoma.CrearSintoma(txtNombreSintoma.Text, cmbSintoma.SelectedItem)
             MsgBox("Sintoma creado")
             Listar_Click(sender, e)
-        Catch
+        Catch ex As Exception
             MsgBox("Error")
         End Try
+
+
     End Sub
 
     Private Sub btnModificarSintoma_Click(sender As Object, e As EventArgs) Handles btnModificarSintoma.Click
@@ -56,5 +58,9 @@ Public Class VentanaSintomas
         txtIdSintoma.Text = SSeleccionada.Cells(0).Value.ToString()
         txtNombreSintoma.Text = SSeleccionada.Cells(1).Value.ToString()
         cmbSintoma.Text = SSeleccionada.Cells(2).Value.ToString()
+    End Sub
+
+    Private Sub txtIdSintoma_TextChanged(sender As Object, e As EventArgs) Handles txtIdSintoma.TextChanged
+
     End Sub
 End Class
