@@ -15,4 +15,11 @@ Public Class IngresoPersona
         Dim s = New SeleccionSintoma
         s.Show()
     End Sub
+
+    Private Sub IngresoPersona_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+
+
+    End Sub
 End Class
