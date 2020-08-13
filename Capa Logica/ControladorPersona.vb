@@ -16,6 +16,7 @@ Public Module ControladorPersona
         p.Mail = mail
 
         p.AltaPersona()
+
     End Sub
 
     Public Function PasarIdPersona()

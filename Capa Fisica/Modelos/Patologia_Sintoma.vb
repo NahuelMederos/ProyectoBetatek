@@ -4,9 +4,12 @@
 
     Public IdPatologia As String
     Public NombreSintoma As String
+    Public SintomaTotal As String
+
 
     'String generado en ControladorAsociar'
     Public ComandoObtenerPatologia As String
+    Public ComandoObtenerPatologia2 As String
 
     Public Sub GuardarAsociacion()
         Comando.CommandText = "INSERT INTO PATOLOGIA_SINTOMAS VALUES(" + Me.IdPatologia + ",'" + Me.NombreSintoma + "')"
@@ -41,6 +44,25 @@
 
     End Function
 
+    'Hace la cuenta de sintomas totales por patologias
+    Public Function ObtenerNumeroDeSintomasTotalesPorPatologia()
+
+        Comando.CommandText = "SELECT COUNT(NOMBRE) FROM PATOLOGIA_SINTOMAS,PATOLOGIA
+                               WHERE IdPatologia = IDPATOLOGIA_PAT
+                               And NOMBRE='" + SintomaTotal + "'"
+
+        Return Comando.ExecuteScalar().ToString()
+
+    End Function
+
+    'Consigue el numero de sintomas por enfermedad en la busqueda
+    Public Function ObtenerNumeroDeSintomasEnBusqueda()
+
+        Comando.CommandText = ComandoObtenerPatologia2
+
+        Return Comando.ExecuteScalar().ToString()
+
+    End Function
 
 
 End Class
