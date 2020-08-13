@@ -35,4 +35,11 @@ Public Module ControladorSintoma
         Return s.ObtenerSintomas()
 
     End Function
+
+    Public Function ListarNombreSintomas()
+        Dim s As New Sintoma
+
+        Return s.ObtenerNombreSintomas()
+
+    End Function
 End Module

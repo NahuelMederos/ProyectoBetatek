@@ -6,7 +6,7 @@ Public Class SeleccionSintoma
 
     Private Sub btnConfirmar_Click(sender As Object, e As EventArgs) Handles btnListarSintomas.Click
         Dim tabla As New DataTable
-        tabla.Load(ControladorSintoma.ListarSintomas)
+        tabla.Load(ControladorSintoma.ListarNombreSintomas)
         GrillaSintomas.DataSource = tabla
     End Sub
 
@@ -74,8 +74,6 @@ Public Class SeleccionSintoma
         TablaOtrasPatologias.Load(ControladorAsociar.ObtenerOtrasPatologias(nombreList))
         GrillaOtrasPatologias.DataSource = TablaOtrasPatologias
 
-        txtPatologias.Text = nresult
-        txtpresult.Text = presult
 
         Dim PosiblePatologia As String
 
@@ -104,21 +102,22 @@ Public Class SeleccionSintoma
         For Each Patologia As String In PatologiasSeguras
             ResultadoFinal &= Patologia
         Next
+
+        If ResultadoFinal = vbCrLf Then
+            ResultadoFinal = "No hay ningun diagnostico seguro"
+        End If
         txtResultadoFinal.Text = ResultadoFinal
 
 
 
 
-        txtOtrasPatologiasResult.Text = OtrasPatologiasResult
+    End Sub
+
+    Private Sub txtResultadoFinal_TextChanged(sender As Object, e As EventArgs) Handles txtResultadoFinal.TextChanged
+
     End Sub
 
     'Numero de sintomas en la enfermedad que se busca
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim pepito As String = ControladorAsociar.ObtenerPatologiasCompletas(txtweon.Text)
-        MsgBox(pepito)
-    End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
-    End Sub
 End Class

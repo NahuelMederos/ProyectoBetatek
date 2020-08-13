@@ -16,6 +16,7 @@ Public Class Sintoma
 
     End Function
 
+
     Public Function ObtenerNombreSintomas()
 
         Comando.CommandText = "SELECT NOMBRE FROM SINTOMA"
