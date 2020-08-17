@@ -3,21 +3,21 @@
 Public Module ControladorAsociar
 
     Public Function ListarNombresPatologias()
-        Dim p As New Patologia
+        Dim p As New Patologia(Sesion.Username, Sesion.Password)
 
         Return p.IdyNombrePatologia()
 
     End Function
 
     Public Function ListarNombresSintomas()
-        Dim p As New Sintoma
+        Dim p As New Sintoma(Sesion.Username, Sesion.Password)
 
         Return p.ObtenerNombreSintomas()
 
     End Function
 
     Public Sub CrearAsociacion(Id As String, Nombre As String)
-        Dim p As New Patologia_Sintoma
+        Dim p As New Patologia_Sintoma(Sesion.Username, Sesion.Password)
         p.IdPatologia = Id
         p.NombreSintoma = Nombre
 
@@ -26,13 +26,13 @@ Public Module ControladorAsociar
     End Sub
 
     Public Function ListarAsociaciones()
-        Dim p As New Patologia_Sintoma
+        Dim p As New Patologia_Sintoma(Sesion.Username, Sesion.Password)
 
         Return p.ObtenerAsociacion()
     End Function
 
     Public Sub BorrarAsociacion(Id As String, Nombre As String)
-        Dim p As New Patologia_Sintoma
+        Dim p As New Patologia_Sintoma(Sesion.Username, Sesion.Password)
         p.IdPatologia = Id
         p.NombreSintoma = Nombre
 
@@ -43,7 +43,7 @@ Public Module ControladorAsociar
 
     'La funcion pide el array creado en el boton Seleccionar'
     Public Function ObtenerOtrasPatologias(nombreList As Array)
-        Dim p As New Patologia_Sintoma
+        Dim p As New Patologia_Sintoma(Sesion.Username, Sesion.Password)
         'Comienzo del comando de mysql, para poder recorrer el array con el for each, el primer sintoma que busca es "Nada" el cual no va a devolver ninguna Patologia'
         Dim Resultado As String = "SELECT DISTINCT NOMBRE
         FROM PATOLOGIA_SINTOMAS,PATOLOGIA
@@ -65,7 +65,7 @@ Public Module ControladorAsociar
 
     'Sirve para obtener el numero total de sintomas que tiene una enfermedad
     Public Function ObtenerPatologiasCompletas(PosiblePat As String)
-        Dim p As New Patologia_Sintoma
+        Dim p As New Patologia_Sintoma(Sesion.Username, Sesion.Password)
         p.SintomaTotal = PosiblePat
 
         Return p.ObtenerNumeroDeSintomasTotalesPorPatologia()
@@ -73,7 +73,7 @@ Public Module ControladorAsociar
     End Function
 
     Public Function ObtenerAparicionesdePatologiaenBusqueda(PosiblePat2 As String, nombreList As Array)
-        Dim p As New Patologia_Sintoma
+        Dim p As New Patologia_Sintoma(Sesion.Username, Sesion.Password)
         Dim Resultado As String = "SELECT COUNT(NOMBRE) FROM(SELECT NOMBRE
         FROM PATOLOGIA_SINTOMAS,PATOLOGIA
         WHERE IDPATOLOGIA_PAT=IDPATOLOGIA

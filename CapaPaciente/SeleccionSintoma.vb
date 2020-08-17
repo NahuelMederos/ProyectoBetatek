@@ -36,24 +36,10 @@ Public Class SeleccionSintoma
 
     Private Sub btnSeleccionarSintoma_Click_1(sender As Object, e As EventArgs) Handles btnSeleccionarSintoma.Click
 
-        '---------------------------------------------------------------
-        'Guarda en la tabla "TIENE" LA ASOCIACION DE SINTOMA CON EL USUARIO
-        'ES A FUTURO PARA CUANDO TRABAJE CON LA APLICACION DE MEDICO
-        'Dim i As Integer
-        'i = GrillaSintomas.CurrentRow.Index
-
-        'Dim idSintoma As String
-        'Dim ciPersona As String = txtPideCI.Text
-
-        'idSintoma = GrillaSintomas.Item(0, i).Value()
-        'GuardarSintomasPersona(ciPersona, idSintoma)
-
-        '---------------------------------------------------------------
-
 
         Dim nombre As String
 
-        'Por cada item seleccionado en el datagrid, se guardan los datos en el array nombreList'
+        'Por cada item seleccionado en el datagrid, se guardan los nombres en el array nombreList'
         For Each selectedItem As DataGridViewRow In GrillaSintomas.SelectedRows
             nombre = selectedItem.Cells("NOMBRE").Value
             ReDim Preserve nombreList(contador)
@@ -62,7 +48,6 @@ Public Class SeleccionSintoma
         Next selectedItem
 
         'Por cada elemento en el array nombreList se agrega a la busqueda de nresult'
-        'Lo que esta aca es lo mismo que en ControladorAsociar, solo sirve para poder ver el comando de mysql en el RichTextBox'
         For Each elem2 As String In nombreList
             nresult &= " OR IDPATOLOGIA_PAT=IDPATOLOGIA
             AND SINTOMA='" + elem2 + "'"

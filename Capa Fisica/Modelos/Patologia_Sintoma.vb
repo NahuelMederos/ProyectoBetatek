@@ -2,6 +2,11 @@
 
     Inherits ModeloConexion
 
+    Public Sub New(username As String, password As String)
+        MyBase.New(username, password)
+
+    End Sub
+
     Public IdPatologia As String
     Public NombreSintoma As String
     Public SintomaTotal As String

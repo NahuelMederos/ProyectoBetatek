@@ -73,6 +73,13 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Sesion.vb" />
+    <Compile Include="VentanaGestores.Designer.vb">
+      <DependentUpon>VentanaGestores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaGestores.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="VentanaLogin.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +134,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="VentanaGestores.resx">
+      <DependentUpon>VentanaGestores.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentanaLogin.resx">
       <DependentUpon>VentanaLogin.vb</DependentUpon>
     </EmbeddedResource>

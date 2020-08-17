@@ -5,6 +5,11 @@ Public Class Patologia
 
     Inherits ModeloConexion
 
+    Public Sub New(username As String, password As String)
+        MyBase.New(username, password)
+
+    End Sub
+
     Public IdPatologia As String
     Public Nombre As String
     Public Prioridad As String

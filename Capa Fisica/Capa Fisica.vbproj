@@ -66,10 +66,9 @@
   <ItemGroup>
     <Compile Include="ModeloConexion.vb" />
     <Compile Include="Modelos\Diagnostico.vb" />
-    <Compile Include="Modelos\Login.vb" />
     <Compile Include="Modelos\Patologia_Sintoma.vb" />
     <Compile Include="Modelos\Tiene.vb" />
-    <Compile Include="Modelos\Usuario.vb" />
+    <Compile Include="Modelos\Usuarios.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

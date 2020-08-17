@@ -3,7 +3,7 @@
 Public Module ControladorPatologia
 
     Public Sub CrearPatologia(Nombre As String, Prioridad As String)
-        Dim p As New Patologia
+        Dim p As New Patologia(Sesion.Username, Sesion.Password)
         p.Nombre = Nombre
         p.Prioridad = Prioridad
 
@@ -12,7 +12,7 @@ Public Module ControladorPatologia
     End Sub
 
     Public Sub BorrarPatologia(Id As String)
-        Dim p As New Patologia
+        Dim p As New Patologia(Sesion.Username, Sesion.Password)
         p.IdPatologia = Id
 
         p.BajaPatologia()
@@ -20,7 +20,7 @@ Public Module ControladorPatologia
     End Sub
 
     Public Sub ModificarPatologia(Id As String, Nombre As String, Prioridad As String)
-        Dim p As New Patologia
+        Dim p As New Patologia(Sesion.Username, Sesion.Password)
 
         p.IdPatologia = Id
         p.Nombre = Nombre
@@ -30,7 +30,7 @@ Public Module ControladorPatologia
     End Sub
 
     Public Function ListarPatologias()
-        Dim p As New Patologia
+        Dim p As New Patologia(Sesion.Username, Sesion.Password)
 
         Return p.ObtenerPatologia()
 

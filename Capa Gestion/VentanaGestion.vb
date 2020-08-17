@@ -14,4 +14,8 @@
         Me.Hide()
     End Sub
 
+    Private Sub btnAgregarGestor_Click(sender As Object, e As EventArgs) Handles btnAgregarGestor.Click
+        VentanaGestores.Visible = True
+        Me.Hide()
+    End Sub
 End Class

@@ -1,6 +1,11 @@
 ﻿Public Class Persona
     Inherits ModeloConexion
 
+    Public Sub New(username As String, password As String)
+        MyBase.New(username, password)
+
+    End Sub
+
     Public Ci As String
     Public Nombre As String
     Public Apellido As String

@@ -1,76 +1,30 @@
 ﻿Imports Capa_Fisica
 
-
-
 Public Module ControladorUsuarios
 
+    Public Sub CrearGestor(NombreUsuario As String, Contraseña As String, Nombre As String, Apellido As String, Cedula As String)
+        Dim s As New Usuarios(Username, Password)
 
-    Public Sub AltaMedico(ci As String, Nombre As String, apellido As String, edad As String, mail As String, tipo As String, estado As String)
-        Dim u As New Usuario
+        s.NombreUsuario = NombreUsuario
+        s.Contraseña = Contraseña
+        s.Nombre = Nombre
+        s.Apellido = Apellido
+        s.Cedula = Cedula
 
-        u.CI = ci
-        u.Nombre = Nombre
-        u.Apellido = apellido
-        u.edad = edad
-        u.Mail = mail
-        u.Tipo = tipo
-        u.Estado = estado
-        u.AltaMedico()
-
+        s.CrearGestor()
 
     End Sub
 
-    Public Sub AltaAdmin(ci As String, nombre As String, apellido As String, edad As String, mail As String, tipo As String, estado As String)
-        Dim u As New Usuario
-
-        u.CI = ci
-        u.Nombre = nombre
-        u.Apellido = apellido
-        u.edad = edad
-        u.Mail = mail
-        u.Tipo = tipo
-        u.Estado = estado
-        u.AltaAdmin()
-
+    Public Sub setearSesion(usuario, password)
+        Sesion.Username = usuario
+        Sesion.Password = password
 
     End Sub
 
-    Public Sub BajaMedico(ci As String)
-        Dim u As New Usuario
-        u.CI = ci
+    Public Function AutenticarGestor(usuario As String, contraseña As String)
+        Dim u As New Usuarios(usuario, contraseña)
+        Return u.AutenticarGestor()
 
-    End Sub
-
-    Public Sub BajaAdmin(ci As String)
-        Dim u As New Usuario
-        u.CI = ci
-
-    End Sub
-
-    Public Sub ModificarMedico(ci As String, nombre As String, apellido As String, edad As String, mail As String, tipo As String, estado As String)
-        Dim u As New Usuario
-        u.CI = ci
-        u.Nombre = nombre
-        u.Apellido = apellido
-        u.edad = edad
-        u.Mail = mail
-        u.Tipo = tipo
-        u.Estado = estado
-
-        u.ModificarUsuario()
-
-    End Sub
-    Public Sub ModificarAdmin(ci As String, nombre As String, apellido As String, edad As String, mail As String, tipo As String, estado As String)
-        Dim u As New Usuario
-        u.CI = ci
-        u.Nombre = nombre
-        u.Apellido = apellido
-        u.edad = edad
-        u.Mail = mail
-        u.Tipo = tipo
-        u.Estado = estado
-
-        u.ModificarUsuario()
-    End Sub
+    End Function
 
 End Module

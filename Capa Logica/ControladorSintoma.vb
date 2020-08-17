@@ -3,7 +3,7 @@
 Public Module ControladorSintoma
 
     Public Sub CrearSintoma(Nombre As String, Prioridad As String)
-        Dim s As New Sintoma
+        Dim s As New Sintoma(Sesion.Username, Sesion.Password)
         s.Nombre = Nombre
         s.Prioridad = Prioridad
 
@@ -12,7 +12,7 @@ Public Module ControladorSintoma
     End Sub
 
     Public Sub BorrarSintoma(Id As String)
-        Dim s As New Sintoma
+        Dim s As New Sintoma(Sesion.Username, Sesion.Password)
         s.IdSintoma = Id
 
         s.BajaSintoma()
@@ -20,7 +20,7 @@ Public Module ControladorSintoma
     End Sub
 
     Public Sub ModificarSintoma(Id As String, Nombre As String, Prioridad As String)
-        Dim s As New Sintoma
+        Dim s As New Sintoma(Sesion.Username, Sesion.Password)
 
         s.IdSintoma = Id
         s.Nombre = Nombre
@@ -30,14 +30,14 @@ Public Module ControladorSintoma
     End Sub
 
     Public Function ListarSintomas()
-        Dim s As New Sintoma
+        Dim s As New Sintoma(Sesion.Username, Sesion.Password)
 
         Return s.ObtenerSintomas()
 
     End Function
 
     Public Function ListarNombreSintomas()
-        Dim s As New Sintoma
+        Dim s As New Sintoma(Sesion.Username, Sesion.Password)
 
         Return s.ObtenerNombreSintomas()
 

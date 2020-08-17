@@ -1,6 +1,11 @@
 ﻿Public Class Tiene
     Inherits ModeloConexion
 
+    Public Sub New(username As String, password As String)
+        MyBase.New(username, password)
+
+    End Sub
+
     Public CiPersona As String
     Public IdSintoma As String
 
