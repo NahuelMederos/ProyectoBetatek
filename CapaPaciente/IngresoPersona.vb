@@ -7,7 +7,7 @@ Public Class IngresoPersona
             ControladorPersona.DarAlta(txtCi.Text, txtNombre.Text, txtApellido.Text, txtCalle.Text, txtEsquina.Text, txtNumero.Text, txtEdad.Text, txtMail.Text)
             SeleccionSintoma.Visible = True
             Me.Hide()
-            Sesion.CiPersona = txtCi.Text
+            Usuario.Nombre = txtNombre.Text
 
         Catch ex As Exception
             MsgBox("Hubo un error")

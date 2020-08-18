@@ -102,7 +102,12 @@ Public Class SeleccionSintoma
 
     End Sub
 
-    'Numero de sintomas en la enfermedad que se busca
+    Private Sub btnSolicitarChat_Click(sender As Object, e As EventArgs) Handles btnSolicitarChat.Click
+        ChatPaciente.Visible = True
+        Me.Hide()
+    End Sub
+
+
 
 
 End Class
