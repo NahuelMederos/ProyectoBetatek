@@ -31,7 +31,7 @@
         Me.Comando.CommandText =
             "
             SELECT 
-	           m.de, m.fechahora, m.texto, m.idmensaje as id_mensaje, u.nombre as emisor
+	           m.de, m.fechahora, m.texto, m.idmensaje as id_mensaje, u.nombre as emisor, u.NombreUsuario
             FROM
 	            Chatea m 
             JOIN

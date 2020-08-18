@@ -42,11 +42,8 @@ Public Class ChatPaciente
             "
 
                 ControladorChat.MarcarMensajeLeido(fila("id_mensaje").ToString)
+                txtPara.Text = fila("NombreUsuario").ToString
             Next
-
-
-
-
 
         End If
     End Sub

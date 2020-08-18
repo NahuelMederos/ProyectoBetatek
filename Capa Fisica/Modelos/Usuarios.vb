@@ -54,8 +54,8 @@
         Comando.CommandText = "START TRANSACTION;"
         Comando.ExecuteNonQuery()
 
-        ' Try
-        Comando.CommandText = "CREATE USER '" + Me.NombreUsuario + "'@'localhost' IDENTIFIED BY '" + Me.Contraseña + "';"
+        Try
+            Comando.CommandText = "CREATE USER '" + Me.NombreUsuario + "'@'localhost' IDENTIFIED BY '" + Me.Contraseña + "';"
             Comando.ExecuteNonQuery()
 
             Comando.CommandText = " GRANT SELECT on betatek.Medico TO '" + Me.NombreUsuario + "'@'localhost';"
@@ -70,14 +70,14 @@
             Comando.CommandText = "INSERT INTO MEDICO VALUES('" + Me.NombreUsuario + "','" + Me.Nombre + "','" + Me.Apellido + "','" + Me.Cedula + "');"
             Comando.ExecuteNonQuery()
 
-        ' Comando.CommandText = "COMMIT;"
-        'Comando.ExecuteNonQuery()
+            Comando.CommandText = "COMMIT;"
+            Comando.ExecuteNonQuery()
 
-        ' Catch ex As Exception
-        ' Comando.CommandText = "ROLLBACK;"
-        '  Comando.ExecuteNonQuery()
+        Catch ex As Exception
+            Comando.CommandText = "ROLLBACK;"
+        Comando.ExecuteNonQuery()
 
-        ' End Try
+        End Try
 
     End Sub
 
