@@ -94,8 +94,8 @@ Public Class SeleccionSintoma
         txtResultadoFinal.Text = ResultadoFinal
 
 
-
-
+        btnSeleccionarSintoma.Enabled = False
+        btnSolicitarChat.Enabled = True
     End Sub
 
     Private Sub txtResultadoFinal_TextChanged(sender As Object, e As EventArgs) Handles txtResultadoFinal.TextChanged

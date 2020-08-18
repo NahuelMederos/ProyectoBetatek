@@ -1,9 +1,9 @@
 ﻿Imports Capa_Logica
 
-Public Class FormLogin
+Public Class Login
 
     Private Function AutenticarUsuario(usuario, password)
-        Return ControladorUsuarios.AutenticarGestor(usuario, password)
+        Return ControladorUsuarios.AutenticarMedico(usuario, password)
     End Function
 
     Private Sub setearSesion(usuario, password)
@@ -12,23 +12,15 @@ Public Class FormLogin
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
+    Private Sub btnIngresar_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
         Try
             If (AutenticarUsuario(txtUsuario.Text, txtPassword.Text) = "1") Then
                 setearSesion(txtUsuario.Text, txtPassword.Text)
                 ControladorUsuarios.setearSesion(txtUsuario.Text, txtPassword.Text)
                 Me.Hide()
-                VentanaGestion.Show()
-
-            ElseIf (txtUsuario.Text = "root") Then
-                setearSesion(txtUsuario.Text, txtPassword.Text)
-                ControladorUsuarios.setearSesion(txtUsuario.Text, txtPassword.Text)
-                Me.Hide()
-                MsgBox("Bienvenido root")
-                VentanaGestion.Show()
-
+                VentanaMedico.Show()
             Else
-                MsgBox("Este usuario no es gestor")
+                MsgBox("Este usuario no es medico")
             End If
 
         Catch ex As Exception
@@ -36,6 +28,5 @@ Public Class FormLogin
         End Try
 
     End Sub
-
 
 End Class

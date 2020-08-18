@@ -50,6 +50,42 @@
 
     End Function
 
+    Public Sub CrearMedico()
+        Comando.CommandText = "START TRANSACTION;"
+        Comando.ExecuteNonQuery()
+
+        Try
+            Comando.CommandText = "CREATE USER '" + Me.NombreUsuario + "'@'localhost' IDENTIFIED BY '" + Me.Contraseña + "';"
+            Comando.ExecuteNonQuery()
+
+            Comando.CommandText = "GRANT ALL PRIVILEGES  ON betatek.* TO '" + Me.NombreUsuario + "'@'localhost' WITH GRANT OPTION;"
+            Comando.ExecuteNonQuery()
+
+
+            Comando.CommandText = "INSERT INTO MEDICO VALUES('" + Me.NombreUsuario + "','" + Me.Nombre + "','" + Me.Apellido + "','" + Me.Cedula + "');"
+            Comando.ExecuteNonQuery()
+
+            Comando.CommandText = "COMMIT;"
+            Comando.ExecuteNonQuery()
+
+        Catch ex As Exception
+            Comando.CommandText = "ROLLBACK;"
+            Comando.ExecuteNonQuery()
+
+        End Try
+
+    End Sub
+
+    Public Function AutenticarMedico()
+
+        Comando.CommandText = "SELECT COUNT(NombreUsuario) FROM Medico
+                               WHERE NombreUsuario='" + Me.DbUser + "';"
+
+
+        Return Comando.ExecuteScalar().ToString()
+
+    End Function
+
 End Class
 
 

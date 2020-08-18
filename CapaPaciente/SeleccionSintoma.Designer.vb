@@ -33,6 +33,7 @@ Partial Class SeleccionSintoma
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtResultadoFinal = New System.Windows.Forms.RichTextBox()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.btnSolicitarChat = New System.Windows.Forms.Button()
         CType(Me.GrillaSintomas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GrillaOtrasPatologias, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -130,11 +131,21 @@ Partial Class SeleccionSintoma
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(254, 73)
+        Me.Label8.Location = New System.Drawing.Point(236, 73)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(163, 26)
         Me.Label8.TabIndex = 28
-        Me.Label8.Text = "Este es el que te da la patologia " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "solo si cumplis todos los sintomas"
+        Me.Label8.Text = "Te da las patologias " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "solo si cumplis todos los sintomas"
+        '
+        'btnSolicitarChat
+        '
+        Me.btnSolicitarChat.Enabled = False
+        Me.btnSolicitarChat.Location = New System.Drawing.Point(284, 289)
+        Me.btnSolicitarChat.Name = "btnSolicitarChat"
+        Me.btnSolicitarChat.Size = New System.Drawing.Size(75, 39)
+        Me.btnSolicitarChat.TabIndex = 29
+        Me.btnSolicitarChat.Text = "Solicitar" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Chat"
+        Me.btnSolicitarChat.UseVisualStyleBackColor = True
         '
         'SeleccionSintoma
         '
@@ -142,6 +153,7 @@ Partial Class SeleccionSintoma
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightCyan
         Me.ClientSize = New System.Drawing.Size(669, 428)
+        Me.Controls.Add(Me.btnSolicitarChat)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.txtResultadoFinal)
         Me.Controls.Add(Me.Label7)
@@ -172,4 +184,5 @@ Partial Class SeleccionSintoma
     Friend WithEvents Label7 As Label
     Friend WithEvents txtResultadoFinal As RichTextBox
     Friend WithEvents Label8 As Label
+    Friend WithEvents btnSolicitarChat As Button
 End Class

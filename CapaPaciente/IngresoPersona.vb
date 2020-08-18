@@ -2,24 +2,16 @@
 
 
 Public Class IngresoPersona
-    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
         Try
-            ControladorPersona.DarAlta(txtCi.Text, TxtNombre.Text, txtApellido.Text, txtCalle.Text, txtEsquina.Text, txtNumero.Text, txtEdad.Text, txtMail.Text)
-            MsgBox("Persona creada")
+            ControladorPersona.DarAlta(txtCi.Text, txtNombre.Text, txtApellido.Text, txtCalle.Text, txtEsquina.Text, txtNumero.Text, txtEdad.Text, txtMail.Text)
+            SeleccionSintoma.Visible = True
+            Me.Hide()
+            Sesion.CiPersona = txtCi.Text
+
         Catch ex As Exception
             MsgBox("Hubo un error")
         End Try
-    End Sub
-
-    Private Sub btnSiguiente_Click(sender As Object, e As EventArgs) Handles btnSiguiente.Click
-        Dim s = New SeleccionSintoma
-        s.Show()
-    End Sub
-
-    Private Sub IngresoPersona_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
-
 
     End Sub
 End Class
