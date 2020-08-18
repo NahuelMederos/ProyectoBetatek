@@ -56,4 +56,6 @@ Public Class VentanaPatologia
         txtNombrePatologia.Text = PSeleccionada.Cells(1).Value.ToString()
         cmbPatologia.Text = PSeleccionada.Cells(2).Value.ToString()
     End Sub
+
+
 End Class

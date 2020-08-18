@@ -39,4 +39,20 @@ Public Module ControladorChat
         m.MarcarLeido()
 
     End Sub
+
+    Public Function BuscarUltimaSesion()
+        Dim m As New ModeloChat(Username, Password)
+        If m.UltimaSesion() = "" Then
+            Return "0"
+        End If
+        Return m.UltimaSesion()
+    End Function
+
+    Public Function ListarChatsNoLeidos()
+        Dim p As New ModeloChat(Sesion.Username, Sesion.Password)
+
+        Return p.ChatsNoRespondidos()
+
+    End Function
+
 End Module

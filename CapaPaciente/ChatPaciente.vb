@@ -1,6 +1,16 @@
 ﻿Imports Capa_Logica
 
+
+
 Public Class ChatPaciente
+
+    Private Sub ChatPaciente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TxtId.Text = Usuario.Ci
+        txtPara.Text = "Medico"
+        txtSesion.Text = Convert.ToInt32(ControladorChat.BuscarUltimaSesion) + 1
+
+    End Sub
+
     Private Sub BtnEnviar_Click(sender As Object, e As EventArgs) Handles BtnEnviar.Click
         ControladorChat.Guardar(txtSesion.Text, TxtId.Text, txtPara.Text, RTxtMensaje.Text)
         RTxtChat.Text += Environment.NewLine + "YO:" + Environment.NewLine + RTxtMensaje.Text
@@ -41,7 +51,11 @@ Public Class ChatPaciente
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnIniciarChat.Click
         Timer1.Enabled = True
+        BtnEnviar.Enabled = True
+        btnIniciarChat.Enabled = False
     End Sub
+
+
 End Class

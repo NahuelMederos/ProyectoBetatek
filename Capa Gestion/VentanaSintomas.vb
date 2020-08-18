@@ -60,7 +60,6 @@ Public Class VentanaSintomas
         cmbSintoma.Text = SSeleccionada.Cells(2).Value.ToString()
     End Sub
 
-    Private Sub txtIdSintoma_TextChanged(sender As Object, e As EventArgs) Handles txtIdSintoma.TextChanged
 
-    End Sub
+
 End Class

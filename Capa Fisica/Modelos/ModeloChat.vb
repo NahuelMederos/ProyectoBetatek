@@ -85,4 +85,32 @@
 
     End Sub
 
+    Public Function ChatsNoRespondidos()
+        Me.Comando.CommandText = "
+            SELECT 
+	           sesion,de As Cedula,FechaHora,Nombre
+            FROM
+	            chatea m 
+            JOIN
+                Persona u 
+                    ON m.de = u.Ci
+            
+
+            WHERE 
+                m.leido = FALSE AND
+                m.para = 'Medico'     
+            Group by Sesion
+            "
+
+        Reader = Comando.ExecuteReader()
+        Return Reader
+
+    End Function
+
+    Public Function UltimaSesion()
+        Me.Comando.CommandText = "SELECT MAX(sesion) FROM CHATEA"
+
+        Return Comando.ExecuteScalar().ToString()
+    End Function
+
 End Class

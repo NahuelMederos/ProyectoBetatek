@@ -1,4 +1,4 @@
 ﻿Module Usuario
-    Public Nombre As String
+    Public Ci As String
 
 End Module
