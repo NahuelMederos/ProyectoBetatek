@@ -6,7 +6,7 @@ Public Class VentanaGestores
 
         ControladorUsuarios.CrearGestor(txtNombreUsuario.Text, txtContraseña.Text, txtNombre.Text, txtApellido.Text, txtCedula.Text)
         MsgBox("Creado")
-
+        Me.Close()
     End Sub
 
 

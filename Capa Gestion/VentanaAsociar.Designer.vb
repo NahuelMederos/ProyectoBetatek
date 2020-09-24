@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class VentanaAsociar
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class VentanaAsociar
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.TablaPat = New System.Windows.Forms.DataGridView()
         Me.TablaSint = New System.Windows.Forms.DataGridView()
@@ -33,7 +33,6 @@ Partial Class VentanaAsociar
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnAsociar = New System.Windows.Forms.Button()
         Me.btnVerAsociaciones = New System.Windows.Forms.Button()
-        Me.btnVolver = New System.Windows.Forms.Button()
         CType(Me.TablaPat, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TablaSint, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -131,21 +130,11 @@ Partial Class VentanaAsociar
         Me.btnVerAsociaciones.Text = "Ver asociaciones"
         Me.btnVerAsociaciones.UseVisualStyleBackColor = True
         '
-        'btnVolver
-        '
-        Me.btnVolver.Location = New System.Drawing.Point(12, 7)
-        Me.btnVolver.Name = "btnVolver"
-        Me.btnVolver.Size = New System.Drawing.Size(45, 23)
-        Me.btnVolver.TabIndex = 12
-        Me.btnVolver.Text = "Volver"
-        Me.btnVolver.UseVisualStyleBackColor = True
-        '
         'VentanaAsociar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(595, 422)
-        Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.btnVerAsociaciones)
         Me.Controls.Add(Me.btnAsociar)
         Me.Controls.Add(Me.Label3)
@@ -177,5 +166,4 @@ Partial Class VentanaAsociar
     Friend WithEvents Label3 As Label
     Friend WithEvents btnAsociar As Button
     Friend WithEvents btnVerAsociaciones As Button
-    Friend WithEvents btnVolver As Button
 End Class
