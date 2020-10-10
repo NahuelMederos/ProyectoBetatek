@@ -40,6 +40,26 @@ Public Module ControladorUsuarios
 
     End Function
 
+    Public Sub CrearPaciente(NombreUsuario As String, Contraseña As String, Nombre As String, Apellido As String, Edad As String, Mail As String)
+        Dim s As New Usuarios(Username, Password)
+
+        s.NombreUsuario = NombreUsuario
+        s.Contraseña = Contraseña
+        s.Nombre = Nombre
+        s.Apellido = Apellido
+        s.Edad = Edad
+        s.Mail = Mail
+
+        s.CrearPaciente()
+
+    End Sub
+
+    Public Function AutenticarPaciente(usuario As String, contraseña As String)
+        Dim u As New Usuarios(usuario, contraseña)
+        Return u.AutenticarPaciente()
+
+    End Function
+
     Public Sub setearSesion(usuario, password)
         Sesion.Username = usuario
         Sesion.Password = password

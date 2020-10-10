@@ -9,7 +9,7 @@
 
     Public IdPatologia As String
     Public NombreSintoma As String
-    Public SintomaTotal As String
+    Public SintomasTotalesDePatologia As String
 
 
     'String generado en ControladorAsociar'
@@ -54,7 +54,7 @@
 
         Comando.CommandText = "SELECT COUNT(NOMBRE) FROM PATOLOGIA_SINTOMAS,PATOLOGIA
                                WHERE IdPatologia = IDPATOLOGIA_PAT
-                               And NOMBRE='" + SintomaTotal + "'"
+                               And NOMBRE='" + SintomasTotalesDePatologia + "'"
 
         Return Comando.ExecuteScalar().ToString()
 

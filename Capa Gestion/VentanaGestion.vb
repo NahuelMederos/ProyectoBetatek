@@ -23,4 +23,7 @@
         VentanaMedicos.ShowDialog()
     End Sub
 
+    Private Sub btnAgregarPacientes_Click(sender As Object, e As EventArgs) Handles btnAgregarPacientes.Click
+        VentanaPacientes.ShowDialog()
+    End Sub
 End Class

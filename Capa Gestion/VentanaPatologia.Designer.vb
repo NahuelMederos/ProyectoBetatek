@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class VentanaPatologia
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class VentanaPatologia
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.ListarPat = New System.Windows.Forms.Button()
         Me.TablaDePatologias = New System.Windows.Forms.DataGridView()
@@ -33,7 +33,6 @@ Partial Class VentanaPatologia
         Me.txtNombrePatologia = New System.Windows.Forms.TextBox()
         Me.txtIdPatologia = New System.Windows.Forms.TextBox()
         Me.btnAgregarPatologia = New System.Windows.Forms.Button()
-        Me.btnVolver = New System.Windows.Forms.Button()
         CType(Me.TablaDePatologias, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -133,21 +132,11 @@ Partial Class VentanaPatologia
         Me.btnAgregarPatologia.Text = "Agregar Patologia"
         Me.btnAgregarPatologia.UseVisualStyleBackColor = True
         '
-        'btnVolver
-        '
-        Me.btnVolver.Location = New System.Drawing.Point(418, 332)
-        Me.btnVolver.Name = "btnVolver"
-        Me.btnVolver.Size = New System.Drawing.Size(45, 23)
-        Me.btnVolver.TabIndex = 23
-        Me.btnVolver.Text = "Volver"
-        Me.btnVolver.UseVisualStyleBackColor = True
-        '
         'VentanaPatologia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(474, 361)
-        Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.ListarPat)
         Me.Controls.Add(Me.TablaDePatologias)
         Me.Controls.Add(Me.BtnBorrarPat)
@@ -178,5 +167,4 @@ Partial Class VentanaPatologia
     Friend WithEvents txtNombrePatologia As TextBox
     Friend WithEvents txtIdPatologia As TextBox
     Friend WithEvents btnAgregarPatologia As Button
-    Friend WithEvents btnVolver As Button
 End Class

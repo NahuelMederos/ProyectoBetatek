@@ -31,6 +31,7 @@ Public Module ControladorAsociar
         Return p.ObtenerAsociacion()
     End Function
 
+
     Public Sub BorrarAsociacion(Id As String, Nombre As String)
         Dim p As New Patologia_Sintoma(Sesion.Username, Sesion.Password)
         p.IdPatologia = Id
@@ -41,10 +42,12 @@ Public Module ControladorAsociar
     End Sub
 
 
-    'La funcion pide el array creado en el boton Seleccionar'
+    'La funcion pide el array creado en el boton Generar diagnostico'
     Public Function ObtenerOtrasPatologias(nombreList As Array)
         Dim p As New Patologia_Sintoma(Sesion.Username, Sesion.Password)
-        'Comienzo del comando de mysql, para poder recorrer el array con el for each, el primer sintoma que busca es "Nada" el cual no va a devolver ninguna Patologia'
+
+        'Comienzo del comando de mysql, para poder recorrer el array con el For Each.'
+        'El primer sintoma que busca es "Nada" para poder usar OR cuando se agreguen mas items a la busqueda'
         Dim Resultado As String = "SELECT DISTINCT NOMBRE
         FROM PATOLOGIA_SINTOMAS,PATOLOGIA
         WHERE IDPATOLOGIA_PAT=IDPATOLOGIA
@@ -63,15 +66,16 @@ Public Module ControladorAsociar
         Return p.ObtenerPatologia()
     End Function
 
-    'Sirve para obtener el numero total de sintomas que tiene una enfermedad
+    'Sirve para obtener el numero total de sintomas que tiene una patologia'
     Public Function ObtenerPatologiasCompletas(PosiblePat As String)
         Dim p As New Patologia_Sintoma(Sesion.Username, Sesion.Password)
-        p.SintomaTotal = PosiblePat
+        p.SintomasTotalesDePatologia = PosiblePat
 
         Return p.ObtenerNumeroDeSintomasTotalesPorPatologia()
 
     End Function
 
+    'Cuenta el numero de sintomas seleccionados por el usuario para la PosiblePat'
     Public Function ObtenerAparicionesdePatologiaenBusqueda(PosiblePat2 As String, nombreList As Array)
         Dim p As New Patologia_Sintoma(Sesion.Username, Sesion.Password)
         Dim Resultado As String = "SELECT COUNT(NOMBRE) FROM(SELECT NOMBRE
@@ -89,7 +93,7 @@ Public Module ControladorAsociar
         'Se envia un String con el comando para hacer la busqueda al modelo Patologia_Sintoma'
         p.ComandoObtenerPatologia2 = Resultado
 
-        'Se devuelve la lista con las patologias'
+        'Se devuelve el numero de sintomas seleccionados por el usuario para la PosiblePat'
         Return p.ObtenerNumeroDeSintomasEnBusqueda
 
     End Function

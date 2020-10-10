@@ -45,10 +45,7 @@ Public Class VentanaSintomas
         End Try
     End Sub
 
-    Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
-        VentanaGestion.Visible = True
-        Me.Close()
-    End Sub
+
 
     Private Sub TablaDeSintomas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles TablaDeSintomas.CellClick
         Dim Indice As New Integer

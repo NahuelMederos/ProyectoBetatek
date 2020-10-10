@@ -79,10 +79,10 @@
     <Compile Include="ChatPaciente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inicio.Designer.vb">
-      <DependentUpon>Inicio.vb</DependentUpon>
+    <Compile Include="Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
     </Compile>
-    <Compile Include="Inicio.vb">
+    <Compile Include="Login.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SeleccionSintoma.vb">
@@ -90,12 +90,6 @@
     </Compile>
     <Compile Include="SeleccionSintoma.Designer.vb">
       <DependentUpon>SeleccionSintoma.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="IngresoPersona.Designer.vb">
-      <DependentUpon>IngresoPersona.vb</DependentUpon>
-    </Compile>
-    <Compile Include="IngresoPersona.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -113,20 +107,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Usuario.vb" />
+    <Compile Include="Sesion.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ChatPaciente.resx">
       <DependentUpon>ChatPaciente.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inicio.resx">
-      <DependentUpon>Inicio.vb</DependentUpon>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SeleccionSintoma.resx">
       <DependentUpon>SeleccionSintoma.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="IngresoPersona.resx">
-      <DependentUpon>IngresoPersona.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

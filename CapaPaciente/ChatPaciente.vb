@@ -5,7 +5,7 @@
 Public Class ChatPaciente
 
     Private Sub ChatPaciente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        TxtId.Text = Usuario.Ci
+        TxtId.Text = Sesion.CI
         txtPara.Text = "Medico"
         txtSesion.Text = Convert.ToInt32(ControladorChat.BuscarUltimaSesion) + 1
 

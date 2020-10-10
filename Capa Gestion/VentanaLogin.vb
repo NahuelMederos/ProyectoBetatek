@@ -23,10 +23,9 @@ Public Class FormLogin
             ElseIf (txtUsuario.Text = "root") Then
                 setearSesion(txtUsuario.Text, txtPassword.Text)
                 ControladorUsuarios.setearSesion(txtUsuario.Text, txtPassword.Text)
-                Me.Hide()
                 MsgBox("Bienvenido root")
                 VentanaGestion.Show()
-
+                Me.Close()
             Else
                 MsgBox("Este usuario no es gestor")
             End If

@@ -11,7 +11,8 @@
     Public Nombre As String
     Public Apellido As String
     Public Cedula As String
-
+    Public Edad As String
+    Public Mail As String
 
     Public Sub CrearGestor()
         Comando.CommandText = "START TRANSACTION;"
@@ -85,6 +86,55 @@
 
         Comando.CommandText = "SELECT COUNT(NombreUsuario) FROM Medico
                                WHERE NombreUsuario='" + Me.DbUser + "';"
+
+
+        Return Comando.ExecuteScalar().ToString()
+
+    End Function
+
+    Public Sub CrearPaciente()
+        Comando.CommandText = "START TRANSACTION;"
+        Comando.ExecuteNonQuery()
+
+        Try
+            Comando.CommandText = "CREATE USER '" + Me.NombreUsuario + "'@'localhost' IDENTIFIED BY '" + Me.Contraseña + "';"
+            Comando.ExecuteNonQuery()
+
+            Comando.CommandText = " GRANT INSERT,UPDATE,SELECT ON betatek.Chatea TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.ExecuteNonQuery()
+
+            Comando.CommandText = " GRANT SELECT ON betatek.Persona TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.ExecuteNonQuery()
+
+            Comando.CommandText = " GRANT SELECT ON betatek.Medico TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.ExecuteNonQuery()
+
+            Comando.CommandText = " GRANT SELECT ON betatek.Sintoma TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.ExecuteNonQuery()
+
+            Comando.CommandText = " GRANT SELECT ON betatek.Patologia TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.ExecuteNonQuery()
+
+            Comando.CommandText = " GRANT SELECT ON betatek.Patologia_Sintomas TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.ExecuteNonQuery()
+
+            Comando.CommandText = "INSERT INTO PERSONA VALUES('" + Me.NombreUsuario + "','" + Me.Nombre + "','" + Me.Apellido + "','" + Me.Edad + "','" + Me.Mail + "');"
+            Comando.ExecuteNonQuery()
+
+            Comando.CommandText = "COMMIT;"
+            Comando.ExecuteNonQuery()
+
+        Catch ex As Exception
+            Comando.CommandText = "ROLLBACK;"
+            Comando.ExecuteNonQuery()
+
+        End Try
+    End Sub
+
+    Public Function AutenticarPaciente()
+
+        Comando.CommandText = "SELECT COUNT(CI) FROM Persona
+                               WHERE CI='" + Me.DbUser + "';"
 
 
         Return Comando.ExecuteScalar().ToString()

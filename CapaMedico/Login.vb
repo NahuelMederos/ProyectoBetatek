@@ -17,8 +17,9 @@ Public Class Login
             If (AutenticarUsuario(txtUsuario.Text, txtPassword.Text) = "1") Then
                 setearSesion(txtUsuario.Text, txtPassword.Text)
                 ControladorUsuarios.setearSesion(txtUsuario.Text, txtPassword.Text)
-                Me.Hide()
                 ChatMedico.Show()
+                Me.Close()
+
             Else
                 MsgBox("Este usuario no es medico")
             End If

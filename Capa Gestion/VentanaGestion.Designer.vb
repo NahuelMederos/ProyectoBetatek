@@ -28,6 +28,7 @@ Partial Class VentanaGestion
         Me.btnAsociar = New System.Windows.Forms.Button()
         Me.btnAgregarGestor = New System.Windows.Forms.Button()
         Me.btnAgregarMedicos = New System.Windows.Forms.Button()
+        Me.btnAgregarPacientes = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnSintomas
@@ -85,11 +86,21 @@ Partial Class VentanaGestion
         Me.btnAgregarMedicos.Text = "Agregar medico"
         Me.btnAgregarMedicos.UseVisualStyleBackColor = True
         '
+        'btnAgregarPacientes
+        '
+        Me.btnAgregarPacientes.Location = New System.Drawing.Point(77, 498)
+        Me.btnAgregarPacientes.Name = "btnAgregarPacientes"
+        Me.btnAgregarPacientes.Size = New System.Drawing.Size(178, 49)
+        Me.btnAgregarPacientes.TabIndex = 6
+        Me.btnAgregarPacientes.Text = "Agregar paciente"
+        Me.btnAgregarPacientes.UseVisualStyleBackColor = True
+        '
         'VentanaGestion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(320, 503)
+        Me.ClientSize = New System.Drawing.Size(320, 575)
+        Me.Controls.Add(Me.btnAgregarPacientes)
         Me.Controls.Add(Me.btnAgregarMedicos)
         Me.Controls.Add(Me.btnAgregarGestor)
         Me.Controls.Add(Me.btnAsociar)
@@ -109,4 +120,5 @@ Partial Class VentanaGestion
     Friend WithEvents btnAsociar As Button
     Friend WithEvents btnAgregarGestor As Button
     Friend WithEvents btnAgregarMedicos As Button
+    Friend WithEvents btnAgregarPacientes As Button
 End Class

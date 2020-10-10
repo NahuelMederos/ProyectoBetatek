@@ -11,12 +11,7 @@ Public Class SeleccionSintoma
     End Sub
 
 
-    'Sirve para que se pueda ver el RichTextBox desde esta ventana'
-    'nresult nos da los nombres de todas las patologias que podemos tener por cada elemento seleccionado'
-    Private nresult As String = "SELECT DISTINCT NOMBRE 
-                                 FROM PATOLOGIA_SINTOMAS,PATOLOGIA 
-                                 WHERE IDPATOLOGIA_PAT=IDPATOLOGIA 
-                                 AND SINTOMA='Nada'"
+
 
     'Son declarados en private para que se mantengan sus valores despues de ser usados por el boton seleccionar'
     Private contador As Integer = 0
@@ -47,12 +42,7 @@ Public Class SeleccionSintoma
             contador += 1
         Next selectedItem
 
-        'Por cada elemento en el array nombreList se agrega a la busqueda de nresult'
-        For Each elem2 As String In nombreList
-            nresult &= " OR IDPATOLOGIA_PAT=IDPATOLOGIA
-            AND SINTOMA='" + elem2 + "'"
-            presult &= elem2
-        Next
+
 
 
         Dim TablaOtrasPatologias As New DataTable
@@ -62,6 +52,7 @@ Public Class SeleccionSintoma
 
         Dim PosiblePatologia As String
 
+        'Crea un array con todas las posibles patologias'
         For Each Item As DataGridViewRow In GrillaOtrasPatologias.Rows
             PosiblePatologia = Item.Cells("NOMBRE").Value
             ReDim Preserve PosiblePatologiaList(contador2)
@@ -69,10 +60,9 @@ Public Class SeleccionSintoma
             contador2 += 1
         Next
 
-
+        'Compara la cantidad de sintomas totales que tiene una patologia, con los sintomas seleccionados por el usuario para cada patologia en la lista "Otras posibles patologias"'
+        'En el caso de que la cantidad sea la misma, se agrega la patologia a un nuevo array llamado PatologiasSeguras'
         For Each PosiblePat As String In PosiblePatologiaList
-            ControladorAsociar.ObtenerPatologiasCompletas(PosiblePat)
-
             Dim Cuenta1 As Integer = Convert.ToInt32(ControladorAsociar.ObtenerPatologiasCompletas(PosiblePat))
             Dim Cuenta2 As Integer = Convert.ToInt32(ControladorAsociar.ObtenerAparicionesdePatologiaenBusqueda(PosiblePat, nombreList))
             If (Cuenta1 = Cuenta2) Then
@@ -84,6 +74,8 @@ Public Class SeleccionSintoma
         Next
 
         Dim ResultadoFinal As String = ""
+
+        'Por cada Patologia en PatologiasSeguras se agrega al String ResultadoFinal'
         For Each Patologia As String In PatologiasSeguras
             ResultadoFinal &= Patologia
         Next
@@ -91,8 +83,8 @@ Public Class SeleccionSintoma
         If ResultadoFinal = vbCrLf Then
             ResultadoFinal = "No hay ningun diagnostico seguro"
         End If
-        txtResultadoFinal.Text = ResultadoFinal
 
+        txtResultadoFinal.Text = ResultadoFinal
 
         btnSeleccionarSintoma.Enabled = False
         btnSolicitarChat.Enabled = True
@@ -104,7 +96,7 @@ Public Class SeleccionSintoma
 
     Private Sub btnSolicitarChat_Click(sender As Object, e As EventArgs) Handles btnSolicitarChat.Click
         ChatPaciente.Visible = True
-        Me.Hide()
+        Me.Close()
     End Sub
 
 
