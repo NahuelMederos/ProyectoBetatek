@@ -25,16 +25,19 @@ Public Class VentanaAsociar
     End Sub
 
     Private Sub TablaSint_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles TablaSint.CellClick
+
         Dim Indice2 As New Integer
         Indice2 = e.RowIndex
         Dim SintSeleccionada As DataGridViewRow
         SintSeleccionada = TablaSint.Rows(Indice2)
-        txtNombreSintoma.Text = SintSeleccionada.Cells(0).Value.ToString()
+        txtIdSintoma.Text = SintSeleccionada.Cells(0).Value.ToString()
+        txtNombreSintoma.Text = SintSeleccionada.Cells(1).Value.ToString()
+
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnAsociar.Click
         Try
-            ControladorAsociar.CrearAsociacion(txtIdPatologia.Text, txtNombreSintoma.Text)
+            ControladorAsociar.CrearAsociacion(txtIdPatologia.Text, txtIdSintoma.Text)
             MsgBox("Asociacion creada")
             ListarTodo_Click(sender, e)
         Catch

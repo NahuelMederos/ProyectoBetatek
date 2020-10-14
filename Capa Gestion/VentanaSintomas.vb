@@ -3,9 +3,13 @@
 Public Class VentanaSintomas
     Private Sub btnAgregarSintoma_Click(sender As Object, e As EventArgs) Handles btnAgregarSintoma.Click
         Try
-            ControladorSintoma.CrearSintoma(txtNombreSintoma.Text)
-            MsgBox("Sintoma creado")
-            Listar_Click(sender, e)
+            If String.IsNullOrEmpty(txtNombreSintoma.Text) Then
+                MsgBox("Debe ingresar un nombre para el sintoma")
+            Else
+                ControladorSintoma.CrearSintoma(txtNombreSintoma.Text)
+                MsgBox("Sintoma creado")
+                Listar_Click(sender, e)
+            End If
         Catch ex As Exception
             MsgBox("Error")
         End Try
@@ -41,7 +45,7 @@ Public Class VentanaSintomas
             MsgBox("Sintoma eliminado")
             Listar_Click(sender, e)
         Catch ex As Exception
-            MsgBox("Error")
+            MsgBox("Primero debe borrar las asociaciones de este sintoma")
         End Try
     End Sub
 

@@ -8,7 +8,7 @@
     End Sub
 
     Public IdPatologia As String
-    Public NombreSintoma As String
+    Public IdSintoma As String
     Public SintomasTotalesDePatologia As String
 
 
@@ -17,7 +17,7 @@
     Public ComandoObtenerPatologia2 As String
 
     Public Sub GuardarAsociacion()
-        Comando.CommandText = "INSERT INTO PATOLOGIA_SINTOMAS VALUES(" + Me.IdPatologia + ",'" + Me.NombreSintoma + "')"
+        Comando.CommandText = "INSERT INTO PATOLOGIA_SINTOMAS VALUES(" + Me.IdPatologia + "," + Me.IdSintoma + ")"
 
         Comando.ExecuteNonQuery()
 
@@ -25,7 +25,10 @@
 
     Public Function ObtenerAsociacion()
 
-        Comando.CommandText = "SELECT PATOLOGIA_SINTOMAS.IDPATOLOGIA_PAT,PATOLOGIA.NOMBRE,PATOLOGIA_SINTOMAS.SINTOMA FROM PATOLOGIA,PATOLOGIA_SINTOMAS WHERE PATOLOGIA_SINTOMAS.IDPATOLOGIA_PAT = PATOLOGIA.IDPATOLOGIA "
+        Comando.CommandText = "SELECT PATOLOGIA_SINTOMAS.IDPATOLOGIA_PAT,PATOLOGIA.NOMBRE,PATOLOGIA_SINTOMAS.SINTOMA,SINTOMA.NOMBRE
+                               FROM PATOLOGIA,PATOLOGIA_SINTOMAS,SINTOMA
+                               WHERE PATOLOGIA_SINTOMAS.IDPATOLOGIA_PAT = PATOLOGIA.IDPATOLOGIA
+                               AND PATOLOGIA_SINTOMAS.SINTOMA = SINTOMA.IDSINTOMA; "
 
         Reader = Comando.ExecuteReader()
         Return Reader
@@ -33,7 +36,7 @@
     End Function
 
     Public Sub BorrarAsociacion()
-        Comando.CommandText = "DELETE FROM PATOLOGIA_SINTOMAS WHERE IDPATOLOGIA_PAT = " + Me.IdPatologia + " AND SINTOMA= '" + Me.NombreSintoma + "'"
+        Comando.CommandText = "DELETE FROM PATOLOGIA_SINTOMAS WHERE IDPATOLOGIA_PAT = " + Me.IdPatologia + " AND SINTOMA= " + Me.IdSintoma + ""
 
         Comando.ExecuteNonQuery()
 

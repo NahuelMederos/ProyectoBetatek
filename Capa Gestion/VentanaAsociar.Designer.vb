@@ -33,6 +33,8 @@ Partial Class VentanaAsociar
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnAsociar = New System.Windows.Forms.Button()
         Me.btnVerAsociaciones = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtIdSintoma = New System.Windows.Forms.TextBox()
         CType(Me.TablaPat, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TablaSint, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -79,7 +81,7 @@ Partial Class VentanaAsociar
         '
         'txtNombreSintoma
         '
-        Me.txtNombreSintoma.Location = New System.Drawing.Point(276, 285)
+        Me.txtNombreSintoma.Location = New System.Drawing.Point(276, 335)
         Me.txtNombreSintoma.Name = "txtNombreSintoma"
         Me.txtNombreSintoma.ReadOnly = True
         Me.txtNombreSintoma.Size = New System.Drawing.Size(100, 20)
@@ -106,7 +108,7 @@ Partial Class VentanaAsociar
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(273, 269)
+        Me.Label3.Location = New System.Drawing.Point(273, 319)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(45, 13)
         Me.Label3.TabIndex = 9
@@ -130,11 +132,30 @@ Partial Class VentanaAsociar
         Me.btnVerAsociaciones.Text = "Ver asociaciones"
         Me.btnVerAsociaciones.UseVisualStyleBackColor = True
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(273, 273)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(57, 13)
+        Me.Label4.TabIndex = 13
+        Me.Label4.Text = "Id Sintoma"
+        '
+        'txtIdSintoma
+        '
+        Me.txtIdSintoma.Location = New System.Drawing.Point(276, 289)
+        Me.txtIdSintoma.Name = "txtIdSintoma"
+        Me.txtIdSintoma.ReadOnly = True
+        Me.txtIdSintoma.Size = New System.Drawing.Size(100, 20)
+        Me.txtIdSintoma.TabIndex = 12
+        '
         'VentanaAsociar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(595, 422)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.txtIdSintoma)
         Me.Controls.Add(Me.btnVerAsociaciones)
         Me.Controls.Add(Me.btnAsociar)
         Me.Controls.Add(Me.Label3)
@@ -166,4 +187,6 @@ Partial Class VentanaAsociar
     Friend WithEvents Label3 As Label
     Friend WithEvents btnAsociar As Button
     Friend WithEvents btnVerAsociaciones As Button
+    Friend WithEvents Label4 As Label
+    Friend WithEvents txtIdSintoma As TextBox
 End Class

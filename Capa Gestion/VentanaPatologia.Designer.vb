@@ -92,6 +92,7 @@ Partial Class VentanaPatologia
         '
         'cmbPatologia
         '
+        Me.cmbPatologia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbPatologia.FormattingEnabled = True
         Me.cmbPatologia.Items.AddRange(New Object() {"Alta", "Media", "Baja"})
         Me.cmbPatologia.Location = New System.Drawing.Point(353, 305)

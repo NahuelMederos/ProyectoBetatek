@@ -1,11 +1,17 @@
 ﻿Imports Capa_Logica
 
 Public Class VentanaPatologia
+
+
     Private Sub btnAgregarPatologia_Click(sender As Object, e As EventArgs) Handles btnAgregarPatologia.Click
         Try
-            ControladorPatologia.CrearPatologia(txtNombrePatologia.Text, cmbPatologia.SelectedItem)
-            MsgBox("Patologia creada")
-            ListarPat_Click(sender, e)
+            If String.IsNullOrEmpty(txtNombrePatologia.Text) Then
+                MsgBox("Debe ingresar un nombre para la patologia")
+            Else
+                ControladorPatologia.CrearPatologia(txtNombrePatologia.Text, cmbPatologia.SelectedItem)
+                MsgBox("Patologia creada")
+                ListarPat_Click(sender, e)
+            End If
         Catch
             MsgBox("Error")
         End Try
@@ -23,6 +29,9 @@ Public Class VentanaPatologia
 
     Private Sub VentanaPatologia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ListarPat_Click(sender, e)
+        If cmbPatologia.Items.Count > 0 Then
+            cmbPatologia.SelectedIndex = 0
+        End If
     End Sub
 
     Private Sub ListarPat_Click(sender As Object, e As EventArgs) Handles ListarPat.Click

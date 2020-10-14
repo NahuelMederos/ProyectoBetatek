@@ -19,6 +19,14 @@ Public Class Sintoma
 
     End Function
 
+    Public Function IdyNombreSintomas()
+
+        Comando.CommandText = "SELECT IDSINTOMA,NOMBRE FROM SINTOMA"
+
+        Me.Reader = Comando.ExecuteReader()
+        Return Me.Reader
+
+    End Function
 
     Public Function ObtenerNombreSintomas()
 
