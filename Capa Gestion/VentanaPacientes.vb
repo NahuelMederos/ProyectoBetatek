@@ -2,17 +2,20 @@
 Public Class VentanaPacientes
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
-
-        If (ControladorUsuarios.VerificarUsuarioMySQL(txtCedula.Text) = "1") Then
-            MsgBox("Este usuario ya existe")
-        ElseIf (ControladorUsuarios.VerificarExistenciaClaveUnica(txtMail.Text, 3) = "1") Then
-            MsgBox("Este mail ya existe")
+        If String.IsNullOrEmpty(txtCedula.Text) Or String.IsNullOrEmpty(txtContraseña.Text) Or String.IsNullOrEmpty(txtNombre.Text) Or String.IsNullOrEmpty(txtApellido.Text) Or String.IsNullOrEmpty(txtEdad.Text) Or String.IsNullOrEmpty(txtMail.Text) Then
+            MsgBox("Todos los campos son obligatorios")
         Else
-            ControladorUsuarios.CrearPaciente(txtCedula.Text, txtContraseña.Text, txtNombre.Text, txtApellido.Text, txtEdad.Text, txtMail.Text)
-            MsgBox("Creado")
-            Me.Close()
-        End If
 
+            If (ControladorUsuarios.VerificarUsuarioMySQL(txtCedula.Text) = "1") Then
+                MsgBox("Este usuario ya existe")
+            ElseIf (ControladorUsuarios.VerificarExistenciaClaveUnica(txtMail.Text, 3) = "1") Then
+                MsgBox("Este mail ya existe")
+            Else
+                ControladorUsuarios.CrearPaciente(txtCedula.Text, txtContraseña.Text, txtNombre.Text, txtApellido.Text, txtEdad.Text, txtMail.Text)
+                MsgBox("Creado")
+                Me.Close()
+            End If
+        End If
     End Sub
 
 

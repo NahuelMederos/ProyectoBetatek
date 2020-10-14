@@ -112,6 +112,7 @@ Partial Class VentanaPatologia
         'txtNombrePatologia
         '
         Me.txtNombrePatologia.Location = New System.Drawing.Point(353, 258)
+        Me.txtNombrePatologia.MaxLength = 30
         Me.txtNombrePatologia.Name = "txtNombrePatologia"
         Me.txtNombrePatologia.Size = New System.Drawing.Size(110, 20)
         Me.txtNombrePatologia.TabIndex = 14

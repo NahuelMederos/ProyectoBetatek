@@ -47,6 +47,7 @@ Partial Class VentanaMedicos
         'txtCedula
         '
         Me.txtCedula.Location = New System.Drawing.Point(12, 128)
+        Me.txtCedula.MaxLength = 8
         Me.txtCedula.Name = "txtCedula"
         Me.txtCedula.Size = New System.Drawing.Size(100, 20)
         Me.txtCedula.TabIndex = 20
@@ -99,6 +100,7 @@ Partial Class VentanaMedicos
         'txtApellido
         '
         Me.txtApellido.Location = New System.Drawing.Point(12, 102)
+        Me.txtApellido.MaxLength = 25
         Me.txtApellido.Name = "txtApellido"
         Me.txtApellido.Size = New System.Drawing.Size(100, 20)
         Me.txtApellido.TabIndex = 14
@@ -106,6 +108,7 @@ Partial Class VentanaMedicos
         'txtNombre
         '
         Me.txtNombre.Location = New System.Drawing.Point(12, 76)
+        Me.txtNombre.MaxLength = 25
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(100, 20)
         Me.txtNombre.TabIndex = 13
@@ -113,6 +116,7 @@ Partial Class VentanaMedicos
         'txtContraseña
         '
         Me.txtContraseña.Location = New System.Drawing.Point(12, 50)
+        Me.txtContraseña.MaxLength = 35
         Me.txtContraseña.Name = "txtContraseña"
         Me.txtContraseña.Size = New System.Drawing.Size(100, 20)
         Me.txtContraseña.TabIndex = 12
@@ -120,6 +124,7 @@ Partial Class VentanaMedicos
         'txtNombreUsuario
         '
         Me.txtNombreUsuario.Location = New System.Drawing.Point(12, 24)
+        Me.txtNombreUsuario.MaxLength = 30
         Me.txtNombreUsuario.Name = "txtNombreUsuario"
         Me.txtNombreUsuario.Size = New System.Drawing.Size(100, 20)
         Me.txtNombreUsuario.TabIndex = 11

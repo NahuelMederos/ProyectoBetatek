@@ -54,6 +54,7 @@ Partial Class VentanaSintomas
         'txtNombreSintoma
         '
         Me.txtNombreSintoma.Location = New System.Drawing.Point(354, 262)
+        Me.txtNombreSintoma.MaxLength = 30
         Me.txtNombreSintoma.Name = "txtNombreSintoma"
         Me.txtNombreSintoma.Size = New System.Drawing.Size(110, 20)
         Me.txtNombreSintoma.TabIndex = 2
