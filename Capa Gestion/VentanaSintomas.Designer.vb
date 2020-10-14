@@ -26,10 +26,8 @@ Partial Class VentanaSintomas
         Me.txtIdSintoma = New System.Windows.Forms.TextBox()
         Me.txtNombreSintoma = New System.Windows.Forms.TextBox()
         Me.btnModificarSintoma = New System.Windows.Forms.Button()
-        Me.cmbSintoma = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.BtnBorrar = New System.Windows.Forms.Button()
         Me.TablaDeSintomas = New System.Windows.Forms.DataGridView()
         Me.Listar = New System.Windows.Forms.Button()
@@ -69,15 +67,6 @@ Partial Class VentanaSintomas
         Me.btnModificarSintoma.Text = "Modificar Sintoma"
         Me.btnModificarSintoma.UseVisualStyleBackColor = True
         '
-        'cmbSintoma
-        '
-        Me.cmbSintoma.FormattingEnabled = True
-        Me.cmbSintoma.Items.AddRange(New Object() {"Alta", "Media", "Baja"})
-        Me.cmbSintoma.Location = New System.Drawing.Point(354, 309)
-        Me.cmbSintoma.Name = "cmbSintoma"
-        Me.cmbSintoma.Size = New System.Drawing.Size(110, 21)
-        Me.cmbSintoma.TabIndex = 4
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -95,15 +84,6 @@ Partial Class VentanaSintomas
         Me.Label3.Size = New System.Drawing.Size(18, 13)
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "ID"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(354, 290)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(48, 13)
-        Me.Label4.TabIndex = 8
-        Me.Label4.Text = "Prioridad"
         '
         'BtnBorrar
         '
@@ -140,10 +120,8 @@ Partial Class VentanaSintomas
         Me.Controls.Add(Me.Listar)
         Me.Controls.Add(Me.TablaDeSintomas)
         Me.Controls.Add(Me.BtnBorrar)
-        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.cmbSintoma)
         Me.Controls.Add(Me.btnModificarSintoma)
         Me.Controls.Add(Me.txtNombreSintoma)
         Me.Controls.Add(Me.txtIdSintoma)
@@ -160,10 +138,8 @@ Partial Class VentanaSintomas
     Friend WithEvents txtIdSintoma As TextBox
     Friend WithEvents txtNombreSintoma As TextBox
     Friend WithEvents btnModificarSintoma As Button
-    Friend WithEvents cmbSintoma As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
     Friend WithEvents BtnBorrar As Button
     Friend WithEvents TablaDeSintomas As DataGridView
     Friend WithEvents Listar As Button

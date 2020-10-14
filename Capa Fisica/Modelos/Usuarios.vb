@@ -43,7 +43,7 @@
 
     Public Function AutenticarGestor()
 
-        Comando.CommandText = "SELECT COUNT(NombreUsuario) FROM ADMINISTRATIVO
+        Comando.CommandText = "SELECT COUNT(NombreUsuario) FROM Administrativo
                                WHERE NombreUsuario='" + Me.DbUser + "';"
 
 

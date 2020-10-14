@@ -8,7 +8,6 @@ Public Class Sintoma
 
     Public IdSintoma As String
     Public Nombre As String
-    Public Prioridad As String
 
 
     Public Function ObtenerSintomas()
@@ -31,7 +30,7 @@ Public Class Sintoma
     End Function
 
     Public Sub GuardarSintoma()
-        Comando.CommandText = "INSERT INTO SINTOMA VALUES(LAST_INSERT_ID(),'" + Me.Nombre + "','" + Me.Prioridad + "')"
+        Comando.CommandText = "INSERT INTO SINTOMA VALUES(LAST_INSERT_ID(),'" + Me.Nombre + "')"
 
         Comando.ExecuteNonQuery()
 
@@ -46,7 +45,7 @@ Public Class Sintoma
 
     Public Sub ModificarSintoma()
 
-        Comando.CommandText = "UPDATE SINTOMA SET NOMBRE = '" + Me.Nombre + "', PRIORIDAD ='" + Me.Prioridad + "' WHERE IdSintoma = " + Me.IdSintoma
+        Comando.CommandText = "UPDATE SINTOMA SET NOMBRE = '" + Me.Nombre + "' WHERE IdSintoma = " + Me.IdSintoma
         Comando.ExecuteNonQuery()
     End Sub
 
