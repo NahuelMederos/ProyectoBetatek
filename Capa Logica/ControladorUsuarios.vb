@@ -66,6 +66,30 @@ Public Module ControladorUsuarios
 
     End Sub
 
+    Public Function VerificarUsuarioMySQL(usuario As String)
+        Dim u As New Usuarios(Username, Password)
+        u.NombreUsuario = usuario
+        Return u.VerificarUsuarioMySQL
+
+        Return 0
+    End Function
+
+    Public Function VerificarExistenciaClaveUnica(Clave As String, tipo As Integer)
+        Dim u As New Usuarios(Username, Password)
+        Select Case tipo
+            Case 1
+                u.Cedula = Clave
+                Return u.VerificarCedulaGestor
+            Case 2
+                u.Cedula = Clave
+                Return u.VerificarCedulaMedico
+            Case 3
+                u.Mail = Clave
+                Return u.VerificarMailPaciente
+        End Select
+
+        Return 0
+    End Function
 
 
 End Module
