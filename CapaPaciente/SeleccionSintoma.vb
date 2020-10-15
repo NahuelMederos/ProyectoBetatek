@@ -35,14 +35,16 @@ Public Class SeleccionSintoma
         Dim nombre As String
 
         'Por cada item seleccionado en el datagrid, se guardan los nombres en el array nombreList'
-        For Each selectedItem As DataGridViewRow In GrillaSintomas.SelectedRows
-            nombre = selectedItem.Cells("NOMBRE").Value
-            ReDim Preserve nombreList(contador)
-            nombreList(contador) = nombre
-            contador += 1
+        For Each selectedItem As DataGridViewRow In GrillaSintomas.Rows
+            Dim chk As DataGridViewCheckBoxCell = selectedItem.Cells(Check.Name)
+            If chk.Value IsNot Nothing AndAlso chk.Value = True Then
+                nombre = selectedItem.Cells("NOMBRE").Value
+                ReDim Preserve nombreList(contador)
+                nombreList(contador) = nombre
+                contador += 1
+            End If
+
         Next selectedItem
-
-
 
 
         Dim TablaOtrasPatologias As New DataTable
@@ -86,20 +88,16 @@ Public Class SeleccionSintoma
 
         txtResultadoFinal.Text = ResultadoFinal
 
+
         btnSeleccionarSintoma.Enabled = False
         btnSolicitarChat.Enabled = True
     End Sub
 
-    Private Sub txtResultadoFinal_TextChanged(sender As Object, e As EventArgs) Handles txtResultadoFinal.TextChanged
-
-    End Sub
 
     Private Sub btnSolicitarChat_Click(sender As Object, e As EventArgs) Handles btnSolicitarChat.Click
         ChatPaciente.Visible = True
         Me.Close()
     End Sub
-
-
 
 
 End Class

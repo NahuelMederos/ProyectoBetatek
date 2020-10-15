@@ -22,6 +22,8 @@ Partial Class SeleccionSintoma
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnListarSintomas = New System.Windows.Forms.Button()
         Me.lblSeleccionDeSintomas = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -34,6 +36,7 @@ Partial Class SeleccionSintoma
         Me.txtResultadoFinal = New System.Windows.Forms.RichTextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.btnSolicitarChat = New System.Windows.Forms.Button()
+        Me.Check = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         CType(Me.GrillaSintomas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GrillaOtrasPatologias, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -78,11 +81,33 @@ Partial Class SeleccionSintoma
         '
         'GrillaSintomas
         '
+        Me.GrillaSintomas.AllowUserToAddRows = False
+        Me.GrillaSintomas.AllowUserToDeleteRows = False
+        Me.GrillaSintomas.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(91, Byte), Integer))
+        Me.GrillaSintomas.BorderStyle = System.Windows.Forms.BorderStyle.None
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(91, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.GrillaSintomas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.GrillaSintomas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.GrillaSintomas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Check})
+        Me.GrillaSintomas.EnableHeadersVisualStyles = False
+        Me.GrillaSintomas.GridColor = System.Drawing.Color.SteelBlue
         Me.GrillaSintomas.Location = New System.Drawing.Point(12, 69)
         Me.GrillaSintomas.Name = "GrillaSintomas"
+        Me.GrillaSintomas.RowHeadersVisible = False
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(91, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        Me.GrillaSintomas.RowsDefaultCellStyle = DataGridViewCellStyle2
         Me.GrillaSintomas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.GrillaSintomas.Size = New System.Drawing.Size(201, 275)
+        Me.GrillaSintomas.Size = New System.Drawing.Size(203, 157)
         Me.GrillaSintomas.TabIndex = 10
         '
         'btnSeleccionarSintoma
@@ -108,6 +133,7 @@ Partial Class SeleccionSintoma
         Me.GrillaOtrasPatologias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.GrillaOtrasPatologias.Location = New System.Drawing.Point(449, 82)
         Me.GrillaOtrasPatologias.Name = "GrillaOtrasPatologias"
+        Me.GrillaOtrasPatologias.RowHeadersVisible = False
         Me.GrillaOtrasPatologias.Size = New System.Drawing.Size(188, 288)
         Me.GrillaOtrasPatologias.TabIndex = 20
         '
@@ -147,12 +173,20 @@ Partial Class SeleccionSintoma
         Me.btnSolicitarChat.Text = "Solicitar" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Chat"
         Me.btnSolicitarChat.UseVisualStyleBackColor = True
         '
+        'Check
+        '
+        Me.Check.HeaderText = ""
+        Me.Check.Name = "Check"
+        Me.Check.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Check.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Check.Width = 20
+        '
         'SeleccionSintoma
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.LightCyan
-        Me.ClientSize = New System.Drawing.Size(669, 428)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(91, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(688, 428)
         Me.Controls.Add(Me.btnSolicitarChat)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.txtResultadoFinal)
@@ -185,4 +219,5 @@ Partial Class SeleccionSintoma
     Friend WithEvents txtResultadoFinal As RichTextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents btnSolicitarChat As Button
+    Friend WithEvents Check As DataGridViewCheckBoxColumn
 End Class
