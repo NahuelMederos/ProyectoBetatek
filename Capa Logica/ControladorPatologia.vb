@@ -36,4 +36,12 @@ Public Module ControladorPatologia
 
     End Function
 
+    Public Function ObtenerPrioridad(Nombre As String)
+        Dim p As New Patologia(Sesion.Username, Sesion.Password)
+        p.Nombre = Nombre
+
+        Return p.ObtenerPrioridadPatologia
+
+    End Function
+
 End Module

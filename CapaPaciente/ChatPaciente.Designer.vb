@@ -35,6 +35,14 @@ Partial Class ChatPaciente
         Me.RTxtMensaje = New System.Windows.Forms.RichTextBox()
         Me.RTxtChat = New System.Windows.Forms.RichTextBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.txtDiagnostico = New System.Windows.Forms.RichTextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtSintomas = New System.Windows.Forms.RichTextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtPrioridad = New System.Windows.Forms.TextBox()
+        Me.txtIdDiagnostico = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'WebBrowser1
@@ -126,9 +134,9 @@ Partial Class ChatPaciente
         '
         'RTxtChat
         '
-        Me.RTxtChat.Location = New System.Drawing.Point(2, 297)
+        Me.RTxtChat.Location = New System.Drawing.Point(7, 528)
         Me.RTxtChat.Name = "RTxtChat"
-        Me.RTxtChat.Size = New System.Drawing.Size(127, 206)
+        Me.RTxtChat.Size = New System.Drawing.Size(127, 32)
         Me.RTxtChat.TabIndex = 15
         Me.RTxtChat.Text = ""
         Me.RTxtChat.Visible = False
@@ -137,11 +145,85 @@ Partial Class ChatPaciente
         '
         Me.Timer1.Interval = 3000
         '
+        'txtDiagnostico
+        '
+        Me.txtDiagnostico.Location = New System.Drawing.Point(-4, 161)
+        Me.txtDiagnostico.Name = "txtDiagnostico"
+        Me.txtDiagnostico.Size = New System.Drawing.Size(138, 56)
+        Me.txtDiagnostico.TabIndex = 28
+        Me.txtDiagnostico.Text = ""
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(-1, 145)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(66, 13)
+        Me.Label2.TabIndex = 29
+        Me.Label2.Text = "Diagnostico:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(-1, 228)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(152, 13)
+        Me.Label4.TabIndex = 31
+        Me.Label4.Text = "Ingreso los siguientes sintomas"
+        '
+        'txtSintomas
+        '
+        Me.txtSintomas.Location = New System.Drawing.Point(2, 244)
+        Me.txtSintomas.Name = "txtSintomas"
+        Me.txtSintomas.Size = New System.Drawing.Size(138, 47)
+        Me.txtSintomas.TabIndex = 30
+        Me.txtSintomas.Text = ""
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(-1, 297)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(48, 13)
+        Me.Label5.TabIndex = 33
+        Me.Label5.Text = "Prioridad"
+        '
+        'txtPrioridad
+        '
+        Me.txtPrioridad.Location = New System.Drawing.Point(2, 313)
+        Me.txtPrioridad.Name = "txtPrioridad"
+        Me.txtPrioridad.Size = New System.Drawing.Size(100, 20)
+        Me.txtPrioridad.TabIndex = 34
+        '
+        'txtIdDiagnostico
+        '
+        Me.txtIdDiagnostico.Location = New System.Drawing.Point(4, 355)
+        Me.txtIdDiagnostico.Name = "txtIdDiagnostico"
+        Me.txtIdDiagnostico.Size = New System.Drawing.Size(100, 20)
+        Me.txtIdDiagnostico.TabIndex = 35
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(4, 336)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(72, 13)
+        Me.Label6.TabIndex = 36
+        Me.Label6.Text = "IdDiagnostico"
+        '
         'ChatPaciente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1234, 579)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.txtIdDiagnostico)
+        Me.Controls.Add(Me.txtPrioridad)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.txtSintomas)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.txtDiagnostico)
         Me.Controls.Add(Me.WebBrowser1)
         Me.Controls.Add(Me.btnIniciarChat)
         Me.Controls.Add(Me.Label3)
@@ -171,4 +253,12 @@ Partial Class ChatPaciente
     Friend WithEvents RTxtMensaje As RichTextBox
     Friend WithEvents RTxtChat As RichTextBox
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents txtDiagnostico As RichTextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents txtSintomas As RichTextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents txtPrioridad As TextBox
+    Friend WithEvents txtIdDiagnostico As TextBox
+    Friend WithEvents Label6 As Label
 End Class

@@ -53,6 +53,13 @@ Public Class Patologia
         Comando.ExecuteNonQuery()
     End Sub
 
+    Public Function ObtenerPrioridadPatologia()
+
+        Comando.CommandText = "SELECT PRIORIDAD FROM PATOLOGIA WHERE NOMBRE='" + Nombre + "';"
+
+        Return Comando.ExecuteScalar().ToString()
+
+    End Function
 
 
 End Class

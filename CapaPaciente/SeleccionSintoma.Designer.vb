@@ -24,32 +24,18 @@ Partial Class SeleccionSintoma
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.btnListarSintomas = New System.Windows.Forms.Button()
         Me.lblSeleccionDeSintomas = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GrillaSintomas = New System.Windows.Forms.DataGridView()
+        Me.Check = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.btnSeleccionarSintoma = New System.Windows.Forms.Button()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.GrillaOtrasPatologias = New System.Windows.Forms.DataGridView()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.txtResultadoFinal = New System.Windows.Forms.RichTextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.btnSolicitarChat = New System.Windows.Forms.Button()
-        Me.Check = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         CType(Me.GrillaSintomas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GrillaOtrasPatologias, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'btnListarSintomas
-        '
-        Me.btnListarSintomas.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.btnListarSintomas.Location = New System.Drawing.Point(12, 350)
-        Me.btnListarSintomas.Name = "btnListarSintomas"
-        Me.btnListarSintomas.Size = New System.Drawing.Size(66, 39)
-        Me.btnListarSintomas.TabIndex = 1
-        Me.btnListarSintomas.Text = "Listar Sintomas"
-        Me.btnListarSintomas.UseVisualStyleBackColor = False
         '
         'lblSeleccionDeSintomas
         '
@@ -110,6 +96,14 @@ Partial Class SeleccionSintoma
         Me.GrillaSintomas.Size = New System.Drawing.Size(203, 157)
         Me.GrillaSintomas.TabIndex = 10
         '
+        'Check
+        '
+        Me.Check.HeaderText = ""
+        Me.Check.Name = "Check"
+        Me.Check.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Check.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Check.Width = 20
+        '
         'btnSeleccionarSintoma
         '
         Me.btnSeleccionarSintoma.Location = New System.Drawing.Point(257, 231)
@@ -119,22 +113,13 @@ Partial Class SeleccionSintoma
         Me.btnSeleccionarSintoma.Text = "Generar" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "diagnostico"
         Me.btnSeleccionarSintoma.UseVisualStyleBackColor = True
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(9, 401)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(316, 13)
-        Me.Label6.TabIndex = 19
-        Me.Label6.Text = "*Por ahora solo funciona si se seleccionan los sintomas con el ctrl"
-        '
         'GrillaOtrasPatologias
         '
         Me.GrillaOtrasPatologias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.GrillaOtrasPatologias.Location = New System.Drawing.Point(449, 82)
         Me.GrillaOtrasPatologias.Name = "GrillaOtrasPatologias"
         Me.GrillaOtrasPatologias.RowHeadersVisible = False
-        Me.GrillaOtrasPatologias.Size = New System.Drawing.Size(188, 288)
+        Me.GrillaOtrasPatologias.Size = New System.Drawing.Size(188, 215)
         Me.GrillaOtrasPatologias.TabIndex = 20
         '
         'Label7
@@ -146,23 +131,6 @@ Partial Class SeleccionSintoma
         Me.Label7.TabIndex = 21
         Me.Label7.Text = "Todas las posibles patologias"
         '
-        'txtResultadoFinal
-        '
-        Me.txtResultadoFinal.Location = New System.Drawing.Point(239, 102)
-        Me.txtResultadoFinal.Name = "txtResultadoFinal"
-        Me.txtResultadoFinal.Size = New System.Drawing.Size(188, 103)
-        Me.txtResultadoFinal.TabIndex = 27
-        Me.txtResultadoFinal.Text = ""
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(236, 73)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(163, 26)
-        Me.Label8.TabIndex = 28
-        Me.Label8.Text = "Te da las patologias " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "solo si cumplis todos los sintomas"
-        '
         'btnSolicitarChat
         '
         Me.btnSolicitarChat.Enabled = False
@@ -173,32 +141,20 @@ Partial Class SeleccionSintoma
         Me.btnSolicitarChat.Text = "Solicitar" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Chat"
         Me.btnSolicitarChat.UseVisualStyleBackColor = True
         '
-        'Check
-        '
-        Me.Check.HeaderText = ""
-        Me.Check.Name = "Check"
-        Me.Check.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Check.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Check.Width = 20
-        '
         'SeleccionSintoma
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(91, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(688, 428)
+        Me.ClientSize = New System.Drawing.Size(688, 379)
         Me.Controls.Add(Me.btnSolicitarChat)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.txtResultadoFinal)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.GrillaOtrasPatologias)
-        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.btnSeleccionarSintoma)
         Me.Controls.Add(Me.GrillaSintomas)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblSeleccionDeSintomas)
-        Me.Controls.Add(Me.btnListarSintomas)
         Me.Name = "SeleccionSintoma"
         Me.Text = "Form1"
         CType(Me.GrillaSintomas, System.ComponentModel.ISupportInitialize).EndInit()
@@ -207,17 +163,13 @@ Partial Class SeleccionSintoma
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents btnListarSintomas As Button
     Friend WithEvents lblSeleccionDeSintomas As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents GrillaSintomas As DataGridView
     Friend WithEvents btnSeleccionarSintoma As Button
-    Friend WithEvents Label6 As Label
     Friend WithEvents GrillaOtrasPatologias As DataGridView
     Friend WithEvents Label7 As Label
-    Friend WithEvents txtResultadoFinal As RichTextBox
-    Friend WithEvents Label8 As Label
     Friend WithEvents btnSolicitarChat As Button
     Friend WithEvents Check As DataGridViewCheckBoxColumn
 End Class

@@ -68,7 +68,7 @@
     <Compile Include="ControladorChat.vb" />
     <Compile Include="ControladorPatologia.vb" />
     <Compile Include="ControladorSintoma.vb" />
-    <Compile Include="ControladorTiene.vb" />
+    <Compile Include="ControladorDiagnostico.vb" />
     <Compile Include="ControladorUsuarios.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

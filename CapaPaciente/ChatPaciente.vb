@@ -3,12 +3,20 @@
 
 
 Public Class ChatPaciente
+    Public Sintomas As String
+    Public Prioridad As String
+    Public Diagnostico As String
 
     Private Sub ChatPaciente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TxtId.Text = Sesion.CI
         txtPara.Text = "Medico"
+        txtIdDiagnostico.Text = Convert.ToInt32(ControladorDiagnostico.BuscarUltimoDiagnostico)
         txtSesion.Text = Convert.ToInt32(ControladorChat.BuscarUltimaSesion) + 1
-
+        txtSesion.Text = txtIdDiagnostico.Text
+        txtSintomas.Text = Sintomas
+        txtPrioridad.Text = Prioridad
+        txtDiagnostico.Text = Diagnostico
+        ControladorDiagnostico.EnviarDiagnostico(txtIdDiagnostico.Text, Prioridad)
     End Sub
 
     Private Sub BtnEnviar_Click(sender As Object, e As EventArgs) Handles BtnEnviar.Click
@@ -48,10 +56,14 @@ Public Class ChatPaciente
         End If
     End Sub
 
+
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnIniciarChat.Click
+
         Timer1.Enabled = True
         BtnEnviar.Enabled = True
         btnIniciarChat.Enabled = False
+
     End Sub
 
 
