@@ -80,6 +80,12 @@
             Comando.CommandText = " GRANT SELECT on betatek.Medico TO '" + Me.NombreUsuario + "'@'localhost';"
             Comando.ExecuteNonQuery()
 
+            Comando.CommandText = " GRANT SELECT on betatek.Recibe TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.ExecuteNonQuery()
+
+            Comando.CommandText = " GRANT SELECT on betatek.Diagnostico TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.ExecuteNonQuery()
+
             Comando.CommandText = " GRANT INSERT,UPDATE,SELECT ON betatek.Chatea TO '" + Me.NombreUsuario + "'@'localhost';"
             Comando.ExecuteNonQuery()
 

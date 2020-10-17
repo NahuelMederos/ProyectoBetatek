@@ -31,5 +31,22 @@
         Return Comando.ExecuteScalar().ToString()
     End Function
 
+    Public Function ObtenerDiagnosticos()
+
+        Comando.CommandText = "Select Diagnostico.Prioridad,Recibe.IdDiagnostico As Id,Informacion,FechaHora
+                               From Recibe,Diagnostico
+                               Where Recibe.IdDiagnostico=Diagnostico.IdDiagnostico
+                               And NombreMedico='Medico'
+                               Order by
+                                      Case
+                                         when Diagnostico.Prioridad= 'Alta' Then 1 
+                                         when Diagnostico.Prioridad= 'Media' Then 2
+                                         when Diagnostico.Prioridad= 'Baja' Then 3
+                                        END;"
+
+        Reader = Comando.ExecuteReader()
+        Return Reader
+
+    End Function
 
 End Class

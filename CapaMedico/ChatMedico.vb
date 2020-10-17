@@ -71,4 +71,6 @@ Public Class ChatMedico
         txtPara.Text = ChatSeleccionado.Cells(1).Value.ToString
 
     End Sub
+
+
 End Class
