@@ -4,7 +4,7 @@ Public Module ControladorDiagnostico
 
     Public Sub CrearDiagnostico(Sintomas As String, Patologias As String, Usuario As String, Prioridad As String, SolicitaChat As String)
         Dim d As New Diagnostico(Sesion.Username, Sesion.Password)
-        Dim Informacion As String = "El paciente " + Usuario + " solicito un diagnostico presentando los siguientes sintomas: " + Sintomas + "El Diagnostico automatico le dio como resultado:" + Patologias
+        Dim Informacion As String = "El paciente " + Usuario + " solicito un diagnostico presentando los siguientes sintomas: " + Sintomas + " El Diagnostico automatico le dio como resultado: " & Chr(34) + Patologias & Chr(34)
         d.Informacion = Informacion
         d.Prioridad = Prioridad
         d.SolicitaChat = SolicitaChat

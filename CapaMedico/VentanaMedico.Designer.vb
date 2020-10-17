@@ -30,7 +30,7 @@ Partial Class VentanaMedico
         '
         'btnVerSolicitudes
         '
-        Me.btnVerSolicitudes.Location = New System.Drawing.Point(328, 260)
+        Me.btnVerSolicitudes.Location = New System.Drawing.Point(360, 519)
         Me.btnVerSolicitudes.Name = "btnVerSolicitudes"
         Me.btnVerSolicitudes.Size = New System.Drawing.Size(75, 45)
         Me.btnVerSolicitudes.TabIndex = 0
@@ -39,7 +39,7 @@ Partial Class VentanaMedico
         '
         'btnSeleccionar
         '
-        Me.btnSeleccionar.Location = New System.Drawing.Point(12, 260)
+        Me.btnSeleccionar.Location = New System.Drawing.Point(54, 530)
         Me.btnSeleccionar.Name = "btnSeleccionar"
         Me.btnSeleccionar.Size = New System.Drawing.Size(75, 23)
         Me.btnSeleccionar.TabIndex = 1
@@ -52,14 +52,14 @@ Partial Class VentanaMedico
         Me.TablaDeDiagnosticos.Location = New System.Drawing.Point(12, 53)
         Me.TablaDeDiagnosticos.Name = "TablaDeDiagnosticos"
         Me.TablaDeDiagnosticos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.TablaDeDiagnosticos.Size = New System.Drawing.Size(758, 150)
+        Me.TablaDeDiagnosticos.Size = New System.Drawing.Size(787, 368)
         Me.TablaDeDiagnosticos.TabIndex = 2
         '
         'VentanaMedico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(811, 317)
+        Me.ClientSize = New System.Drawing.Size(811, 597)
         Me.Controls.Add(Me.TablaDeDiagnosticos)
         Me.Controls.Add(Me.btnSeleccionar)
         Me.Controls.Add(Me.btnVerSolicitudes)
