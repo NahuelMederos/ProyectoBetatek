@@ -1,0 +1,122 @@
+Create database betatek;
+
+use betatek;
+
+CREATE TABLE Persona(
+CI Varchar(8) PRIMARY KEY,
+Nombre Varchar(20) not null,
+Apellido Varchar(20) not null,
+Edad Integer not null,
+Mail Varchar(40) unique not null
+);
+
+
+CREATE TABLE Administrativo (
+NombreUsuario varchar(30),
+Nombre varchar(25) not null,
+Apellido varchar(25) not null,
+Cedula varchar(8) not null unique,
+PRIMARY KEY(NombreUsuario)
+)
+;
+
+CREATE TABLE Medico(
+NombreUsuario varchar(30),
+Nombre varchar(25) not null,
+Apellido varchar(25) not null,
+Cedula varchar(8) not null unique,
+PRIMARY KEY(NombreUsuario)
+);
+
+CREATE TABLE Sintoma(
+IdSintoma integer auto_increment PRIMARY KEY,
+Nombre Varchar(30) not null unique
+);
+
+CREATE TABLE Patologia(
+IdPatologia integer auto_increment PRIMARY KEY,
+Nombre Varchar(30) not null unique,
+Prioridad Varchar(5) not null CHECK (PRIORIDAD IN ('Baja','Media','Alta')) 
+);
+
+CREATE TABLE Patologia_Sintomas(
+IDPATOLOGIA_PAT INTEGER NOT NULL,
+SINTOMA INTEGER NOT NULL,
+FOREIGN KEY (SINTOMA) REFERENCES Sintoma (IdSintoma),
+FOREIGN KEY (IDPATOLOGIA_PAT) REFERENCES Patologia (IdPatologia),
+PRIMARY KEY (IDPATOLOGIA_PAT,SINTOMA)
+);
+
+
+CREATE TABLE Diagnostico(
+IdDiagnostico integer auto_increment PRIMARY KEY,
+Prioridad Varchar(5) CHECK (PRIORIDAD IN ('Baja','Media','Alta')),
+Informacion TEXT,
+SolicitaChat Boolean
+);
+
+CREATE TABLE Tiene(
+CIPersona Varchar(8),
+IdSintoma integer,
+FOREIGN KEY(CIPersona) REFERENCES Persona(CI),
+FOREIGN KEY(IdSintoma) REFERENCES Sintoma(IdSintoma),
+PRIMARY KEY(CIPersona,IdSintoma)
+);
+
+CREATE TABLE Recibe(
+IdDiagnostico integer,
+NombreMedico varchar(30),
+FOREIGN KEY(IdDiagnostico) REFERENCES Diagnostico(IdDiagnostico),
+FOREIGN KEY(NombreMedico) REFERENCES Medico(NombreUsuario),
+PRIMARY KEY(IdDiagnostico,NombreMedico)
+);
+
+CREATE TABLE Gestiona(
+NombreAdmin varchar(30),
+IdSintoma integer,
+FOREIGN KEY(NombreAdmin) REFERENCES Administrativo(NombreUsuario),
+FOREIGN KEY(IdSintoma) REFERENCES Sintoma(IdSintoma),
+PRIMARY KEY(NombreAdmin,IdSintoma)
+);
+
+CREATE TABLE Genera(
+CiPersona Varchar(8),
+IdDiagnostico integer unique,
+FechaHora Timestamp not null,
+FOREIGN KEY(CiPersona) REFERENCES Persona(CI),
+FOREIGN KEY(IdDiagnostico) REFERENCES Diagnostico(IdDiagnostico),
+PRIMARY KEY(CiPersona,IdDiagnostico)
+);
+
+CREATE TABLE Chatea(
+IdMensaje integer auto_increment PRIMARY KEY,
+Sesion Varchar(10) not null,
+De Varchar(20) not null,
+Para varchar(20) not null,
+Texto TEXT,
+FechaHora Timestamp not null,
+Leido boolean not null default 0
+);
+
+INSERT INTO SINTOMA VALUES(1,'Cansancio');
+INSERT INTO SINTOMA VALUES(2,'Diarrea');
+INSERT INTO SINTOMA VALUES(3,'Dolor de estomago');
+INSERT INTO SINTOMA VALUES(4,'Fiebre');
+INSERT INTO SINTOMA VALUES(5,'Tos');
+
+INSERT INTO PATOLOGIA VALUES(1,'Covid','Alta');
+INSERT INTO PATOLOGIA VALUES(2,'Gripe','Media');
+INSERT INTO PATOLOGIA VALUES(3,'Gastroenteritis','Baja');
+
+INSERT INTO PATOLOGIA_SINTOMAS VALUES(1,1);
+INSERT INTO PATOLOGIA_SINTOMAS VALUES(1,4);
+INSERT INTO PATOLOGIA_SINTOMAS VALUES(1,5);
+INSERT INTO PATOLOGIA_SINTOMAS VALUES(2,4);
+INSERT INTO PATOLOGIA_SINTOMAS VALUES(2,5);
+INSERT INTO PATOLOGIA_SINTOMAS VALUES(3,3);
+INSERT INTO PATOLOGIA_SINTOMAS VALUES(3,2);
+
+Insert into medico values('Medico','Solicitudes','Chat','1');
+
+
+
