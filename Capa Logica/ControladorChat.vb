@@ -40,13 +40,7 @@ Public Module ControladorChat
 
     End Sub
 
-    Public Function BuscarUltimaSesion()
-        Dim m As New ModeloChat(Username, Password)
-        If m.UltimaSesion() = "" Then
-            Return "0"
-        End If
-        Return m.UltimaSesion()
-    End Function
+
 
     Public Function ListarChatsNoLeidos()
         Dim p As New ModeloChat(Sesion.Username, Sesion.Password)
@@ -54,5 +48,20 @@ Public Module ControladorChat
         Return p.ChatsNoRespondidos()
 
     End Function
+
+    Public Function EstadoDelChat(IdDiagnostico As String)
+        Dim c As New ModeloChat(Sesion.Username, Sesion.Password)
+        c.Sesion = IdDiagnostico
+
+        Return c.VerificarEstadoDelChat
+
+    End Function
+
+    Public Sub TerminarChat(IdDiagnostico As String)
+        Dim c As New ModeloChat(Sesion.Username, Sesion.Password)
+        c.Sesion = IdDiagnostico
+
+        c.TerminarChat()
+    End Sub
 
 End Module

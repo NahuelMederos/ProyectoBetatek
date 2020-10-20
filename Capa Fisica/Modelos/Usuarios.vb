@@ -80,7 +80,10 @@
             Comando.CommandText = " GRANT SELECT on betatek.Medico TO '" + Me.NombreUsuario + "'@'localhost';"
             Comando.ExecuteNonQuery()
 
-            Comando.CommandText = " GRANT SELECT on betatek.Recibe TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.CommandText = " GRANT SELECT,UPDATE on betatek.Recibe TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.ExecuteNonQuery()
+
+            Comando.CommandText = " GRANT SELECT on betatek.Genera TO '" + Me.NombreUsuario + "'@'localhost';"
             Comando.ExecuteNonQuery()
 
             Comando.CommandText = " GRANT SELECT on betatek.Diagnostico TO '" + Me.NombreUsuario + "'@'localhost';"
@@ -140,7 +143,10 @@
             Comando.CommandText = " GRANT SELECT ON betatek.Medico TO '" + Me.NombreUsuario + "'@'localhost';"
             Comando.ExecuteNonQuery()
 
-            Comando.CommandText = " GRANT INSERT ON betatek.Recibe TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.CommandText = " GRANT INSERT ON betatek.Genera TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.ExecuteNonQuery()
+
+            Comando.CommandText = " GRANT INSERT,SELECT,DELETE ON betatek.Recibe TO '" + Me.NombreUsuario + "'@'localhost';"
             Comando.ExecuteNonQuery()
 
             Comando.CommandText = " GRANT SELECT ON betatek.Diagnostico TO '" + Me.NombreUsuario + "'@'localhost';"

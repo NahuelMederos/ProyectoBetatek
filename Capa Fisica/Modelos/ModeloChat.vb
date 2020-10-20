@@ -65,7 +65,7 @@
             
 
             WHERE 
-	            m.para = '" + Me.Para + "' AND
+	            (m.para = '" + Me.Para + "' OR m.para ='Medico') AND
 	            m.sesion = '" + Me.Sesion + "' AND 
 	            m.leido = FALSE
             "
@@ -107,10 +107,18 @@
 
     End Function
 
-    Public Function UltimaSesion()
-        Me.Comando.CommandText = "SELECT MAX(sesion) FROM CHATEA"
+    Public Function VerificarEstadoDelChat()
+
+        Comando.CommandText = "Select Count(IdDiagnostico) from Recibe where IdDiagnostico=" + Me.Sesion + ""
 
         Return Comando.ExecuteScalar().ToString()
+
     End Function
+
+    Public Sub TerminarChat()
+        Comando.CommandText = "DELETE FROM RECIBE WHERE IDDIAGNOSTICO = " + Me.Sesion
+
+        Comando.ExecuteNonQuery()
+    End Sub
 
 End Class

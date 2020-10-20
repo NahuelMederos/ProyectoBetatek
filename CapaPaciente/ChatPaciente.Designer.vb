@@ -43,6 +43,7 @@ Partial Class ChatPaciente
         Me.txtPrioridad = New System.Windows.Forms.TextBox()
         Me.txtIdDiagnostico = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.btnTerminarChat = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'WebBrowser1
@@ -211,11 +212,21 @@ Partial Class ChatPaciente
         Me.Label6.TabIndex = 36
         Me.Label6.Text = "IdDiagnostico"
         '
+        'btnTerminarChat
+        '
+        Me.btnTerminarChat.Location = New System.Drawing.Point(275, 528)
+        Me.btnTerminarChat.Name = "btnTerminarChat"
+        Me.btnTerminarChat.Size = New System.Drawing.Size(75, 39)
+        Me.btnTerminarChat.TabIndex = 37
+        Me.btnTerminarChat.Text = "Terminar Chat"
+        Me.btnTerminarChat.UseVisualStyleBackColor = True
+        '
         'ChatPaciente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1234, 579)
+        Me.Controls.Add(Me.btnTerminarChat)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.txtIdDiagnostico)
         Me.Controls.Add(Me.txtPrioridad)
@@ -261,4 +272,5 @@ Partial Class ChatPaciente
     Friend WithEvents txtPrioridad As TextBox
     Friend WithEvents txtIdDiagnostico As TextBox
     Friend WithEvents Label6 As Label
+    Friend WithEvents btnTerminarChat As Button
 End Class

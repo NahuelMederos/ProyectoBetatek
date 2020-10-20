@@ -11,12 +11,11 @@ Public Class ChatPaciente
         TxtId.Text = Sesion.CI
         txtPara.Text = "Medico"
         txtIdDiagnostico.Text = Convert.ToInt32(ControladorDiagnostico.BuscarUltimoDiagnostico)
-        txtSesion.Text = Convert.ToInt32(ControladorChat.BuscarUltimaSesion) + 1
         txtSesion.Text = txtIdDiagnostico.Text
         txtSintomas.Text = Sintomas
         txtPrioridad.Text = Prioridad
         txtDiagnostico.Text = Diagnostico
-        ControladorDiagnostico.EnviarDiagnostico(txtIdDiagnostico.Text, Prioridad)
+        ControladorDiagnostico.EnviarDiagnostico(txtIdDiagnostico.Text)
     End Sub
 
     Private Sub BtnEnviar_Click(sender As Object, e As EventArgs) Handles BtnEnviar.Click
@@ -66,5 +65,9 @@ Public Class ChatPaciente
 
     End Sub
 
-
+    Private Sub btnTerminarChat_Click(sender As Object, e As EventArgs) Handles btnTerminarChat.Click
+        ControladorChat.TerminarChat(txtIdDiagnostico.Text)
+        BtnEnviar.Enabled = False
+        btnTerminarChat.Enabled = False
+    End Sub
 End Class

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class ChatMedico
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class ChatMedico
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
@@ -35,9 +35,6 @@ Partial Class ChatMedico
         Me.RTxtMensaje = New System.Windows.Forms.RichTextBox()
         Me.RTxtChat = New System.Windows.Forms.RichTextBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.TablaChats = New System.Windows.Forms.DataGridView()
-        Me.btnListar = New System.Windows.Forms.Button()
-        CType(Me.TablaChats, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'WebBrowser1
@@ -129,41 +126,21 @@ Partial Class ChatMedico
         '
         'RTxtChat
         '
-        Me.RTxtChat.Location = New System.Drawing.Point(954, 581)
+        Me.RTxtChat.Location = New System.Drawing.Point(212, 96)
         Me.RTxtChat.Name = "RTxtChat"
-        Me.RTxtChat.Size = New System.Drawing.Size(116, 31)
+        Me.RTxtChat.Size = New System.Drawing.Size(233, 267)
         Me.RTxtChat.TabIndex = 30
         Me.RTxtChat.Text = ""
-        Me.RTxtChat.Visible = False
         '
         'Timer1
         '
         Me.Timer1.Interval = 3000
-        '
-        'TablaChats
-        '
-        Me.TablaChats.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.TablaChats.Location = New System.Drawing.Point(12, 27)
-        Me.TablaChats.Name = "TablaChats"
-        Me.TablaChats.Size = New System.Drawing.Size(462, 336)
-        Me.TablaChats.TabIndex = 43
-        '
-        'btnListar
-        '
-        Me.btnListar.Location = New System.Drawing.Point(333, 399)
-        Me.btnListar.Name = "btnListar"
-        Me.btnListar.Size = New System.Drawing.Size(75, 23)
-        Me.btnListar.TabIndex = 44
-        Me.btnListar.Text = "Listar"
-        Me.btnListar.UseVisualStyleBackColor = True
         '
         'ChatMedico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1222, 644)
-        Me.Controls.Add(Me.btnListar)
-        Me.Controls.Add(Me.TablaChats)
         Me.Controls.Add(Me.WebBrowser1)
         Me.Controls.Add(Me.btnIniciarChat)
         Me.Controls.Add(Me.Label3)
@@ -177,7 +154,6 @@ Partial Class ChatMedico
         Me.Controls.Add(Me.RTxtChat)
         Me.Name = "ChatMedico"
         Me.Text = "Form1"
-        CType(Me.TablaChats, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -194,6 +170,4 @@ Partial Class ChatMedico
     Friend WithEvents RTxtMensaje As RichTextBox
     Friend WithEvents RTxtChat As RichTextBox
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents TablaChats As DataGridView
-    Friend WithEvents btnListar As Button
 End Class

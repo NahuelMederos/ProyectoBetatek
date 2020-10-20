@@ -25,6 +25,8 @@ Partial Class VentanaMedico
         Me.btnVerSolicitudes = New System.Windows.Forms.Button()
         Me.btnSeleccionar = New System.Windows.Forms.Button()
         Me.TablaDeDiagnosticos = New System.Windows.Forms.DataGridView()
+        Me.txtIdDiagnostico = New System.Windows.Forms.TextBox()
+        Me.txtCiPersona = New System.Windows.Forms.TextBox()
         CType(Me.TablaDeDiagnosticos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -55,11 +57,27 @@ Partial Class VentanaMedico
         Me.TablaDeDiagnosticos.Size = New System.Drawing.Size(787, 368)
         Me.TablaDeDiagnosticos.TabIndex = 2
         '
+        'txtIdDiagnostico
+        '
+        Me.txtIdDiagnostico.Location = New System.Drawing.Point(69, 456)
+        Me.txtIdDiagnostico.Name = "txtIdDiagnostico"
+        Me.txtIdDiagnostico.Size = New System.Drawing.Size(35, 20)
+        Me.txtIdDiagnostico.TabIndex = 3
+        '
+        'txtCiPersona
+        '
+        Me.txtCiPersona.Location = New System.Drawing.Point(183, 455)
+        Me.txtCiPersona.Name = "txtCiPersona"
+        Me.txtCiPersona.Size = New System.Drawing.Size(37, 20)
+        Me.txtCiPersona.TabIndex = 4
+        '
         'VentanaMedico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(811, 597)
+        Me.Controls.Add(Me.txtCiPersona)
+        Me.Controls.Add(Me.txtIdDiagnostico)
         Me.Controls.Add(Me.TablaDeDiagnosticos)
         Me.Controls.Add(Me.btnSeleccionar)
         Me.Controls.Add(Me.btnVerSolicitudes)
@@ -67,10 +85,13 @@ Partial Class VentanaMedico
         Me.Text = "VentanaMedico"
         CType(Me.TablaDeDiagnosticos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents btnVerSolicitudes As Button
     Friend WithEvents btnSeleccionar As Button
     Friend WithEvents TablaDeDiagnosticos As DataGridView
+    Friend WithEvents txtIdDiagnostico As TextBox
+    Friend WithEvents txtCiPersona As TextBox
 End Class
