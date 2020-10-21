@@ -8,34 +8,12 @@ Public Class ChatMedico
 
 
     Private Sub ChatMedico_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Timer1.Enabled = True
         TxtId.Text = Sesion.Username
         txtSesion.Text = IdDiagnostico
         txtPara.Text = Ci
 
-        Dim tabla As New DataTable
-        tabla = ControladorChat.BuscarMensajeNoLeidoParaMedico(txtSesion.Text, TxtId.Text)
-        If tabla.Rows.Count > 0 Then
 
-            For Each fila As DataRow In tabla.Rows
-                RTxtChat.Text += Environment.NewLine + fila("emisor").ToString + " - " + fila("FechaHora").ToString + Environment.NewLine + fila("Texto").ToString
-
-                WebBrowser1.DocumentText +=
-            "
-                <br />
-                <b>" + fila("emisor") + " a las " + fila("FechaHora") + " escribio: </b>
-                <br />
-                " + fila("Texto") + " 
-                <br />
-            "
-
-                ControladorChat.MarcarMensajeLeido(fila("id_mensaje").ToString)
-            Next
-
-
-
-
-
-        End If
     End Sub
 
     Private Sub BtnEnviar_Click(sender As Object, e As EventArgs) Handles BtnEnviar.Click
@@ -62,32 +40,57 @@ Public Class ChatMedico
 
             If tabla.Rows.Count > 0 Then
 
+
+                'Teniendo el WebBrowser dentro del ForEach hace que no aparezcan los mensajes sin leer si son mas de uno(Por alguna razon que desconozco)
+                'textoWB sirve para evitar este problema
+                Dim textoWB As String
                 For Each fila As DataRow In tabla.Rows
                     RTxtChat.Text += Environment.NewLine + fila("emisor").ToString + " - " + fila("FechaHora").ToString + Environment.NewLine + fila("Texto").ToString
 
-                    WebBrowser1.DocumentText +=
+                    textoWB +=
                 "
                 <br />
                 <b>" + fila("emisor") + " a las " + fila("FechaHora") + " escribio: </b>
                 <br />
                 " + fila("Texto") + " 
                 <br />
-            "
+                "
 
                     ControladorChat.MarcarMensajeLeido(fila("id_mensaje").ToString)
                 Next
+                WebBrowser1.DocumentText += textoWB
 
             End If
         End If
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnIniciarChat.Click
-        Timer1.Enabled = True
         BtnEnviar.Enabled = True
         btnIniciarChat.Enabled = False
     End Sub
 
     Private Sub ChatMedico_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         Me.Dispose()
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btnChatCompleto.Click
+        Dim tabla2 As New DataTable
+        tabla2 = ControladorChat.VerChatCompleto(txtSesion.Text)
+
+        If tabla2.Rows.Count > 0 Then
+            Dim textoWB2 As String
+            For Each fila As DataRow In tabla2.Rows
+                textoWB2 +=
+            "
+                <br />
+                <b>" + fila("emisor") + " a las " + fila("FechaHora") + " escribio: </b>
+                <br />
+                " + fila("Texto") + " 
+                <br />
+                "
+            Next
+            ChatCompleto.StrChatCompleto = textoWB2
+            ChatCompleto.ShowDialog()
+        End If
     End Sub
 End Class

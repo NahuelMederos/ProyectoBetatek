@@ -73,6 +73,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChatCompleto.Designer.vb">
+      <DependentUpon>ChatCompleto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ChatCompleto.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ChatMedico.Designer.vb">
       <DependentUpon>ChatMedico.vb</DependentUpon>
     </Compile>
@@ -109,6 +115,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ChatCompleto.resx">
+      <DependentUpon>ChatCompleto.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChatMedico.resx">
       <DependentUpon>ChatMedico.vb</DependentUpon>
     </EmbeddedResource>

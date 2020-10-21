@@ -77,6 +77,8 @@
 
     End Function
 
+
+
     Public Sub MarcarLeido()
         Me.Comando.CommandText =
             "UPDATE Chatea SET Leido = true where IdMensaje = " + Me.Id + ";"
@@ -121,4 +123,33 @@
         Comando.ExecuteNonQuery()
     End Sub
 
+    Public Function VerChatCompleto()
+        Comando.CommandText = "
+        (SELECT 
+	           m.de, m.fechahora, m.texto, m.idmensaje as id_mensaje, u.nombre as emisor
+            FROM
+	            chatea m 
+            JOIN
+                Medico u 
+                    ON m.de = u.NombreUsuario
+                    where m.sesion=" + Me.Sesion + ")
+        UNION
+        (SELECT 
+	           m.de, m.fechahora, m.texto, m.idmensaje as id_mensaje, u.nombre as emisor
+            FROM
+	            chatea m 
+            JOIN
+                Persona u 
+                    ON m.de = u.Ci
+                    where m.sesion=" + Me.Sesion + ")
+         ORDER BY id_mensaje Asc;
+"
+
+        Dim resultado As New DataTable
+        resultado.Load(Me.Comando.ExecuteReader())
+
+        Me.Conexion.Close()
+        Return resultado
+
+    End Function
 End Class

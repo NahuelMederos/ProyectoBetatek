@@ -1,11 +1,36 @@
-﻿Imports Capa_Logica
-
-
+﻿Imports System.Net.Mail
+Imports Capa_Logica
 
 Public Class ChatPaciente
     Public Sintomas As String
     Public Prioridad As String
     Public Diagnostico As String
+
+    Private Sub btnMail_Click(sender As Object, e As EventArgs) Handles btnMail.Click
+        Dim Mail As String
+        Mail = RTxtChat.Text
+        Try
+            Dim Smtp_Server As New SmtpClient
+            Dim e_mail As New MailMessage()
+            Smtp_Server.UseDefaultCredentials = False
+            Smtp_Server.Credentials = New Net.NetworkCredential("betatek2020@gmail.com", "proyectobetatek2020")
+            Smtp_Server.Port = 587
+            Smtp_Server.EnableSsl = True
+            Smtp_Server.Host = "smtp.gmail.com"
+
+            e_mail = New MailMessage()
+            e_mail.From = New MailAddress("betatek2020@gmail.com")
+            e_mail.To.Add("nahuelmederos1@gmail.com")
+            e_mail.Subject = "Chat con Medico"
+            e_mail.IsBodyHtml = False
+            e_mail.Body = Mail
+            Smtp_Server.Send(e_mail)
+            MsgBox("Mail Sent")
+
+        Catch error_t As Exception
+            MsgBox(error_t.ToString)
+        End Try
+    End Sub
 
     Private Sub ChatPaciente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TxtId.Text = Sesion.CI
@@ -20,7 +45,9 @@ Public Class ChatPaciente
 
     Private Sub BtnEnviar_Click(sender As Object, e As EventArgs) Handles BtnEnviar.Click
         ControladorChat.Guardar(txtSesion.Text, TxtId.Text, txtPara.Text, RTxtMensaje.Text)
-        RTxtChat.Text += Environment.NewLine + "YO:" + Environment.NewLine + RTxtMensaje.Text
+        'RTxtChat.Text += "[" + fila("FechaHora").ToString + "] " + fila("emisor").ToString + ": " + fila("Texto").ToString + Environment.NewLine
+        RTxtChat.Text += "[" + TimeOfDay.Hour.ToString + ":" + TimeOfDay.Minute.ToString + "] " + "Yo: " + RTxtMensaje.Text + Environment.NewLine
+        '  RTxtChat.Text += "Yo:" + Environment.NewLine + "  " + RTxtMensaje.Text + Environment.NewLine
         WebBrowser1.DocumentText +=
             "
                 <br />
@@ -28,6 +55,7 @@ Public Class ChatPaciente
                 <br / >
                 " + RTxtMensaje.Text + " 
             "
+        RTxtMensaje.Clear()
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -36,10 +64,12 @@ Public Class ChatPaciente
 
         If tabla.Rows.Count > 0 Then
 
+            'textoWB sirve para lo mismo que en ChatMedico
+            Dim textoWB As String
             For Each fila As DataRow In tabla.Rows
-                RTxtChat.Text += Environment.NewLine + fila("emisor").ToString + " - " + fila("FechaHora").ToString + Environment.NewLine + fila("Texto").ToString
+                RTxtChat.Text += "[" + Strings.Left(Strings.Right(fila("FechaHora").ToString, 8), 5) + "] " + fila("emisor").ToString + ": " + fila("Texto").ToString + Environment.NewLine
 
-                WebBrowser1.DocumentText +=
+                textoWB +=
             "
                 <br />
                 <b>" + fila("emisor") + " a las " + fila("FechaHora") + " escribio: </b>
@@ -51,6 +81,7 @@ Public Class ChatPaciente
                 ControladorChat.MarcarMensajeLeido(fila("id_mensaje").ToString)
                 txtPara.Text = fila("NombreUsuario").ToString
             Next
+            WebBrowser1.DocumentText += textoWB
 
         End If
     End Sub
@@ -69,5 +100,8 @@ Public Class ChatPaciente
         ControladorChat.TerminarChat(txtIdDiagnostico.Text)
         BtnEnviar.Enabled = False
         btnTerminarChat.Enabled = False
+
     End Sub
+
+
 End Class

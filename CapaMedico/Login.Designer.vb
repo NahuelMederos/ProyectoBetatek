@@ -94,7 +94,7 @@ Partial Class Login
         Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.Label1)
         Me.Name = "Login"
-        Me.Text = "Login"
+        Me.Text = "Login Medico"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

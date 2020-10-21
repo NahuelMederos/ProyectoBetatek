@@ -6,7 +6,7 @@ Public Class VentanaMedicos
             MsgBox("Todos los campos son obligatorios")
         Else
 
-            If (ControladorUsuarios.VerificarUsuarioMySQL(txtNombreUsuario.Text) = "1") Then
+            If (ControladorUsuarios.VerificarUsuarioMySQL(txtNombreUsuario.Text) = "1") Or txtNombreUsuario.Text = "Medico" Then
                 MsgBox("Este usuario ya existe")
             ElseIf (ControladorUsuarios.VerificarExistenciaClaveUnica(txtCedula.Text, 2) = "1") Then
                 MsgBox("Esta cedula ya existe")

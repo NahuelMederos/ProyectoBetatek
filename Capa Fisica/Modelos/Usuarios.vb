@@ -149,7 +149,7 @@
             Comando.CommandText = " GRANT INSERT,SELECT,DELETE ON betatek.Recibe TO '" + Me.NombreUsuario + "'@'localhost';"
             Comando.ExecuteNonQuery()
 
-            Comando.CommandText = " GRANT SELECT ON betatek.Diagnostico TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.CommandText = " GRANT SELECT,INSERT ON betatek.Diagnostico TO '" + Me.NombreUsuario + "'@'localhost';"
             Comando.ExecuteNonQuery()
 
             Comando.CommandText = " GRANT SELECT ON betatek.Sintoma TO '" + Me.NombreUsuario + "'@'localhost';"
@@ -161,8 +161,6 @@
             Comando.CommandText = " GRANT SELECT ON betatek.Patologia_Sintomas TO '" + Me.NombreUsuario + "'@'localhost';"
             Comando.ExecuteNonQuery()
 
-            Comando.CommandText = " GRANT INSERT ON betatek.Diagnostico TO '" + Me.NombreUsuario + "'@'localhost';"
-            Comando.ExecuteNonQuery()
 
             Comando.CommandText = "INSERT INTO PERSONA VALUES('" + Me.NombreUsuario + "','" + Me.Nombre + "','" + Me.Apellido + "','" + Me.Edad + "','" + Me.Mail + "');"
             Comando.ExecuteNonQuery()

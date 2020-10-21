@@ -64,4 +64,11 @@ Public Module ControladorChat
         c.TerminarChat()
     End Sub
 
+    Public Function VerChatCompleto(Sesion As String)
+        Dim c As New ModeloChat(Username, Password)
+        c.Sesion = Sesion
+
+        Return c.VerChatCompleto()
+    End Function
+
 End Module

@@ -44,6 +44,7 @@ Partial Class ChatPaciente
         Me.txtIdDiagnostico = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btnTerminarChat = New System.Windows.Forms.Button()
+        Me.btnMail = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'WebBrowser1
@@ -135,12 +136,11 @@ Partial Class ChatPaciente
         '
         'RTxtChat
         '
-        Me.RTxtChat.Location = New System.Drawing.Point(7, 528)
+        Me.RTxtChat.Location = New System.Drawing.Point(1203, 40)
         Me.RTxtChat.Name = "RTxtChat"
-        Me.RTxtChat.Size = New System.Drawing.Size(127, 32)
+        Me.RTxtChat.Size = New System.Drawing.Size(243, 463)
         Me.RTxtChat.TabIndex = 15
         Me.RTxtChat.Text = ""
-        Me.RTxtChat.Visible = False
         '
         'Timer1
         '
@@ -221,11 +221,21 @@ Partial Class ChatPaciente
         Me.btnTerminarChat.Text = "Terminar Chat"
         Me.btnTerminarChat.UseVisualStyleBackColor = True
         '
+        'btnMail
+        '
+        Me.btnMail.Location = New System.Drawing.Point(902, 528)
+        Me.btnMail.Name = "btnMail"
+        Me.btnMail.Size = New System.Drawing.Size(75, 23)
+        Me.btnMail.TabIndex = 38
+        Me.btnMail.Text = "Enviar Mail"
+        Me.btnMail.UseVisualStyleBackColor = True
+        '
         'ChatPaciente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1234, 579)
+        Me.ClientSize = New System.Drawing.Size(1449, 579)
+        Me.Controls.Add(Me.btnMail)
         Me.Controls.Add(Me.btnTerminarChat)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.txtIdDiagnostico)
@@ -273,4 +283,5 @@ Partial Class ChatPaciente
     Friend WithEvents txtIdDiagnostico As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents btnTerminarChat As Button
+    Friend WithEvents btnMail As Button
 End Class

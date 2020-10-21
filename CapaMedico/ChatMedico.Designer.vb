@@ -35,6 +35,7 @@ Partial Class ChatMedico
         Me.RTxtMensaje = New System.Windows.Forms.RichTextBox()
         Me.RTxtChat = New System.Windows.Forms.RichTextBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.btnChatCompleto = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'WebBrowser1
@@ -136,11 +137,21 @@ Partial Class ChatMedico
         '
         Me.Timer1.Interval = 3000
         '
+        'btnChatCompleto
+        '
+        Me.btnChatCompleto.Location = New System.Drawing.Point(977, 510)
+        Me.btnChatCompleto.Name = "btnChatCompleto"
+        Me.btnChatCompleto.Size = New System.Drawing.Size(75, 44)
+        Me.btnChatCompleto.TabIndex = 43
+        Me.btnChatCompleto.Text = "Ver chat" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "completo"
+        Me.btnChatCompleto.UseVisualStyleBackColor = True
+        '
         'ChatMedico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1222, 644)
+        Me.Controls.Add(Me.btnChatCompleto)
         Me.Controls.Add(Me.WebBrowser1)
         Me.Controls.Add(Me.btnIniciarChat)
         Me.Controls.Add(Me.Label3)
@@ -170,4 +181,5 @@ Partial Class ChatMedico
     Friend WithEvents RTxtMensaje As RichTextBox
     Friend WithEvents RTxtChat As RichTextBox
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents btnChatCompleto As Button
 End Class

@@ -101,7 +101,7 @@ Partial Class FormLogin
         Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.Label1)
         Me.Name = "FormLogin"
-        Me.Text = "Login"
+        Me.Text = "Login Gestor"
         CType(Me.FileSystemWatcher1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
