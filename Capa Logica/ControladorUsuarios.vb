@@ -91,5 +91,11 @@ Public Module ControladorUsuarios
         Return 0
     End Function
 
+    Public Function ObtenerMailPaciente(NombreUsuario As String)
+        Dim u As New Usuarios(Username, Password)
+        u.NombreUsuario = NombreUsuario
+
+        Return u.ObtenerMailPaciente
+    End Function
 
 End Module

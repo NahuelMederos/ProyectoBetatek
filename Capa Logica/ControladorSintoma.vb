@@ -42,4 +42,11 @@ Public Module ControladorSintoma
         Return s.ObtenerNombreSintomas()
 
     End Function
+
+    Public Function ObtenerIdSintoma(NombreSintoma As String)
+        Dim s As New Sintoma(Sesion.Username, Sesion.Password)
+        s.Nombre = NombreSintoma
+
+        Return s.ObtenerIdSintomas
+    End Function
 End Module

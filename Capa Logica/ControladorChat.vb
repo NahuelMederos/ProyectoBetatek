@@ -71,4 +71,10 @@ Public Module ControladorChat
         Return c.VerChatCompleto()
     End Function
 
+    Public Function ObtenerFechaChat(Sesion As String)
+        Dim c As New ModeloChat(Username, Password)
+        c.Sesion = Sesion
+
+        Return c.ObtenerFechaDelChat
+    End Function
 End Module

@@ -26,13 +26,14 @@ Public Class ChatMedico
                 <br / >
                 " + RTxtMensaje.Text + " 
             "
+        RTxtMensaje.Clear()
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         If (ControladorChat.EstadoDelChat(txtSesion.Text) = 0) Then
+            Timer1.Stop()
             MsgBox("El paciente termino el chat")
             BtnEnviar.Enabled = False
-            Timer1.Stop()
 
         Else
             Dim tabla As New DataTable

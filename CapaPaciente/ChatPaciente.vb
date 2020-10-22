@@ -6,9 +6,10 @@ Public Class ChatPaciente
     Public Prioridad As String
     Public Diagnostico As String
 
+
     Private Sub btnMail_Click(sender As Object, e As EventArgs) Handles btnMail.Click
         Dim Mail As String
-        Mail = RTxtChat.Text
+        Mail = "Registro de chat con el medico " + txtEmisor.Text + ", con fecha " + ControladorChat.ObtenerFechaChat(txtSesion.Text) + "." + Environment.NewLine + Environment.NewLine + RTxtChat.Text + Environment.NewLine + "Fin de la conversacion." + Environment.NewLine + Environment.NewLine + "Este email se envía automáticamente. Por favor no responder."
         Try
             Dim Smtp_Server As New SmtpClient
             Dim e_mail As New MailMessage()
@@ -20,8 +21,8 @@ Public Class ChatPaciente
 
             e_mail = New MailMessage()
             e_mail.From = New MailAddress("betatek2020@gmail.com")
-            e_mail.To.Add("nahuelmederos1@gmail.com")
-            e_mail.Subject = "Chat con Medico"
+            e_mail.To.Add(ControladorUsuarios.ObtenerMailPaciente(TxtId.Text))
+            e_mail.Subject = "Chat con medico " + txtEmisor.Text + "."
             e_mail.IsBodyHtml = False
             e_mail.Body = Mail
             Smtp_Server.Send(e_mail)
@@ -45,9 +46,7 @@ Public Class ChatPaciente
 
     Private Sub BtnEnviar_Click(sender As Object, e As EventArgs) Handles BtnEnviar.Click
         ControladorChat.Guardar(txtSesion.Text, TxtId.Text, txtPara.Text, RTxtMensaje.Text)
-        'RTxtChat.Text += "[" + fila("FechaHora").ToString + "] " + fila("emisor").ToString + ": " + fila("Texto").ToString + Environment.NewLine
         RTxtChat.Text += "[" + TimeOfDay.Hour.ToString + ":" + TimeOfDay.Minute.ToString + "] " + "Yo: " + RTxtMensaje.Text + Environment.NewLine
-        '  RTxtChat.Text += "Yo:" + Environment.NewLine + "  " + RTxtMensaje.Text + Environment.NewLine
         WebBrowser1.DocumentText +=
             "
                 <br />
@@ -63,16 +62,15 @@ Public Class ChatPaciente
         tabla = ControladorChat.BuscarMensajeNoLeidoParaPaciente(txtSesion.Text, TxtId.Text)
 
         If tabla.Rows.Count > 0 Then
-
             'textoWB sirve para lo mismo que en ChatMedico
             Dim textoWB As String
             For Each fila As DataRow In tabla.Rows
-                RTxtChat.Text += "[" + Strings.Left(Strings.Right(fila("FechaHora").ToString, 8), 5) + "] " + fila("emisor").ToString + ": " + fila("Texto").ToString + Environment.NewLine
+                RTxtChat.Text += "[" + Strings.Left(Strings.Right(fila("FechaHora").ToString, 8), 5) + "] " + fila("emisor") + " " + fila("apellido") + ": " + fila("Texto").ToString + Environment.NewLine
 
                 textoWB +=
             "
                 <br />
-                <b>" + fila("emisor") + " a las " + fila("FechaHora") + " escribio: </b>
+                <b>" + fila("emisor") + " " + fila("apellido") + " a las " + fila("FechaHora") + " escribio: </b>
                 <br />
                 " + fila("Texto") + " 
                 <br />
@@ -80,9 +78,9 @@ Public Class ChatPaciente
 
                 ControladorChat.MarcarMensajeLeido(fila("id_mensaje").ToString)
                 txtPara.Text = fila("NombreUsuario").ToString
+                txtEmisor.Text = fila("emisor").ToString + " " + fila("apellido")
             Next
             WebBrowser1.DocumentText += textoWB
-
         End If
     End Sub
 
@@ -100,6 +98,7 @@ Public Class ChatPaciente
         ControladorChat.TerminarChat(txtIdDiagnostico.Text)
         BtnEnviar.Enabled = False
         btnTerminarChat.Enabled = False
+        btnMail.Enabled = True
 
     End Sub
 

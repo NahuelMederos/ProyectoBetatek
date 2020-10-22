@@ -31,7 +31,7 @@
         Me.Comando.CommandText =
             "
             SELECT 
-	           m.de, m.fechahora, m.texto, m.idmensaje as id_mensaje, u.nombre as emisor, u.NombreUsuario
+	           m.de, m.fechahora, m.texto, m.idmensaje as id_mensaje, u.nombre as emisor, u.NombreUsuario, u.apellido
             FROM
 	            Chatea m 
             JOIN
@@ -56,7 +56,7 @@
         Me.Comando.CommandText =
             "
             SELECT 
-	           m.de, m.fechahora, m.texto, m.idmensaje as id_mensaje, u.nombre as emisor
+	           m.de, m.fechahora, m.texto, m.idmensaje as id_mensaje, u.nombre as emisor, u.apellido
             FROM
 	            chatea m 
             JOIN
@@ -152,4 +152,16 @@
         Return resultado
 
     End Function
+
+    Public Function ObtenerFechaDelChat()
+
+        Comando.CommandText = "SELECT DATE_FORMAT(FechaHora,'%d/%m/%Y')
+                               FROM CHATEA 
+                               WHERE SESION=" + Sesion + " 
+                               LIMIT 1"
+
+        Return Comando.ExecuteScalar().ToString()
+
+    End Function
+
 End Class

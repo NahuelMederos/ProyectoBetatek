@@ -8,11 +8,6 @@ Public Class SeleccionSintoma
         GrillaSintomas.DataSource = tabla
     End Sub
 
-
-
-
-
-
     'Son declarados en private para que se mantengan sus valores despues de ser usados por el boton seleccionar'
     Private contador As Integer = 0
     Private nombreList(contador)
@@ -104,18 +99,22 @@ Public Class SeleccionSintoma
 
         End If
 
+        Dim IdSintomasList As New List(Of String)
+
         For Each Sint In nombreList
             StringSintomas &= Sint + ", "
+            IdSintomasList.Add(ControladorSintoma.ObtenerIdSintoma(Sint))
         Next
+
         StringSintomas = StringSintomas.Remove(StringSintomas.Length - 2) + "."
 
 
         Dim SolicitarChat As DialogResult
         SolicitarChat = MessageBox.Show(ResultadoFinal + Environment.NewLine + Environment.NewLine + "        ¿Desea solicitar un chat con un medico?", "Solicitar Chat", MessageBoxButtons.YesNo)
         If SolicitarChat = DialogResult.No Then
-            ControladorDiagnostico.CrearDiagnostico(StringSintomas, ResultadoFinal, Sesion.CI, PrioridadDiagnostico, "False")
+            ControladorDiagnostico.CrearDiagnostico(StringSintomas, ResultadoFinal, Sesion.CI, PrioridadDiagnostico, "False", IdSintomasList)
         Else
-            ControladorDiagnostico.CrearDiagnostico(StringSintomas, ResultadoFinal, Sesion.CI, PrioridadDiagnostico, "True")
+            ControladorDiagnostico.CrearDiagnostico(StringSintomas, ResultadoFinal, Sesion.CI, PrioridadDiagnostico, "True", IdSintomasList)
             ChatPaciente.Diagnostico = ResultadoFinal
             ChatPaciente.Prioridad = PrioridadDiagnostico
             ChatPaciente.Sintomas = StringSintomas

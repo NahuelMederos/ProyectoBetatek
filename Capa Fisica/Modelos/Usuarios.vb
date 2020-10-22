@@ -208,6 +208,14 @@
 
         Return Comando.ExecuteScalar().ToString()
     End Function
+
+    Public Function ObtenerMailPaciente()
+        Comando.CommandText = "SELECT Mail 
+                               FROM PERSONA 
+                               WHERE Ci='" + Me.NombreUsuario + "';"
+
+        Return Comando.ExecuteScalar().ToString()
+    End Function
 End Class
 
 

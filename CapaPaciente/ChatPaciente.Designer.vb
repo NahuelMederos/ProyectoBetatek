@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class ChatPaciente
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class ChatPaciente
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
@@ -45,6 +45,7 @@ Partial Class ChatPaciente
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btnTerminarChat = New System.Windows.Forms.Button()
         Me.btnMail = New System.Windows.Forms.Button()
+        Me.txtEmisor = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'WebBrowser1
@@ -223,6 +224,7 @@ Partial Class ChatPaciente
         '
         'btnMail
         '
+        Me.btnMail.Enabled = False
         Me.btnMail.Location = New System.Drawing.Point(902, 528)
         Me.btnMail.Name = "btnMail"
         Me.btnMail.Size = New System.Drawing.Size(75, 23)
@@ -230,11 +232,19 @@ Partial Class ChatPaciente
         Me.btnMail.Text = "Enviar Mail"
         Me.btnMail.UseVisualStyleBackColor = True
         '
+        'txtEmisor
+        '
+        Me.txtEmisor.Location = New System.Drawing.Point(7, 395)
+        Me.txtEmisor.Name = "txtEmisor"
+        Me.txtEmisor.Size = New System.Drawing.Size(100, 20)
+        Me.txtEmisor.TabIndex = 39
+        '
         'ChatPaciente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1449, 579)
+        Me.Controls.Add(Me.txtEmisor)
         Me.Controls.Add(Me.btnMail)
         Me.Controls.Add(Me.btnTerminarChat)
         Me.Controls.Add(Me.Label6)
@@ -284,4 +294,5 @@ Partial Class ChatPaciente
     Friend WithEvents Label6 As Label
     Friend WithEvents btnTerminarChat As Button
     Friend WithEvents btnMail As Button
+    Friend WithEvents txtEmisor As TextBox
 End Class

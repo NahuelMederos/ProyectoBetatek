@@ -7,6 +7,7 @@
     Public IdDiagnostico As String
     Public CiPaciente As String
     Public NombreMedico As String
+    Public IdSintoma As String
 
     Public Sub New(username As String, password As String)
         MyBase.New(username, password)
@@ -40,6 +41,7 @@
                                Where Recibe.IdDiagnostico=Diagnostico.IdDiagnostico
                                And Genera.IdDiagnostico=Diagnostico.IdDiagnostico
                                And (NombreMedico='" + Me.NombreMedico + "' Or NombreMedico='Medico')
+                               Group by Genera.IdDiagnostico
                                Order by
                                       Case
                                          when Diagnostico.Prioridad= 'Alta' Then 1 
@@ -53,7 +55,7 @@
     End Function
 
     Public Sub PacienteGeneraDiagnostico()
-        Comando.CommandText = "INSERT INTO GENERA VALUES('" + Me.CiPaciente + "',LAST_INSERT_ID(),now())"
+        Comando.CommandText = "INSERT INTO GENERA VALUES('" + Me.CiPaciente + "',LAST_INSERT_ID(),'" + Me.IdSintoma + "',now())"
 
         Comando.ExecuteNonQuery()
     End Sub

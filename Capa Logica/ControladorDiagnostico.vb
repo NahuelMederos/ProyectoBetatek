@@ -2,7 +2,7 @@
 
 Public Module ControladorDiagnostico
 
-    Public Sub CrearDiagnostico(Sintomas As String, Patologias As String, Usuario As String, Prioridad As String, SolicitaChat As String)
+    Public Sub CrearDiagnostico(Sintomas As String, Patologias As String, Usuario As String, Prioridad As String, SolicitaChat As String, ListaSintomas As List(Of String))
         Dim d As New Diagnostico(Sesion.Username, Sesion.Password)
         Dim Informacion As String = "El paciente " + Usuario + " solicito un diagnostico presentando los siguientes sintomas: " + Sintomas + " El Diagnostico automatico le dio como resultado: " & Chr(34) + Patologias & Chr(34)
         d.CiPaciente = Usuario
@@ -11,8 +11,11 @@ Public Module ControladorDiagnostico
         d.SolicitaChat = SolicitaChat
 
         d.CrearDiagnostico()
-        d.PacienteGeneraDiagnostico
 
+        For Each Sintoma In ListaSintomas
+            d.IdSintoma = Sintoma
+            d.PacienteGeneraDiagnostico()
+        Next
     End Sub
 
     Public Sub EnviarDiagnostico(IdDiagnostico As String)

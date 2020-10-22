@@ -37,6 +37,14 @@ Public Class Sintoma
 
     End Function
 
+    Public Function ObtenerIdSintomas()
+
+        Comando.CommandText = "SELECT IDSintoma FROM SINTOMA WHERE NOMBRE='" + Me.Nombre + "'"
+
+        Return Comando.ExecuteScalar().ToString()
+
+    End Function
+
     Public Sub GuardarSintoma()
         Comando.CommandText = "INSERT INTO SINTOMA VALUES(LAST_INSERT_ID(),'" + Me.Nombre + "')"
 
