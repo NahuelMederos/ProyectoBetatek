@@ -33,14 +33,13 @@ Partial Class ChatMedico
         Me.TxtId = New System.Windows.Forms.TextBox()
         Me.BtnEnviar = New System.Windows.Forms.Button()
         Me.RTxtMensaje = New System.Windows.Forms.RichTextBox()
-        Me.RTxtChat = New System.Windows.Forms.RichTextBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.btnChatCompleto = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'WebBrowser1
         '
-        Me.WebBrowser1.Location = New System.Drawing.Point(491, 27)
+        Me.WebBrowser1.Location = New System.Drawing.Point(12, 12)
         Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser1.Name = "WebBrowser1"
         Me.WebBrowser1.Size = New System.Drawing.Size(719, 336)
@@ -48,7 +47,7 @@ Partial Class ChatMedico
         '
         'btnIniciarChat
         '
-        Me.btnIniciarChat.Location = New System.Drawing.Point(90, 461)
+        Me.btnIniciarChat.Location = New System.Drawing.Point(789, 153)
         Me.btnIniciarChat.Name = "btnIniciarChat"
         Me.btnIniciarChat.Size = New System.Drawing.Size(100, 23)
         Me.btnIniciarChat.TabIndex = 41
@@ -58,7 +57,7 @@ Partial Class ChatMedico
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(47, 435)
+        Me.Label3.Location = New System.Drawing.Point(746, 127)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(39, 13)
         Me.Label3.TabIndex = 40
@@ -67,7 +66,7 @@ Partial Class ChatMedico
         'txtSesion
         '
         Me.txtSesion.Enabled = False
-        Me.txtSesion.Location = New System.Drawing.Point(90, 435)
+        Me.txtSesion.Location = New System.Drawing.Point(789, 127)
         Me.txtSesion.Name = "txtSesion"
         Me.txtSesion.Size = New System.Drawing.Size(100, 20)
         Me.txtSesion.TabIndex = 39
@@ -75,7 +74,7 @@ Partial Class ChatMedico
         'lblPara
         '
         Me.lblPara.AutoSize = True
-        Me.lblPara.Location = New System.Drawing.Point(47, 409)
+        Me.lblPara.Location = New System.Drawing.Point(746, 101)
         Me.lblPara.Name = "lblPara"
         Me.lblPara.Size = New System.Drawing.Size(29, 13)
         Me.lblPara.TabIndex = 38
@@ -84,7 +83,7 @@ Partial Class ChatMedico
         'txtPara
         '
         Me.txtPara.Enabled = False
-        Me.txtPara.Location = New System.Drawing.Point(90, 409)
+        Me.txtPara.Location = New System.Drawing.Point(789, 101)
         Me.txtPara.Name = "txtPara"
         Me.txtPara.Size = New System.Drawing.Size(100, 20)
         Me.txtPara.TabIndex = 37
@@ -92,7 +91,7 @@ Partial Class ChatMedico
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(47, 383)
+        Me.Label1.Location = New System.Drawing.Point(746, 75)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(16, 13)
         Me.Label1.TabIndex = 35
@@ -101,7 +100,7 @@ Partial Class ChatMedico
         'TxtId
         '
         Me.TxtId.Enabled = False
-        Me.TxtId.Location = New System.Drawing.Point(90, 383)
+        Me.TxtId.Location = New System.Drawing.Point(789, 75)
         Me.TxtId.Name = "TxtId"
         Me.TxtId.Size = New System.Drawing.Size(100, 20)
         Me.TxtId.TabIndex = 33
@@ -110,7 +109,7 @@ Partial Class ChatMedico
         '
         Me.BtnEnviar.Enabled = False
         Me.BtnEnviar.ForeColor = System.Drawing.Color.Red
-        Me.BtnEnviar.Location = New System.Drawing.Point(665, 497)
+        Me.BtnEnviar.Location = New System.Drawing.Point(186, 482)
         Me.BtnEnviar.Name = "BtnEnviar"
         Me.BtnEnviar.Size = New System.Drawing.Size(98, 57)
         Me.BtnEnviar.TabIndex = 32
@@ -119,19 +118,11 @@ Partial Class ChatMedico
         '
         'RTxtMensaje
         '
-        Me.RTxtMensaje.Location = New System.Drawing.Point(491, 403)
+        Me.RTxtMensaje.Location = New System.Drawing.Point(12, 388)
         Me.RTxtMensaje.Name = "RTxtMensaje"
         Me.RTxtMensaje.Size = New System.Drawing.Size(701, 88)
         Me.RTxtMensaje.TabIndex = 31
         Me.RTxtMensaje.Text = ""
-        '
-        'RTxtChat
-        '
-        Me.RTxtChat.Location = New System.Drawing.Point(212, 96)
-        Me.RTxtChat.Name = "RTxtChat"
-        Me.RTxtChat.Size = New System.Drawing.Size(233, 267)
-        Me.RTxtChat.TabIndex = 30
-        Me.RTxtChat.Text = ""
         '
         'Timer1
         '
@@ -139,7 +130,7 @@ Partial Class ChatMedico
         '
         'btnChatCompleto
         '
-        Me.btnChatCompleto.Location = New System.Drawing.Point(977, 510)
+        Me.btnChatCompleto.Location = New System.Drawing.Point(498, 495)
         Me.btnChatCompleto.Name = "btnChatCompleto"
         Me.btnChatCompleto.Size = New System.Drawing.Size(75, 44)
         Me.btnChatCompleto.TabIndex = 43
@@ -150,7 +141,7 @@ Partial Class ChatMedico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1222, 644)
+        Me.ClientSize = New System.Drawing.Size(921, 553)
         Me.Controls.Add(Me.btnChatCompleto)
         Me.Controls.Add(Me.WebBrowser1)
         Me.Controls.Add(Me.btnIniciarChat)
@@ -162,14 +153,12 @@ Partial Class ChatMedico
         Me.Controls.Add(Me.TxtId)
         Me.Controls.Add(Me.BtnEnviar)
         Me.Controls.Add(Me.RTxtMensaje)
-        Me.Controls.Add(Me.RTxtChat)
         Me.Name = "ChatMedico"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents WebBrowser1 As WebBrowser
     Friend WithEvents btnIniciarChat As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents txtSesion As TextBox
@@ -179,7 +168,7 @@ Partial Class ChatMedico
     Friend WithEvents TxtId As TextBox
     Friend WithEvents BtnEnviar As Button
     Friend WithEvents RTxtMensaje As RichTextBox
-    Friend WithEvents RTxtChat As RichTextBox
     Friend WithEvents Timer1 As Timer
     Friend WithEvents btnChatCompleto As Button
+    Friend WithEvents WebBrowser1 As WebBrowser
 End Class

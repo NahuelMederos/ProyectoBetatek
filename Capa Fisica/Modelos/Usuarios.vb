@@ -34,9 +34,6 @@
             Comando.CommandText = "GRANT SELECT ON MYSQL.USER TO '" + Me.NombreUsuario + "'@'localhost';"
             Comando.ExecuteNonQuery()
 
-            Comando.CommandText = "GRANT SELECT ON betatek.* TO '" + Me.NombreUsuario + "'@'localhost' WITH GRANT OPTION;"
-            Comando.ExecuteNonQuery()
-
             Comando.CommandText = "GRANT CREATE USER ON *.* TO '" + Me.NombreUsuario + "'@'localhost' WITH GRANT OPTION;"
             Comando.ExecuteNonQuery()
 

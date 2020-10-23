@@ -6,8 +6,23 @@ Public Class ChatMedico
     Public Ci As String
 
 
-
     Private Sub ChatMedico_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        WebBrowser1.DocumentText = "<style>
+                                      body {
+                                          background-color:#1c1e22;
+                                            }
+                                     p{
+                                          font-size: 12pt;
+                                          color: white;
+                                     }
+                                     .Nombre{
+                                          text-align:right;
+                                          font-size: 12pt;
+                                          color: white
+                                     }
+                                   </style>"
+
+        
         Timer1.Enabled = True
         TxtId.Text = Sesion.Username
         txtSesion.Text = IdDiagnostico
@@ -18,14 +33,8 @@ Public Class ChatMedico
 
     Private Sub BtnEnviar_Click(sender As Object, e As EventArgs) Handles BtnEnviar.Click
         ControladorChat.Guardar(txtSesion.Text, TxtId.Text, txtPara.Text, RTxtMensaje.Text)
-        RTxtChat.Text += Environment.NewLine + "YO:" + Environment.NewLine + RTxtMensaje.Text
-        WebBrowser1.DocumentText +=
-            "
-                <br />
-                <b>YO: </b> 
-                <br / >
-                " + RTxtMensaje.Text + " 
-            "
+        WebBrowser1.DocumentText += "<p class=Nombre><b>YO: </b> <br />" + RTxtMensaje.Text + " </p>"
+
         RTxtMensaje.Clear()
     End Sub
 
@@ -34,6 +43,7 @@ Public Class ChatMedico
             Timer1.Stop()
             MsgBox("El paciente termino el chat")
             BtnEnviar.Enabled = False
+            VentanaMedico.btnVerSolicitudes_Click(sender, e)
 
         Else
             Dim tabla As New DataTable
@@ -46,21 +56,16 @@ Public Class ChatMedico
                 'textoWB sirve para evitar este problema
                 Dim textoWB As String
                 For Each fila As DataRow In tabla.Rows
-                    RTxtChat.Text += Environment.NewLine + fila("emisor").ToString + " - " + fila("FechaHora").ToString + Environment.NewLine + fila("Texto").ToString
-
                     textoWB +=
                 "
                 <br />
-                <b>" + fila("emisor") + " a las " + fila("FechaHora") + " escribio: </b>
+                <p><b>" + fila("emisor") + " a las " + Strings.Left(Strings.Right(fila("FechaHora").ToString, 8), 5) + " escribio: </b>
                 <br />
-                " + fila("Texto") + " 
-                <br />
-                "
+                " + fila("Texto") + "</p>"
 
                     ControladorChat.MarcarMensajeLeido(fila("id_mensaje").ToString)
                 Next
                 WebBrowser1.DocumentText += textoWB
-
             End If
         End If
     End Sub
@@ -86,12 +91,15 @@ Public Class ChatMedico
                 <br />
                 <b>" + fila("emisor") + " a las " + fila("FechaHora") + " escribio: </b>
                 <br />
-                " + fila("Texto") + " 
-                <br />
+                " + fila("Texto") + "  
                 "
             Next
             ChatCompleto.StrChatCompleto = textoWB2
             ChatCompleto.ShowDialog()
         End If
+    End Sub
+
+    Private Sub WebBrowser1_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser1.DocumentCompleted
+        Me.WebBrowser1.Document.Window.ScrollTo(0, WebBrowser1.Document.Window.Size.Height)
     End Sub
 End Class

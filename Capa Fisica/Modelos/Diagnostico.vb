@@ -34,6 +34,12 @@
         Return Comando.ExecuteScalar().ToString()
     End Function
 
+    Public Function UltimoDiagnosticoEnRecibe()
+        Me.Comando.CommandText = "SELECT MAX(IdDiagnostico) FROM Recibe"
+
+        Return Comando.ExecuteScalar().ToString()
+    End Function
+
     Public Function ObtenerDiagnosticos()
 
         Comando.CommandText = "Select Diagnostico.Prioridad,Recibe.IdDiagnostico As Id,Informacion,Genera.FechaHora,CiPersona

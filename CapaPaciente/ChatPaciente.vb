@@ -34,6 +34,20 @@ Public Class ChatPaciente
     End Sub
 
     Private Sub ChatPaciente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        WebBrowser1.DocumentText = "<style>
+                                      body {
+                                          background-color:#1c1e22;
+                                            }
+                                     p{
+                                          font-size: 12pt;
+                                          color: white;
+                                     }
+                                     .Nombre{
+                                          text-align:right;
+                                          font-size: 12pt;
+                                          color: white
+                                     }
+                                   </style>"
         TxtId.Text = Sesion.CI
         txtPara.Text = "Medico"
         txtIdDiagnostico.Text = Convert.ToInt32(ControladorDiagnostico.BuscarUltimoDiagnostico)
@@ -46,14 +60,9 @@ Public Class ChatPaciente
 
     Private Sub BtnEnviar_Click(sender As Object, e As EventArgs) Handles BtnEnviar.Click
         ControladorChat.Guardar(txtSesion.Text, TxtId.Text, txtPara.Text, RTxtMensaje.Text)
+
         RTxtChat.Text += "[" + TimeOfDay.Hour.ToString + ":" + TimeOfDay.Minute.ToString + "] " + "Yo: " + RTxtMensaje.Text + Environment.NewLine
-        WebBrowser1.DocumentText +=
-            "
-                <br />
-                <b>YO: </b> 
-                <br / >
-                " + RTxtMensaje.Text + " 
-            "
+        WebBrowser1.DocumentText += "<p class=Nombre><b>YO: </b> <br />" + RTxtMensaje.Text + " </p>"
         RTxtMensaje.Clear()
     End Sub
 
@@ -68,13 +77,11 @@ Public Class ChatPaciente
                 RTxtChat.Text += "[" + Strings.Left(Strings.Right(fila("FechaHora").ToString, 8), 5) + "] " + fila("emisor") + " " + fila("apellido") + ": " + fila("Texto").ToString + Environment.NewLine
 
                 textoWB +=
-            "
+                "
                 <br />
-                <b>" + fila("emisor") + " " + fila("apellido") + " a las " + fila("FechaHora") + " escribio: </b>
+                <p><b>" + fila("emisor") + " " + fila("apellido") + " a las " + Strings.Left(Strings.Right(fila("FechaHora").ToString, 8), 5) + " escribio: </b>
                 <br />
-                " + fila("Texto") + " 
-                <br />
-            "
+                " + fila("Texto") + "</p>"
 
                 ControladorChat.MarcarMensajeLeido(fila("id_mensaje").ToString)
                 txtPara.Text = fila("NombreUsuario").ToString
@@ -102,5 +109,7 @@ Public Class ChatPaciente
 
     End Sub
 
-
+    Private Sub WebBrowser1_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser1.DocumentCompleted
+        Me.WebBrowser1.Document.Window.ScrollTo(0, WebBrowser1.Document.Window.Size.Height)
+    End Sub
 End Class

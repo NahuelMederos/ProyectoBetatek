@@ -32,6 +32,13 @@ Public Module ControladorDiagnostico
 
     End Function
 
+    Public Function BuscarUltimoDiagnosticoEnRecibe()
+        Dim d As New Diagnostico(Username, Password)
+        Return d.UltimoDiagnosticoEnRecibe()
+
+    End Function
+
+
     Public Function ListarDiagnosticos()
         Dim d As New Diagnostico(Sesion.Username, Sesion.Password)
         d.NombreMedico = Sesion.Username
