@@ -10,12 +10,14 @@ Public Module ControladorDiagnostico
         d.Prioridad = Prioridad
         d.SolicitaChat = SolicitaChat
 
-        d.CrearDiagnostico()
-
-        For Each Sintoma In ListaSintomas
-            d.IdSintoma = Sintoma
-            d.PacienteGeneraDiagnostico()
-        Next
+        Try
+            d.CrearDiagnostico()
+            For Each Sintoma In ListaSintomas
+                d.IdSintoma = Sintoma
+                d.PacienteGeneraDiagnostico()
+            Next
+        Catch ex As Exception
+        End Try
     End Sub
 
     Public Sub EnviarDiagnostico(IdDiagnostico As String)
@@ -23,6 +25,17 @@ Public Module ControladorDiagnostico
         d.IdDiagnostico = IdDiagnostico
 
         d.EnviarDiagnosticoAMedico()
+
+    End Sub
+
+    Public Sub DiagnosticoTienePatologias(IdDiagnostico As String, ListaPatologias As List(Of String))
+        Dim d As New Diagnostico(Sesion.Username, Sesion.Password)
+        d.IdDiagnostico = IdDiagnostico
+
+        For Each Patologia In ListaPatologias
+            d.IdPatologia = Patologia
+            d.AgregarPatologiaADiagnostico()
+        Next
 
     End Sub
 

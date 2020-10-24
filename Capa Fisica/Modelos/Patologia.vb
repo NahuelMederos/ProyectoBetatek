@@ -24,6 +24,14 @@ Public Class Patologia
 
     End Function
 
+    Public Function BuscarIdPatologia()
+
+        Comando.CommandText = "SELECT IdPatologia FROM PATOLOGIA WHERE Nombre='" + Nombre + "'"
+
+        Return Comando.ExecuteScalar().ToString()
+
+    End Function
+
     Public Function IdyNombrePatologia()
 
         Comando.CommandText = "SELECT IDPATOLOGIA,NOMBRE FROM PATOLOGIA"

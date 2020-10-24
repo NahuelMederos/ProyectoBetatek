@@ -143,7 +143,10 @@
             Comando.CommandText = " GRANT INSERT ON betatek.Genera TO '" + Me.NombreUsuario + "'@'localhost';"
             Comando.ExecuteNonQuery()
 
-            Comando.CommandText = " GRANT INSERT,SELECT,DELETE ON betatek.Recibe TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.CommandText = " GRANT INSERT ON betatek.Patologias TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.ExecuteNonQuery()
+
+            Comando.CommandText = " GRANT INSERT,SELECT,UPDATE ON betatek.Recibe TO '" + Me.NombreUsuario + "'@'localhost';"
             Comando.ExecuteNonQuery()
 
             Comando.CommandText = " GRANT SELECT,INSERT ON betatek.Diagnostico TO '" + Me.NombreUsuario + "'@'localhost';"

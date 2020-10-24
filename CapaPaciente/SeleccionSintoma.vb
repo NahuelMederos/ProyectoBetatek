@@ -76,8 +76,17 @@ Public Class SeleccionSintoma
         Dim PrioridadDiagnostico As String = "Baja"
 
 
+        Dim NumeroDePatologiasSeguras As Integer = -1
+        Dim IdPatologiasList As New List(Of String)
+
         'Por cada Patologia en PatologiasSeguras se agrega al String ResultadoFinal y se utiliza la prioridad mas alta para el diagnostico'
         For Each Patologia As String In PatologiasSeguras
+            NumeroDePatologiasSeguras += 1
+            Try
+                IdPatologiasList.Add(ControladorPatologia.ObtenerIdPatologia(Patologia))
+            Catch ex As Exception
+            End Try
+
             ResultadoFinal &= Patologia + ", "
             Try
                 Prio = ControladorPatologia.ObtenerPrioridad(Patologia)
@@ -90,6 +99,11 @@ Public Class SeleccionSintoma
             End Try
         Next
 
+
+
+        For Each IdPat In IdPatologiasList
+            txtIdPatologias.Text += IdPat
+        Next
 
         If ResultadoFinal = ", " Then
             ResultadoFinal = "No hay ningun diagnostico seguro."
@@ -108,13 +122,20 @@ Public Class SeleccionSintoma
 
         StringSintomas = StringSintomas.Remove(StringSintomas.Length - 2) + "."
 
+        txtPatologiasSeguras.Text = NumeroDePatologiasSeguras
 
         Dim SolicitarChat As DialogResult
         SolicitarChat = MessageBox.Show(ResultadoFinal + Environment.NewLine + Environment.NewLine + "        ¿Desea solicitar un chat con un medico?", "Solicitar Chat", MessageBoxButtons.YesNo)
         If SolicitarChat = DialogResult.No Then
             ControladorDiagnostico.CrearDiagnostico(StringSintomas, ResultadoFinal, Sesion.CI, PrioridadDiagnostico, "False", IdSintomasList)
+            If NumeroDePatologiasSeguras >= 1 Then
+                ControladorDiagnostico.DiagnosticoTienePatologias(ControladorDiagnostico.BuscarUltimoDiagnostico, IdPatologiasList)
+            End If
         Else
             ControladorDiagnostico.CrearDiagnostico(StringSintomas, ResultadoFinal, Sesion.CI, PrioridadDiagnostico, "True", IdSintomasList)
+            If NumeroDePatologiasSeguras >= 1 Then
+                ControladorDiagnostico.DiagnosticoTienePatologias(ControladorDiagnostico.BuscarUltimoDiagnostico, IdPatologiasList)
+            End If
             ChatPaciente.Diagnostico = ResultadoFinal
             ChatPaciente.Prioridad = PrioridadDiagnostico
             ChatPaciente.Sintomas = StringSintomas

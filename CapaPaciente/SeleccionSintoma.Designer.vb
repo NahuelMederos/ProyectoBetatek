@@ -33,6 +33,8 @@ Partial Class SeleccionSintoma
         Me.GrillaOtrasPatologias = New System.Windows.Forms.DataGridView()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.btnSolicitarChat = New System.Windows.Forms.Button()
+        Me.txtPatologiasSeguras = New System.Windows.Forms.TextBox()
+        Me.txtIdPatologias = New System.Windows.Forms.TextBox()
         CType(Me.GrillaSintomas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GrillaOtrasPatologias, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -141,12 +143,28 @@ Partial Class SeleccionSintoma
         Me.btnSolicitarChat.Text = "Solicitar" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Chat"
         Me.btnSolicitarChat.UseVisualStyleBackColor = True
         '
+        'txtPatologiasSeguras
+        '
+        Me.txtPatologiasSeguras.Location = New System.Drawing.Point(449, 338)
+        Me.txtPatologiasSeguras.Name = "txtPatologiasSeguras"
+        Me.txtPatologiasSeguras.Size = New System.Drawing.Size(100, 20)
+        Me.txtPatologiasSeguras.TabIndex = 30
+        '
+        'txtIdPatologias
+        '
+        Me.txtIdPatologias.Location = New System.Drawing.Point(312, 347)
+        Me.txtIdPatologias.Name = "txtIdPatologias"
+        Me.txtIdPatologias.Size = New System.Drawing.Size(100, 20)
+        Me.txtIdPatologias.TabIndex = 31
+        '
         'SeleccionSintoma
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(91, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(688, 379)
+        Me.Controls.Add(Me.txtIdPatologias)
+        Me.Controls.Add(Me.txtPatologiasSeguras)
         Me.Controls.Add(Me.btnSolicitarChat)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.GrillaOtrasPatologias)
@@ -172,4 +190,6 @@ Partial Class SeleccionSintoma
     Friend WithEvents Label7 As Label
     Friend WithEvents btnSolicitarChat As Button
     Friend WithEvents Check As DataGridViewCheckBoxColumn
+    Friend WithEvents txtPatologiasSeguras As TextBox
+    Friend WithEvents txtIdPatologias As TextBox
 End Class

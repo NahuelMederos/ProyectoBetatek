@@ -8,6 +8,7 @@
     Public CiPaciente As String
     Public NombreMedico As String
     Public IdSintoma As String
+    Public IdPatologia As String
 
     Public Sub New(username As String, password As String)
         MyBase.New(username, password)
@@ -22,7 +23,7 @@
     End Sub
 
     Public Sub EnviarDiagnosticoAMedico()
-        Comando.CommandText = "INSERT INTO RECIBE VALUES(" + Me.IdDiagnostico + ",'Medico')"
+        Comando.CommandText = "INSERT INTO RECIBE VALUES(" + Me.IdDiagnostico + ",'Medico',1)"
 
         Comando.ExecuteNonQuery()
 
@@ -45,6 +46,7 @@
         Comando.CommandText = "Select Diagnostico.Prioridad,Recibe.IdDiagnostico As Id,Informacion,Genera.FechaHora,CiPersona
                                From Recibe,Diagnostico,Genera
                                Where Recibe.IdDiagnostico=Diagnostico.IdDiagnostico
+                               And EstadoSesion=1
                                And Genera.IdDiagnostico=Diagnostico.IdDiagnostico
                                And (NombreMedico='" + Me.NombreMedico + "' Or NombreMedico='Medico')
                                Group by Genera.IdDiagnostico
@@ -70,6 +72,13 @@
         Comando.CommandText = "UPDATE RECIBE SET NOMBREMEDICO='" + Me.NombreMedico + "' WHERE IDDIAGNOSTICO=" + Me.IdDiagnostico + ""
 
         Comando.ExecuteNonQuery()
+    End Sub
+
+    Public Sub AgregarPatologiaADiagnostico()
+        Comando.CommandText = "INSERT INTO PATOLOGIAS VALUES(" + Me.IdDiagnostico + "," + Me.IdPatologia + ")"
+
+        Comando.ExecuteNonQuery()
+
     End Sub
 
 End Class

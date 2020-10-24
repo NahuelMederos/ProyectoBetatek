@@ -44,4 +44,12 @@ Public Module ControladorPatologia
 
     End Function
 
+    Public Function ObtenerIdPatologia(Nombre As String)
+        Dim p As New Patologia(Sesion.Username, Sesion.Password)
+        p.Nombre = Nombre
+
+        Return p.BuscarIdPatologia
+
+    End Function
+
 End Module

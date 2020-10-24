@@ -51,7 +51,7 @@ Public Module ControladorChat
 
     Public Function EstadoDelChat(IdDiagnostico As String)
         Dim c As New ModeloChat(Sesion.Username, Sesion.Password)
-        c.Sesion = IdDiagnostico
+        c.IdDiagnostico = IdDiagnostico
 
         Return c.VerificarEstadoDelChat
 
@@ -59,7 +59,7 @@ Public Module ControladorChat
 
     Public Sub TerminarChat(IdDiagnostico As String)
         Dim c As New ModeloChat(Sesion.Username, Sesion.Password)
-        c.Sesion = IdDiagnostico
+        c.IdDiagnostico = IdDiagnostico
 
         c.TerminarChat()
     End Sub

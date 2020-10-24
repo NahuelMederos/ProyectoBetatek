@@ -14,7 +14,7 @@
     Public Mensaje As String
     Public FechaHora As String
     Public Leido As Boolean
-
+    Public IdDiagnostico As String
 
     Public Sub Guardar()
         Me.Comando.CommandText =
@@ -111,17 +111,18 @@
 
     Public Function VerificarEstadoDelChat()
 
-        Comando.CommandText = "Select Count(IdDiagnostico) from Recibe where IdDiagnostico=" + Me.Sesion + ""
+        Comando.CommandText = "Select ESTADOSESION from Recibe where IdDiagnostico=" + Me.IdDiagnostico
 
         Return Comando.ExecuteScalar().ToString()
 
     End Function
 
     Public Sub TerminarChat()
-        Comando.CommandText = "DELETE FROM RECIBE WHERE IDDIAGNOSTICO = " + Me.Sesion
+        Comando.CommandText = "Update RECIBE SET ESTADOSESION= 0 WHERE IDDIAGNOSTICO=" + Me.IdDiagnostico
 
         Comando.ExecuteNonQuery()
     End Sub
+
 
     Public Function VerChatCompleto()
         Comando.CommandText = "

@@ -50,7 +50,7 @@ Public Class ChatPaciente
                                    </style>"
         TxtId.Text = Sesion.CI
         txtPara.Text = "Medico"
-        txtIdDiagnostico.Text = Convert.ToInt32(ControladorDiagnostico.BuscarUltimoDiagnostico)
+        txtIdDiagnostico.Text = ControladorDiagnostico.BuscarUltimoDiagnostico
         txtSesion.Text = txtIdDiagnostico.Text
         txtSintomas.Text = Sintomas
         txtPrioridad.Text = Prioridad
