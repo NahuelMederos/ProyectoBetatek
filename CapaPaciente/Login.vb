@@ -17,7 +17,7 @@ Public Class Login
             If (AutenticarUsuario(txtUsuario.Text, txtPassword.Text) = "1") Then
                 setearSesion(txtUsuario.Text, txtPassword.Text)
                 ControladorUsuarios.setearSesion(txtUsuario.Text, txtPassword.Text)
-                SeleccionSintoma.Show()
+                VentanaMenu.Show()
                 Me.Close()
             Else
                 MsgBox("Este usuario no es el de un paciente")

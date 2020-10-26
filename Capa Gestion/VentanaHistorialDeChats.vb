@@ -27,7 +27,7 @@ Public Class VentanaHistorialDeChats
                 textoWB2 +=
             "
                 <br />
-                <b>" + fila("emisor") + fila("Apellido") + " a las " + fila("FechaHora").ToString + " escribio: </b>
+                <b>" + fila("emisor") + " " + fila("Apellido") + " a las " + fila("FechaHora").ToString + " escribio: </b>
                 <br />
                 " + fila("Texto") + "  
                 <br />

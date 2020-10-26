@@ -74,4 +74,17 @@ Public Module ControladorDiagnostico
 
     End Function
 
+    Public Function ObtenerDiagnosticosAntiguos(Opcion As Integer)
+        Dim d As New Diagnostico(Username, Password)
+        d.Opcion = Opcion
+        If Opcion = 1 Then
+            d.CiPaciente = Sesion.Username
+            Return d.ObtenerDiagnosticosAntiguos
+        Else
+            d.NombreMedico = Sesion.Username
+            Return d.ObtenerDiagnosticosAntiguos
+        End If
+
+    End Function
+
 End Module

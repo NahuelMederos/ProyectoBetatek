@@ -32,12 +32,13 @@ Partial Class VentanaMedico
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.MensajesNuevos = New System.Windows.Forms.Label()
         Me.txtContar2 = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.TablaDeDiagnosticos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnVerSolicitudes
         '
-        Me.btnVerSolicitudes.Location = New System.Drawing.Point(687, 508)
+        Me.btnVerSolicitudes.Location = New System.Drawing.Point(590, 503)
         Me.btnVerSolicitudes.Name = "btnVerSolicitudes"
         Me.btnVerSolicitudes.Size = New System.Drawing.Size(75, 45)
         Me.btnVerSolicitudes.TabIndex = 0
@@ -55,11 +56,14 @@ Partial Class VentanaMedico
         '
         'TablaDeDiagnosticos
         '
+        Me.TablaDeDiagnosticos.AllowUserToAddRows = False
+        Me.TablaDeDiagnosticos.AllowUserToDeleteRows = False
         Me.TablaDeDiagnosticos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.TablaDeDiagnosticos.Location = New System.Drawing.Point(12, 53)
         Me.TablaDeDiagnosticos.Name = "TablaDeDiagnosticos"
+        Me.TablaDeDiagnosticos.ReadOnly = True
         Me.TablaDeDiagnosticos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.TablaDeDiagnosticos.Size = New System.Drawing.Size(787, 368)
+        Me.TablaDeDiagnosticos.Size = New System.Drawing.Size(653, 368)
         Me.TablaDeDiagnosticos.TabIndex = 2
         '
         'txtIdDiagnostico
@@ -78,7 +82,7 @@ Partial Class VentanaMedico
         '
         'txtContar
         '
-        Me.txtContar.Location = New System.Drawing.Point(441, 565)
+        Me.txtContar.Location = New System.Drawing.Point(322, 549)
         Me.txtContar.Name = "txtContar"
         Me.txtContar.Size = New System.Drawing.Size(100, 20)
         Me.txtContar.TabIndex = 5
@@ -90,25 +94,35 @@ Partial Class VentanaMedico
         'MensajesNuevos
         '
         Me.MensajesNuevos.AutoSize = True
-        Me.MensajesNuevos.Location = New System.Drawing.Point(684, 556)
+        Me.MensajesNuevos.Location = New System.Drawing.Point(597, 549)
         Me.MensajesNuevos.Name = "MensajesNuevos"
-        Me.MensajesNuevos.Size = New System.Drawing.Size(115, 13)
+        Me.MensajesNuevos.Size = New System.Drawing.Size(68, 26)
         Me.MensajesNuevos.TabIndex = 6
-        Me.MensajesNuevos.Text = "*Hay mensajes nuevos"
+        Me.MensajesNuevos.Text = "*Hay nuevas" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "solicitudes"
         Me.MensajesNuevos.Visible = False
         '
         'txtContar2
         '
-        Me.txtContar2.Location = New System.Drawing.Point(268, 565)
+        Me.txtContar2.Location = New System.Drawing.Point(216, 549)
         Me.txtContar2.Name = "txtContar2"
         Me.txtContar2.Size = New System.Drawing.Size(100, 20)
         Me.txtContar2.TabIndex = 7
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(468, 503)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 50)
+        Me.Button1.TabIndex = 8
+        Me.Button1.Text = "Historial de chats personal"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'VentanaMedico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(811, 597)
+        Me.ClientSize = New System.Drawing.Size(694, 597)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.txtContar2)
         Me.Controls.Add(Me.MensajesNuevos)
         Me.Controls.Add(Me.txtContar)
@@ -134,4 +148,5 @@ Partial Class VentanaMedico
     Friend WithEvents Timer1 As Timer
     Friend WithEvents MensajesNuevos As Label
     Friend WithEvents txtContar2 As TextBox
+    Friend WithEvents Button1 As Button
 End Class

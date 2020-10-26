@@ -9,6 +9,7 @@
     Public NombreMedico As String
     Public IdSintoma As String
     Public IdPatologia As String
+    Public Opcion As Integer
 
     Public Sub New(username As String, password As String)
         MyBase.New(username, password)
@@ -89,6 +90,39 @@
 
         Reader = Comando.ExecuteReader()
         Return Reader
+    End Function
+
+    Public Function ObtenerDiagnosticosAntiguos()
+        If Me.Opcion = 1 Then
+            Comando.CommandText = "Select Fecha,CONCAT( Nombre, "" "", Apellido ) AS Medico ,Informacion,Sesion
+                                   From (select Sesion,date(Fechahora) as Fecha,Medico.Nombre As Nombre,Medico.Apellido As Apellido
+                                   from persona,chatea,Medico
+                                   where Ci=De 
+                                   And chatea.Para=Medico.NombreUsuario
+                                   And De='" + Me.CiPaciente + "' 
+                                   and para!='Medico' 
+                                   group by sesion) as A
+                                   Join
+                                   (Select * 
+                                   From Diagnostico) as B
+                                   On a.Sesion=B.IdDiagnostico
+                                   Order by Fecha Desc"
+
+            Reader = Comando.ExecuteReader()
+            Return Reader
+        Else
+            Comando.CommandText = "Select Recibe.IdDiagnostico As Sesion,Diagnostico.Prioridad,Date(Genera.FechaHora) as Fecha,Informacion
+                                   From Recibe,Diagnostico,Genera
+                                   Where Recibe.IdDiagnostico=Diagnostico.IdDiagnostico
+                                   And EstadoSesion=0
+                                   And Genera.IdDiagnostico=Diagnostico.IdDiagnostico
+                                   And NombreMedico='" + Me.NombreMedico + "'
+                                   Group by Genera.IdDiagnostico
+                                   Order by Fecha;"
+
+            Reader = Comando.ExecuteReader()
+            Return Reader
+        End If
     End Function
 
 End Class

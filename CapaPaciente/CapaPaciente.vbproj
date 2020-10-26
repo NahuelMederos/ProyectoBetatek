@@ -108,6 +108,24 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Sesion.vb" />
+    <Compile Include="VentanaHistorialChatPaciente.Designer.vb">
+      <DependentUpon>VentanaHistorialChatPaciente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaHistorialChatPaciente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaHistorialChatsPaciente.Designer.vb">
+      <DependentUpon>VentanaHistorialChatsPaciente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaHistorialChatsPaciente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaMenu.Designer.vb">
+      <DependentUpon>VentanaMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ChatPaciente.resx">
@@ -124,6 +142,15 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaHistorialChatPaciente.resx">
+      <DependentUpon>VentanaHistorialChatPaciente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaHistorialChatsPaciente.resx">
+      <DependentUpon>VentanaHistorialChatsPaciente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaMenu.resx">
+      <DependentUpon>VentanaMenu.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

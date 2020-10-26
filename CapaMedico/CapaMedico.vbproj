@@ -107,6 +107,18 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Sesion.vb" />
+    <Compile Include="VentanaHistorialChatCompleto.Designer.vb">
+      <DependentUpon>VentanaHistorialChatCompleto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaHistorialChatCompleto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaHistorialDeDiagnosticosMedico.Designer.vb">
+      <DependentUpon>VentanaHistorialDeDiagnosticosMedico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaHistorialDeDiagnosticosMedico.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="VentanaMedico.Designer.vb">
       <DependentUpon>VentanaMedico.vb</DependentUpon>
     </Compile>
@@ -129,6 +141,12 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaHistorialChatCompleto.resx">
+      <DependentUpon>VentanaHistorialChatCompleto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaHistorialDeDiagnosticosMedico.resx">
+      <DependentUpon>VentanaHistorialDeDiagnosticosMedico.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaMedico.resx">
       <DependentUpon>VentanaMedico.vb</DependentUpon>
