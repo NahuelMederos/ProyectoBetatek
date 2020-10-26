@@ -33,17 +33,24 @@ Partial Class VentanaPatologia
         Me.txtNombrePatologia = New System.Windows.Forms.TextBox()
         Me.txtIdPatologia = New System.Windows.Forms.TextBox()
         Me.btnAgregarPatologia = New System.Windows.Forms.Button()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.txtRutaCsv = New System.Windows.Forms.TextBox()
+        Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.btnOk = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.TablaDePatologias, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ListarPat
         '
-        Me.ListarPat.Location = New System.Drawing.Point(11, 329)
+        Me.ListarPat.Enabled = False
+        Me.ListarPat.Location = New System.Drawing.Point(442, 205)
         Me.ListarPat.Name = "ListarPat"
-        Me.ListarPat.Size = New System.Drawing.Size(75, 23)
+        Me.ListarPat.Size = New System.Drawing.Size(21, 23)
         Me.ListarPat.TabIndex = 22
         Me.ListarPat.Text = "Listar"
         Me.ListarPat.UseVisualStyleBackColor = True
+        Me.ListarPat.Visible = False
         '
         'TablaDePatologias
         '
@@ -134,11 +141,54 @@ Partial Class VentanaPatologia
         Me.btnAgregarPatologia.Text = "Agregar Patologia"
         Me.btnAgregarPatologia.UseVisualStyleBackColor = True
         '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'txtRutaCsv
+        '
+        Me.txtRutaCsv.Location = New System.Drawing.Point(86, 373)
+        Me.txtRutaCsv.Name = "txtRutaCsv"
+        Me.txtRutaCsv.Size = New System.Drawing.Size(236, 20)
+        Me.txtRutaCsv.TabIndex = 23
+        '
+        'btnBuscar
+        '
+        Me.btnBuscar.Location = New System.Drawing.Point(7, 373)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(75, 21)
+        Me.btnBuscar.TabIndex = 24
+        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.UseVisualStyleBackColor = True
+        '
+        'btnOk
+        '
+        Me.btnOk.Location = New System.Drawing.Point(328, 373)
+        Me.btnOk.Name = "btnOk"
+        Me.btnOk.Size = New System.Drawing.Size(31, 20)
+        Me.btnOk.TabIndex = 25
+        Me.btnOk.Text = "OK"
+        Me.btnOk.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(4, 335)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(275, 26)
+        Me.Label1.TabIndex = 26
+        Me.Label1.Text = "Para subir las enfermedades a traves de un archivo .csv," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " ingrese la ruta del ar" &
+    "chivo y presione OK"
+        '
         'VentanaPatologia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(474, 361)
+        Me.ClientSize = New System.Drawing.Size(474, 405)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.btnOk)
+        Me.Controls.Add(Me.btnBuscar)
+        Me.Controls.Add(Me.txtRutaCsv)
         Me.Controls.Add(Me.ListarPat)
         Me.Controls.Add(Me.TablaDePatologias)
         Me.Controls.Add(Me.BtnBorrarPat)
@@ -169,4 +219,9 @@ Partial Class VentanaPatologia
     Friend WithEvents txtNombrePatologia As TextBox
     Friend WithEvents txtIdPatologia As TextBox
     Friend WithEvents btnAgregarPatologia As Button
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents txtRutaCsv As TextBox
+    Friend WithEvents btnBuscar As Button
+    Friend WithEvents btnOk As Button
+    Friend WithEvents Label1 As Label
 End Class

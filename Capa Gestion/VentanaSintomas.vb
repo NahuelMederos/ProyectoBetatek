@@ -60,6 +60,44 @@ Public Class VentanaSintomas
         txtNombreSintoma.Text = SSeleccionada.Cells(1).Value.ToString()
     End Sub
 
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        OpenFileDialog1.ShowDialog()
+        txtRutaCsv.Text = OpenFileDialog1.FileName
+    End Sub
 
+    Private Sub btnOk_Click(sender As Object, e As EventArgs) Handles btnOk.Click
+        If txtRutaCsv.Text = "" Then
+            MsgBox("Por favor, seleccione un archivo", MsgBoxStyle.Critical, "Error")
+        ElseIf String.Compare(Strings.Right(txtRutaCsv.Text, 4), ".csv", StringComparison.OrdinalIgnoreCase) <> 0 Then
+            MsgBox("El formato del archivo debe ser .csv", MsgBoxStyle.Critical, "Error")
+        Else
+            Using archivo As New Microsoft.VisualBasic.
+                      FileIO.TextFieldParser(
+                        txtRutaCsv.Text)
 
+                archivo.TextFieldType = FileIO.FieldType.Delimited
+                archivo.SetDelimiters(",")
+                Dim currentRow As String()
+                Dim Contador As Integer = 0
+                While Not archivo.EndOfData
+                    Contador += 1
+                    Try
+                        currentRow = archivo.ReadFields()
+                        Dim linea As String() = currentRow.ToArray()
+                        Try
+                                ControladorSintoma.CrearSintoma(linea(0))
+                                MsgBox("Sintoma " + Chr(34) + linea(0) + Chr(34) + " fue ingresado")
+                            Catch ex As Exception
+                                MsgBox("Sintoma " + Chr(34) + linea(0) + Chr(34) + " ya existe en el sistema")
+                            End Try
+
+                    Catch ex As Exception
+                        MsgBox("Linea " + Contador.ToString +
+                        " no es valida y sera salteada.")
+                    End Try
+                    Listar_Click(sender, e)
+                End While
+            End Using
+        End If
+    End Sub
 End Class

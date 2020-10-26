@@ -31,6 +31,11 @@ Partial Class VentanaSintomas
         Me.BtnBorrar = New System.Windows.Forms.Button()
         Me.TablaDeSintomas = New System.Windows.Forms.DataGridView()
         Me.Listar = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnOk = New System.Windows.Forms.Button()
+        Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.txtRutaCsv = New System.Windows.Forms.TextBox()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         CType(Me.TablaDeSintomas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -106,18 +111,62 @@ Partial Class VentanaSintomas
         '
         'Listar
         '
-        Me.Listar.Location = New System.Drawing.Point(12, 333)
+        Me.Listar.Enabled = False
+        Me.Listar.Location = New System.Drawing.Point(463, 406)
         Me.Listar.Name = "Listar"
-        Me.Listar.Size = New System.Drawing.Size(75, 23)
+        Me.Listar.Size = New System.Drawing.Size(10, 23)
         Me.Listar.TabIndex = 11
-        Me.Listar.Text = "Listar"
         Me.Listar.UseVisualStyleBackColor = True
+        Me.Listar.Visible = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(9, 359)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(275, 26)
+        Me.Label1.TabIndex = 30
+        Me.Label1.Text = "Para subir las enfermedades a traves de un archivo .csv," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " ingrese la ruta del ar" &
+    "chivo y presione OK"
+        '
+        'btnOk
+        '
+        Me.btnOk.Location = New System.Drawing.Point(333, 397)
+        Me.btnOk.Name = "btnOk"
+        Me.btnOk.Size = New System.Drawing.Size(31, 20)
+        Me.btnOk.TabIndex = 29
+        Me.btnOk.Text = "OK"
+        Me.btnOk.UseVisualStyleBackColor = True
+        '
+        'btnBuscar
+        '
+        Me.btnBuscar.Location = New System.Drawing.Point(12, 397)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(75, 21)
+        Me.btnBuscar.TabIndex = 28
+        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.UseVisualStyleBackColor = True
+        '
+        'txtRutaCsv
+        '
+        Me.txtRutaCsv.Location = New System.Drawing.Point(91, 397)
+        Me.txtRutaCsv.Name = "txtRutaCsv"
+        Me.txtRutaCsv.Size = New System.Drawing.Size(236, 20)
+        Me.txtRutaCsv.TabIndex = 27
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
         'VentanaSintomas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(474, 361)
+        Me.ClientSize = New System.Drawing.Size(474, 428)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.btnOk)
+        Me.Controls.Add(Me.btnBuscar)
+        Me.Controls.Add(Me.txtRutaCsv)
         Me.Controls.Add(Me.Listar)
         Me.Controls.Add(Me.TablaDeSintomas)
         Me.Controls.Add(Me.BtnBorrar)
@@ -144,4 +193,9 @@ Partial Class VentanaSintomas
     Friend WithEvents BtnBorrar As Button
     Friend WithEvents TablaDeSintomas As DataGridView
     Friend WithEvents Listar As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents btnOk As Button
+    Friend WithEvents btnBuscar As Button
+    Friend WithEvents txtRutaCsv As TextBox
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class

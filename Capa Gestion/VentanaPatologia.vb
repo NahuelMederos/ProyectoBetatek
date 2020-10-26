@@ -2,7 +2,6 @@
 
 Public Class VentanaPatologia
 
-
     Private Sub btnAgregarPatologia_Click(sender As Object, e As EventArgs) Handles btnAgregarPatologia.Click
         Try
             If String.IsNullOrEmpty(txtNombrePatologia.Text) Then
@@ -64,5 +63,56 @@ Public Class VentanaPatologia
 
     End Sub
 
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        OpenFileDialog1.ShowDialog()
+        txtRutaCsv.Text = OpenFileDialog1.FileName
+    End Sub
 
+
+    Private Sub btnOk_Click(sender As Object, e As EventArgs) Handles btnOk.Click
+        If txtRutaCsv.Text = "" Then
+            MsgBox("Por favor, seleccione un archivo", MsgBoxStyle.Critical, "Error")
+        ElseIf String.Compare(Strings.Right(txtRutaCsv.Text, 4), ".csv", StringComparison.OrdinalIgnoreCase) <> 0 Then
+            MsgBox("El formato del archivo debe ser .csv", MsgBoxStyle.Critical, "Error")
+        Else
+            Using archivo As New Microsoft.VisualBasic.
+                      FileIO.TextFieldParser(
+                        txtRutaCsv.Text)
+
+                archivo.TextFieldType = FileIO.FieldType.Delimited
+                archivo.SetDelimiters(",")
+                Dim currentRow As String()
+                Dim Contador As Integer = 0
+                Dim Prioridades As String() = {"Alta", "Media", "Baja"}
+                While Not archivo.EndOfData
+                    Contador += 1
+                    Try
+                        currentRow = archivo.ReadFields()
+                        Dim linea As String() = currentRow.ToArray()
+                        If String.IsNullOrEmpty(linea(1)) Then
+                            MsgBox("Linea " + Contador.ToString +
+                            " no es valida y sera salteada.")
+                        Else
+                            Try
+                                If Prioridades.Contains(linea(1)) Then
+                                    ControladorPatologia.CrearPatologia(linea(0), linea(1))
+                                    MsgBox("Patologia " + Chr(34) + linea(0) + Chr(34) + " fue ingresada")
+
+                                Else
+                                    MsgBox("La prioridad debe ser Alta, Media o Baja en linea " + Contador.ToString)
+                                End If
+
+                            Catch ex As Exception
+                                MsgBox("Patologia " + Chr(34) + linea(0) + Chr(34) + " ya existe en el sistema")
+                            End Try
+                        End If
+                    Catch ex As Exception
+                        MsgBox("Linea " + Contador.ToString +
+                        " no es valida y sera salteada.")
+                    End Try
+                    ListarPat_Click(sender, e)
+                End While
+            End Using
+        End If
+    End Sub
 End Class
