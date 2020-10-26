@@ -17,7 +17,7 @@ Public Class FormLogin
             If (AutenticarUsuario(txtUsuario.Text, txtPassword.Text) = "1") Then
                 setearSesion(txtUsuario.Text, txtPassword.Text)
                 ControladorUsuarios.setearSesion(txtUsuario.Text, txtPassword.Text)
-                VentanaGestion.Show()
+                VentanaPrincipal.Show()
                 Me.Close()
 
 
@@ -25,7 +25,7 @@ Public Class FormLogin
                 setearSesion(txtUsuario.Text, txtPassword.Text)
                 ControladorUsuarios.setearSesion(txtUsuario.Text, txtPassword.Text)
                 MsgBox("Bienvenido root")
-                VentanaGestion.Show()
+                VentanaPrincipal.Show()
                 Me.Close()
 
             End If

@@ -81,4 +81,14 @@
 
     End Sub
 
+    Public Function ListarDiagnosticos()
+        Comando.CommandText = "select Diagnostico.IdDiagnostico as Id,Informacion,Date(FechaHora) as Fecha
+                              from diagnostico,Genera 
+                              group by Id 
+                              order by Id Desc;"
+
+        Reader = Comando.ExecuteReader()
+        Return Reader
+    End Function
+
 End Class

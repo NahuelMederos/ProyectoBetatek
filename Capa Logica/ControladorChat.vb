@@ -15,6 +15,12 @@ Public Module ControladorChat
 
     End Sub
 
+    Public Function ListarSesionesDeChat()
+        Dim m As New ModeloChat(Username, Password)
+
+        Return m.ObtenerSesionesDeChat
+    End Function
+
     Public Function BuscarMensajeNoLeidoParaMedico(Sesion As String, Para As String)
 
         Dim m As New ModeloChat(Username, Password)

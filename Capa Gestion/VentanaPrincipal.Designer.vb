@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class VentanaGestion
+Partial Class VentanaPrincipal
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -29,6 +29,7 @@ Partial Class VentanaGestion
         Me.btnAgregarGestor = New System.Windows.Forms.Button()
         Me.btnAgregarMedicos = New System.Windows.Forms.Button()
         Me.btnAgregarPacientes = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnSintomas
@@ -95,11 +96,21 @@ Partial Class VentanaGestion
         Me.btnAgregarPacientes.Text = "Agregar paciente"
         Me.btnAgregarPacientes.UseVisualStyleBackColor = True
         '
-        'VentanaGestion
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(77, 572)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(178, 49)
+        Me.Button1.TabIndex = 7
+        Me.Button1.Text = "Gestion de datos"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'VentanaPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(320, 575)
+        Me.ClientSize = New System.Drawing.Size(320, 659)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnAgregarPacientes)
         Me.Controls.Add(Me.btnAgregarMedicos)
         Me.Controls.Add(Me.btnAgregarGestor)
@@ -107,7 +118,7 @@ Partial Class VentanaGestion
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnPatologias)
         Me.Controls.Add(Me.btnSintomas)
-        Me.Name = "VentanaGestion"
+        Me.Name = "VentanaPrincipal"
         Me.Text = "Gestion"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -121,4 +132,5 @@ Partial Class VentanaGestion
     Friend WithEvents btnAgregarGestor As Button
     Friend WithEvents btnAgregarMedicos As Button
     Friend WithEvents btnAgregarPacientes As Button
+    Friend WithEvents Button1 As Button
 End Class

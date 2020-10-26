@@ -67,4 +67,11 @@ Public Module ControladorDiagnostico
 
         d.ModificarNombreEnRecibe
     End Sub
+
+    Public Function HistorialDeDiagnosticos()
+        Dim d As New Diagnostico(Username, Password)
+        Return d.ListarDiagnosticos()
+
+    End Function
+
 End Module

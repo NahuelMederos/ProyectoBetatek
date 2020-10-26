@@ -59,7 +59,7 @@ Public Class ChatMedico
                     textoWB +=
                 "
                 <br />
-                <p><b>" + fila("emisor") + " a las " + Strings.Left(Strings.Right(fila("FechaHora").ToString, 8), 5) + " escribio: </b>
+                <p><b>" + fila("emisor") + " a las " + fila("fechahora").ToString + " escribio: </b>
                 <br />
                 " + fila("Texto") + "</p>"
 
@@ -89,7 +89,7 @@ Public Class ChatMedico
                 textoWB2 +=
             "
                 <br />
-                <b>" + fila("emisor") + " a las " + fila("FechaHora") + " escribio: </b>
+                <b>" + fila("emisor") + " a las " + fila("FechaHora").ToString + " escribio: </b>
                 <br />
                 " + fila("Texto") + "  
                 "

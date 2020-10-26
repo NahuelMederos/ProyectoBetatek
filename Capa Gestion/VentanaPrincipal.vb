@@ -1,4 +1,4 @@
-﻿Public Class VentanaGestion
+﻿Public Class VentanaPrincipal
     Private Sub btnSintomas_Click(sender As Object, e As EventArgs) Handles btnSintomas.Click
         VentanaSintomas.ShowDialog()
 
@@ -25,5 +25,9 @@
 
     Private Sub btnAgregarPacientes_Click(sender As Object, e As EventArgs) Handles btnAgregarPacientes.Click
         VentanaPacientes.ShowDialog()
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        VentanaDatos.ShowDialog()
     End Sub
 End Class

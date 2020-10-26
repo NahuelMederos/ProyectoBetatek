@@ -31,7 +31,7 @@
         Me.Comando.CommandText =
             "
             SELECT 
-	           m.de, m.fechahora, m.texto, m.idmensaje as id_mensaje, u.nombre as emisor, u.NombreUsuario, u.apellido
+	           m.de, (m.fechahora) as fechahora, m.texto, m.idmensaje as id_mensaje, u.nombre as emisor, u.NombreUsuario, u.apellido
             FROM
 	            Chatea m 
             JOIN
@@ -56,7 +56,7 @@
         Me.Comando.CommandText =
             "
             SELECT 
-	           m.de, m.fechahora, m.texto, m.idmensaje as id_mensaje, u.nombre as emisor, u.apellido
+	           m.de, Time(m.fechahora) as fechahora, m.texto, m.idmensaje as id_mensaje, u.nombre as emisor, u.apellido
             FROM
 	            chatea m 
             JOIN
@@ -90,7 +90,7 @@
     Public Function ChatsNoRespondidos()
         Me.Comando.CommandText = "
             SELECT 
-	           sesion,de As Cedula,FechaHora,Nombre
+	           sesion,de As Cedula,Time(FechaHora) as FechaHora,Nombre
             FROM
 	            chatea m 
             JOIN
@@ -127,7 +127,7 @@
     Public Function VerChatCompleto()
         Comando.CommandText = "
         (SELECT 
-	           m.de, m.fechahora, m.texto, m.idmensaje as id_mensaje, u.nombre as emisor
+	           m.de, TIME(m.fechahora) as fechahora, m.texto, m.idmensaje as id_mensaje, u.nombre as emisor, apellido
             FROM
 	            chatea m 
             JOIN
@@ -136,7 +136,7 @@
                     where m.sesion=" + Me.Sesion + ")
         UNION
         (SELECT 
-	           m.de, m.fechahora, m.texto, m.idmensaje as id_mensaje, u.nombre as emisor
+	           m.de, TIME(m.fechahora) as fechahora, m.texto, m.idmensaje as id_mensaje, u.nombre as emisor, apellido
             FROM
 	            chatea m 
             JOIN
@@ -165,4 +165,12 @@
 
     End Function
 
+    Public Function ObtenerSesionesDeChat()
+        Comando.CommandText = "Select Sesion,De,Para,Date(FechaHora) as Fecha 
+                               From chatea 
+                               Group by sesion"
+
+        Reader = Comando.ExecuteReader
+        Return Reader
+    End Function
 End Class

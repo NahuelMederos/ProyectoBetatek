@@ -74,12 +74,12 @@ Public Class ChatPaciente
             'textoWB sirve para lo mismo que en ChatMedico
             Dim textoWB As String
             For Each fila As DataRow In tabla.Rows
-                RTxtChat.Text += "[" + Strings.Left(Strings.Right(fila("FechaHora").ToString, 8), 5) + "] " + fila("emisor") + " " + fila("apellido") + ": " + fila("Texto").ToString + Environment.NewLine
+                RTxtChat.Text += "[" + fila("FechaHora").ToString + "] " + fila("emisor") + " " + fila("apellido") + ": " + fila("Texto").ToString + Environment.NewLine
 
                 textoWB +=
                 "
                 <br />
-                <p><b>" + fila("emisor") + " " + fila("apellido") + " a las " + Strings.Left(Strings.Right(fila("FechaHora").ToString, 8), 5) + " escribio: </b>
+                <p><b>" + fila("emisor") + " " + fila("apellido") + " a las " + fila("FechaHora").ToString + " escribio: </b>
                 <br />
                 " + fila("Texto") + "</p>"
 

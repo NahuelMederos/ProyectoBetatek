@@ -74,10 +74,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Sesion.vb" />
+    <Compile Include="VentanaChatCompleto.Designer.vb">
+      <DependentUpon>VentanaChatCompleto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaChatCompleto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaDatos.Designer.vb">
+      <DependentUpon>VentanaDatos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaDatos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="VentanaGestores.Designer.vb">
       <DependentUpon>VentanaGestores.vb</DependentUpon>
     </Compile>
     <Compile Include="VentanaGestores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaHistorialDeChats.Designer.vb">
+      <DependentUpon>VentanaHistorialDeChats.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaHistorialDeChats.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaHistorialDiagnosticos.Designer.vb">
+      <DependentUpon>VentanaHistorialDiagnosticos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaHistorialDiagnosticos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VentanaLogin.vb">
@@ -108,10 +132,10 @@
     <Compile Include="VentanaAsociar.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaGestion.Designer.vb">
-      <DependentUpon>VentanaGestion.vb</DependentUpon>
+    <Compile Include="VentanaPrincipal.Designer.vb">
+      <DependentUpon>VentanaPrincipal.vb</DependentUpon>
     </Compile>
-    <Compile Include="VentanaGestion.vb">
+    <Compile Include="VentanaPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VentanaMedicos.Designer.vb">
@@ -146,8 +170,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="VentanaChatCompleto.resx">
+      <DependentUpon>VentanaChatCompleto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaDatos.resx">
+      <DependentUpon>VentanaDatos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentanaGestores.resx">
       <DependentUpon>VentanaGestores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaHistorialDeChats.resx">
+      <DependentUpon>VentanaHistorialDeChats.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaHistorialDiagnosticos.resx">
+      <DependentUpon>VentanaHistorialDiagnosticos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaLogin.resx">
       <DependentUpon>VentanaLogin.vb</DependentUpon>
@@ -161,8 +197,8 @@
     <EmbeddedResource Include="VentanaAsociar.resx">
       <DependentUpon>VentanaAsociar.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaGestion.resx">
-      <DependentUpon>VentanaGestion.vb</DependentUpon>
+    <EmbeddedResource Include="VentanaPrincipal.resx">
+      <DependentUpon>VentanaPrincipal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaMedicos.resx">
       <DependentUpon>VentanaMedicos.vb</DependentUpon>
