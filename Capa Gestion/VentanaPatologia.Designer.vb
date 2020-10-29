@@ -147,14 +147,14 @@ Partial Class VentanaPatologia
         '
         'txtRutaCsv
         '
-        Me.txtRutaCsv.Location = New System.Drawing.Point(86, 373)
+        Me.txtRutaCsv.Location = New System.Drawing.Point(90, 352)
         Me.txtRutaCsv.Name = "txtRutaCsv"
         Me.txtRutaCsv.Size = New System.Drawing.Size(236, 20)
         Me.txtRutaCsv.TabIndex = 23
         '
         'btnBuscar
         '
-        Me.btnBuscar.Location = New System.Drawing.Point(7, 373)
+        Me.btnBuscar.Location = New System.Drawing.Point(11, 352)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(75, 21)
         Me.btnBuscar.TabIndex = 24
@@ -163,7 +163,7 @@ Partial Class VentanaPatologia
         '
         'btnOk
         '
-        Me.btnOk.Location = New System.Drawing.Point(328, 373)
+        Me.btnOk.Location = New System.Drawing.Point(332, 352)
         Me.btnOk.Name = "btnOk"
         Me.btnOk.Size = New System.Drawing.Size(31, 20)
         Me.btnOk.TabIndex = 25
@@ -173,18 +173,17 @@ Partial Class VentanaPatologia
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(4, 335)
+        Me.Label1.Location = New System.Drawing.Point(8, 336)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(275, 26)
+        Me.Label1.Size = New System.Drawing.Size(106, 13)
         Me.Label1.TabIndex = 26
-        Me.Label1.Text = "Para subir las enfermedades a traves de un archivo .csv," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " ingrese la ruta del ar" &
-    "chivo y presione OK"
+        Me.Label1.Text = "Ingresar archivo .csv"
         '
         'VentanaPatologia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(474, 405)
+        Me.ClientSize = New System.Drawing.Size(474, 380)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnOk)
         Me.Controls.Add(Me.btnBuscar)

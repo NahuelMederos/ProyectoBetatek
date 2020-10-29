@@ -112,7 +112,7 @@ Partial Class VentanaSintomas
         'Listar
         '
         Me.Listar.Enabled = False
-        Me.Listar.Location = New System.Drawing.Point(463, 406)
+        Me.Listar.Location = New System.Drawing.Point(454, 355)
         Me.Listar.Name = "Listar"
         Me.Listar.Size = New System.Drawing.Size(10, 23)
         Me.Listar.TabIndex = 11
@@ -122,16 +122,15 @@ Partial Class VentanaSintomas
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(9, 359)
+        Me.Label1.Location = New System.Drawing.Point(12, 339)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(275, 26)
+        Me.Label1.Size = New System.Drawing.Size(106, 13)
         Me.Label1.TabIndex = 30
-        Me.Label1.Text = "Para subir las enfermedades a traves de un archivo .csv," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " ingrese la ruta del ar" &
-    "chivo y presione OK"
+        Me.Label1.Text = "Ingresar archivo .csv"
         '
         'btnOk
         '
-        Me.btnOk.Location = New System.Drawing.Point(333, 397)
+        Me.btnOk.Location = New System.Drawing.Point(333, 355)
         Me.btnOk.Name = "btnOk"
         Me.btnOk.Size = New System.Drawing.Size(31, 20)
         Me.btnOk.TabIndex = 29
@@ -140,7 +139,7 @@ Partial Class VentanaSintomas
         '
         'btnBuscar
         '
-        Me.btnBuscar.Location = New System.Drawing.Point(12, 397)
+        Me.btnBuscar.Location = New System.Drawing.Point(12, 355)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(75, 21)
         Me.btnBuscar.TabIndex = 28
@@ -149,7 +148,7 @@ Partial Class VentanaSintomas
         '
         'txtRutaCsv
         '
-        Me.txtRutaCsv.Location = New System.Drawing.Point(91, 397)
+        Me.txtRutaCsv.Location = New System.Drawing.Point(91, 355)
         Me.txtRutaCsv.Name = "txtRutaCsv"
         Me.txtRutaCsv.Size = New System.Drawing.Size(236, 20)
         Me.txtRutaCsv.TabIndex = 27
@@ -162,7 +161,7 @@ Partial Class VentanaSintomas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(474, 428)
+        Me.ClientSize = New System.Drawing.Size(474, 386)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnOk)
         Me.Controls.Add(Me.btnBuscar)

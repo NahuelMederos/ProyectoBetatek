@@ -91,11 +91,142 @@ Public Module ControladorUsuarios
         Return 0
     End Function
 
-    Public Function ObtenerMailPaciente(NombreUsuario As String)
+    Public Function ObtenerDatosPaciente(NombreUsuario As String, Opcion As Integer)
         Dim u As New Usuarios(Username, Password)
         u.NombreUsuario = NombreUsuario
 
-        Return u.ObtenerMailPaciente
+        Select Case Opcion
+            Case 1
+                Return u.ObtenerNombrePaciente
+            Case 2
+                Return u.ObtenerApellidoPaciente
+            Case 3
+                Return u.ObtenerEdadPaciente
+            Case 4
+                Return u.ObtenerMailPaciente
+            Case 5
+                u.NombreUsuario = NombreUsuario
+                Dim DatosUsuario As New List(Of String) From {u.ObtenerNombrePaciente, u.ObtenerApellidoPaciente, u.ObtenerEdadPaciente, u.ObtenerMailPaciente}
+                Return DatosUsuario
+        End Select
     End Function
 
+    Public Function ObtenerDatosMedico(NombreUsuario As String, Opcion As Integer)
+        Dim u As New Usuarios(Username, Password)
+        u.NombreUsuario = NombreUsuario
+
+        Select Case Opcion
+            Case 1
+                Return u.ObtenerNombreMedico
+            Case 2
+                Return u.ObtenerApellidoMedico
+            Case 3
+                Return u.ObtenerCedulaMedico
+            Case 5
+                Dim DatosUsuario As New List(Of String) From {u.ObtenerNombreMedico, u.ObtenerApellidoMedico, u.ObtenerCedulaMedico}
+                Return DatosUsuario
+        End Select
+    End Function
+
+    Public Function ObtenerDatosGestor(NombreUsuario As String, Opcion As Integer)
+        Dim u As New Usuarios(Username, Password)
+        u.NombreUsuario = NombreUsuario
+
+        Select Case Opcion
+            Case 1
+                Return u.ObtenerNombreGestor
+            Case 2
+                Return u.ObtenerApellidoGestor
+            Case 3
+                Return u.ObtenerCedulaGestor
+            Case 5
+                Dim DatosUsuario As New List(Of String) From {u.ObtenerNombreGestor, u.ObtenerApellidoGestor, u.ObtenerCedulaGestor}
+                Return DatosUsuario
+        End Select
+    End Function
+
+    Public Sub ModificarPaciente(Ci As String, Nombre As String, Apellido As String, Edad As String, Mail As String)
+        Dim u As New Usuarios(Username, Password)
+        u.Cedula = Ci
+        u.Nombre = Nombre
+        u.Apellido = Apellido
+        u.Edad = Edad
+        u.Mail = Mail
+
+        u.ModificarPaciente()
+    End Sub
+
+    Public Sub ModificarMedico(NombreUsuario As String, Nombre As String, Apellido As String, Cedula As String)
+        Dim u As New Usuarios(Username, Password)
+        u.NombreUsuario = NombreUsuario
+        u.Cedula = Cedula
+        u.Nombre = Nombre
+        u.Apellido = Apellido
+
+        u.ModificarMedico()
+    End Sub
+
+    Public Sub ModificarGestor(NombreUsuario As String, Nombre As String, Apellido As String, Cedula As String)
+        Dim u As New Usuarios(Username, Password)
+        u.NombreUsuario = NombreUsuario
+        u.Cedula = Cedula
+        u.Nombre = Nombre
+        u.Apellido = Apellido
+
+        u.ModificarGestor()
+    End Sub
+
+    Public Function ListarUsuarios(Opcion As Integer)
+        Dim u As New Usuarios(Username, Password)
+        Select Case Opcion
+            Case 1
+                Return u.ListarPacientes
+            Case 2
+                Return u.ListarMedicos
+            Case 3
+                Return u.ListarGestores()
+        End Select
+    End Function
+
+    Public Sub DesactivarUsuario(NombreUsuario As String, Opcion As Integer)
+        Dim u As New Usuarios(Username, Password)
+        u.NombreUsuario = NombreUsuario
+
+        Select Case Opcion
+            Case 1
+                u.DesactivarPaciente()
+            Case 2
+                u.DesactivarMedico()
+            Case 3
+                u.DesactivarGestor()
+        End Select
+    End Sub
+
+    Public Function VerificarEstadoUsuario(NombreUsuario As String, Opcion As Integer)
+        Dim u As New Usuarios(Username, Password)
+        u.NombreUsuario = NombreUsuario
+
+        Select Case Opcion
+            Case 1
+                Return u.EstadoDePaciente
+            Case 2
+                Return u.EstadoDeMedico
+            Case 3
+                Return u.EstadoDeGestor
+        End Select
+    End Function
+
+    Public Sub ActivarUsuario(NombreUsuario As String, Opcion As Integer)
+        Dim u As New Usuarios(Username, Password)
+        u.NombreUsuario = NombreUsuario
+
+        Select Case Opcion
+            Case 1
+                u.ActivarPaciente()
+            Case 2
+                u.ActivarMedico()
+            Case 3
+                u.ActivarGestor()
+        End Select
+    End Sub
 End Module

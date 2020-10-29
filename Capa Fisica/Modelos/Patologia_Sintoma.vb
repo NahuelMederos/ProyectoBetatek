@@ -28,7 +28,9 @@
         Comando.CommandText = "SELECT PATOLOGIA_SINTOMAS.IDPATOLOGIA_PAT,PATOLOGIA.NOMBRE,PATOLOGIA_SINTOMAS.SINTOMA,SINTOMA.NOMBRE
                                FROM PATOLOGIA,PATOLOGIA_SINTOMAS,SINTOMA
                                WHERE PATOLOGIA_SINTOMAS.IDPATOLOGIA_PAT = PATOLOGIA.IDPATOLOGIA
-                               AND PATOLOGIA_SINTOMAS.SINTOMA = SINTOMA.IDSINTOMA; "
+                               AND PATOLOGIA_SINTOMAS.SINTOMA = SINTOMA.IDSINTOMA
+                               AND SINTOMA.ACTIVO=1
+                               AND PATOLOGIA.ACTIVO=1; "
 
         Reader = Comando.ExecuteReader()
         Return Reader
@@ -52,11 +54,11 @@
 
     End Function
 
-    'Hace la cuenta de sintomas totales por patologias
     Public Function ObtenerNumeroDeSintomasTotalesPorPatologia()
 
         Comando.CommandText = "SELECT COUNT(NOMBRE) FROM PATOLOGIA_SINTOMAS,PATOLOGIA
                                WHERE IdPatologia = IDPATOLOGIA_PAT
+                               AND PATOLOGIA.ACTIVO = 1
                                And NOMBRE='" + SintomasTotalesDePatologia + "'"
 
         Return Comando.ExecuteScalar().ToString()

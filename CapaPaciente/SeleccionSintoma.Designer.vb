@@ -100,6 +100,7 @@ Partial Class SeleccionSintoma
         '
         'Check
         '
+        Me.Check.DataPropertyName = "Seleccion"
         Me.Check.HeaderText = ""
         Me.Check.Name = "Check"
         Me.Check.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
@@ -189,7 +190,7 @@ Partial Class SeleccionSintoma
     Friend WithEvents GrillaOtrasPatologias As DataGridView
     Friend WithEvents Label7 As Label
     Friend WithEvents btnSolicitarChat As Button
-    Friend WithEvents Check As DataGridViewCheckBoxColumn
     Friend WithEvents txtPatologiasSeguras As TextBox
     Friend WithEvents txtIdPatologias As TextBox
+    Friend WithEvents Check As DataGridViewCheckBoxColumn
 End Class

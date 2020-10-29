@@ -14,7 +14,6 @@ Public Class VentanaSintomas
             MsgBox("Error")
         End Try
 
-
     End Sub
 
     Private Sub btnModificarSintoma_Click(sender As Object, e As EventArgs) Handles btnModificarSintoma.Click
@@ -40,13 +39,10 @@ Public Class VentanaSintomas
     End Sub
 
     Private Sub BtnBorrar_Click(sender As Object, e As EventArgs) Handles BtnBorrar.Click
-        Try
-            ControladorSintoma.BorrarSintoma(txtIdSintoma.Text)
-            MsgBox("Sintoma eliminado")
-            Listar_Click(sender, e)
-        Catch ex As Exception
-            MsgBox("Primero debe borrar las asociaciones de este sintoma")
-        End Try
+        ControladorSintoma.BorrarSintoma(txtIdSintoma.Text)
+        MsgBox("Sintoma eliminado")
+        Listar_Click(sender, e)
+
     End Sub
 
 

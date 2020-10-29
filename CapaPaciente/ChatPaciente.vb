@@ -21,7 +21,7 @@ Public Class ChatPaciente
 
             e_mail = New MailMessage()
             e_mail.From = New MailAddress("betatek2020@gmail.com")
-            e_mail.To.Add(ControladorUsuarios.ObtenerMailPaciente(TxtId.Text))
+            e_mail.To.Add(ControladorUsuarios.ObtenerDatosPaciente(TxtId.Text, 4))
             e_mail.Subject = "Chat con medico " + txtEmisor.Text + "."
             e_mail.IsBodyHtml = False
             e_mail.Body = Mail

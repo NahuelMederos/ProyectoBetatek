@@ -8,7 +8,7 @@ Public Class VentanaAsociar
         TablaPat.DataSource = TablaP
 
         Dim TablaS As New DataTable
-        TablaS.Load(ControladorAsociar.ListarNombresSintomas())
+        TablaS.Load(ControladorSintoma.ListarSintomas())
 
         TablaSint.DataSource = TablaS
     End Sub

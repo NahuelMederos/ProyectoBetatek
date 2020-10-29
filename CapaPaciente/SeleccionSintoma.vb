@@ -6,9 +6,9 @@ Public Class SeleccionSintoma
         Dim tabla As New DataTable
         tabla.Load(ControladorSintoma.ListarNombreSintomas)
         GrillaSintomas.DataSource = tabla
+
     End Sub
 
-    'Son declarados en private para que se mantengan sus valores despues de ser usados por el boton seleccionar'
     Private contador As Integer = 0
     Private nombreList(contador)
 
@@ -17,11 +17,7 @@ Public Class SeleccionSintoma
 
     Private contador3 As Integer = 0
     Private PatologiasSeguras(contador3)
-
-    'presult nos deja ver los sintomas que se seleccionaron'
     Private presult As String
-
-    'Nos permite ver todas las patologias posibles en un array'
     Private OtrasPatologiasResult As String
 
     Private Sub btnSeleccionarSintoma_Click_1(sender As Object, e As EventArgs) Handles btnSeleccionarSintoma.Click
@@ -32,7 +28,7 @@ Public Class SeleccionSintoma
         'Por cada item seleccionado en el datagrid, se guardan los nombres en el array nombreList'
         For Each selectedItem As DataGridViewRow In GrillaSintomas.Rows
             Dim chk As DataGridViewCheckBoxCell = selectedItem.Cells(Check.Name)
-            If chk.Value IsNot Nothing AndAlso chk.Value = True Then
+            If chk.Value = True Then
                 nombre = selectedItem.Cells("NOMBRE").Value
                 ReDim Preserve nombreList(contador)
                 nombreList(contador) = nombre

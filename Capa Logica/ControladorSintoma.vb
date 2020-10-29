@@ -6,8 +6,12 @@ Public Module ControladorSintoma
         Dim s As New Sintoma(Sesion.Username, Sesion.Password)
         s.Nombre = Nombre
 
+        If String.Compare(s.EstadoSintoma(), 0) = 0 Then
+            s.ActivarSintoma()
+        Else
+            s.GuardarSintoma()
+        End If
 
-        s.GuardarSintoma()
 
     End Sub
 
@@ -33,14 +37,12 @@ Public Module ControladorSintoma
         Dim s As New Sintoma(Sesion.Username, Sesion.Password)
 
         Return s.ObtenerSintomas()
-
     End Function
 
     Public Function ListarNombreSintomas()
         Dim s As New Sintoma(Sesion.Username, Sesion.Password)
 
         Return s.ObtenerNombreSintomas()
-
     End Function
 
     Public Function ObtenerIdSintoma(NombreSintoma As String)
@@ -49,4 +51,5 @@ Public Module ControladorSintoma
 
         Return s.ObtenerIdSintomas
     End Function
+
 End Module

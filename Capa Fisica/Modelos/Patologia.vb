@@ -17,7 +17,7 @@ Public Class Patologia
 
     Public Function ObtenerPatologia()
 
-        Comando.CommandText = "SELECT * FROM PATOLOGIA"
+        Comando.CommandText = "SELECT IdPatologia,Nombre,Prioridad FROM PATOLOGIA where activo=1"
 
         Reader = Comando.ExecuteReader()
         Return Reader
@@ -34,7 +34,7 @@ Public Class Patologia
 
     Public Function IdyNombrePatologia()
 
-        Comando.CommandText = "SELECT IDPATOLOGIA,NOMBRE FROM PATOLOGIA"
+        Comando.CommandText = "SELECT IDPATOLOGIA,NOMBRE FROM PATOLOGIA where activo=1"
 
         Reader = Comando.ExecuteReader()
         Return Reader
@@ -42,17 +42,26 @@ Public Class Patologia
     End Function
 
     Public Sub AltaPatologia()
-        Comando.CommandText = "INSERT INTO PATOLOGIA VALUES(LAST_INSERT_ID(),'" + Me.Nombre + "','" + Me.Prioridad + "')"
+        Comando.CommandText = "INSERT INTO PATOLOGIA VALUES(LAST_INSERT_ID(),'" + Me.Nombre + "','" + Me.Prioridad + "',default)"
 
         Comando.ExecuteNonQuery()
 
     End Sub
 
     Public Sub BajaPatologia()
-        Comando.CommandText = "DELETE FROM PATOLOGIA WHERE IDPATOLOGIA = " + Me.IdPatologia
-
+        Comando.CommandText = "START TRANSACTION;"
         Comando.ExecuteNonQuery()
-
+        Try
+            Comando.CommandText = "update Patologia set activo=0 where idpatologia=" + Me.IdPatologia
+            Comando.ExecuteNonQuery()
+            Comando.CommandText = "delete from patologia_sintomas where IdPatologia_pat=" + Me.IdPatologia
+            Comando.ExecuteNonQuery()
+            Comando.CommandText = "COMMIT;"
+            Comando.ExecuteNonQuery()
+        Catch ex As Exception
+            Comando.CommandText = "ROLLBACK;"
+            Comando.ExecuteNonQuery()
+        End Try
     End Sub
 
     Public Sub Modificar()

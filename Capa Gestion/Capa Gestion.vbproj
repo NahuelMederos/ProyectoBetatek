@@ -86,10 +86,28 @@
     <Compile Include="VentanaDatos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaGestores.Designer.vb">
-      <DependentUpon>VentanaGestores.vb</DependentUpon>
+    <Compile Include="VentanaGestionGestores.Designer.vb">
+      <DependentUpon>VentanaGestionGestores.vb</DependentUpon>
     </Compile>
-    <Compile Include="VentanaGestores.vb">
+    <Compile Include="VentanaGestionGestores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaGestionMedicos.Designer.vb">
+      <DependentUpon>VentanaGestionMedicos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaGestionMedicos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaGestionPacientes.Designer.vb">
+      <DependentUpon>VentanaGestionPacientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaGestionPacientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaAgregarGestores.Designer.vb">
+      <DependentUpon>VentanaAgregarGestores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaAgregarGestores.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VentanaHistorialDeChats.Designer.vb">
@@ -138,16 +156,16 @@
     <Compile Include="VentanaPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaMedicos.Designer.vb">
-      <DependentUpon>VentanaMedicos.vb</DependentUpon>
+    <Compile Include="VentanaAgregarMedicos.Designer.vb">
+      <DependentUpon>VentanaAgregarMedicos.vb</DependentUpon>
     </Compile>
-    <Compile Include="VentanaMedicos.vb">
+    <Compile Include="VentanaAgregarMedicos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaPacientes.Designer.vb">
-      <DependentUpon>VentanaPacientes.vb</DependentUpon>
+    <Compile Include="VentanaAgregarPacientes.Designer.vb">
+      <DependentUpon>VentanaAgregarPacientes.vb</DependentUpon>
     </Compile>
-    <Compile Include="VentanaPacientes.vb">
+    <Compile Include="VentanaAgregarPacientes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VentanaPatologia.Designer.vb">
@@ -176,8 +194,17 @@
     <EmbeddedResource Include="VentanaDatos.resx">
       <DependentUpon>VentanaDatos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaGestores.resx">
-      <DependentUpon>VentanaGestores.vb</DependentUpon>
+    <EmbeddedResource Include="VentanaGestionGestores.resx">
+      <DependentUpon>VentanaGestionGestores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaGestionMedicos.resx">
+      <DependentUpon>VentanaGestionMedicos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaGestionPacientes.resx">
+      <DependentUpon>VentanaGestionPacientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaAgregarGestores.resx">
+      <DependentUpon>VentanaAgregarGestores.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaHistorialDeChats.resx">
       <DependentUpon>VentanaHistorialDeChats.vb</DependentUpon>
@@ -200,11 +227,11 @@
     <EmbeddedResource Include="VentanaPrincipal.resx">
       <DependentUpon>VentanaPrincipal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaMedicos.resx">
-      <DependentUpon>VentanaMedicos.vb</DependentUpon>
+    <EmbeddedResource Include="VentanaAgregarMedicos.resx">
+      <DependentUpon>VentanaAgregarMedicos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaPacientes.resx">
-      <DependentUpon>VentanaPacientes.vb</DependentUpon>
+    <EmbeddedResource Include="VentanaAgregarPacientes.resx">
+      <DependentUpon>VentanaAgregarPacientes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaPatologia.resx">
       <DependentUpon>VentanaPatologia.vb</DependentUpon>

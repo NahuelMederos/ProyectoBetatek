@@ -9,12 +9,7 @@ Public Module ControladorAsociar
 
     End Function
 
-    Public Function ListarNombresSintomas()
-        Dim p As New Sintoma(Sesion.Username, Sesion.Password)
 
-        Return p.IdyNombreSintomas()
-
-    End Function
 
     Public Sub CrearAsociacion(IdP As String, IdS As String)
         Dim p As New Patologia_Sintoma(Sesion.Username, Sesion.Password)
@@ -52,12 +47,17 @@ Public Module ControladorAsociar
         FROM PATOLOGIA_SINTOMAS,PATOLOGIA,SINTOMA
         WHERE IDPATOLOGIA_PAT=IDPATOLOGIA
         AND PATOLOGIA_SINTOMAS.SINTOMA=IDSINTOMA
-        AND SINTOMA.NOMBRE='Nada'"
+        AND SINTOMA.NOMBRE='Nada'
+        AND SINTOMA.ACTIVO = 1
+        AND PATOLOGIA.ACTIVO = 1"
+
 
         'Por cada lugar en nombreList se le agrega una nueva busqueda con el nombre del sintoma que pertenece a ese lugar'
         For Each elem2 As String In nombreList
             Resultado &= " OR IDPATOLOGIA_PAT=IDPATOLOGIA
         AND PATOLOGIA_SINTOMAS.SINTOMA=IDSINTOMA
+        AND SINTOMA.ACTIVO = 1
+        AND PATOLOGIA.ACTIVO = 1
         AND SINTOMA.NOMBRE='" + elem2 + "'"
         Next
 
@@ -84,6 +84,8 @@ Public Module ControladorAsociar
         FROM(SELECT PATOLOGIA.NOMBRE
         FROM PATOLOGIA_SINTOMAS,PATOLOGIA,SINTOMA
         WHERE IDPATOLOGIA_PAT=IDPATOLOGIA
+        AND SINTOMA.ACTIVO = 1
+        AND PATOLOGIA.ACTIVO = 1
         AND IDSINTOMA=SINTOMA
         AND SINTOMA.NOMBRE='Nada'"
 
@@ -91,6 +93,8 @@ Public Module ControladorAsociar
             Resultado &= " OR 
         IDPATOLOGIA_PAT=IDPATOLOGIA
         AND IDSINTOMA=SINTOMA
+        AND SINTOMA.ACTIVO = 1
+        AND PATOLOGIA.ACTIVO = 1
         AND SINTOMA.NOMBRE='" + elem2 + "'"
         Next
         Resultado &= ") as Patologias
