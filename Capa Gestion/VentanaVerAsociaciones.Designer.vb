@@ -36,9 +36,12 @@ Partial Class VentanaVerAsociaciones
         '
         'TablaAsociaciones
         '
+        Me.TablaAsociaciones.AllowUserToAddRows = False
+        Me.TablaAsociaciones.AllowUserToDeleteRows = False
         Me.TablaAsociaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.TablaAsociaciones.Location = New System.Drawing.Point(24, 12)
         Me.TablaAsociaciones.Name = "TablaAsociaciones"
+        Me.TablaAsociaciones.ReadOnly = True
         Me.TablaAsociaciones.Size = New System.Drawing.Size(356, 293)
         Me.TablaAsociaciones.TabIndex = 0
         '

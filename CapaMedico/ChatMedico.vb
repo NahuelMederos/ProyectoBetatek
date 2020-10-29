@@ -102,6 +102,6 @@ Public Class ChatMedico
     End Sub
 
     Private Sub WebBrowser1_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser1.DocumentCompleted
-        Me.WebBrowser1.Document.Window.ScrollTo(0, WebBrowser1.Document.Window.Size.Height)
+        Me.WebBrowser1.Document.Window.ScrollTo(0, WebBrowser1.Document.Body.ScrollRectangle.Size.Height)
     End Sub
 End Class

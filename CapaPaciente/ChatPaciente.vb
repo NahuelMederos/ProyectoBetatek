@@ -1,4 +1,5 @@
-﻿Imports System.Net.Mail
+﻿Imports System.ComponentModel
+Imports System.Net.Mail
 Imports Capa_Logica
 
 Public Class ChatPaciente
@@ -18,10 +19,10 @@ Public Class ChatPaciente
             Smtp_Server.Port = 587
             Smtp_Server.EnableSsl = True
             Smtp_Server.Host = "smtp.gmail.com"
-
+            'ControladorUsuarios.ObtenerDatosPaciente(TxtId.Text, 4)
             e_mail = New MailMessage()
             e_mail.From = New MailAddress("betatek2020@gmail.com")
-            e_mail.To.Add(ControladorUsuarios.ObtenerDatosPaciente(TxtId.Text, 4))
+            e_mail.To.Add("a")
             e_mail.Subject = "Chat con medico " + txtEmisor.Text + "."
             e_mail.IsBodyHtml = False
             e_mail.Body = Mail
@@ -110,6 +111,12 @@ Public Class ChatPaciente
     End Sub
 
     Private Sub WebBrowser1_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser1.DocumentCompleted
-        Me.WebBrowser1.Document.Window.ScrollTo(0, WebBrowser1.Document.Window.Size.Height)
+        Me.WebBrowser1.Document.Window.ScrollTo(0, WebBrowser1.Document.Body.ScrollRectangle.Size.Height)
     End Sub
+
+    Private Sub ChatPaciente_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        VentanaMenu.Show()
+    End Sub
+
+
 End Class

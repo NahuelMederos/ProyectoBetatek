@@ -102,9 +102,12 @@ Partial Class VentanaSintomas
         '
         'TablaDeSintomas
         '
+        Me.TablaDeSintomas.AllowUserToAddRows = False
+        Me.TablaDeSintomas.AllowUserToDeleteRows = False
         Me.TablaDeSintomas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.TablaDeSintomas.Location = New System.Drawing.Point(12, 12)
         Me.TablaDeSintomas.Name = "TablaDeSintomas"
+        Me.TablaDeSintomas.ReadOnly = True
         Me.TablaDeSintomas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.TablaDeSintomas.Size = New System.Drawing.Size(315, 315)
         Me.TablaDeSintomas.TabIndex = 10

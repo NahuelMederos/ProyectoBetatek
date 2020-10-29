@@ -32,7 +32,6 @@ Partial Class SeleccionSintoma
         Me.btnSeleccionarSintoma = New System.Windows.Forms.Button()
         Me.GrillaOtrasPatologias = New System.Windows.Forms.DataGridView()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.btnSolicitarChat = New System.Windows.Forms.Button()
         Me.txtPatologiasSeguras = New System.Windows.Forms.TextBox()
         Me.txtIdPatologias = New System.Windows.Forms.TextBox()
         CType(Me.GrillaSintomas, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -85,6 +84,7 @@ Partial Class SeleccionSintoma
         Me.GrillaSintomas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Check})
         Me.GrillaSintomas.EnableHeadersVisualStyles = False
         Me.GrillaSintomas.GridColor = System.Drawing.Color.SteelBlue
+        Me.GrillaSintomas.ImeMode = System.Windows.Forms.ImeMode.Off
         Me.GrillaSintomas.Location = New System.Drawing.Point(12, 69)
         Me.GrillaSintomas.Name = "GrillaSintomas"
         Me.GrillaSintomas.RowHeadersVisible = False
@@ -100,7 +100,7 @@ Partial Class SeleccionSintoma
         '
         'Check
         '
-        Me.Check.DataPropertyName = "Seleccion"
+        Me.Check.DataPropertyName = "Check"
         Me.Check.HeaderText = ""
         Me.Check.Name = "Check"
         Me.Check.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
@@ -134,16 +134,6 @@ Partial Class SeleccionSintoma
         Me.Label7.TabIndex = 21
         Me.Label7.Text = "Todas las posibles patologias"
         '
-        'btnSolicitarChat
-        '
-        Me.btnSolicitarChat.Enabled = False
-        Me.btnSolicitarChat.Location = New System.Drawing.Point(284, 289)
-        Me.btnSolicitarChat.Name = "btnSolicitarChat"
-        Me.btnSolicitarChat.Size = New System.Drawing.Size(75, 39)
-        Me.btnSolicitarChat.TabIndex = 29
-        Me.btnSolicitarChat.Text = "Solicitar" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Chat"
-        Me.btnSolicitarChat.UseVisualStyleBackColor = True
-        '
         'txtPatologiasSeguras
         '
         Me.txtPatologiasSeguras.Location = New System.Drawing.Point(449, 338)
@@ -166,7 +156,6 @@ Partial Class SeleccionSintoma
         Me.ClientSize = New System.Drawing.Size(688, 379)
         Me.Controls.Add(Me.txtIdPatologias)
         Me.Controls.Add(Me.txtPatologiasSeguras)
-        Me.Controls.Add(Me.btnSolicitarChat)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.GrillaOtrasPatologias)
         Me.Controls.Add(Me.btnSeleccionarSintoma)
@@ -189,7 +178,6 @@ Partial Class SeleccionSintoma
     Friend WithEvents btnSeleccionarSintoma As Button
     Friend WithEvents GrillaOtrasPatologias As DataGridView
     Friend WithEvents Label7 As Label
-    Friend WithEvents btnSolicitarChat As Button
     Friend WithEvents txtPatologiasSeguras As TextBox
     Friend WithEvents txtIdPatologias As TextBox
     Friend WithEvents Check As DataGridViewCheckBoxColumn

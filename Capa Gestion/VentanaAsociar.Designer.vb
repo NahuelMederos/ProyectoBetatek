@@ -41,17 +41,23 @@ Partial Class VentanaAsociar
         '
         'TablaPat
         '
+        Me.TablaPat.AllowUserToAddRows = False
+        Me.TablaPat.AllowUserToDeleteRows = False
         Me.TablaPat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.TablaPat.Location = New System.Drawing.Point(12, 36)
         Me.TablaPat.Name = "TablaPat"
+        Me.TablaPat.ReadOnly = True
         Me.TablaPat.Size = New System.Drawing.Size(247, 339)
         Me.TablaPat.TabIndex = 0
         '
         'TablaSint
         '
+        Me.TablaSint.AllowUserToAddRows = False
+        Me.TablaSint.AllowUserToDeleteRows = False
         Me.TablaSint.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.TablaSint.Location = New System.Drawing.Point(391, 36)
         Me.TablaSint.Name = "TablaSint"
+        Me.TablaSint.ReadOnly = True
         Me.TablaSint.Size = New System.Drawing.Size(192, 339)
         Me.TablaSint.TabIndex = 1
         '

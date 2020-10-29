@@ -1,4 +1,5 @@
-﻿Imports Capa_Logica
+﻿Imports System.ComponentModel
+Imports Capa_Logica
 
 Public Class SeleccionSintoma
 
@@ -6,7 +7,7 @@ Public Class SeleccionSintoma
         Dim tabla As New DataTable
         tabla.Load(ControladorSintoma.ListarNombreSintomas)
         GrillaSintomas.DataSource = tabla
-
+        GrillaSintomas.Columns(1).ReadOnly = True
     End Sub
 
     Private contador As Integer = 0
@@ -34,119 +35,116 @@ Public Class SeleccionSintoma
                 nombreList(contador) = nombre
                 contador += 1
             End If
-
         Next selectedItem
 
-
-        Dim TablaOtrasPatologias As New DataTable
-        TablaOtrasPatologias.Load(ControladorAsociar.ObtenerOtrasPatologias(nombreList))
-        GrillaOtrasPatologias.DataSource = TablaOtrasPatologias
-
-
-        Dim PosiblePatologia As String
-
-        'Crea un array con todas las posibles patologias'
-        For Each Item As DataGridViewRow In GrillaOtrasPatologias.Rows
-            PosiblePatologia = Item.Cells("NOMBRE").Value
-            ReDim Preserve PosiblePatologiaList(contador2)
-            PosiblePatologiaList(contador2) = PosiblePatologia
-            contador2 += 1
-        Next
-
-        'Compara la cantidad de sintomas totales que tiene una patologia, con los sintomas seleccionados por el usuario para cada patologia en la lista "Otras posibles patologias"'
-        'En el caso de que la cantidad sea la misma, se agrega la patologia a un nuevo array llamado PatologiasSeguras'
-        For Each PosiblePat As String In PosiblePatologiaList
-            Dim Cuenta1 As Integer = Convert.ToInt32(ControladorAsociar.ObtenerPatologiasCompletas(PosiblePat))
-            Dim Cuenta2 As Integer = Convert.ToInt32(ControladorAsociar.ObtenerAparicionesdePatologiaenBusqueda(PosiblePat, nombreList))
-            If (Cuenta1 = Cuenta2) Then
-                ReDim Preserve PatologiasSeguras(contador3)
-                PatologiasSeguras(contador3) = PosiblePat
-                contador3 += 1
-            End If
-
-        Next
-
-        Dim ResultadoFinal As String = ""
-        Dim StringSintomas As String = ""
-        Dim Prio As String
-        Dim PrioridadDiagnostico As String = "Baja"
+        If contador = 0 Then
+            MsgBox("Debe elegir algun sintoma para poder generar un diagnostico")
+        Else
 
 
-        Dim NumeroDePatologiasSeguras As Integer = -1
-        Dim IdPatologiasList As New List(Of String)
+            Dim TablaOtrasPatologias As New DataTable
+            TablaOtrasPatologias.Load(ControladorAsociar.ObtenerOtrasPatologias(nombreList))
+            GrillaOtrasPatologias.DataSource = TablaOtrasPatologias
 
-        'Por cada Patologia en PatologiasSeguras se agrega al String ResultadoFinal y se utiliza la prioridad mas alta para el diagnostico'
-        For Each Patologia As String In PatologiasSeguras
-            NumeroDePatologiasSeguras += 1
-            Try
-                IdPatologiasList.Add(ControladorPatologia.ObtenerIdPatologia(Patologia))
-            Catch ex As Exception
-            End Try
 
-            ResultadoFinal &= Patologia + ", "
-            Try
-                Prio = ControladorPatologia.ObtenerPrioridad(Patologia)
-                If Prio = "Alta" Then
-                    PrioridadDiagnostico = "Alta"
-                ElseIf Prio = "Media" And PrioridadDiagnostico IsNot "Alta" Then
-                    PrioridadDiagnostico = "Media"
+            Dim PosiblePatologia As String
+
+            'Crea un array con todas las posibles patologias'
+            For Each Item As DataGridViewRow In GrillaOtrasPatologias.Rows
+                PosiblePatologia = Item.Cells("NOMBRE").Value
+                ReDim Preserve PosiblePatologiaList(contador2)
+                PosiblePatologiaList(contador2) = PosiblePatologia
+                contador2 += 1
+            Next
+
+            'Compara la cantidad de sintomas totales que tiene una patologia, con los sintomas seleccionados por el usuario para cada patologia en la lista "Otras posibles patologias"'
+            'En el caso de que la cantidad sea la misma, se agrega la patologia a un nuevo array llamado PatologiasSeguras'
+            For Each PosiblePat As String In PosiblePatologiaList
+                Dim Cuenta1 As Integer = Convert.ToInt32(ControladorAsociar.ObtenerPatologiasCompletas(PosiblePat))
+                Dim Cuenta2 As Integer = Convert.ToInt32(ControladorAsociar.ObtenerAparicionesdePatologiaenBusqueda(PosiblePat, nombreList))
+                If (Cuenta1 = Cuenta2) Then
+                    ReDim Preserve PatologiasSeguras(contador3)
+                    PatologiasSeguras(contador3) = PosiblePat
+                    contador3 += 1
                 End If
-            Catch
-            End Try
-        Next
+
+            Next
+
+            Dim ResultadoFinal As String = ""
+            Dim StringSintomas As String = ""
+            Dim Prio As String
+            Dim PrioridadDiagnostico As String = "Baja"
+
+
+            Dim NumeroDePatologiasSeguras As Integer = -1
+            Dim IdPatologiasList As New List(Of String)
+
+            'Por cada Patologia en PatologiasSeguras se agrega al String ResultadoFinal y se utiliza la prioridad mas alta para el diagnostico'
+            For Each Patologia As String In PatologiasSeguras
+                NumeroDePatologiasSeguras += 1
+                Try
+                    IdPatologiasList.Add(ControladorPatologia.ObtenerIdPatologia(Patologia))
+                Catch ex As Exception
+                End Try
+
+                ResultadoFinal &= Patologia + ", "
+                Try
+                    Prio = ControladorPatologia.ObtenerPrioridad(Patologia)
+                    If Prio = "Alta" Then
+                        PrioridadDiagnostico = "Alta"
+                    ElseIf Prio = "Media" And PrioridadDiagnostico IsNot "Alta" Then
+                        PrioridadDiagnostico = "Media"
+                    End If
+                Catch
+                End Try
+            Next
 
 
 
-        For Each IdPat In IdPatologiasList
-            txtIdPatologias.Text += IdPat
-        Next
+            For Each IdPat In IdPatologiasList
+                txtIdPatologias.Text += IdPat
+            Next
 
-        If ResultadoFinal = ", " Then
-            ResultadoFinal = "No hay ningun diagnostico seguro."
-        Else
-            ResultadoFinal = "Las posibles patologias segun los sintomas seleccionados son: " + ResultadoFinal
-            ResultadoFinal = ResultadoFinal.Remove(ResultadoFinal.Length - 4) + "."
+            If ResultadoFinal = ", " Then
+                ResultadoFinal = "No hay ningun diagnostico seguro."
+            Else
+                ResultadoFinal = "Las posibles patologias segun los sintomas seleccionados son: " + ResultadoFinal
+                ResultadoFinal = ResultadoFinal.Remove(ResultadoFinal.Length - 4) + "."
 
-        End If
-
-        Dim IdSintomasList As New List(Of String)
-
-        For Each Sint In nombreList
-            StringSintomas &= Sint + ", "
-            IdSintomasList.Add(ControladorSintoma.ObtenerIdSintoma(Sint))
-        Next
-
-        StringSintomas = StringSintomas.Remove(StringSintomas.Length - 2) + "."
-
-        txtPatologiasSeguras.Text = NumeroDePatologiasSeguras
-
-        Dim SolicitarChat As DialogResult
-        SolicitarChat = MessageBox.Show(ResultadoFinal + Environment.NewLine + Environment.NewLine + "        ¿Desea solicitar un chat con un medico?", "Solicitar Chat", MessageBoxButtons.YesNo)
-        If SolicitarChat = DialogResult.No Then
-            ControladorDiagnostico.CrearDiagnostico(StringSintomas, ResultadoFinal, Sesion.CI, PrioridadDiagnostico, "False", IdSintomasList)
-            If NumeroDePatologiasSeguras >= 1 Then
-                ControladorDiagnostico.DiagnosticoTienePatologias(ControladorDiagnostico.BuscarUltimoDiagnostico, IdPatologiasList)
             End If
-        Else
-            ControladorDiagnostico.CrearDiagnostico(StringSintomas, ResultadoFinal, Sesion.CI, PrioridadDiagnostico, "True", IdSintomasList)
-            If NumeroDePatologiasSeguras >= 1 Then
-                ControladorDiagnostico.DiagnosticoTienePatologias(ControladorDiagnostico.BuscarUltimoDiagnostico, IdPatologiasList)
+
+            Dim IdSintomasList As New List(Of String)
+
+            For Each Sint In nombreList
+                StringSintomas &= Sint + ", "
+                IdSintomasList.Add(ControladorSintoma.ObtenerIdSintoma(Sint))
+            Next
+
+            StringSintomas = StringSintomas.Remove(StringSintomas.Length - 2) + "."
+
+            txtPatologiasSeguras.Text = NumeroDePatologiasSeguras
+
+            Dim SolicitarChat As DialogResult
+            SolicitarChat = MessageBox.Show(ResultadoFinal + Environment.NewLine + Environment.NewLine + "        ¿Desea solicitar un chat con un medico?", "Solicitar Chat", MessageBoxButtons.YesNo)
+            If SolicitarChat = DialogResult.No Then
+                ControladorDiagnostico.CrearDiagnostico(StringSintomas, ResultadoFinal, Sesion.CI, PrioridadDiagnostico, "False", IdSintomasList)
+                If NumeroDePatologiasSeguras >= 1 Then
+                    ControladorDiagnostico.DiagnosticoTienePatologias(ControladorDiagnostico.BuscarUltimoDiagnostico, IdPatologiasList)
+                End If
+            Else
+                ControladorDiagnostico.CrearDiagnostico(StringSintomas, ResultadoFinal, Sesion.CI, PrioridadDiagnostico, "True", IdSintomasList)
+                If NumeroDePatologiasSeguras >= 1 Then
+                    ControladorDiagnostico.DiagnosticoTienePatologias(ControladorDiagnostico.BuscarUltimoDiagnostico, IdPatologiasList)
+                End If
+                ChatPaciente.Diagnostico = ResultadoFinal
+                ChatPaciente.Prioridad = PrioridadDiagnostico
+                ChatPaciente.Sintomas = StringSintomas
+                VentanaMenu.Hide()
+                ChatPaciente.Show()
+                Me.Close()
             End If
-            ChatPaciente.Diagnostico = ResultadoFinal
-            ChatPaciente.Prioridad = PrioridadDiagnostico
-            ChatPaciente.Sintomas = StringSintomas
-            ChatPaciente.Visible = True
-            Me.Close()
+            btnSeleccionarSintoma.Enabled = False
         End If
-
-
-        btnSeleccionarSintoma.Enabled = False
-    End Sub
-
-
-    Private Sub btnSolicitarChat_Click(sender As Object, e As EventArgs) Handles btnSolicitarChat.Click
-        ChatPaciente.Visible = True
-        Me.Close()
     End Sub
 
 

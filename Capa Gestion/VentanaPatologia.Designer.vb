@@ -54,9 +54,12 @@ Partial Class VentanaPatologia
         '
         'TablaDePatologias
         '
+        Me.TablaDePatologias.AllowUserToAddRows = False
+        Me.TablaDePatologias.AllowUserToDeleteRows = False
         Me.TablaDePatologias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.TablaDePatologias.Location = New System.Drawing.Point(11, 8)
         Me.TablaDePatologias.Name = "TablaDePatologias"
+        Me.TablaDePatologias.ReadOnly = True
         Me.TablaDePatologias.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.TablaDePatologias.Size = New System.Drawing.Size(315, 315)
         Me.TablaDePatologias.TabIndex = 21
