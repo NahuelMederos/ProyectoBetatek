@@ -6,8 +6,9 @@ CREATE TABLE Persona(
 CI Varchar(8) PRIMARY KEY,
 Nombre Varchar(20) not null,
 Apellido Varchar(20) not null,
-Edad Integer not null,
-Mail Varchar(40) unique not null
+Edad Varchar(3) not null,
+Mail Varchar(40) unique not null,
+Activo boolean Default 1
 );
 
 
@@ -16,7 +17,8 @@ NombreUsuario varchar(30),
 Nombre varchar(25) not null,
 Apellido varchar(25) not null,
 Cedula varchar(8) not null unique,
-PRIMARY KEY(NombreUsuario)
+PRIMARY KEY(NombreUsuario),
+Activo boolean Default 1
 )
 ;
 
@@ -25,18 +27,21 @@ NombreUsuario varchar(30),
 Nombre varchar(25) not null,
 Apellido varchar(25) not null,
 Cedula varchar(8) not null unique,
-PRIMARY KEY(NombreUsuario)
+PRIMARY KEY(NombreUsuario),
+Activo boolean Default 1
 );
 
 CREATE TABLE Sintoma(
 IdSintoma integer auto_increment PRIMARY KEY,
-Nombre Varchar(30) not null unique
+Nombre Varchar(30) not null unique,
+Activo boolean Default 1
 );
 
 CREATE TABLE Patologia(
 IdPatologia integer auto_increment PRIMARY KEY,
 Nombre Varchar(30) not null unique,
-Prioridad Varchar(5) not null CHECK (PRIORIDAD IN ('Baja','Media','Alta')) 
+Prioridad Varchar(5) not null CHECK (PRIORIDAD IN ('Baja','Media','Alta')), 
+Activo boolean Default 1
 );
 
 CREATE TABLE Patologia_Sintomas(
@@ -55,6 +60,15 @@ Informacion TEXT,
 SolicitaChat Boolean
 );
 
+CREATE TABLE PATOLOGIAS(
+IdDiagnostico integer,
+IdPatologia integer,
+FOREIGN KEY (IdDiagnostico) REFERENCES Diagnostico (IdDiagnostico),
+FOREIGN KEY (IDPATOLOGIA) REFERENCES Patologia (IdPatologia),
+PRIMARY KEY (IDDIAGNOSTICO,IDPATOLOGIA)
+);
+
+
 CREATE TABLE Tiene(
 CIPersona Varchar(8),
 IdSintoma integer,
@@ -66,6 +80,7 @@ PRIMARY KEY(CIPersona,IdSintoma)
 CREATE TABLE Recibe(
 IdDiagnostico integer,
 NombreMedico varchar(30),
+EstadoSesion boolean DEFAULT 1,
 FOREIGN KEY(IdDiagnostico) REFERENCES Diagnostico(IdDiagnostico),
 FOREIGN KEY(NombreMedico) REFERENCES Medico(NombreUsuario),
 PRIMARY KEY(IdDiagnostico,NombreMedico)
@@ -73,19 +88,23 @@ PRIMARY KEY(IdDiagnostico,NombreMedico)
 
 CREATE TABLE Gestiona(
 NombreAdmin varchar(30),
-IdSintoma integer,
+IdSintoma integer unique,
+IdPatologia integer unique,
 FOREIGN KEY(NombreAdmin) REFERENCES Administrativo(NombreUsuario),
 FOREIGN KEY(IdSintoma) REFERENCES Sintoma(IdSintoma),
-PRIMARY KEY(NombreAdmin,IdSintoma)
+FOREIGN KEY(IdPatologia) REFERENCES Patologia(IdPatologia),
+PRIMARY KEY(NombreAdmin,IdSintoma,IdPatologia)
 );
 
 CREATE TABLE Genera(
 CiPersona Varchar(8),
-IdDiagnostico integer unique,
+IdDiagnostico integer,
+IdSintoma integer,
 FechaHora Timestamp not null,
 FOREIGN KEY(CiPersona) REFERENCES Persona(CI),
 FOREIGN KEY(IdDiagnostico) REFERENCES Diagnostico(IdDiagnostico),
-PRIMARY KEY(CiPersona,IdDiagnostico)
+FOREIGN KEY(IdSintoma) REFERENCES Sintoma(IdSintoma),
+PRIMARY KEY(CiPersona,IdDiagnostico,IdSintoma)
 );
 
 CREATE TABLE Chatea(
@@ -98,25 +117,54 @@ FechaHora Timestamp not null,
 Leido boolean not null default 0
 );
 
-INSERT INTO SINTOMA VALUES(1,'Cansancio');
-INSERT INTO SINTOMA VALUES(2,'Diarrea');
-INSERT INTO SINTOMA VALUES(3,'Dolor de estomago');
-INSERT INTO SINTOMA VALUES(4,'Fiebre');
-INSERT INTO SINTOMA VALUES(5,'Tos');
+INSERT INTO SINTOMA VALUES(1,'Cansancio',default);
+INSERT INTO SINTOMA VALUES(2,'Diarrea',default);
+INSERT INTO SINTOMA VALUES(3,'Dolor de estomago',default);
+INSERT INTO SINTOMA VALUES(4,'Fiebre',default);
+INSERT INTO SINTOMA VALUES(5,'Tos',default);
+INSERT INTO SINTOMA VALUES(6,'Dolor de cabeza',default);
 
-INSERT INTO PATOLOGIA VALUES(1,'Covid','Alta');
-INSERT INTO PATOLOGIA VALUES(2,'Gripe','Media');
-INSERT INTO PATOLOGIA VALUES(3,'Gastroenteritis','Baja');
+INSERT INTO PATOLOGIA VALUES(1,'Covid','Alta',default);
+INSERT INTO PATOLOGIA VALUES(2,'Gripe','Media',default);
+INSERT INTO PATOLOGIA VALUES(3,'Gastroenteritis','Baja',default);
 
 INSERT INTO PATOLOGIA_SINTOMAS VALUES(1,1);
 INSERT INTO PATOLOGIA_SINTOMAS VALUES(1,4);
 INSERT INTO PATOLOGIA_SINTOMAS VALUES(1,5);
 INSERT INTO PATOLOGIA_SINTOMAS VALUES(2,4);
 INSERT INTO PATOLOGIA_SINTOMAS VALUES(2,5);
+INSERT INTO PATOLOGIA_SINTOMAS VALUES(2,6);
 INSERT INTO PATOLOGIA_SINTOMAS VALUES(3,3);
 INSERT INTO PATOLOGIA_SINTOMAS VALUES(3,2);
 
-Insert into medico values('Medico','Solicitudes','Chat','1');
+Insert into medico values('Medico','Solicitudes','Chat','1',default);
 
+CREATE USER '11111111'@'localhost' IDENTIFIED BY '123';
+GRANT INSERT,UPDATE,SELECT ON betatek.Chatea TO '11111111'@'localhost';
+GRANT SELECT ON betatek.Persona TO '11111111'@'localhost';
+GRANT SELECT ON betatek.Medico TO '11111111'@'localhost';
+GRANT INSERT ON betatek.Genera TO '11111111'@'localhost';
+Grant Insert On betatek.Patologias to '11111111'@'localhost';
+GRANT INSERT,SELECT,UPDATE ON betatek.Recibe TO '11111111'@'localhost';
+GRANT SELECT,INSERT ON betatek.Diagnostico TO '11111111'@'localhost';
+GRANT SELECT ON betatek.Sintoma TO '11111111'@'localhost';
+GRANT SELECT ON betatek.Patologia TO '11111111'@'localhost';
+GRANT SELECT ON betatek.Patologia_Sintomas TO '11111111'@'localhost';
+INSERT INTO PERSONA VALUES('11111111','Ejemplo','Paciente',25,'mail@gmail.com',DEFAULT);
+
+CREATE USER 'EjemploMedico'@'localhost' IDENTIFIED BY '123';
+GRANT SELECT on betatek.Medico TO 'EjemploMedico'@'localhost';
+GRANT SELECT,UPDATE on betatek.Recibe TO 'EjemploMedico'@'localhost';
+GRANT SELECT on betatek.Genera TO 'EjemploMedico'@'localhost';
+GRANT SELECT on betatek.Diagnostico TO 'EjemploMedico'@'localhost';
+GRANT INSERT,UPDATE,SELECT ON betatek.Chatea TO 'EjemploMedico'@'localhost';
+GRANT SELECT ON betatek.PERSONA TO 'EjemploMedico'@'localhost';
+INSERT INTO MEDICO VALUES('EjemploMedico','Ejemplo','Medico','22222222',DEFAULT);
+
+CREATE USER 'EjemploGestor'@'localhost' IDENTIFIED BY '123';
+GRANT ALL PRIVILEGES ON betatek.* TO 'EjemploGestor'@'localhost' WITH GRANT OPTION;
+GRANT SELECT ON MYSQL.USER TO 'EjemploGestor'@'localhost';
+GRANT CREATE USER ON *.* TO 'EjemploGestor'@'localhost' WITH GRANT OPTION;
+INSERT INTO ADMINISTRATIVO VALUES('EjemploGestor','Ejemplo','Gestor','33333333',DEFAULT);
 
 
