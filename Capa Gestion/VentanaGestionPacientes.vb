@@ -6,9 +6,13 @@ Public Class VentanaGestionPacientes
 
     Public Sub btnListarPacientes_Click(sender As Object, e As EventArgs) Handles btnListarPacientes.Click
         Dim TablaPacientes As New DataTable
-        TablaPacientes.Load(ControladorUsuarios.ListarUsuarios(1))
+        Try
+            TablaPacientes.Load(ControladorUsuarios.ListarUsuarios(1))
 
-        TablaDePacientes.DataSource = TablaPacientes
+            TablaDePacientes.DataSource = TablaPacientes
+        Catch ex As Exception
+            MsgBox("El sistema no se pudo comunicar con la base de datos", MsgBoxStyle.Critical, "Error")
+        End Try
     End Sub
 
     Private Sub TablaDePacientes_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles TablaDePacientes.CellClick
@@ -34,7 +38,7 @@ Public Class VentanaGestionPacientes
                     MsgBox("Datos modificados")
                     btnListarPacientes_Click(sender, e)
                 Catch ex As Exception
-                    MsgBox("Hubo un error", MsgBoxStyle.Critical, "Error")
+                    MsgBox("El sistema no se pudo comunicar con la base de datos", MsgBoxStyle.Critical, "Error")
                 End Try
             Else
                 MsgBox("Ese mail ya existe")
@@ -44,9 +48,17 @@ Public Class VentanaGestionPacientes
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        ControladorUsuarios.DesactivarUsuario(txtCi.Text, 1)
-        MsgBox("Usuario desactivado")
-        btnListarPacientes_Click(sender, e)
+        If String.IsNullOrEmpty(txtCi.Text) Then
+        Else
+            Try
+                MsgBox("Debe seleccionar el paciente primero")
+                ControladorUsuarios.DesactivarUsuario(txtCi.Text, 1)
+                MsgBox("Usuario desactivado")
+                btnListarPacientes_Click(sender, e)
+            Catch ex As Exception
+                MsgBox("El sistema no se pudo comunicar con la base de datos", MsgBoxStyle.Critical, "Error")
+            End Try
+        End If
     End Sub
 
     Private Sub btnAgregarPaciente_Click(sender As Object, e As EventArgs) Handles btnAgregarPaciente.Click

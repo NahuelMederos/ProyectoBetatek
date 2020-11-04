@@ -38,7 +38,7 @@ Partial Class VentanaPrincipal
         Me.btnSintomas.Name = "btnSintomas"
         Me.btnSintomas.Size = New System.Drawing.Size(178, 49)
         Me.btnSintomas.TabIndex = 0
-        Me.btnSintomas.Text = "Ingreso de Sintomas"
+        Me.btnSintomas.Text = "Gestion de sintomas"
         Me.btnSintomas.UseVisualStyleBackColor = True
         '
         'btnPatologias
@@ -47,7 +47,7 @@ Partial Class VentanaPrincipal
         Me.btnPatologias.Name = "btnPatologias"
         Me.btnPatologias.Size = New System.Drawing.Size(178, 49)
         Me.btnPatologias.TabIndex = 1
-        Me.btnPatologias.Text = "Ingreso de Patologias"
+        Me.btnPatologias.Text = "Gestion de patologias"
         Me.btnPatologias.UseVisualStyleBackColor = True
         '
         'Label1
@@ -102,7 +102,7 @@ Partial Class VentanaPrincipal
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(178, 49)
         Me.Button2.TabIndex = 10
-        Me.Button2.Text = "Gestion gestores"
+        Me.Button2.Text = "Gestion administradores"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'VentanaPrincipal

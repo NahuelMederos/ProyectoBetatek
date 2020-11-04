@@ -73,10 +73,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChatPaciente.Designer.vb">
-      <DependentUpon>ChatPaciente.vb</DependentUpon>
+    <Compile Include="VentanaChatPaciente.Designer.vb">
+      <DependentUpon>VentanaChatPaciente.vb</DependentUpon>
     </Compile>
-    <Compile Include="ChatPaciente.vb">
+    <Compile Include="VentanaChatPaciente.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.vb">
@@ -90,11 +90,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SeleccionSintoma.vb">
+    <Compile Include="VentanaSeleccionSintoma.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SeleccionSintoma.Designer.vb">
-      <DependentUpon>SeleccionSintoma.vb</DependentUpon>
+    <Compile Include="VentanaSeleccionSintoma.Designer.vb">
+      <DependentUpon>VentanaSeleccionSintoma.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -114,10 +114,10 @@
     <Compile Include="VentanaHistorialChatPaciente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaHistorialChatsPaciente.Designer.vb">
-      <DependentUpon>VentanaHistorialChatsPaciente.vb</DependentUpon>
+    <Compile Include="VentanaListaChatsPaciente.Designer.vb">
+      <DependentUpon>VentanaListaChatsPaciente.vb</DependentUpon>
     </Compile>
-    <Compile Include="VentanaHistorialChatsPaciente.vb">
+    <Compile Include="VentanaListaChatsPaciente.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VentanaMenu.Designer.vb">
@@ -134,14 +134,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ChatPaciente.resx">
-      <DependentUpon>ChatPaciente.vb</DependentUpon>
+    <EmbeddedResource Include="VentanaChatPaciente.resx">
+      <DependentUpon>VentanaChatPaciente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SeleccionSintoma.resx">
-      <DependentUpon>SeleccionSintoma.vb</DependentUpon>
+    <EmbeddedResource Include="VentanaSeleccionSintoma.resx">
+      <DependentUpon>VentanaSeleccionSintoma.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -152,8 +152,8 @@
     <EmbeddedResource Include="VentanaHistorialChatPaciente.resx">
       <DependentUpon>VentanaHistorialChatPaciente.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaHistorialChatsPaciente.resx">
-      <DependentUpon>VentanaHistorialChatsPaciente.vb</DependentUpon>
+    <EmbeddedResource Include="VentanaListaChatsPaciente.resx">
+      <DependentUpon>VentanaListaChatsPaciente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaMenu.resx">
       <DependentUpon>VentanaMenu.vb</DependentUpon>

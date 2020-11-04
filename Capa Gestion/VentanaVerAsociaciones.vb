@@ -2,10 +2,15 @@
 
 Public Class VentanaVerAsociaciones
     Private Sub btnListar_Click(sender As Object, e As EventArgs) Handles btnListar.Click
-        Dim TablaA As New DataTable
-        TablaA.Load(ControladorAsociar.ListarAsociaciones())
+        Try
+            Dim TablaA As New DataTable
+            TablaA.Load(ControladorAsociar.ListarAsociaciones())
 
-        TablaAsociaciones.DataSource = TablaA
+            TablaAsociaciones.DataSource = TablaA
+        Catch ex As Exception
+            MsgBox("El sistema no se pudo comunicar con la base de datos", MsgBoxStyle.Critical, "Error")
+        End Try
+
     End Sub
 
     Private Sub TablaAsociaciones_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles TablaAsociaciones.CellClick
@@ -25,7 +30,7 @@ Public Class VentanaVerAsociaciones
             MsgBox("Asociacion eliminada")
             btnListar_Click(sender, e)
         Catch
-            MsgBox("Error")
+            MsgBox("El sistema no se pudo comunicar con la base de datos", MsgBoxStyle.Critical, "Error")
         End Try
 
     End Sub

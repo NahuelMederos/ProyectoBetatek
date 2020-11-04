@@ -11,19 +11,23 @@ Public Class VentanaSintomas
                 Listar_Click(sender, e)
             End If
         Catch ex As Exception
-            MsgBox("Error")
+            MsgBox("Error, ya existe un sintoma con este nombre")
         End Try
 
     End Sub
 
     Private Sub btnModificarSintoma_Click(sender As Object, e As EventArgs) Handles btnModificarSintoma.Click
-        Try
-            ControladorSintoma.ModificarSintoma(txtIdSintoma.Text, txtNombreSintoma.Text)
-            MsgBox("Sintoma modificado")
-            Listar_Click(sender, e)
-        Catch
-            MsgBox("Error")
-        End Try
+        If String.IsNullOrEmpty(txtNombreSintoma.Text) Or String.IsNullOrEmpty(txtIdSintoma.Text) Then
+            MsgBox("No puede dejar campos vacios")
+        Else
+            Try
+                ControladorSintoma.ModificarSintoma(txtIdSintoma.Text, txtNombreSintoma.Text)
+                MsgBox("Sintoma modificado")
+                Listar_Click(sender, e)
+            Catch
+                MsgBox("Ya existe un sintoma con ese nombre")
+            End Try
+        End If
     End Sub
 
 
@@ -32,17 +36,33 @@ Public Class VentanaSintomas
     End Sub
 
     Private Sub Listar_Click(sender As Object, e As EventArgs) Handles Listar.Click
-        Dim TablaSintomas As New DataTable
-        TablaSintomas.Load(ControladorSintoma.ListarSintomas())
+        Try
+            Dim TablaSintomas As New DataTable
+            TablaSintomas.Load(ControladorSintoma.ListarSintomas())
 
-        TablaDeSintomas.DataSource = TablaSintomas
+            TablaDeSintomas.DataSource = TablaSintomas
+        Catch ex As Exception
+            MsgBox("El sistema no se pudo comunicar con la base de datos", MsgBoxStyle.Critical, "Error")
+        End Try
     End Sub
 
     Private Sub BtnBorrar_Click(sender As Object, e As EventArgs) Handles BtnBorrar.Click
-        ControladorSintoma.BorrarSintoma(txtIdSintoma.Text)
-        MsgBox("Sintoma eliminado")
-        Listar_Click(sender, e)
+        If String.IsNullOrEmpty(txtIdSintoma.Text) Then
+            MsgBox("Debe seleccionar un sintoma para eliminarlo")
+        Else
+            Dim BorrarSintoma As DialogResult
+            BorrarSintoma = MessageBox.Show("¿Esta seguro de que desea eliminar este sintoma, se borraran todas las asociaciones en las que este involucrado?", "Borrar sintoma", MessageBoxButtons.YesNo)
+            If BorrarSintoma = DialogResult.Yes Then
+                Try
+                    ControladorSintoma.BorrarSintoma(txtIdSintoma.Text)
+                    MsgBox("Sintoma eliminado")
+                    Listar_Click(sender, e)
+                Catch ex As Exception
+                    MsgBox("El sistema no se pudo comunicar con la base de datos", MsgBoxStyle.Critical, "Error")
+                End Try
 
+            End If
+        End If
     End Sub
 
 
@@ -96,4 +116,5 @@ Public Class VentanaSintomas
             End Using
         End If
     End Sub
+
 End Class

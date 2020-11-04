@@ -129,7 +129,7 @@ Partial Class VentanaAgregarMedicos
         Me.txtNombreUsuario.Size = New System.Drawing.Size(100, 20)
         Me.txtNombreUsuario.TabIndex = 11
         '
-        'VentanaMedicos
+        'VentanaAgregarMedicos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -145,7 +145,7 @@ Partial Class VentanaAgregarMedicos
         Me.Controls.Add(Me.txtNombre)
         Me.Controls.Add(Me.txtContraseña)
         Me.Controls.Add(Me.txtNombreUsuario)
-        Me.Name = "VentanaMedicos"
+        Me.Name = "VentanaAgregarMedicos"
         Me.Text = "VentanaMedicos"
         Me.ResumeLayout(False)
         Me.PerformLayout()

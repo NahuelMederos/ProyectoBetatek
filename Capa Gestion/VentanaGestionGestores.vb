@@ -2,10 +2,14 @@
 
 Public Class VentanaGestionGestores
     Public Sub btnListarGestores_Click(sender As Object, e As EventArgs) Handles btnListarGestores.Click
-        Dim TablaGestores As New DataTable
-        TablaGestores.Load(ControladorUsuarios.ListarUsuarios(3))
+        Try
+            Dim TablaGestores As New DataTable
+            TablaGestores.Load(ControladorUsuarios.ListarUsuarios(3))
 
-        TablaDeGestores.DataSource = TablaGestores
+            TablaDeGestores.DataSource = TablaGestores
+        Catch ex As Exception
+            MsgBox("El sistema no se pudo comunicar con la base de datos", MsgBoxStyle.Critical, "Error")
+        End Try
     End Sub
 
     Private Sub VentanaGestionGestores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -42,9 +46,17 @@ Public Class VentanaGestionGestores
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        ControladorUsuarios.DesactivarUsuario(txtNombreUsuario.Text, 3)
-        MsgBox("Usuario desactivado")
-        btnListarGestores_Click(sender, e)
+        If String.IsNullOrEmpty(txtNombreUsuario.Text) Then
+            MsgBox("Debe seleccionar el Gestor primero")
+        Else
+            Try
+                ControladorUsuarios.DesactivarUsuario(txtNombreUsuario.Text, 3)
+                MsgBox("Usuario desactivado")
+                btnListarGestores_Click(sender, e)
+            Catch ex As Exception
+                MsgBox("El sistema no se pudo comunicar con la base de datos", MsgBoxStyle.Critical, "Error")
+            End Try
+        End If
     End Sub
 
     Private Sub btnAgregarGestor_Click(sender As Object, e As EventArgs) Handles btnAgregarGestor.Click

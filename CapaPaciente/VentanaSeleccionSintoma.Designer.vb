@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class SeleccionSintoma
+Partial Class VentanaSeleccionSintoma
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -148,7 +148,7 @@ Partial Class SeleccionSintoma
         Me.txtIdPatologias.Size = New System.Drawing.Size(100, 20)
         Me.txtIdPatologias.TabIndex = 31
         '
-        'SeleccionSintoma
+        'VentanaSeleccionSintoma
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -163,7 +163,7 @@ Partial Class SeleccionSintoma
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblSeleccionDeSintomas)
-        Me.Name = "SeleccionSintoma"
+        Me.Name = "VentanaSeleccionSintoma"
         Me.Text = "Form1"
         CType(Me.GrillaSintomas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GrillaOtrasPatologias, System.ComponentModel.ISupportInitialize).EndInit()

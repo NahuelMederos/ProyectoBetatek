@@ -139,7 +139,7 @@ Partial Class VentanaAgregarGestores
         Me.Label6.TabIndex = 11
         Me.Label6.Text = "*Todos los campos" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "   son obligatorios" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
-        'VentanaGestores
+        'VentanaAgregarGestores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -156,7 +156,7 @@ Partial Class VentanaAgregarGestores
         Me.Controls.Add(Me.txtNombre)
         Me.Controls.Add(Me.txtContraseña)
         Me.Controls.Add(Me.txtNombreUsuario)
-        Me.Name = "VentanaGestores"
+        Me.Name = "VentanaAgregarGestores"
         Me.Text = "VentanaGestores"
         Me.ResumeLayout(False)
         Me.PerformLayout()

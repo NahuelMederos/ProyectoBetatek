@@ -17,18 +17,27 @@ Public Class VentanaAgregarPacientes
                     Dim ActivarUsuario As DialogResult
                     ActivarUsuario = MessageBox.Show("Este usuario se encuentra desabilitado" + Environment.NewLine + " ¿Desea reactivarlo?", "Activar usuario", MessageBoxButtons.YesNo)
                     If ActivarUsuario = DialogResult.Yes Then
-                        ControladorUsuarios.ActivarUsuario(txtCedula.Text, 1)
-                        MsgBox("Usuario activado." + Environment.NewLine + "Ahora puede modificarle los datos si lo desea")
-                        VentanaGestionPacientes.btnListarPacientes_Click(sender, e)
-                        Me.Dispose()
+                        Try
+                            ControladorUsuarios.ActivarUsuario(txtCedula.Text, 1)
+                            MsgBox("Usuario activado." + Environment.NewLine + "Ahora puede modificarle los datos si lo desea")
+                            VentanaGestionPacientes.btnListarPacientes_Click(sender, e)
+                            Me.Dispose()
+                        Catch ex As Exception
+                            MsgBox("El sistema no se pudo comunicar con la base de datos", MsgBoxStyle.Critical, "Error")
+                        End Try
                     End If
                 End If
 
             Else
-                ControladorUsuarios.CrearPaciente(txtCedula.Text, txtContraseña.Text, txtNombre.Text, txtApellido.Text, txtEdad.Text, txtMail.Text)
-                MsgBox("Usuario creado")
-                VentanaGestionPacientes.btnListarPacientes_Click(sender, e)
-                Me.Dispose()
+                Try
+                    ControladorUsuarios.CrearPaciente(txtCedula.Text, txtContraseña.Text, txtNombre.Text, txtApellido.Text, txtEdad.Text, txtMail.Text)
+                    MsgBox("Usuario creado")
+                    VentanaGestionPacientes.btnListarPacientes_Click(sender, e)
+                    Me.Dispose()
+                Catch ex As Exception
+                    MsgBox("El sistema no se pudo comunicar con la base de datos", MsgBoxStyle.Critical, "Error")
+                End Try
+
             End If
         End If
     End Sub

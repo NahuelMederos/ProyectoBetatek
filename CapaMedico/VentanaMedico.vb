@@ -35,11 +35,16 @@ Public Class VentanaMedico
     End Sub
 
     Public Sub btnVerSolicitudes_Click(sender As Object, e As EventArgs) Handles btnVerSolicitudes.Click
-        Dim TablaDiagnosticos As New DataTable
-        TablaDiagnosticos.Load(ControladorDiagnostico.ListarDiagnosticos())
-        TablaDeDiagnosticos.DataSource = TablaDiagnosticos
-        txtContar.Text = ControladorDiagnostico.BuscarUltimoDiagnosticoEnRecibe()
-        MensajesNuevos.Visible = False
+        Try
+            Dim TablaDiagnosticos As New DataTable
+            TablaDiagnosticos.Load(ControladorDiagnostico.ListarDiagnosticos())
+            TablaDeDiagnosticos.DataSource = TablaDiagnosticos
+            txtContar.Text = ControladorDiagnostico.BuscarUltimoDiagnosticoEnRecibe()
+            MensajesNuevos.Visible = False
+        Catch ex As Exception
+            MsgBox("El sistema no se pudo comunicar con la base de datos", MsgBoxStyle.Critical, "Error")
+        End Try
+
 
     End Sub
 

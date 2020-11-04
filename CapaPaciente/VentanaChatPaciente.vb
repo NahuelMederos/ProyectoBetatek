@@ -2,7 +2,7 @@
 Imports System.Net.Mail
 Imports Capa_Logica
 
-Public Class ChatPaciente
+Public Class VentanaChatPaciente
     Public Sintomas As String
     Public Prioridad As String
     Public Diagnostico As String
@@ -19,10 +19,10 @@ Public Class ChatPaciente
             Smtp_Server.Port = 587
             Smtp_Server.EnableSsl = True
             Smtp_Server.Host = "smtp.gmail.com"
-            'ControladorUsuarios.ObtenerDatosPaciente(TxtId.Text, 4)
+
             e_mail = New MailMessage()
             e_mail.From = New MailAddress("betatek2020@gmail.com")
-            e_mail.To.Add("a")
+            e_mail.To.Add(ControladorUsuarios.ObtenerDatosPaciente(TxtId.Text, 4))
             e_mail.Subject = "Chat con medico " + txtEmisor.Text + "."
             e_mail.IsBodyHtml = False
             e_mail.Body = Mail

@@ -17,13 +17,17 @@ Public Class VentanaPatologia
     End Sub
 
     Private Sub btnModificarPatologia_Click(sender As Object, e As EventArgs) Handles btnModificarPatologia.Click
-        Try
-            ControladorPatologia.ModificarPatologia(txtIdPatologia.Text, txtNombrePatologia.Text, cmbPatologia.SelectedItem)
-            MsgBox("Patologia modificada")
-            ListarPat_Click(sender, e)
-        Catch
-            MsgBox("Error")
-        End Try
+        If String.IsNullOrEmpty(txtNombrePatologia.Text) Or String.IsNullOrEmpty(txtIdPatologia.Text) Then
+            MsgBox("Debe ingresar un nombre para la patologia")
+        Else
+            Try
+                ControladorPatologia.ModificarPatologia(txtIdPatologia.Text, txtNombrePatologia.Text, cmbPatologia.SelectedItem)
+                MsgBox("Patologia modificada")
+                ListarPat_Click(sender, e)
+            Catch
+                MsgBox("Ya existe una patologia con ese nombre")
+            End Try
+        End If
     End Sub
 
     Private Sub VentanaPatologia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -34,20 +38,33 @@ Public Class VentanaPatologia
     End Sub
 
     Private Sub ListarPat_Click(sender As Object, e As EventArgs) Handles ListarPat.Click
-        Dim TablaPatologias As New DataTable
-        TablaPatologias.Load(ControladorPatologia.ListarPatologias())
+        Try
+            Dim TablaPatologias As New DataTable
+            TablaPatologias.Load(ControladorPatologia.ListarPatologias())
 
-        TablaDePatologias.DataSource = TablaPatologias
+            TablaDePatologias.DataSource = TablaPatologias
+        Catch ex As Exception
+            MsgBox("El sistema no se pudo comunicar con la base de datos", MsgBoxStyle.Critical, "Error")
+        End Try
     End Sub
 
     Private Sub BtnBorrarPat_Click(sender As Object, e As EventArgs) Handles BtnBorrarPat.Click
-        Try
-            ControladorPatologia.BorrarPatologia(txtIdPatologia.Text)
-            ListarPat_Click(sender, e)
-            MsgBox("Patologia borrada")
-        Catch
-            MsgBox("Primero debe borrar las asociaciones de esta patologia")
-        End Try
+        If String.IsNullOrEmpty(txtIdPatologia.Text) Then
+            MsgBox("Debe seleccionar una patologia para eliminarla")
+        Else
+            Dim BorrarPatologia As DialogResult
+            BorrarPatologia = MessageBox.Show("¿Esta seguro de que desea eliminar esta patologia, se borraran todas las asociaciones en las que este involucrada?", "Borrar patologia", MessageBoxButtons.YesNo)
+            If BorrarPatologia = DialogResult.Yes Then
+                Try
+                    ControladorPatologia.BorrarPatologia(txtIdPatologia.Text)
+                    ListarPat_Click(sender, e)
+                    MsgBox("Patologia eliminada")
+                Catch
+                    MsgBox("El sistema no se pudo comunicar con la base de datos", MsgBoxStyle.Critical, "Error")
+                End Try
+            End If
+        End If
+
     End Sub
 
 

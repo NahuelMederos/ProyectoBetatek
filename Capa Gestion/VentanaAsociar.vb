@@ -2,15 +2,20 @@
 
 Public Class VentanaAsociar
     Private Sub ListarTodo_Click(sender As Object, e As EventArgs) Handles ListarTodo.Click
-        Dim TablaP As New DataTable
-        TablaP.Load(ControladorAsociar.ListarNombresPatologias())
+        Try
+            Dim TablaP As New DataTable
+            TablaP.Load(ControladorAsociar.ListarNombresPatologias())
 
-        TablaPat.DataSource = TablaP
+            TablaPat.DataSource = TablaP
 
-        Dim TablaS As New DataTable
-        TablaS.Load(ControladorSintoma.ListarSintomas())
+            Dim TablaS As New DataTable
+            TablaS.Load(ControladorSintoma.ListarSintomas())
 
-        TablaSint.DataSource = TablaS
+            TablaSint.DataSource = TablaS
+        Catch ex As Exception
+            MsgBox("El sistema no se pudo comunicar con la base de datos", MsgBoxStyle.Critical, "Error")
+        End Try
+
     End Sub
 
 
@@ -36,14 +41,16 @@ Public Class VentanaAsociar
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnAsociar.Click
-        Try
-            ControladorAsociar.CrearAsociacion(txtIdPatologia.Text, txtIdSintoma.Text)
-            MsgBox("Asociacion creada")
-            ListarTodo_Click(sender, e)
-        Catch
-            MsgBox("Error")
-        End Try
-
+        If String.IsNullOrEmpty(txtIdSintoma.Text) Or String.IsNullOrEmpty(txtIdPatologia.Text) Then
+            MsgBox("Debe seleccionar un sintoma y una patologia")
+            Try
+                ControladorAsociar.CrearAsociacion(txtIdPatologia.Text, txtIdSintoma.Text)
+                MsgBox("Asociacion creada")
+                ListarTodo_Click(sender, e)
+            Catch
+                MsgBox("Esta asociacion ya existe")
+            End Try
+        End If
     End Sub
 
     Private Sub VentanaAsociar_Load(sender As Object, e As EventArgs) Handles MyBase.Load

@@ -1,10 +1,15 @@
 ﻿Imports Capa_Logica
 Public Class VentanaGestionMedicos
     Public Sub btnListarMedicos_Click(sender As Object, e As EventArgs) Handles btnListarMedicos.Click
-        Dim TablaMedicos As New DataTable
-        TablaMedicos.Load(ControladorUsuarios.ListarUsuarios(2))
+        Try
+            Dim TablaMedicos As New DataTable
+            TablaMedicos.Load(ControladorUsuarios.ListarUsuarios(2))
 
-        TablaDeMedicos.DataSource = TablaMedicos
+            TablaDeMedicos.DataSource = TablaMedicos
+        Catch ex As Exception
+            MsgBox("El sistema no se pudo comunicar con la base de datos", MsgBoxStyle.Critical, "Error")
+        End Try
+
     End Sub
 
     Private Sub VentanaGestionMedicos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -33,7 +38,7 @@ Public Class VentanaGestionMedicos
                     MsgBox("Datos modificados")
                     btnListarMedicos_Click(sender, e)
                 Catch ex As Exception
-                    MsgBox("Hubo un error", MsgBoxStyle.Critical, "Error")
+                    MsgBox("El sistema no se pudo comunicar con la base de datos", MsgBoxStyle.Critical, "Error")
                 End Try
             Else
                 MsgBox("Esta cedula ya existe")
@@ -42,9 +47,18 @@ Public Class VentanaGestionMedicos
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        ControladorUsuarios.DesactivarUsuario(txtNombreUsuario.Text, 2)
-        MsgBox("Usuario desactivado")
-        btnListarMedicos_Click(sender, e)
+        If String.IsNullOrEmpty(txtNombreUsuario.Text) Then
+            MsgBox("Debe seleccionar el Medico primero")
+        Else
+            Try
+                ControladorUsuarios.DesactivarUsuario(txtNombreUsuario.Text, 2)
+                MsgBox("Usuario desactivado")
+                btnListarMedicos_Click(sender, e)
+            Catch ex As Exception
+                MsgBox("El sistema no se pudo comunicar con la base de datos", MsgBoxStyle.Critical, "Error")
+            End Try
+
+        End If
     End Sub
 
     Private Sub btnAgregarMedico_Click(sender As Object, e As EventArgs) Handles btnAgregarMedico.Click
