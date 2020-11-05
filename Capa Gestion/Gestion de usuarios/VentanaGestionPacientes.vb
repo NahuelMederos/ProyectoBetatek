@@ -10,6 +10,8 @@ Public Class VentanaGestionPacientes
             TablaPacientes.Load(ControladorUsuarios.ListarUsuarios(1))
 
             TablaDePacientes.DataSource = TablaPacientes
+            TablaDePacientes.Columns(3).Width = 40
+            TablaDePacientes.Columns(4).Width = 200
         Catch ex As Exception
             MsgBox("El sistema no se pudo comunicar con la base de datos", MsgBoxStyle.Critical, "Error")
         End Try
@@ -25,6 +27,8 @@ Public Class VentanaGestionPacientes
         txtApellido.Text = Paciente.Cells(2).Value.ToString()
         txtEdad.Text = Paciente.Cells(3).Value.ToString()
         txtMail.Text = Paciente.Cells(4).Value.ToString()
+
+
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
@@ -65,13 +69,6 @@ Public Class VentanaGestionPacientes
         VentanaAgregarPacientes.ShowDialog()
     End Sub
 
-    Private Sub txtCi_TextChanged(sender As Object, e As EventArgs) Handles txtCi.TextChanged
-        If Not String.IsNullOrEmpty(txtCi.Text) Then
-            btnModificar.Enabled = True
-            btnEliminar.Enabled = True
-        End If
-    End Sub
-
     Private Sub txtEdad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtEdad.KeyPress
         If Asc(e.KeyChar) <> 8 Then
             If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
@@ -79,4 +76,13 @@ Public Class VentanaGestionPacientes
             End If
         End If
     End Sub
+
+    Private Sub txtCi_TextChanged_1(sender As Object, e As EventArgs) Handles txtCi.TextChanged
+        If Not String.IsNullOrEmpty(txtCi.Text) Then
+            btnModificar.Enabled = True
+            btnEliminar.Enabled = True
+        End If
+    End Sub
+
+
 End Class

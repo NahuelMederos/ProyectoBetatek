@@ -1,24 +1,24 @@
 ﻿Imports Capa_Logica
 Public Class VentanaHistorialDeDiagnosticosMedico
     Private Sub VentanaHistorialDeChatsMedico_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        TablaDeDiagnosticos.DefaultCellStyle.WrapMode = DataGridViewTriState.True
-        TablaDeDiagnosticos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells
-        TablaDeDiagnosticos.AutoResizeColumns()
-        TablaDeDiagnosticos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+        TablaDeChats.DefaultCellStyle.WrapMode = DataGridViewTriState.True
+        TablaDeChats.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells
+        TablaDeChats.AutoResizeColumns()
+        TablaDeChats.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
 
         Dim TablaDiagnosticos As New DataTable
         TablaDiagnosticos.Load(ControladorDiagnostico.ObtenerDiagnosticosAntiguos(2))
 
-        TablaDeDiagnosticos.DataSource = TablaDiagnosticos
+        TablaDeChats.DataSource = TablaDiagnosticos
     End Sub
 
 
-    Private Sub TablaDeDiagnosticos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles TablaDeDiagnosticos.CellClick
+    Private Sub TablaDeDiagnosticos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles TablaDeChats.CellClick
         Dim Indice As New Integer
         Indice = e.RowIndex
 
         Dim SesionSeleccionada As DataGridViewRow
-        SesionSeleccionada = TablaDeDiagnosticos.Rows(Indice)
+        SesionSeleccionada = TablaDeChats.Rows(Indice)
         txtSesion.Text = SesionSeleccionada.Cells(0).Value.ToString()
     End Sub
 
@@ -47,5 +47,6 @@ Public Class VentanaHistorialDeDiagnosticosMedico
             MsgBox("El sistema no se pudo comunicar con la base de datos", MsgBoxStyle.Critical, "Error")
         End Try
     End Sub
+
 
 End Class

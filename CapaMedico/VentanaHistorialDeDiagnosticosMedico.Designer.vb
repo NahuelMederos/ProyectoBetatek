@@ -22,14 +22,14 @@ Partial Class VentanaHistorialDeDiagnosticosMedico
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txtSesion = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TablaDeDiagnosticos = New System.Windows.Forms.DataGridView()
+        Me.TablaDeChats = New System.Windows.Forms.DataGridView()
         Me.btnSeleccionar = New System.Windows.Forms.Button()
-        CType(Me.TablaDeDiagnosticos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TablaDeChats, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtSesion
@@ -54,38 +54,38 @@ Partial Class VentanaHistorialDeDiagnosticosMedico
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "Sesion"
         '
-        'TablaDeDiagnosticos
+        'TablaDeChats
         '
-        Me.TablaDeDiagnosticos.AllowUserToAddRows = False
-        Me.TablaDeDiagnosticos.AllowUserToDeleteRows = False
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TablaDeDiagnosticos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle10
-        Me.TablaDeDiagnosticos.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(91, Byte), Integer))
-        Me.TablaDeDiagnosticos.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(91, Byte), Integer))
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.TablaDeDiagnosticos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
-        Me.TablaDeDiagnosticos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.TablaDeDiagnosticos.EnableHeadersVisualStyles = False
-        Me.TablaDeDiagnosticos.GridColor = System.Drawing.Color.SteelBlue
-        Me.TablaDeDiagnosticos.Location = New System.Drawing.Point(13, 12)
-        Me.TablaDeDiagnosticos.Name = "TablaDeDiagnosticos"
-        Me.TablaDeDiagnosticos.ReadOnly = True
-        Me.TablaDeDiagnosticos.RowHeadersVisible = False
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(91, Byte), Integer))
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.0!)
-        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.SteelBlue
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White
-        Me.TablaDeDiagnosticos.RowsDefaultCellStyle = DataGridViewCellStyle12
-        Me.TablaDeDiagnosticos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.TablaDeDiagnosticos.Size = New System.Drawing.Size(611, 180)
-        Me.TablaDeDiagnosticos.TabIndex = 6
+        Me.TablaDeChats.AllowUserToAddRows = False
+        Me.TablaDeChats.AllowUserToDeleteRows = False
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TablaDeChats.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.TablaDeChats.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(91, Byte), Integer))
+        Me.TablaDeChats.BorderStyle = System.Windows.Forms.BorderStyle.None
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(91, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.TablaDeChats.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.TablaDeChats.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.TablaDeChats.EnableHeadersVisualStyles = False
+        Me.TablaDeChats.GridColor = System.Drawing.Color.SteelBlue
+        Me.TablaDeChats.Location = New System.Drawing.Point(13, 12)
+        Me.TablaDeChats.Name = "TablaDeChats"
+        Me.TablaDeChats.ReadOnly = True
+        Me.TablaDeChats.RowHeadersVisible = False
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(91, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.0!)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
+        Me.TablaDeChats.RowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.TablaDeChats.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.TablaDeChats.Size = New System.Drawing.Size(611, 180)
+        Me.TablaDeChats.TabIndex = 6
         '
         'btnSeleccionar
         '
@@ -108,20 +108,20 @@ Partial Class VentanaHistorialDeDiagnosticosMedico
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(91, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(636, 241)
         Me.Controls.Add(Me.btnSeleccionar)
-        Me.Controls.Add(Me.TablaDeDiagnosticos)
+        Me.Controls.Add(Me.TablaDeChats)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtSesion)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "VentanaHistorialDeDiagnosticosMedico"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Chats antiguos"
-        CType(Me.TablaDeDiagnosticos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TablaDeChats, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents txtSesion As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents TablaDeDiagnosticos As DataGridView
+    Friend WithEvents TablaDeChats As DataGridView
     Friend WithEvents btnSeleccionar As Button
 End Class

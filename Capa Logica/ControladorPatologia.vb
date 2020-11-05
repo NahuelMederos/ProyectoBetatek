@@ -7,7 +7,11 @@ Public Module ControladorPatologia
         p.Nombre = Nombre
         p.Prioridad = Prioridad
 
-        p.AltaPatologia()
+        If String.Compare(p.EstadoPatologia(), 0) = 0 Then
+            p.ActivarPatologia()
+        Else
+            p.AltaPatologia()
+        End If
 
     End Sub
 

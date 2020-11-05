@@ -12,7 +12,7 @@ Public Class Sintoma
 
     Public Function ObtenerSintomas()
 
-        Comando.CommandText = "SELECT IdSintoma,Nombre FROM SINTOMA where activo=1"
+        Comando.CommandText = "SELECT IdSintoma as Id,Nombre FROM SINTOMA where activo=1"
 
         Me.Reader = Comando.ExecuteReader()
         Return Me.Reader
@@ -46,8 +46,12 @@ Public Class Sintoma
 
     Public Function EstadoSintoma()
         Comando.CommandText = "Select Activo from Sintoma where Nombre='" + Me.Nombre + "'"
+        Try
+            Return Comando.ExecuteScalar().ToString()
+        Catch ex As Exception
+            Return 2
+        End Try
 
-        Return Comando.ExecuteScalar().ToString()
     End Function
 
     Public Sub ActivarSintoma()

@@ -12,7 +12,7 @@ Public Class VentanaPatologia
                 ListarPat_Click(sender, e)
             End If
         Catch
-            MsgBox("Error")
+            MsgBox("Ya existe una patologia con ese nombre")
         End Try
     End Sub
 
@@ -43,6 +43,9 @@ Public Class VentanaPatologia
             TablaPatologias.Load(ControladorPatologia.ListarPatologias())
 
             TablaDePatologias.DataSource = TablaPatologias
+            TablaDePatologias.Columns(0).Width = 25
+            TablaDePatologias.Columns(1).Width = 100
+            TablaDePatologias.Columns(2).Width = 75
         Catch ex As Exception
             MsgBox("El sistema no se pudo comunicar con la base de datos", MsgBoxStyle.Critical, "Error")
         End Try
@@ -132,4 +135,6 @@ Public Class VentanaPatologia
             End Using
         End If
     End Sub
+
+
 End Class

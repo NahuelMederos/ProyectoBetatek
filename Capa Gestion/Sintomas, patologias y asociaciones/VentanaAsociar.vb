@@ -7,11 +7,16 @@ Public Class VentanaAsociar
             TablaP.Load(ControladorAsociar.ListarNombresPatologias())
 
             TablaPat.DataSource = TablaP
+            TablaPat.Columns(0).Width = 25
+            TablaPat.Columns(1).Width = 100
 
             Dim TablaS As New DataTable
             TablaS.Load(ControladorSintoma.ListarSintomas())
 
             TablaSint.DataSource = TablaS
+            TablaSint.Columns(0).Width = 25
+            TablaSint.Columns(1).Width = 100
+            TablaSint.Columns(1).HeaderText = "Sintoma"
         Catch ex As Exception
             MsgBox("El sistema no se pudo comunicar con la base de datos", MsgBoxStyle.Critical, "Error")
         End Try
@@ -45,12 +50,12 @@ Public Class VentanaAsociar
             MsgBox("Debe seleccionar un sintoma y una patologia")
         Else
             Try
-            ControladorAsociar.CrearAsociacion(txtIdPatologia.Text, txtIdSintoma.Text)
-            MsgBox("Asociacion creada")
-            ListarTodo_Click(sender, e)
-        Catch
-            MsgBox("Esta asociacion ya existe")
-        End Try
+                ControladorAsociar.CrearAsociacion(txtIdPatologia.Text, txtIdSintoma.Text)
+                MsgBox("Asociacion creada")
+                ListarTodo_Click(sender, e)
+            Catch
+                MsgBox("Esta asociacion ya existe")
+            End Try
         End If
     End Sub
 

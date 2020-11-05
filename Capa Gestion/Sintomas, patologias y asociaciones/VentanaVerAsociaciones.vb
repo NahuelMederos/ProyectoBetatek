@@ -10,7 +10,8 @@ Public Class VentanaVerAsociaciones
         Catch ex As Exception
             MsgBox("El sistema no se pudo comunicar con la base de datos", MsgBoxStyle.Critical, "Error")
         End Try
-
+        TablaAsociaciones.Columns(0).Width = 30
+        TablaAsociaciones.Columns(2).Width = 30
     End Sub
 
     Private Sub TablaAsociaciones_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles TablaAsociaciones.CellClick
@@ -21,6 +22,7 @@ Public Class VentanaVerAsociaciones
         txtIdA.Text = ASeleccionada.Cells(0).Value.ToString()
         txtPatA.Text = ASeleccionada.Cells(1).Value.ToString()
         txtSintA.Text = ASeleccionada.Cells(2).Value.ToString()
+
 
     End Sub
 

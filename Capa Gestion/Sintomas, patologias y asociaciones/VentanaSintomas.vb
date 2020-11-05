@@ -39,8 +39,9 @@ Public Class VentanaSintomas
         Try
             Dim TablaSintomas As New DataTable
             TablaSintomas.Load(ControladorSintoma.ListarSintomas())
-
             TablaDeSintomas.DataSource = TablaSintomas
+            TablaDeSintomas.Columns(0).Width = 25
+            TablaDeSintomas.Columns(1).Width = 125
         Catch ex As Exception
             MsgBox("El sistema no se pudo comunicar con la base de datos", MsgBoxStyle.Critical, "Error")
         End Try
@@ -101,11 +102,11 @@ Public Class VentanaSintomas
                         currentRow = archivo.ReadFields()
                         Dim linea As String() = currentRow.ToArray()
                         Try
-                                ControladorSintoma.CrearSintoma(linea(0))
-                                MsgBox("Sintoma " + Chr(34) + linea(0) + Chr(34) + " fue ingresado")
-                            Catch ex As Exception
-                                MsgBox("Sintoma " + Chr(34) + linea(0) + Chr(34) + " ya existe en el sistema")
-                            End Try
+                            ControladorSintoma.CrearSintoma(linea(0))
+                            MsgBox("Sintoma " + Chr(34) + linea(0) + Chr(34) + " fue ingresado")
+                        Catch ex As Exception
+                            MsgBox("Sintoma " + Chr(34) + linea(0) + Chr(34) + " ya existe en el sistema")
+                        End Try
 
                     Catch ex As Exception
                         MsgBox("Linea " + Contador.ToString +
@@ -116,5 +117,6 @@ Public Class VentanaSintomas
             End Using
         End If
     End Sub
+
 
 End Class

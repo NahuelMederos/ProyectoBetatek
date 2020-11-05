@@ -27,10 +27,10 @@ Partial Class VentanaChatCompleto
         '
         'WebBrowser1
         '
-        Me.WebBrowser1.Location = New System.Drawing.Point(15, 10)
+        Me.WebBrowser1.Location = New System.Drawing.Point(1, -4)
         Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser1.Name = "WebBrowser1"
-        Me.WebBrowser1.Size = New System.Drawing.Size(1010, 336)
+        Me.WebBrowser1.Size = New System.Drawing.Size(1038, 365)
         Me.WebBrowser1.TabIndex = 29
         '
         'VentanaChatCompleto
@@ -39,8 +39,10 @@ Partial Class VentanaChatCompleto
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1040, 357)
         Me.Controls.Add(Me.WebBrowser1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "VentanaChatCompleto"
-        Me.Text = "VentanaChatCompleto"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.Text = "Chat completo"
         Me.ResumeLayout(False)
 
     End Sub

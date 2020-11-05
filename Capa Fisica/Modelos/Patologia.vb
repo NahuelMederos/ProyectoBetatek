@@ -17,7 +17,7 @@ Public Class Patologia
 
     Public Function ObtenerPatologia()
 
-        Comando.CommandText = "SELECT IdPatologia,Nombre,Prioridad FROM PATOLOGIA where activo=1"
+        Comando.CommandText = "SELECT IdPatologia as Id,Nombre,Prioridad FROM PATOLOGIA where activo=1"
 
         Reader = Comando.ExecuteReader()
         Return Reader
@@ -34,7 +34,7 @@ Public Class Patologia
 
     Public Function IdyNombrePatologia()
 
-        Comando.CommandText = "SELECT IDPATOLOGIA,NOMBRE FROM PATOLOGIA where activo=1"
+        Comando.CommandText = "SELECT IDPATOLOGIA as Id,NOMBRE as Patologia FROM PATOLOGIA where activo=1"
 
         Reader = Comando.ExecuteReader()
         Return Reader
@@ -78,5 +78,19 @@ Public Class Patologia
 
     End Function
 
+    Public Sub ActivarPatologia()
+        Comando.CommandText = "Update Patologia set activo=1 where Nombre='" + Me.Nombre + "'"
+        Comando.ExecuteNonQuery()
+    End Sub
+
+    Public Function EstadoPatologia()
+        Comando.CommandText = "Select Activo from Patologia where Nombre='" + Me.Nombre + "'"
+        Try
+            Return Comando.ExecuteScalar().ToString()
+        Catch ex As Exception
+            Return 2
+        End Try
+
+    End Function
 
 End Class
