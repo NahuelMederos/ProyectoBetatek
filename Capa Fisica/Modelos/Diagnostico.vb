@@ -63,6 +63,12 @@
 
     End Function
 
+    Public Sub PacienteTieneSintomas()
+        Comando.CommandText = "INSERT INTO TIENE VALUES('" + Me.CiPaciente + "','" + Me.IdSintoma + "')"
+
+        Comando.ExecuteNonQuery()
+    End Sub
+
     Public Sub PacienteGeneraDiagnostico()
         Comando.CommandText = "INSERT INTO GENERA VALUES('" + Me.CiPaciente + "',LAST_INSERT_ID(),'" + Me.IdSintoma + "',now())"
 

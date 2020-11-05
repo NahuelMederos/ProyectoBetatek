@@ -39,7 +39,9 @@ Partial Class VentanaHistorialChatPaciente
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(994, 297)
         Me.Controls.Add(Me.WebBrowser1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "VentanaHistorialChatPaciente"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "VentanaChatCompleto"
         Me.ResumeLayout(False)
 

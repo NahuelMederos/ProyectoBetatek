@@ -4,10 +4,13 @@ Imports Capa_Logica
 Public Class VentanaSeleccionSintoma
 
     Private Sub SeleccionSintoma_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        GrillaSintomas.DefaultCellStyle.WrapMode = DataGridViewTriState.True
+        GrillaSintomas.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells
         Try
             Dim tabla As New DataTable
             tabla.Load(ControladorSintoma.ListarNombreSintomas)
             GrillaSintomas.DataSource = tabla
+            GrillaSintomas.Columns(1).Width = 150
         Catch ex As Exception
             MsgBox("El sistema no se pudo comunicar con la base de datos", MsgBoxStyle.Critical, "Error")
         End Try
@@ -37,7 +40,7 @@ Public Class VentanaSeleccionSintoma
             For Each selectedItem As DataGridViewRow In GrillaSintomas.Rows
                 Dim chk As DataGridViewCheckBoxCell = selectedItem.Cells(Check.Name)
                 If chk.Value = True Then
-                    nombre = selectedItem.Cells("NOMBRE").Value
+                    nombre = selectedItem.Cells("Sintomas").Value
                     ReDim Preserve nombreList(contador)
                     nombreList(contador) = nombre
                     contador += 1
@@ -132,9 +135,11 @@ Public Class VentanaSeleccionSintoma
                 txtPatologiasSeguras.Text = NumeroDePatologiasSeguras
 
                 Dim SolicitarChat As DialogResult
-                SolicitarChat = MessageBox.Show(ResultadoFinal + Environment.NewLine + Environment.NewLine + "        ¿Desea solicitar un chat con un medico?", "Solicitar Chat", MessageBoxButtons.YesNo)
+                SolicitarChat = MessageBox.Show(ResultadoFinal + Environment.NewLine + Environment.NewLine + "Nivel de riesgo: " + PrioridadDiagnostico.Remove(PrioridadDiagnostico.Length - 1) + "o" + Environment.NewLine + Environment.NewLine + "                  ¿Desea solicitar un chat con un medico?", "Solicitar Chat", MessageBoxButtons.YesNo)
                 If SolicitarChat = DialogResult.No Then
                     ControladorDiagnostico.CrearDiagnostico(StringSintomas, ResultadoFinal, Sesion.CI, PrioridadDiagnostico, "False", IdSintomasList)
+                    Me.Dispose()
+
                     If NumeroDePatologiasSeguras >= 1 Then
                         ControladorDiagnostico.DiagnosticoTienePatologias(ControladorDiagnostico.BuscarUltimoDiagnostico, IdPatologiasList)
                     End If
@@ -157,6 +162,10 @@ Public Class VentanaSeleccionSintoma
         Catch ex As Exception
             MsgBox("El sistema no se pudo comunicar con la base de datos", MsgBoxStyle.Critical, "Error")
         End Try
+    End Sub
+
+    Private Sub VentanaSeleccionSintoma_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        Me.Dispose()
     End Sub
 
 

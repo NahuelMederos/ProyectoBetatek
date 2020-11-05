@@ -15,8 +15,11 @@ Public Module ControladorAsociar
         Dim p As New Patologia_Sintoma(Sesion.Username, Sesion.Password)
         p.IdPatologia = IdP
         p.IdSintoma = IdS
+        p.NombreGestor = Sesion.Username
+
 
         p.GuardarAsociacion()
+        p.GuardarAsociacionEnGestiona()
 
     End Sub
 
@@ -32,6 +35,7 @@ Public Module ControladorAsociar
         p.IdPatologia = IdS
         p.IdSintoma = IdP
 
+        p.BorrarAsociacionEnGestiona()
         p.BorrarAsociacion()
 
     End Sub

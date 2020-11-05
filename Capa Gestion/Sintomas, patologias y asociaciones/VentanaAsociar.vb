@@ -43,13 +43,14 @@ Public Class VentanaAsociar
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnAsociar.Click
         If String.IsNullOrEmpty(txtIdSintoma.Text) Or String.IsNullOrEmpty(txtIdPatologia.Text) Then
             MsgBox("Debe seleccionar un sintoma y una patologia")
+        Else
             Try
-                ControladorAsociar.CrearAsociacion(txtIdPatologia.Text, txtIdSintoma.Text)
-                MsgBox("Asociacion creada")
-                ListarTodo_Click(sender, e)
-            Catch
-                MsgBox("Esta asociacion ya existe")
-            End Try
+            ControladorAsociar.CrearAsociacion(txtIdPatologia.Text, txtIdSintoma.Text)
+            MsgBox("Asociacion creada")
+            ListarTodo_Click(sender, e)
+        Catch
+            MsgBox("Esta asociacion ya existe")
+        End Try
         End If
     End Sub
 

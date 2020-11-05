@@ -1,5 +1,5 @@
-﻿Imports System.ComponentModel
-Imports System.Net.Mail
+﻿
+Imports System.ComponentModel
 Imports Capa_Logica
 
 Public Class VentanaChatPaciente
@@ -7,30 +7,18 @@ Public Class VentanaChatPaciente
     Public Prioridad As String
     Public Diagnostico As String
 
+    'Darle a elegir al paciente despues de terminar el chat si desea enviar la sesion por correo, en caso de poner que no enviarlo al menu principal.
+    Private Sub EnviarMail()
+        Dim Chat As String
+        Chat = "Registro de chat con el medico " + txtEmisor.Text + ", con fecha " + ControladorChat.ObtenerFechaChat(txtSesion.Text) + "." + Environment.NewLine + Environment.NewLine + RTxtChat.Text + Environment.NewLine + "Fin de la conversacion." + Environment.NewLine + Environment.NewLine + "Este email se envía automáticamente. Por favor no responder."
 
-    Private Sub btnMail_Click(sender As Object, e As EventArgs) Handles btnMail.Click
-        Dim Mail As String
-        Mail = "Registro de chat con el medico " + txtEmisor.Text + ", con fecha " + ControladorChat.ObtenerFechaChat(txtSesion.Text) + "." + Environment.NewLine + Environment.NewLine + RTxtChat.Text + Environment.NewLine + "Fin de la conversacion." + Environment.NewLine + Environment.NewLine + "Este email se envía automáticamente. Por favor no responder."
         Try
-            Dim Smtp_Server As New SmtpClient
-            Dim e_mail As New MailMessage()
-            Smtp_Server.UseDefaultCredentials = False
-            Smtp_Server.Credentials = New Net.NetworkCredential("betatek2020@gmail.com", "proyectobetatek2020")
-            Smtp_Server.Port = 587
-            Smtp_Server.EnableSsl = True
-            Smtp_Server.Host = "smtp.gmail.com"
-
-            e_mail = New MailMessage()
-            e_mail.From = New MailAddress("betatek2020@gmail.com")
-            e_mail.To.Add(ControladorUsuarios.ObtenerDatosPaciente(TxtId.Text, 4))
-            e_mail.Subject = "Chat con medico " + txtEmisor.Text + "."
-            e_mail.IsBodyHtml = False
-            e_mail.Body = Mail
-            Smtp_Server.Send(e_mail)
-            MsgBox("Mail Sent")
-
-        Catch error_t As Exception
-            MsgBox(error_t.ToString)
+            ControladorChat.EnviarMail(txtEmisor.Text, (ControladorUsuarios.ObtenerDatosPaciente(TxtId.Text, 4)), Chat)
+            MsgBox("Email enviado")
+            VentanaMenu.Show()
+            Me.Dispose()
+        Catch ex As Exception
+            MsgBox("Su email " + ControladorUsuarios.ObtenerDatosPaciente(TxtId.Text, 4) + " no es valido")
         End Try
     End Sub
 
@@ -57,9 +45,10 @@ Public Class VentanaChatPaciente
         txtPrioridad.Text = Prioridad
         txtDiagnostico.Text = Diagnostico
         ControladorDiagnostico.EnviarDiagnostico(txtIdDiagnostico.Text)
+        btnIniciarChat_Click(sender, e)
     End Sub
 
-    Private Sub BtnEnviar_Click(sender As Object, e As EventArgs) Handles BtnEnviar.Click
+    Private Sub BtnEnviar_Click(sender As Object, e As EventArgs) Handles btnEnviar.Click
         ControladorChat.Guardar(txtSesion.Text, TxtId.Text, txtPara.Text, RTxtMensaje.Text)
 
         RTxtChat.Text += "[" + TimeOfDay.Hour.ToString + ":" + TimeOfDay.Minute.ToString + "] " + "Yo: " + RTxtMensaje.Text + Environment.NewLine
@@ -94,7 +83,7 @@ Public Class VentanaChatPaciente
 
 
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnIniciarChat.Click
+    Private Sub btnIniciarChat_Click(sender As Object, e As EventArgs) Handles btnIniciarChat.Click
 
         Timer1.Enabled = True
         BtnEnviar.Enabled = True
@@ -106,7 +95,15 @@ Public Class VentanaChatPaciente
         ControladorChat.TerminarChat(txtIdDiagnostico.Text)
         BtnEnviar.Enabled = False
         btnTerminarChat.Enabled = False
-        btnMail.Enabled = True
+        Dim SolicitarMail As DialogResult
+        SolicitarMail = MessageBox.Show("¿Desea enviar esta sesion de chat a su e-mail?", "Solicitar Mail", MessageBoxButtons.YesNo)
+        If SolicitarMail = DialogResult.Yes Then
+            EnviarMail()
+        Else
+            VentanaMenu.Show()
+            Me.Dispose()
+        End If
+
 
     End Sub
 
@@ -114,8 +111,8 @@ Public Class VentanaChatPaciente
         Me.WebBrowser1.Document.Window.ScrollTo(0, WebBrowser1.Document.Body.ScrollRectangle.Size.Height)
     End Sub
 
-    Private Sub ChatPaciente_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-        VentanaMenu.Show()
+    Private Sub VentanaChatPaciente_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        btnTerminarChat_Click(sender, e)
     End Sub
 
 

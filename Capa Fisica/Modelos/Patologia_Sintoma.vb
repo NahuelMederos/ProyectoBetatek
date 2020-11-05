@@ -10,7 +10,7 @@
     Public IdPatologia As String
     Public IdSintoma As String
     Public SintomasTotalesDePatologia As String
-
+    Public NombreGestor As String
 
     'String generado en ControladorAsociar'
     Public ComandoObtenerPatologia As String
@@ -18,6 +18,13 @@
 
     Public Sub GuardarAsociacion()
         Comando.CommandText = "INSERT INTO PATOLOGIA_SINTOMAS VALUES(" + Me.IdPatologia + "," + Me.IdSintoma + ")"
+
+        Comando.ExecuteNonQuery()
+
+    End Sub
+
+    Public Sub GuardarAsociacionEnGestiona()
+        Comando.CommandText = "INSERT INTO GESTIONA VALUES('" + Me.NombreGestor + "'," + Me.IdSintoma + "," + Me.IdPatologia + ")"
 
         Comando.ExecuteNonQuery()
 
@@ -37,11 +44,18 @@
 
     End Function
 
+
     Public Sub BorrarAsociacion()
         Comando.CommandText = "DELETE FROM PATOLOGIA_SINTOMAS WHERE IDPATOLOGIA_PAT = " + Me.IdPatologia + " AND SINTOMA= " + Me.IdSintoma + ""
 
         Comando.ExecuteNonQuery()
 
+    End Sub
+
+    Public Sub BorrarAsociacionEnGestiona()
+        Comando.CommandText = "DELETE FROM Gestiona WHERE IDPATOLOGIA = " + Me.IdPatologia + " AND IDSINTOMA= " + Me.IdSintoma + ""
+
+        Comando.ExecuteNonQuery()
     End Sub
 
     Public Function ObtenerPatologia()

@@ -163,6 +163,8 @@
             Comando.CommandText = " GRANT SELECT ON betatek.Patologia_Sintomas TO '" + Me.NombreUsuario + "'@'localhost';"
             Comando.ExecuteNonQuery()
 
+            Comando.CommandText = " GRANT INSERT ON betatek.TIENE TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.ExecuteNonQuery()
 
             Comando.CommandText = "INSERT INTO PERSONA VALUES('" + Me.NombreUsuario + "','" + Me.Nombre + "','" + Me.Apellido + "','" + Me.Edad + "','" + Me.Mail + "',DEFAULT);"
             Comando.ExecuteNonQuery()

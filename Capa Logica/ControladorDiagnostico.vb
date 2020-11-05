@@ -15,9 +15,14 @@ Public Module ControladorDiagnostico
             For Each Sintoma In ListaSintomas
                 d.IdSintoma = Sintoma
                 d.PacienteGeneraDiagnostico()
+                Try
+                    d.PacienteTieneSintomas()
+                Catch ex As Exception
+                End Try
             Next
         Catch ex As Exception
         End Try
+
     End Sub
 
     Public Sub EnviarDiagnostico(IdDiagnostico As String)

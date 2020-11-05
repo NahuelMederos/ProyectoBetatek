@@ -43,9 +43,9 @@ Public Class ChatMedico
             Timer1.Stop()
             MsgBox("El paciente termino el chat")
             BtnEnviar.Enabled = False
-            VentanaMedico.btnVerSolicitudes_Click(sender, e)
-            VentanaMedico.txtIdDiagnostico.Text = ""
-            VentanaMedico.txtCiPersona.Text = ""
+            VentanaPrincipalMedico.btnVerSolicitudes_Click(sender, e)
+            VentanaPrincipalMedico.txtIdDiagnostico.Text = ""
+            VentanaPrincipalMedico.txtCiPersona.Text = ""
 
         Else
             Dim tabla As New DataTable

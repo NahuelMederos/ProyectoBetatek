@@ -26,4 +26,5 @@ Public Class VentanaModificarDatos
             End If
         End If
     End Sub
+
 End Class

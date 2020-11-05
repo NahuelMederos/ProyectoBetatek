@@ -79,10 +79,10 @@
     <Compile Include="VentanaChatPaciente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.vb">
-      <DependentUpon>Login.vb</DependentUpon>
+    <Compile Include="LoginPaciente.Designer.vb">
+      <DependentUpon>LoginPaciente.vb</DependentUpon>
     </Compile>
-    <Compile Include="Login.vb">
+    <Compile Include="LoginPaciente.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
@@ -137,8 +137,8 @@
     <EmbeddedResource Include="VentanaChatPaciente.resx">
       <DependentUpon>VentanaChatPaciente.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.vb</DependentUpon>
+    <EmbeddedResource Include="LoginPaciente.resx">
+      <DependentUpon>LoginPaciente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaSeleccionSintoma.resx">
       <DependentUpon>VentanaSeleccionSintoma.vb</DependentUpon>
@@ -191,6 +191,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\OjoCerrado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo 2 sin fondo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

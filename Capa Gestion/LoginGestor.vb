@@ -41,5 +41,19 @@ Public Class FormLogin
 
     End Sub
 
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        txtPassword.PasswordChar = ""
+        PictureBox2.Enabled = False
+        PictureBox2.Visible = False
+        PictureBox3.Enabled = True
+        PictureBox3.Visible = True
+    End Sub
 
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        txtPassword.PasswordChar = "*"
+        PictureBox3.Enabled = False
+        PictureBox3.Visible = False
+        PictureBox2.Enabled = True
+        PictureBox2.Visible = True
+    End Sub
 End Class

@@ -80,34 +80,28 @@
     <Compile Include="VentanaChatCompleto.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaDatos.Designer.vb">
-      <DependentUpon>VentanaDatos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="VentanaDatos.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VentanaGestionGestores.Designer.vb">
+    <Compile Include="Gestion de usuarios\VentanaGestionGestores.Designer.vb">
       <DependentUpon>VentanaGestionGestores.vb</DependentUpon>
     </Compile>
-    <Compile Include="VentanaGestionGestores.vb">
+    <Compile Include="Gestion de usuarios\VentanaGestionGestores.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaGestionMedicos.Designer.vb">
+    <Compile Include="Gestion de usuarios\VentanaGestionMedicos.Designer.vb">
       <DependentUpon>VentanaGestionMedicos.vb</DependentUpon>
     </Compile>
-    <Compile Include="VentanaGestionMedicos.vb">
+    <Compile Include="Gestion de usuarios\VentanaGestionMedicos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaGestionPacientes.Designer.vb">
+    <Compile Include="Gestion de usuarios\VentanaGestionPacientes.Designer.vb">
       <DependentUpon>VentanaGestionPacientes.vb</DependentUpon>
     </Compile>
-    <Compile Include="VentanaGestionPacientes.vb">
+    <Compile Include="Gestion de usuarios\VentanaGestionPacientes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaAgregarGestores.Designer.vb">
+    <Compile Include="Gestion de usuarios\VentanaAgregarGestores.Designer.vb">
       <DependentUpon>VentanaAgregarGestores.vb</DependentUpon>
     </Compile>
-    <Compile Include="VentanaAgregarGestores.vb">
+    <Compile Include="Gestion de usuarios\VentanaAgregarGestores.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VentanaHistorialDeChats.Designer.vb">
@@ -122,11 +116,11 @@
     <Compile Include="VentanaHistorialDiagnosticos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaLogin.vb">
+    <Compile Include="LoginGestor.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaLogin.Designer.vb">
-      <DependentUpon>VentanaLogin.vb</DependentUpon>
+    <Compile Include="LoginGestor.Designer.vb">
+      <DependentUpon>LoginGestor.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -144,10 +138,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="VentanaAsociar.Designer.vb">
+    <Compile Include="Sintomas, patologias y asociaciones\VentanaAsociar.Designer.vb">
       <DependentUpon>VentanaAsociar.vb</DependentUpon>
     </Compile>
-    <Compile Include="VentanaAsociar.vb">
+    <Compile Include="Sintomas, patologias y asociaciones\VentanaAsociar.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VentanaPrincipal.Designer.vb">
@@ -156,34 +150,34 @@
     <Compile Include="VentanaPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaAgregarMedicos.Designer.vb">
+    <Compile Include="Gestion de usuarios\VentanaAgregarMedicos.Designer.vb">
       <DependentUpon>VentanaAgregarMedicos.vb</DependentUpon>
     </Compile>
-    <Compile Include="VentanaAgregarMedicos.vb">
+    <Compile Include="Gestion de usuarios\VentanaAgregarMedicos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaAgregarPacientes.Designer.vb">
+    <Compile Include="Gestion de usuarios\VentanaAgregarPacientes.Designer.vb">
       <DependentUpon>VentanaAgregarPacientes.vb</DependentUpon>
     </Compile>
-    <Compile Include="VentanaAgregarPacientes.vb">
+    <Compile Include="Gestion de usuarios\VentanaAgregarPacientes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaPatologia.Designer.vb">
+    <Compile Include="Sintomas, patologias y asociaciones\VentanaPatologia.Designer.vb">
       <DependentUpon>VentanaPatologia.vb</DependentUpon>
     </Compile>
-    <Compile Include="VentanaPatologia.vb">
+    <Compile Include="Sintomas, patologias y asociaciones\VentanaPatologia.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaSintomas.Designer.vb">
+    <Compile Include="Sintomas, patologias y asociaciones\VentanaSintomas.Designer.vb">
       <DependentUpon>VentanaSintomas.vb</DependentUpon>
     </Compile>
-    <Compile Include="VentanaSintomas.vb">
+    <Compile Include="Sintomas, patologias y asociaciones\VentanaSintomas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaVerAsociaciones.Designer.vb">
+    <Compile Include="Sintomas, patologias y asociaciones\VentanaVerAsociaciones.Designer.vb">
       <DependentUpon>VentanaVerAsociaciones.vb</DependentUpon>
     </Compile>
-    <Compile Include="VentanaVerAsociaciones.vb">
+    <Compile Include="Sintomas, patologias y asociaciones\VentanaVerAsociaciones.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -191,19 +185,16 @@
     <EmbeddedResource Include="VentanaChatCompleto.resx">
       <DependentUpon>VentanaChatCompleto.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaDatos.resx">
-      <DependentUpon>VentanaDatos.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VentanaGestionGestores.resx">
+    <EmbeddedResource Include="Gestion de usuarios\VentanaGestionGestores.resx">
       <DependentUpon>VentanaGestionGestores.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaGestionMedicos.resx">
+    <EmbeddedResource Include="Gestion de usuarios\VentanaGestionMedicos.resx">
       <DependentUpon>VentanaGestionMedicos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaGestionPacientes.resx">
+    <EmbeddedResource Include="Gestion de usuarios\VentanaGestionPacientes.resx">
       <DependentUpon>VentanaGestionPacientes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaAgregarGestores.resx">
+    <EmbeddedResource Include="Gestion de usuarios\VentanaAgregarGestores.resx">
       <DependentUpon>VentanaAgregarGestores.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaHistorialDeChats.resx">
@@ -212,8 +203,8 @@
     <EmbeddedResource Include="VentanaHistorialDiagnosticos.resx">
       <DependentUpon>VentanaHistorialDiagnosticos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaLogin.resx">
-      <DependentUpon>VentanaLogin.vb</DependentUpon>
+    <EmbeddedResource Include="LoginGestor.resx">
+      <DependentUpon>LoginGestor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -221,31 +212,29 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaAsociar.resx">
+    <EmbeddedResource Include="Sintomas, patologias y asociaciones\VentanaAsociar.resx">
       <DependentUpon>VentanaAsociar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaPrincipal.resx">
       <DependentUpon>VentanaPrincipal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaAgregarMedicos.resx">
+    <EmbeddedResource Include="Gestion de usuarios\VentanaAgregarMedicos.resx">
       <DependentUpon>VentanaAgregarMedicos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaAgregarPacientes.resx">
+    <EmbeddedResource Include="Gestion de usuarios\VentanaAgregarPacientes.resx">
       <DependentUpon>VentanaAgregarPacientes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaPatologia.resx">
+    <EmbeddedResource Include="Sintomas, patologias y asociaciones\VentanaPatologia.resx">
       <DependentUpon>VentanaPatologia.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaSintomas.resx">
+    <EmbeddedResource Include="Sintomas, patologias y asociaciones\VentanaSintomas.resx">
       <DependentUpon>VentanaSintomas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaVerAsociaciones.resx">
+    <EmbeddedResource Include="Sintomas, patologias y asociaciones\VentanaVerAsociaciones.resx">
       <DependentUpon>VentanaVerAsociaciones.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
-    <None Include="ClassDiagram2.cd" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -262,6 +251,21 @@
       <Project>{3bc8757b-1568-46db-97a1-17d93317fde7}</Project>
       <Name>Capa Logica</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo sin fondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FondoLogin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OjoCerrado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OjoAbierto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo 2 sin fondo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

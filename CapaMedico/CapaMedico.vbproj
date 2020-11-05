@@ -85,10 +85,10 @@
     <Compile Include="ChatMedico.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.vb">
-      <DependentUpon>Login.vb</DependentUpon>
+    <Compile Include="LoginMedico.Designer.vb">
+      <DependentUpon>LoginMedico.vb</DependentUpon>
     </Compile>
-    <Compile Include="Login.vb">
+    <Compile Include="LoginMedico.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -119,10 +119,10 @@
     <Compile Include="VentanaHistorialDeDiagnosticosMedico.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaMedico.Designer.vb">
-      <DependentUpon>VentanaMedico.vb</DependentUpon>
+    <Compile Include="VentanaPrincipalMedico.Designer.vb">
+      <DependentUpon>VentanaPrincipalMedico.vb</DependentUpon>
     </Compile>
-    <Compile Include="VentanaMedico.vb">
+    <Compile Include="VentanaPrincipalMedico.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -133,8 +133,8 @@
     <EmbeddedResource Include="ChatMedico.resx">
       <DependentUpon>ChatMedico.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.vb</DependentUpon>
+    <EmbeddedResource Include="LoginMedico.resx">
+      <DependentUpon>LoginMedico.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -148,8 +148,8 @@
     <EmbeddedResource Include="VentanaHistorialDeDiagnosticosMedico.resx">
       <DependentUpon>VentanaHistorialDeDiagnosticosMedico.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaMedico.resx">
-      <DependentUpon>VentanaMedico.vb</DependentUpon>
+    <EmbeddedResource Include="VentanaPrincipalMedico.resx">
+      <DependentUpon>VentanaPrincipalMedico.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -169,6 +169,18 @@
       <Project>{3bc8757b-1568-46db-97a1-17d93317fde7}</Project>
       <Name>Capa Logica</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo sin fondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FondoLogin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OjoCerrado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OjoAbierto.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

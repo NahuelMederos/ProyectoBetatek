@@ -22,7 +22,7 @@ Public Class Sintoma
 
     Public Function ObtenerNombreSintomas()
 
-        Comando.CommandText = "SELECT NOMBRE FROM SINTOMA where activo=1"
+        Comando.CommandText = "SELECT NOMBRE as Sintomas FROM SINTOMA where activo=1"
 
         Me.Reader = Comando.ExecuteReader()
         Return Me.Reader

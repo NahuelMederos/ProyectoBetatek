@@ -13,9 +13,6 @@
         VentanaAsociar.ShowDialog()
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
-        VentanaDatos.ShowDialog()
-    End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnGestionPaciente.Click
         VentanaGestionPacientes.ShowDialog()
@@ -27,5 +24,13 @@
 
     Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
         VentanaGestionGestores.ShowDialog()
+    End Sub
+
+    Private Sub btnHistorialDeChats_Click(sender As Object, e As EventArgs) Handles btnHistorialDeChats.Click
+        VentanaHistorialDeChats.ShowDialog()
+    End Sub
+
+    Private Sub btnDiagnosticosGenerados_Click(sender As Object, e As EventArgs) Handles btnDiagnosticosGenerados.Click
+        VentanaHistorialDiagnosticos.ShowDialog()
     End Sub
 End Class

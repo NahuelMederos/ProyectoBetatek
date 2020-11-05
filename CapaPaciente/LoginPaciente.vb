@@ -1,6 +1,6 @@
 ﻿Imports Capa_Logica
 
-Public Class Login
+Public Class LoginPaciente
 
     Private Function AutenticarUsuario(usuario, password)
         Return ControladorUsuarios.AutenticarPaciente(usuario, password)
@@ -44,4 +44,5 @@ Public Class Login
         PictureBox2.Enabled = True
         PictureBox2.Visible = True
     End Sub
+
 End Class

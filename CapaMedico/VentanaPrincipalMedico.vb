@@ -1,7 +1,7 @@
 ﻿Imports Capa_Logica
 
 
-Public Class VentanaMedico
+Public Class VentanaPrincipalMedico
 
     Private Sub VentanaMedico_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TablaDeDiagnosticos.DefaultCellStyle.WrapMode = DataGridViewTriState.True
