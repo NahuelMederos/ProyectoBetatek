@@ -33,14 +33,16 @@ Partial Class VentanaHistorialChatCompleto
         Me.WebBrowser1.Size = New System.Drawing.Size(1010, 336)
         Me.WebBrowser1.TabIndex = 30
         '
-        'VentanaHistorialChatCompletos
+        'VentanaHistorialChatCompleto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1040, 357)
         Me.Controls.Add(Me.WebBrowser1)
-        Me.Name = "VentanaHistorialChatCompletos"
-        Me.Text = "VentanaHistorialChatCompletos"
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Name = "VentanaHistorialChatCompleto"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.Text = "Chat completo"
         Me.ResumeLayout(False)
 
     End Sub

@@ -46,7 +46,7 @@ Partial Class VentanaSeleccionSintoma
         Me.lblSeleccionDeSintomas.Name = "lblSeleccionDeSintomas"
         Me.lblSeleccionDeSintomas.Size = New System.Drawing.Size(169, 56)
         Me.lblSeleccionDeSintomas.TabIndex = 2
-        Me.lblSeleccionDeSintomas.Text = "Seleccione sus " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "     sintomas"
+        Me.lblSeleccionDeSintomas.Text = "Seleccione sus " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "     síntomas"
         '
         'Label3
         '
@@ -108,7 +108,7 @@ Partial Class VentanaSeleccionSintoma
         Me.btnSeleccionarSintoma.Name = "btnSeleccionarSintoma"
         Me.btnSeleccionarSintoma.Size = New System.Drawing.Size(129, 39)
         Me.btnSeleccionarSintoma.TabIndex = 12
-        Me.btnSeleccionarSintoma.Text = "Generar" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "diagnostico"
+        Me.btnSeleccionarSintoma.Text = "Generar" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "diagnóstico"
         Me.btnSeleccionarSintoma.UseVisualStyleBackColor = False
         '
         'GrillaOtrasPatologias

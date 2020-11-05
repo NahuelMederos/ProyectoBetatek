@@ -136,7 +136,7 @@ Partial Class VentanaChatPaciente
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(182, 46)
         Me.Label4.TabIndex = 31
-        Me.Label4.Text = "Ingreso los siguientes" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " sintomas:"
+        Me.Label4.Text = "Ingreso los siguientes" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " síntomas:"
         '
         'txtSintomas
         '
@@ -173,7 +173,7 @@ Partial Class VentanaChatPaciente
         Me.btnTerminarChat.BackColor = System.Drawing.Color.IndianRed
         Me.btnTerminarChat.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnTerminarChat.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTerminarChat.Location = New System.Drawing.Point(923, 479)
+        Me.btnTerminarChat.Location = New System.Drawing.Point(874, 479)
         Me.btnTerminarChat.Name = "btnTerminarChat"
         Me.btnTerminarChat.Size = New System.Drawing.Size(112, 67)
         Me.btnTerminarChat.TabIndex = 37
@@ -198,7 +198,7 @@ Partial Class VentanaChatPaciente
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(112, 26)
         Me.Label1.TabIndex = 40
-        Me.Label1.Text = "Diagnostico"
+        Me.Label1.Text = "Diagnóstico"
         '
         'btnEnviar
         '
@@ -219,11 +219,11 @@ Partial Class VentanaChatPaciente
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(831, 545)
+        Me.Label2.Location = New System.Drawing.Point(831, 549)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(205, 26)
         Me.Label2.TabIndex = 42
-        Me.Label2.Text = "Si desea enviar la sesion de chat por mail, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "primero debera terminar el chat."
+        Me.Label2.Text = "Si desea enviar la sesión de chat por mail, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "primero deberá terminar el chat."
         '
         'VentanaChatPaciente
         '

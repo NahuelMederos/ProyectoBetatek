@@ -15,6 +15,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CapaMedico", "CapaMedico\Ca
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PruebasUnitarias", "UnitTestProject1\PruebasUnitarias.vbproj", "{304D6136-811A-4C29-98E8-5046C5B277F6}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Aplicacion paciente", "Aplicacion paciente\Aplicacion paciente.vdproj", "{F77D74E0-3FB1-40D6-A9A3-C34B21223801}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,8 @@ Global
 		{304D6136-811A-4C29-98E8-5046C5B277F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{304D6136-811A-4C29-98E8-5046C5B277F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{304D6136-811A-4C29-98E8-5046C5B277F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F77D74E0-3FB1-40D6-A9A3-C34B21223801}.Debug|Any CPU.ActiveCfg = Debug
+		{F77D74E0-3FB1-40D6-A9A3-C34B21223801}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

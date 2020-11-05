@@ -18,6 +18,7 @@ Public Class VentanaPrincipalMedico
         ControladorDiagnostico.ModificarNombreRecibe(txtIdDiagnostico.Text)
         ChatMedico.IdDiagnostico = txtIdDiagnostico.Text
         ChatMedico.Ci = txtCiPersona.Text
+        ChatMedico.Diagnostico = txtDiagnostico.Text
         ChatMedico.ShowDialog()
 
     End Sub
@@ -29,6 +30,7 @@ Public Class VentanaPrincipalMedico
         Dim DSeleccionado As DataGridViewRow
         DSeleccionado = TablaDeDiagnosticos.Rows(Indice)
         txtIdDiagnostico.Text = DSeleccionado.Cells(1).Value.ToString()
+        txtDiagnostico.Text = DSeleccionado.Cells(2).Value.ToString()
         txtCiPersona.Text = DSeleccionado.Cells(4).Value.ToString()
 
 
@@ -56,7 +58,9 @@ Public Class VentanaPrincipalMedico
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btnHistorialChats_Click(sender As Object, e As EventArgs) Handles btnHistorialChats.Click
         VentanaHistorialDeDiagnosticosMedico.ShowDialog()
     End Sub
+
+
 End Class

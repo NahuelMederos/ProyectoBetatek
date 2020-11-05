@@ -42,7 +42,7 @@ Partial Class VentanaHistorialChatPaciente
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "VentanaHistorialChatPaciente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "VentanaChatCompleto"
+        Me.Text = "Chat completo"
         Me.ResumeLayout(False)
 
     End Sub

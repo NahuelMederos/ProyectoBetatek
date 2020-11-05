@@ -39,8 +39,10 @@ Partial Class ChatCompleto
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1040, 357)
         Me.Controls.Add(Me.WebBrowser2)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "ChatCompleto"
-        Me.Text = "ChatCompleto"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.Text = "Chat completo"
         Me.ResumeLayout(False)
 
     End Sub

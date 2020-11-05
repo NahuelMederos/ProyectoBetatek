@@ -26,8 +26,8 @@ Partial Class VentanaMenu
         Me.btnHistorialChats = New System.Windows.Forms.Button()
         Me.btnModificarDatos = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -42,7 +42,7 @@ Partial Class VentanaMenu
         Me.btnSeleccionarSintomas.Name = "btnSeleccionarSintomas"
         Me.btnSeleccionarSintomas.Size = New System.Drawing.Size(458, 92)
         Me.btnSeleccionarSintomas.TabIndex = 0
-        Me.btnSeleccionarSintomas.Text = "Consulta medica"
+        Me.btnSeleccionarSintomas.Text = "Consulta médica"
         Me.btnSeleccionarSintomas.UseVisualStyleBackColor = False
         '
         'btnHistorialChats
@@ -84,6 +84,17 @@ Partial Class VentanaMenu
         Me.Panel1.Size = New System.Drawing.Size(458, 72)
         Me.Panel1.TabIndex = 3
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = Global.CapaPaciente.My.Resources.Resources.Logo_2_sin_fondo
+        Me.PictureBox1.Location = New System.Drawing.Point(366, 9)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(80, 66)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -95,17 +106,6 @@ Partial Class VentanaMenu
         Me.Label1.Size = New System.Drawing.Size(174, 42)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Bienvenido"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = Global.CapaPaciente.My.Resources.Resources.Logo_2_sin_fondo
-        Me.PictureBox1.Location = New System.Drawing.Point(366, 9)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(80, 66)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
         '
         'VentanaMenu
         '

@@ -47,4 +47,5 @@ Public Class VentanaHistorialDeDiagnosticosMedico
             MsgBox("El sistema no se pudo comunicar con la base de datos", MsgBoxStyle.Critical, "Error")
         End Try
     End Sub
+
 End Class

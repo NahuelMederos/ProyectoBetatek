@@ -109,6 +109,7 @@ Public Module ControladorUsuarios
                 Dim DatosUsuario As New List(Of String) From {u.ObtenerNombrePaciente, u.ObtenerApellidoPaciente, u.ObtenerEdadPaciente, u.ObtenerMailPaciente}
                 Return DatosUsuario
         End Select
+        Return 0
     End Function
 
     Public Function ObtenerDatosMedico(NombreUsuario As String, Opcion As Integer)
@@ -126,6 +127,7 @@ Public Module ControladorUsuarios
                 Dim DatosUsuario As New List(Of String) From {u.ObtenerNombreMedico, u.ObtenerApellidoMedico, u.ObtenerCedulaMedico}
                 Return DatosUsuario
         End Select
+        Return 0
     End Function
 
     Public Function ObtenerDatosGestor(NombreUsuario As String, Opcion As Integer)
@@ -143,6 +145,7 @@ Public Module ControladorUsuarios
                 Dim DatosUsuario As New List(Of String) From {u.ObtenerNombreGestor, u.ObtenerApellidoGestor, u.ObtenerCedulaGestor}
                 Return DatosUsuario
         End Select
+        Return 0
     End Function
 
     Public Sub ModificarPaciente(Ci As String, Nombre As String, Apellido As String, Edad As String, Mail As String)
@@ -186,6 +189,7 @@ Public Module ControladorUsuarios
             Case 3
                 Return u.ListarGestores()
         End Select
+        Return 0
     End Function
 
     Public Sub DesactivarUsuario(NombreUsuario As String, Opcion As Integer)
@@ -214,6 +218,7 @@ Public Module ControladorUsuarios
             Case 3
                 Return u.EstadoDeGestor
         End Select
+        Return 0
     End Function
 
     Public Sub ActivarUsuario(NombreUsuario As String, Opcion As Integer)

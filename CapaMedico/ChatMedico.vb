@@ -4,6 +4,7 @@ Imports Capa_Logica
 Public Class ChatMedico
     Public IdDiagnostico As String
     Public Ci As String
+    Public Diagnostico As String
 
 
     Private Sub ChatMedico_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -22,12 +23,14 @@ Public Class ChatMedico
                                      }
                                    </style>"
 
-        
+
         Timer1.Enabled = True
+
         TxtId.Text = Sesion.Username
         txtSesion.Text = IdDiagnostico
         txtPara.Text = Ci
-
+        txtDiagnostico.Text = Diagnostico
+        btnIniciarChat_Click(sender, e)
 
     End Sub
 
@@ -72,7 +75,7 @@ Public Class ChatMedico
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnIniciarChat.Click
+    Private Sub btnIniciarChat_Click(sender As Object, e As EventArgs) Handles btnIniciarChat.Click
         BtnEnviar.Enabled = True
         btnIniciarChat.Enabled = False
     End Sub
@@ -109,4 +112,6 @@ Public Class ChatMedico
     Private Sub WebBrowser1_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser1.DocumentCompleted
         Me.WebBrowser1.Document.Window.ScrollTo(0, WebBrowser1.Document.Body.ScrollRectangle.Size.Height)
     End Sub
+
+
 End Class
