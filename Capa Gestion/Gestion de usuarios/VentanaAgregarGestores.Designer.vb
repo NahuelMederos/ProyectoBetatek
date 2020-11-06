@@ -22,157 +22,232 @@ Partial Class VentanaAgregarGestores
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.txtNombreUsuario = New System.Windows.Forms.TextBox()
         Me.txtContraseña = New System.Windows.Forms.TextBox()
-        Me.txtNombre = New System.Windows.Forms.TextBox()
-        Me.txtApellido = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.btnAgregar = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtCedula = New System.Windows.Forms.TextBox()
+        Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtCedula = New System.Windows.Forms.TextBox()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtApellido = New System.Windows.Forms.TextBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txtNombre = New System.Windows.Forms.TextBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Nombre = New System.Windows.Forms.Label()
+        Me.txtNombreUsuario = New System.Windows.Forms.TextBox()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.btnAgregar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
-        '
-        'txtNombreUsuario
-        '
-        Me.txtNombreUsuario.Location = New System.Drawing.Point(12, 30)
-        Me.txtNombreUsuario.MaxLength = 30
-        Me.txtNombreUsuario.Name = "txtNombreUsuario"
-        Me.txtNombreUsuario.Size = New System.Drawing.Size(100, 20)
-        Me.txtNombreUsuario.TabIndex = 0
         '
         'txtContraseña
         '
-        Me.txtContraseña.Location = New System.Drawing.Point(12, 56)
-        Me.txtContraseña.MaxLength = 35
+        Me.txtContraseña.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(91, Byte), Integer))
+        Me.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtContraseña.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtContraseña.ForeColor = System.Drawing.Color.White
+        Me.txtContraseña.Location = New System.Drawing.Point(12, 83)
         Me.txtContraseña.Name = "txtContraseña"
-        Me.txtContraseña.Size = New System.Drawing.Size(100, 20)
-        Me.txtContraseña.TabIndex = 1
+        Me.txtContraseña.Size = New System.Drawing.Size(120, 19)
+        Me.txtContraseña.TabIndex = 135
         '
-        'txtNombre
+        'Panel6
         '
-        Me.txtNombre.Location = New System.Drawing.Point(12, 82)
-        Me.txtNombre.MaxLength = 25
-        Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(100, 20)
-        Me.txtNombre.TabIndex = 2
-        '
-        'txtApellido
-        '
-        Me.txtApellido.Location = New System.Drawing.Point(12, 108)
-        Me.txtApellido.MaxLength = 25
-        Me.txtApellido.Name = "txtApellido"
-        Me.txtApellido.Size = New System.Drawing.Size(100, 20)
-        Me.txtApellido.TabIndex = 3
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(118, 33)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(96, 13)
-        Me.Label1.TabIndex = 4
-        Me.Label1.Text = "Nombre de usuario"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(118, 59)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(61, 13)
-        Me.Label2.TabIndex = 5
-        Me.Label2.Text = "Contraseña"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(118, 85)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(44, 13)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Nombre"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(118, 111)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(44, 13)
-        Me.Label4.TabIndex = 7
-        Me.Label4.Text = "Apellido"
-        '
-        'btnAgregar
-        '
-        Me.btnAgregar.Location = New System.Drawing.Point(121, 175)
-        Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(75, 23)
-        Me.btnAgregar.TabIndex = 8
-        Me.btnAgregar.Text = "Agregar"
-        Me.btnAgregar.UseVisualStyleBackColor = True
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(118, 137)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(40, 13)
-        Me.Label5.TabIndex = 10
-        Me.Label5.Text = "Cedula"
-        '
-        'txtCedula
-        '
-        Me.txtCedula.Location = New System.Drawing.Point(12, 134)
-        Me.txtCedula.MaxLength = 8
-        Me.txtCedula.Name = "txtCedula"
-        Me.txtCedula.Size = New System.Drawing.Size(100, 20)
-        Me.txtCedula.TabIndex = 9
+        Me.Panel6.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Panel6.Location = New System.Drawing.Point(12, 102)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(120, 1)
+        Me.Panel6.TabIndex = 136
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(9, 172)
+        Me.Label6.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.Label6.Location = New System.Drawing.Point(10, 65)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(97, 26)
-        Me.Label6.TabIndex = 11
-        Me.Label6.Text = "*Todos los campos" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "   son obligatorios" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label6.Size = New System.Drawing.Size(70, 15)
+        Me.Label6.TabIndex = 134
+        Me.Label6.Text = "Contraseña"
+        '
+        'txtCedula
+        '
+        Me.txtCedula.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(91, Byte), Integer))
+        Me.txtCedula.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtCedula.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCedula.ForeColor = System.Drawing.Color.White
+        Me.txtCedula.Location = New System.Drawing.Point(13, 242)
+        Me.txtCedula.Name = "txtCedula"
+        Me.txtCedula.Size = New System.Drawing.Size(120, 19)
+        Me.txtCedula.TabIndex = 132
+        '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Panel4.Location = New System.Drawing.Point(13, 261)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(120, 1)
+        Me.Panel4.TabIndex = 133
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.Label8.Location = New System.Drawing.Point(11, 224)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(45, 15)
+        Me.Label8.TabIndex = 131
+        Me.Label8.Text = "Cedula"
+        '
+        'txtApellido
+        '
+        Me.txtApellido.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(91, Byte), Integer))
+        Me.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtApellido.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtApellido.ForeColor = System.Drawing.Color.White
+        Me.txtApellido.Location = New System.Drawing.Point(13, 187)
+        Me.txtApellido.Name = "txtApellido"
+        Me.txtApellido.Size = New System.Drawing.Size(120, 19)
+        Me.txtApellido.TabIndex = 129
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Panel2.Location = New System.Drawing.Point(13, 206)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(120, 1)
+        Me.Panel2.TabIndex = 130
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.Label9.Location = New System.Drawing.Point(11, 169)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(53, 15)
+        Me.Label9.TabIndex = 128
+        Me.Label9.Text = "Apellido"
+        '
+        'txtNombre
+        '
+        Me.txtNombre.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(91, Byte), Integer))
+        Me.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtNombre.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombre.ForeColor = System.Drawing.Color.White
+        Me.txtNombre.Location = New System.Drawing.Point(12, 135)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(120, 19)
+        Me.txtNombre.TabIndex = 126
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Panel1.Location = New System.Drawing.Point(12, 154)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(120, 1)
+        Me.Panel1.TabIndex = 127
+        '
+        'Nombre
+        '
+        Me.Nombre.AutoSize = True
+        Me.Nombre.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Nombre.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.Nombre.Location = New System.Drawing.Point(10, 117)
+        Me.Nombre.Name = "Nombre"
+        Me.Nombre.Size = New System.Drawing.Size(50, 15)
+        Me.Nombre.TabIndex = 125
+        Me.Nombre.Text = "Nombre"
+        '
+        'txtNombreUsuario
+        '
+        Me.txtNombreUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(91, Byte), Integer))
+        Me.txtNombreUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtNombreUsuario.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombreUsuario.ForeColor = System.Drawing.Color.White
+        Me.txtNombreUsuario.Location = New System.Drawing.Point(12, 31)
+        Me.txtNombreUsuario.Name = "txtNombreUsuario"
+        Me.txtNombreUsuario.Size = New System.Drawing.Size(120, 19)
+        Me.txtNombreUsuario.TabIndex = 123
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Panel3.Location = New System.Drawing.Point(12, 50)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(120, 1)
+        Me.Panel3.TabIndex = 124
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.Label10.Location = New System.Drawing.Point(10, 13)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(96, 15)
+        Me.Label10.TabIndex = 122
+        Me.Label10.Text = "Nombre usuario"
+        '
+        'btnAgregar
+        '
+        Me.btnAgregar.BackColor = System.Drawing.Color.SkyBlue
+        Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnAgregar.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregar.ForeColor = System.Drawing.Color.White
+        Me.btnAgregar.Location = New System.Drawing.Point(13, 293)
+        Me.btnAgregar.Name = "btnAgregar"
+        Me.btnAgregar.Size = New System.Drawing.Size(120, 49)
+        Me.btnAgregar.TabIndex = 121
+        Me.btnAgregar.Text = "Agregar"
+        Me.btnAgregar.UseVisualStyleBackColor = False
         '
         'VentanaAgregarGestores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(230, 210)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.txtCedula)
-        Me.Controls.Add(Me.btnAgregar)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtApellido)
-        Me.Controls.Add(Me.txtNombre)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(91, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(154, 368)
         Me.Controls.Add(Me.txtContraseña)
+        Me.Controls.Add(Me.Panel6)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.txtCedula)
+        Me.Controls.Add(Me.Panel4)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.txtApellido)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.txtNombre)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Nombre)
         Me.Controls.Add(Me.txtNombreUsuario)
+        Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.btnAgregar)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "VentanaAgregarGestores"
-        Me.Text = "VentanaGestores"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.Text = "Ingresar gestores"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents txtNombreUsuario As TextBox
     Friend WithEvents txtContraseña As TextBox
-    Friend WithEvents txtNombre As TextBox
-    Friend WithEvents txtApellido As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents btnAgregar As Button
-    Friend WithEvents Label5 As Label
-    Friend WithEvents txtCedula As TextBox
+    Friend WithEvents Panel6 As Panel
     Friend WithEvents Label6 As Label
+    Friend WithEvents txtCedula As TextBox
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Label8 As Label
+    Friend WithEvents txtApellido As TextBox
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Label9 As Label
+    Friend WithEvents txtNombre As TextBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Nombre As Label
+    Friend WithEvents txtNombreUsuario As TextBox
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Label10 As Label
+    Friend WithEvents btnAgregar As Button
 End Class

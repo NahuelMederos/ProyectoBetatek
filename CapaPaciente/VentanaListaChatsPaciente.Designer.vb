@@ -24,6 +24,7 @@ Partial Class VentanaListaChatsPaciente
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txtSesion = New System.Windows.Forms.TextBox()
         Me.TablaDeDiagnosticos = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -57,11 +58,18 @@ Partial Class VentanaListaChatsPaciente
         Me.TablaDeDiagnosticos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.TablaDeDiagnosticos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.TablaDeDiagnosticos.EnableHeadersVisualStyles = False
+        Me.TablaDeDiagnosticos.GridColor = System.Drawing.Color.SteelBlue
         Me.TablaDeDiagnosticos.ImeMode = System.Windows.Forms.ImeMode.Off
         Me.TablaDeDiagnosticos.Location = New System.Drawing.Point(11, 12)
         Me.TablaDeDiagnosticos.Name = "TablaDeDiagnosticos"
         Me.TablaDeDiagnosticos.ReadOnly = True
         Me.TablaDeDiagnosticos.RowHeadersVisible = False
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(91, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
+        Me.TablaDeDiagnosticos.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.TablaDeDiagnosticos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.TablaDeDiagnosticos.Size = New System.Drawing.Size(524, 217)
         Me.TablaDeDiagnosticos.TabIndex = 6

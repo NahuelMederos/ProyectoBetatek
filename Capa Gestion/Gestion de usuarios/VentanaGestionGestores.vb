@@ -69,4 +69,6 @@ Public Class VentanaGestionGestores
             btnEliminar.Enabled = True
         End If
     End Sub
+
+
 End Class

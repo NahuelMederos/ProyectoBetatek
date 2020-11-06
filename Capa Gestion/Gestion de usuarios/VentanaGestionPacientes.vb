@@ -53,9 +53,9 @@ Public Class VentanaGestionPacientes
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         If String.IsNullOrEmpty(txtCi.Text) Then
+            MsgBox("Debe seleccionar el paciente primero")
         Else
             Try
-                MsgBox("Debe seleccionar el paciente primero")
                 ControladorUsuarios.DesactivarUsuario(txtCi.Text, 1)
                 MsgBox("Usuario desactivado")
                 btnListarPacientes_Click(sender, e)
