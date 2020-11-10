@@ -56,6 +56,7 @@ Public Module ControladorUsuarios
 
     Public Function AutenticarPaciente(usuario As String, contraseña As String)
         Dim u As New Usuarios(usuario, contraseña)
+        u.DbUser = usuario
         Return u.AutenticarPaciente()
 
     End Function

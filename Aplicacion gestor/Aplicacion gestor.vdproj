@@ -4,9 +4,9 @@
 "ProjectType" = "8:{978C614F-708E-4E1A-B201-565925725DBA}"
 "IsWebType" = "8:FALSE"
 "ProjectName" = "8:Aplicacion gestor"
-"LanguageId" = "3:1033"
+"LanguageId" = "3:3082"
 "CodePage" = "3:1252"
-"UILanguageId" = "3:1033"
+"UILanguageId" = "3:3082"
 "SccProjectName" = "8:"
 "SccLocalPath" = "8:"
 "SccAuxPath" = "8:"
@@ -15,14 +15,8 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_102C7AFE2B2B64883C7A6C4E03C38F44"
+        "MsmKey" = "8:_0850763A38A085E09140B3EB69E98314"
         "OwnerKey" = "8:_ED9F58AB590A419F9076A0B2B6B56F97"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_102C7AFE2B2B64883C7A6C4E03C38F44"
-        "OwnerKey" = "8:_C0C86D8B41F9262DF4CE350429AC40A5"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -33,14 +27,20 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_AF22B0E1A4F445FA929B1CF7C09D564D"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_904185A4EB26789429557DB4066CC793"
+        "OwnerKey" = "8:_ED9F58AB590A419F9076A0B2B6B56F97"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_C0C86D8B41F9262DF4CE350429AC40A5"
-        "OwnerKey" = "8:_ED9F58AB590A419F9076A0B2B6B56F97"
+        "MsmKey" = "8:_904185A4EB26789429557DB4066CC793"
+        "OwnerKey" = "8:_0850763A38A085E09140B3EB69E98314"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_AF22B0E1A4F445FA929B1CF7C09D564D"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -52,25 +52,25 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_63A4E438753E05F3C1E213A7FBA29197"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_ED9F58AB590A419F9076A0B2B6B56F97"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_C0C86D8B41F9262DF4CE350429AC40A5"
+        "OwnerKey" = "8:_63A4E438753E05F3C1E213A7FBA29197"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_102C7AFE2B2B64883C7A6C4E03C38F44"
+        "OwnerKey" = "8:_904185A4EB26789429557DB4066CC793"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_0850763A38A085E09140B3EB69E98314"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -91,6 +91,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -107,6 +123,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -136,20 +168,15 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_102C7AFE2B2B64883C7A6C4E03C38F44"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0850763A38A085E09140B3EB69E98314"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Capa Fisica, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Capa Logica, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_102C7AFE2B2B64883C7A6C4E03C38F44"
-                    {
-                    "Name" = "8:Capa Fisica.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
-            "SourcePath" = "8:Capa Fisica.dll"
+            "SourcePath" = "8:Capa Logica.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_E52B364E17BB488CA59761F620F40DE3"
@@ -174,13 +201,34 @@
             "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
                 "ScatterAssemblies"
                 {
-                    "_63A4E438753E05F3C1E213A7FBA29197"
-                    {
-                    "Name" = "8:System.Net.Http.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:System.Net.Http.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_E52B364E17BB488CA59761F620F40DE3"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_904185A4EB26789429557DB4066CC793"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Capa Fisica, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                }
+            "SourcePath" = "8:Capa Fisica.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_E52B364E17BB488CA59761F620F40DE3"
@@ -216,37 +264,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C0C86D8B41F9262DF4CE350429AC40A5"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Capa Logica, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_C0C86D8B41F9262DF4CE350429AC40A5"
-                    {
-                    "Name" = "8:Capa Logica.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Capa Logica.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_E52B364E17BB488CA59761F620F40DE3"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
         }
@@ -298,22 +315,22 @@
         }
         "MsiBootstrapper"
         {
-        "LangId" = "3:1033"
+        "LangId" = "3:3082"
         "RequiresElevation" = "11:FALSE"
         }
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Aplicacion gestor"
-        "ProductCode" = "8:{26EC8152-EEF0-4222-A15C-48C4A5926F80}"
-        "PackageCode" = "8:{C03DD160-24B4-4458-BC4E-80DEFDF5307F}"
+        "ProductCode" = "8:{E0CDD199-ED19-4F1E-B420-3E2EABBB8D7C}"
+        "PackageCode" = "8:{8B3812E2-9C12-4CAF-96F4-FAF9474DB449}"
         "UpgradeCode" = "8:{192CB93F-6C4A-4C03-B18D-50B2B1A3017F}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:1.0.2"
         "Manufacturer" = "8:Betatek"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -439,7 +456,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_CD4B5B724EF2499E8958C5979F008431"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Progress"
+                    "DisplayName" = "8:Progreso"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdProgressDlg.wid"
@@ -483,7 +500,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_33AF3EBFA3664743A25F1293A8FC0331"
                     {
                     "Sequence" = "3:200"
-                    "DisplayName" = "8:Installation Folder"
+                    "DisplayName" = "8:Carpeta de instalación"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminFolderDlg.wid"
@@ -505,7 +522,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_3C1EDAB9C5FC42A2A65854D838741E1D"
                     {
                     "Sequence" = "3:300"
-                    "DisplayName" = "8:Confirm Installation"
+                    "DisplayName" = "8:Confirmar instalación"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminConfirmDlg.wid"
@@ -527,7 +544,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_A51832D80270408F9792A5867586B8EF"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Welcome"
+                    "DisplayName" = "8:Pantalla de bienvenida"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminWelcomeDlg.wid"
@@ -590,7 +607,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_BE4350CC9D3C4D3B97121DFA5D60180B"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Finished"
+                    "DisplayName" = "8:Finalizado"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminFinishedDlg.wid"
@@ -621,7 +638,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_8582895EF7E84485AABFF6D454582A2D"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Progress"
+                    "DisplayName" = "8:Progreso"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminProgressDlg.wid"
@@ -665,7 +682,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_583B2B72DDB742099A863F6B773B3EAC"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Welcome"
+                    "DisplayName" = "8:Pantalla de bienvenida"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdWelcomeDlg.wid"
@@ -713,7 +730,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_7C5689562D1D4AE58728364A7BBCBA52"
                     {
                     "Sequence" = "3:300"
-                    "DisplayName" = "8:Confirm Installation"
+                    "DisplayName" = "8:Confirmar instalación"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdConfirmDlg.wid"
@@ -735,7 +752,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_9D12A368CAAA43A6AAE9A2148555388A"
                     {
                     "Sequence" = "3:200"
-                    "DisplayName" = "8:Installation Folder"
+                    "DisplayName" = "8:Carpeta de instalación"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdFolderDlg.wid"
@@ -779,7 +796,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_043A10D2B4D146178351F9CFC4FE805B"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Finished"
+                    "DisplayName" = "8:Finalizado"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdFinishedDlg.wid"

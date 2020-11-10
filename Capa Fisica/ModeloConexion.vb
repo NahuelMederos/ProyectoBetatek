@@ -2,12 +2,12 @@
 
 Public MustInherit Class ModeloConexion
 
-    Public DbDriver As String = "MySQL ODBC 8.0 UNICODE Driver"
+    Public DbDriver As String = "MySQL ODBC 8.0 ANSI Driver"
     Public DbUser As String
     Public DbPassword As String
     Public DbPort As String = "3306"
     Public DbName As String = "betatek"
-    Public DbHost As String = "localhost"
+    Public DbHost As String = "192.168.5.50"
 
     Public Conexion As New OdbcConnection()
 

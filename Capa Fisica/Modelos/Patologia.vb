@@ -1,7 +1,7 @@
 
 
 
-Public Class Patologia
+Public Class PATOLOGIA
 
     Inherits ModeloConexion
 
@@ -10,14 +10,14 @@ Public Class Patologia
 
     End Sub
 
-    Public IdPatologia As String
-    Public Nombre As String
-    Public Prioridad As String
+    Public IDPATOLOGIA As String
+    Public NOMBRE As String
+    Public PRIORIDAD As String
 
 
     Public Function ObtenerPatologia()
 
-        Comando.CommandText = "SELECT IdPatologia as Id,Nombre,Prioridad FROM PATOLOGIA where activo=1"
+        Comando.CommandText = "SELECT IDPATOLOGIA as Id,NOMBRE,PRIORIDAD FROM PATOLOGIA where ACTIVO=1"
 
         Reader = Comando.ExecuteReader()
         Return Reader
@@ -26,7 +26,7 @@ Public Class Patologia
 
     Public Function BuscarIdPatologia()
 
-        Comando.CommandText = "SELECT IdPatologia FROM PATOLOGIA WHERE Nombre='" + Nombre + "'"
+        Comando.CommandText = "SELECT IDPATOLOGIA FROM PATOLOGIA WHERE NOMBRE='" + NOMBRE + "'"
 
         Return Comando.ExecuteScalar().ToString()
 
@@ -34,7 +34,7 @@ Public Class Patologia
 
     Public Function IdyNombrePatologia()
 
-        Comando.CommandText = "SELECT IDPATOLOGIA as Id,NOMBRE as Patologia FROM PATOLOGIA where activo=1"
+        Comando.CommandText = "SELECT IDPATOLOGIA as Id,NOMBRE as PATOLOGIA FROM PATOLOGIA where ACTIVO=1"
 
         Reader = Comando.ExecuteReader()
         Return Reader
@@ -42,7 +42,7 @@ Public Class Patologia
     End Function
 
     Public Sub AltaPatologia()
-        Comando.CommandText = "INSERT INTO PATOLOGIA VALUES(LAST_INSERT_ID(),'" + Me.Nombre + "','" + Me.Prioridad + "',default)"
+        Comando.CommandText = "INSERT INTO PATOLOGIA VALUES(LAST_INSERT_ID(),'" + Me.NOMBRE + "','" + Me.PRIORIDAD + "',default)"
 
         Comando.ExecuteNonQuery()
 
@@ -52,9 +52,9 @@ Public Class Patologia
         Comando.CommandText = "START TRANSACTION;"
         Comando.ExecuteNonQuery()
         Try
-            Comando.CommandText = "update Patologia set activo=0 where idpatologia=" + Me.IdPatologia
+            Comando.CommandText = "update PATOLOGIA set ACTIVO=0 where IDPATOLOGIA=" + Me.IDPATOLOGIA
             Comando.ExecuteNonQuery()
-            Comando.CommandText = "delete from patologia_sintomas where IdPatologia_pat=" + Me.IdPatologia
+            Comando.CommandText = "delete from PATOLOGIA_SINTOMAS where IDPATOLOGIA_PAT=" + Me.IDPATOLOGIA
             Comando.ExecuteNonQuery()
             Comando.CommandText = "COMMIT;"
             Comando.ExecuteNonQuery()
@@ -66,25 +66,25 @@ Public Class Patologia
 
     Public Sub Modificar()
 
-        Comando.CommandText = "UPDATE PATOLOGIA SET NOMBRE = '" + Me.Nombre + "', PRIORIDAD ='" + Me.Prioridad + "' WHERE IDPATOLOGIA = " + Me.IdPatologia
+        Comando.CommandText = "UPDATE PATOLOGIA SET NOMBRE = '" + Me.NOMBRE + "', PRIORIDAD ='" + Me.PRIORIDAD + "' WHERE IDPATOLOGIA = " + Me.IDPATOLOGIA
         Comando.ExecuteNonQuery()
     End Sub
 
     Public Function ObtenerPrioridadPatologia()
 
-        Comando.CommandText = "SELECT PRIORIDAD FROM PATOLOGIA WHERE NOMBRE='" + Nombre + "';"
+        Comando.CommandText = "SELECT PRIORIDAD FROM PATOLOGIA WHERE NOMBRE='" + NOMBRE + "';"
 
         Return Comando.ExecuteScalar().ToString()
 
     End Function
 
     Public Sub ActivarPatologia()
-        Comando.CommandText = "Update Patologia set activo=1 where Nombre='" + Me.Nombre + "'"
+        Comando.CommandText = "Update PATOLOGIA set ACTIVO=1 where NOMBRE='" + Me.NOMBRE + "'"
         Comando.ExecuteNonQuery()
     End Sub
 
     Public Function EstadoPatologia()
-        Comando.CommandText = "Select Activo from Patologia where Nombre='" + Me.Nombre + "'"
+        Comando.CommandText = "Select ACTIVO from PATOLOGIA where NOMBRE='" + Me.NOMBRE + "'"
         Try
             Return Comando.ExecuteScalar().ToString()
         Catch ex As Exception

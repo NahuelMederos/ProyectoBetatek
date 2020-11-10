@@ -22,9 +22,9 @@ Partial Class VentanaPatologia
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ListarPat = New System.Windows.Forms.Button()
         Me.cmbPatologia = New System.Windows.Forms.ComboBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
@@ -49,9 +49,10 @@ Partial Class VentanaPatologia
         'ListarPat
         '
         Me.ListarPat.Enabled = False
-        Me.ListarPat.Location = New System.Drawing.Point(1, 149)
+        Me.ListarPat.Location = New System.Drawing.Point(2, 229)
+        Me.ListarPat.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ListarPat.Name = "ListarPat"
-        Me.ListarPat.Size = New System.Drawing.Size(10, 23)
+        Me.ListarPat.Size = New System.Drawing.Size(15, 35)
         Me.ListarPat.TabIndex = 22
         Me.ListarPat.Text = "Listar"
         Me.ListarPat.UseVisualStyleBackColor = True
@@ -65,9 +66,10 @@ Partial Class VentanaPatologia
         Me.cmbPatologia.ForeColor = System.Drawing.Color.White
         Me.cmbPatologia.FormattingEnabled = True
         Me.cmbPatologia.Items.AddRange(New Object() {"Alta", "Media", "Baja"})
-        Me.cmbPatologia.Location = New System.Drawing.Point(232, 297)
+        Me.cmbPatologia.Location = New System.Drawing.Point(348, 457)
+        Me.cmbPatologia.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.cmbPatologia.Name = "cmbPatologia"
-        Me.cmbPatologia.Size = New System.Drawing.Size(110, 21)
+        Me.cmbPatologia.Size = New System.Drawing.Size(163, 28)
         Me.cmbPatologia.TabIndex = 16
         '
         'OpenFileDialog1
@@ -79,9 +81,10 @@ Partial Class VentanaPatologia
         Me.MensajesNuevos.AutoSize = True
         Me.MensajesNuevos.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MensajesNuevos.ForeColor = System.Drawing.Color.White
-        Me.MensajesNuevos.Location = New System.Drawing.Point(9, 325)
+        Me.MensajesNuevos.Location = New System.Drawing.Point(14, 500)
+        Me.MensajesNuevos.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.MensajesNuevos.Name = "MensajesNuevos"
-        Me.MensajesNuevos.Size = New System.Drawing.Size(122, 15)
+        Me.MensajesNuevos.Size = New System.Drawing.Size(178, 24)
         Me.MensajesNuevos.TabIndex = 71
         Me.MensajesNuevos.Text = "Ingresar archivo .csv" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.MensajesNuevos.Visible = False
@@ -89,9 +92,10 @@ Partial Class VentanaPatologia
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Panel2.Location = New System.Drawing.Point(236, 207)
+        Me.Panel2.Location = New System.Drawing.Point(354, 318)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(30, 1)
+        Me.Panel2.Size = New System.Drawing.Size(45, 2)
         Me.Panel2.TabIndex = 70
         '
         'txtNombrePatologia
@@ -100,9 +104,10 @@ Partial Class VentanaPatologia
         Me.txtNombrePatologia.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtNombrePatologia.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombrePatologia.ForeColor = System.Drawing.Color.White
-        Me.txtNombrePatologia.Location = New System.Drawing.Point(233, 240)
+        Me.txtNombrePatologia.Location = New System.Drawing.Point(350, 369)
+        Me.txtNombrePatologia.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtNombrePatologia.Name = "txtNombrePatologia"
-        Me.txtNombrePatologia.Size = New System.Drawing.Size(86, 19)
+        Me.txtNombrePatologia.Size = New System.Drawing.Size(129, 28)
         Me.txtNombrePatologia.TabIndex = 65
         '
         'Label1
@@ -110,9 +115,10 @@ Partial Class VentanaPatologia
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label1.Location = New System.Drawing.Point(230, 218)
+        Me.Label1.Location = New System.Drawing.Point(345, 335)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(50, 15)
+        Me.Label1.Size = New System.Drawing.Size(78, 24)
         Me.Label1.TabIndex = 66
         Me.Label1.Text = "Nombre"
         '
@@ -123,9 +129,10 @@ Partial Class VentanaPatologia
         Me.txtIdPatologia.Enabled = False
         Me.txtIdPatologia.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtIdPatologia.ForeColor = System.Drawing.Color.White
-        Me.txtIdPatologia.Location = New System.Drawing.Point(236, 189)
+        Me.txtIdPatologia.Location = New System.Drawing.Point(354, 291)
+        Me.txtIdPatologia.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtIdPatologia.Name = "txtIdPatologia"
-        Me.txtIdPatologia.Size = New System.Drawing.Size(30, 19)
+        Me.txtIdPatologia.Size = New System.Drawing.Size(45, 28)
         Me.txtIdPatologia.TabIndex = 68
         '
         'Label5
@@ -133,18 +140,20 @@ Partial Class VentanaPatologia
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label5.Location = New System.Drawing.Point(233, 171)
+        Me.Label5.Location = New System.Drawing.Point(350, 263)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(19, 15)
+        Me.Label5.Size = New System.Drawing.Size(27, 24)
         Me.Label5.TabIndex = 67
         Me.Label5.Text = "ID"
         '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Panel3.Location = New System.Drawing.Point(233, 259)
+        Me.Panel3.Location = New System.Drawing.Point(350, 398)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(86, 1)
+        Me.Panel3.Size = New System.Drawing.Size(129, 2)
         Me.Panel3.TabIndex = 69
         '
         'btnModificarPatologia
@@ -154,9 +163,10 @@ Partial Class VentanaPatologia
         Me.btnModificarPatologia.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnModificarPatologia.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnModificarPatologia.ForeColor = System.Drawing.SystemColors.Control
-        Me.btnModificarPatologia.Location = New System.Drawing.Point(233, 116)
+        Me.btnModificarPatologia.Location = New System.Drawing.Point(350, 178)
+        Me.btnModificarPatologia.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnModificarPatologia.Name = "btnModificarPatologia"
-        Me.btnModificarPatologia.Size = New System.Drawing.Size(109, 46)
+        Me.btnModificarPatologia.Size = New System.Drawing.Size(164, 71)
         Me.btnModificarPatologia.TabIndex = 64
         Me.btnModificarPatologia.Text = "Modificar patologia"
         Me.btnModificarPatologia.UseVisualStyleBackColor = False
@@ -168,9 +178,10 @@ Partial Class VentanaPatologia
         Me.btnAgregarPatologia.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnAgregarPatologia.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregarPatologia.ForeColor = System.Drawing.SystemColors.Control
-        Me.btnAgregarPatologia.Location = New System.Drawing.Point(233, 64)
+        Me.btnAgregarPatologia.Location = New System.Drawing.Point(350, 98)
+        Me.btnAgregarPatologia.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnAgregarPatologia.Name = "btnAgregarPatologia"
-        Me.btnAgregarPatologia.Size = New System.Drawing.Size(109, 46)
+        Me.btnAgregarPatologia.Size = New System.Drawing.Size(164, 71)
         Me.btnAgregarPatologia.TabIndex = 63
         Me.btnAgregarPatologia.Text = "Agregar patologia"
         Me.btnAgregarPatologia.UseVisualStyleBackColor = False
@@ -182,9 +193,10 @@ Partial Class VentanaPatologia
         Me.BtnBorrarPat.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnBorrarPat.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnBorrarPat.ForeColor = System.Drawing.SystemColors.Control
-        Me.BtnBorrarPat.Location = New System.Drawing.Point(233, 12)
+        Me.BtnBorrarPat.Location = New System.Drawing.Point(350, 18)
+        Me.BtnBorrarPat.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.BtnBorrarPat.Name = "BtnBorrarPat"
-        Me.BtnBorrarPat.Size = New System.Drawing.Size(109, 46)
+        Me.BtnBorrarPat.Size = New System.Drawing.Size(164, 71)
         Me.BtnBorrarPat.TabIndex = 62
         Me.BtnBorrarPat.Text = "Baja patologia"
         Me.BtnBorrarPat.UseVisualStyleBackColor = False
@@ -193,33 +205,34 @@ Partial Class VentanaPatologia
         '
         Me.TablaDePatologias.AllowUserToAddRows = False
         Me.TablaDePatologias.AllowUserToDeleteRows = False
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TablaDePatologias.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TablaDePatologias.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.TablaDePatologias.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(91, Byte), Integer))
         Me.TablaDePatologias.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(91, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.TablaDePatologias.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(91, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.TablaDePatologias.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.TablaDePatologias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.TablaDePatologias.EnableHeadersVisualStyles = False
         Me.TablaDePatologias.GridColor = System.Drawing.Color.SteelBlue
-        Me.TablaDePatologias.Location = New System.Drawing.Point(12, 12)
+        Me.TablaDePatologias.Location = New System.Drawing.Point(18, 18)
+        Me.TablaDePatologias.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TablaDePatologias.Name = "TablaDePatologias"
         Me.TablaDePatologias.ReadOnly = True
         Me.TablaDePatologias.RowHeadersVisible = False
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(91, Byte), Integer))
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.0!)
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SteelBlue
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
-        Me.TablaDePatologias.RowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(91, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.0!)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
+        Me.TablaDePatologias.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.TablaDePatologias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.TablaDePatologias.Size = New System.Drawing.Size(212, 310)
+        Me.TablaDePatologias.Size = New System.Drawing.Size(318, 477)
         Me.TablaDePatologias.TabIndex = 61
         '
         'btnOk
@@ -228,9 +241,10 @@ Partial Class VentanaPatologia
         Me.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnOk.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnOk.ForeColor = System.Drawing.Color.White
-        Me.btnOk.Location = New System.Drawing.Point(311, 348)
+        Me.btnOk.Location = New System.Drawing.Point(466, 535)
+        Me.btnOk.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnOk.Name = "btnOk"
-        Me.btnOk.Size = New System.Drawing.Size(31, 20)
+        Me.btnOk.Size = New System.Drawing.Size(46, 31)
         Me.btnOk.TabIndex = 60
         Me.btnOk.Text = "OK"
         Me.btnOk.UseVisualStyleBackColor = False
@@ -241,18 +255,20 @@ Partial Class VentanaPatologia
         Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnBuscar.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBuscar.ForeColor = System.Drawing.Color.White
-        Me.btnBuscar.Location = New System.Drawing.Point(12, 347)
+        Me.btnBuscar.Location = New System.Drawing.Point(18, 534)
+        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(75, 21)
+        Me.btnBuscar.Size = New System.Drawing.Size(112, 32)
         Me.btnBuscar.TabIndex = 59
         Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = False
         '
         'txtRutaCsv
         '
-        Me.txtRutaCsv.Location = New System.Drawing.Point(91, 347)
+        Me.txtRutaCsv.Location = New System.Drawing.Point(136, 534)
+        Me.txtRutaCsv.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtRutaCsv.Name = "txtRutaCsv"
-        Me.txtRutaCsv.Size = New System.Drawing.Size(214, 20)
+        Me.txtRutaCsv.Size = New System.Drawing.Size(319, 26)
         Me.txtRutaCsv.TabIndex = 58
         '
         'Label2
@@ -260,18 +276,19 @@ Partial Class VentanaPatologia
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label2.Location = New System.Drawing.Point(233, 279)
+        Me.Label2.Location = New System.Drawing.Point(350, 429)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(60, 15)
+        Me.Label2.Size = New System.Drawing.Size(87, 24)
         Me.Label2.TabIndex = 72
         Me.Label2.Text = "Prioridad"
         '
         'VentanaPatologia
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(91, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(354, 380)
+        Me.ClientSize = New System.Drawing.Size(531, 585)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.MensajesNuevos)
         Me.Controls.Add(Me.Panel2)
@@ -290,6 +307,7 @@ Partial Class VentanaPatologia
         Me.Controls.Add(Me.ListarPat)
         Me.Controls.Add(Me.cmbPatologia)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "VentanaPatologia"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Patologias"

@@ -103,7 +103,7 @@ Public Class VentanaPatologia
                 archivo.SetDelimiters(",")
                 Dim currentRow As String()
                 Dim Contador As Integer = 0
-                Dim Prioridades As String() = {"Alta", "Media", "Baja"}
+                Dim Prioridades As String() = {"ALTA", "MEDIA", "BAJA"}
                 While Not archivo.EndOfData
                     Contador += 1
                     Try
@@ -136,5 +136,7 @@ Public Class VentanaPatologia
         End If
     End Sub
 
+    Private Sub cmbPatologia_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbPatologia.SelectedIndexChanged
 
+    End Sub
 End Class

@@ -6,17 +6,17 @@
 
     End Sub
 
-    Public NombreUsuario As String
+    Public NOMBREUSUARIO As String
     Public Contraseña As String
-    Public Nombre As String
-    Public Apellido As String
-    Public Cedula As String
-    Public Edad As String
-    Public Mail As String
+    Public NOMBRE As String
+    Public APELLIDO As String
+    Public CEDULA As String
+    Public EDAD As String
+    Public MAIL As String
 
     Public Sub CrearGestor()
         Try
-            Comando.CommandText = "DROP USER '" + Me.NombreUsuario + "'@'localhost'"
+            Comando.CommandText = "DROP USER '" + Me.NOMBREUSUARIO + "'@'localhost'"
             Comando.ExecuteNonQuery()
         Catch ex As Exception
         End Try
@@ -25,19 +25,19 @@
         Comando.ExecuteNonQuery()
 
         Try
-            Comando.CommandText = "CREATE USER '" + Me.NombreUsuario + "'@'localhost' IDENTIFIED BY '" + Me.Contraseña + "';"
+            Comando.CommandText = "CREATE USER '" + Me.NOMBREUSUARIO + "'@'localhost' IDENTIFIED BY '" + Me.Contraseña + "';"
             Comando.ExecuteNonQuery()
 
-            Comando.CommandText = "GRANT ALL PRIVILEGES ON betatek.* TO '" + Me.NombreUsuario + "'@'localhost' WITH GRANT OPTION;"
+            Comando.CommandText = "GRANT ALL PRIVILEGES ON betatek.* TO '" + Me.NOMBREUSUARIO + "'@'localhost' WITH GRANT OPTION;"
             Comando.ExecuteNonQuery()
 
-            Comando.CommandText = "GRANT SELECT ON MYSQL.USER TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.CommandText = "GRANT SELECT ON MYSQL.USER TO '" + Me.NOMBREUSUARIO + "'@'localhost';"
             Comando.ExecuteNonQuery()
 
-            Comando.CommandText = "GRANT CREATE USER ON *.* TO '" + Me.NombreUsuario + "'@'localhost' WITH GRANT OPTION;"
+            Comando.CommandText = "GRANT CREATE USER ON *.* TO '" + Me.NOMBREUSUARIO + "'@'localhost' WITH GRANT OPTION;"
             Comando.ExecuteNonQuery()
 
-            Comando.CommandText = "INSERT INTO ADMINISTRATIVO VALUES('" + Me.NombreUsuario + "','" + Me.Nombre + "','" + Me.Apellido + "','" + Me.Cedula + "',DEFAULT);"
+            Comando.CommandText = "INSERT INTO ADMINISTRATIVO VALUES('" + Me.NOMBREUSUARIO + "','" + Me.NOMBRE + "','" + Me.APELLIDO + "','" + Me.CEDULA + "',DEFAULT);"
             Comando.ExecuteNonQuery()
 
             Comando.CommandText = "COMMIT;"
@@ -52,9 +52,9 @@
 
     Public Function AutenticarGestor()
 
-        Comando.CommandText = "SELECT COUNT(NombreUsuario) FROM Administrativo
-                               WHERE NombreUsuario='" + Me.DbUser + "'
-                               And Activo=1;"
+        Comando.CommandText = "SELECT COUNT(NOMBREUSUARIO) FROM ADMINISTRATIVO
+                               WHERE NOMBREUSUARIO='" + Me.DbUser + "'
+                               AND ACTIVO=1;"
 
 
         Return Comando.ExecuteScalar().ToString()
@@ -63,7 +63,7 @@
 
     Public Sub CrearMedico()
         Try
-            Comando.CommandText = "DROP USER '" + Me.NombreUsuario + "'@'localhost'"
+            Comando.CommandText = "DROP USER '" + Me.NOMBREUSUARIO + "'@'localhost'"
             Comando.ExecuteNonQuery()
         Catch ex As Exception
         End Try
@@ -72,28 +72,28 @@
         Comando.ExecuteNonQuery()
 
         Try
-            Comando.CommandText = "CREATE USER '" + Me.NombreUsuario + "'@'localhost' IDENTIFIED BY '" + Me.Contraseña + "';"
+            Comando.CommandText = "CREATE USER '" + Me.NOMBREUSUARIO + "'@'localhost' IDENTIFIED BY '" + Me.Contraseña + "';"
             Comando.ExecuteNonQuery()
 
-            Comando.CommandText = " GRANT SELECT on betatek.Medico TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.CommandText = " GRANT SELECT on betatek.MEDICO TO '" + Me.NOMBREUSUARIO + "'@'localhost';"
             Comando.ExecuteNonQuery()
 
-            Comando.CommandText = " GRANT SELECT,UPDATE on betatek.Recibe TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.CommandText = " GRANT SELECT,UPDATE on betatek.RECIBE TO '" + Me.NOMBREUSUARIO + "'@'localhost';"
             Comando.ExecuteNonQuery()
 
-            Comando.CommandText = " GRANT SELECT on betatek.Genera TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.CommandText = " GRANT SELECT on betatek.GENERA TO '" + Me.NOMBREUSUARIO + "'@'localhost';"
             Comando.ExecuteNonQuery()
 
-            Comando.CommandText = " GRANT SELECT on betatek.Diagnostico TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.CommandText = " GRANT SELECT on betatek.DIAGNOSTICO TO '" + Me.NOMBREUSUARIO + "'@'localhost';"
             Comando.ExecuteNonQuery()
 
-            Comando.CommandText = " GRANT INSERT,UPDATE,SELECT ON betatek.Chatea TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.CommandText = " GRANT INSERT,UPDATE,SELECT ON betatek.CHATEA TO '" + Me.NOMBREUSUARIO + "'@'localhost';"
             Comando.ExecuteNonQuery()
 
-            Comando.CommandText = " GRANT SELECT ON betatek.PERSONA TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.CommandText = " GRANT SELECT ON betatek.PERSONA TO '" + Me.NOMBREUSUARIO + "'@'localhost';"
             Comando.ExecuteNonQuery()
 
-            Comando.CommandText = "INSERT INTO MEDICO VALUES('" + Me.NombreUsuario + "','" + Me.Nombre + "','" + Me.Apellido + "','" + Me.Cedula + "',DEFAULT);"
+            Comando.CommandText = "INSERT INTO MEDICO VALUES('" + Me.NOMBREUSUARIO + "','" + Me.NOMBRE + "','" + Me.APELLIDO + "','" + Me.CEDULA + "',DEFAULT);"
             Comando.ExecuteNonQuery()
 
             Comando.CommandText = "COMMIT;"
@@ -109,9 +109,9 @@
 
     Public Function AutenticarMedico()
 
-        Comando.CommandText = "SELECT COUNT(NombreUsuario) FROM Medico
-                               WHERE NombreUsuario='" + Me.DbUser + "'
-                               And Activo=1;"
+        Comando.CommandText = "SELECT COUNT(NOMBREUSUARIO) FROM MEDICO
+                               WHERE NOMBREUSUARIO='" + Me.DbUser + "'
+                               AND ACTIVO=1;"
 
 
         Return Comando.ExecuteScalar().ToString()
@@ -120,7 +120,7 @@
 
     Public Sub CrearPaciente()
         Try
-            Comando.CommandText = "DROP USER '" + Me.NombreUsuario + "'@'localhost'"
+            Comando.CommandText = "DROP USER '" + Me.NOMBREUSUARIO + "'@'localhost'"
             Comando.ExecuteNonQuery()
         Catch ex As Exception
         End Try
@@ -130,43 +130,43 @@
 
         Try
 
-            Comando.CommandText = "CREATE USER '" + Me.NombreUsuario + "'@'localhost' IDENTIFIED BY '" + Me.Contraseña + "';"
+            Comando.CommandText = "CREATE USER '" + Me.NOMBREUSUARIO + "'@'localhost' IDENTIFIED BY '" + Me.Contraseña + "';"
             Comando.ExecuteNonQuery()
 
-            Comando.CommandText = " GRANT INSERT,UPDATE,SELECT ON betatek.Chatea TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.CommandText = " GRANT INSERT,UPDATE,SELECT ON betatek.CHATEA TO '" + Me.NOMBREUSUARIO + "'@'localhost';"
             Comando.ExecuteNonQuery()
 
-            Comando.CommandText = " GRANT UPDATE (Nombre,Apellido,Edad,Mail),SELECT ON betatek.Persona TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.CommandText = " GRANT UPDATE (NOMBRE,APELLIDO,EDAD,MAIL),SELECT ON betatek.PERSONA TO '" + Me.NOMBREUSUARIO + "'@'localhost';"
             Comando.ExecuteNonQuery()
 
-            Comando.CommandText = " GRANT SELECT ON betatek.Medico TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.CommandText = " GRANT SELECT ON betatek.MEDICO TO '" + Me.NOMBREUSUARIO + "'@'localhost';"
             Comando.ExecuteNonQuery()
 
-            Comando.CommandText = " GRANT INSERT ON betatek.Genera TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.CommandText = " GRANT INSERT ON betatek.GENERA TO '" + Me.NOMBREUSUARIO + "'@'localhost';"
             Comando.ExecuteNonQuery()
 
-            Comando.CommandText = " GRANT INSERT ON betatek.Patologias TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.CommandText = " GRANT INSERT ON betatek.PATOLOGIAS TO '" + Me.NOMBREUSUARIO + "'@'localhost';"
             Comando.ExecuteNonQuery()
 
-            Comando.CommandText = " GRANT INSERT,SELECT,UPDATE ON betatek.Recibe TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.CommandText = " GRANT INSERT,SELECT,UPDATE ON betatek.RECIBE TO '" + Me.NOMBREUSUARIO + "'@'localhost';"
             Comando.ExecuteNonQuery()
 
-            Comando.CommandText = " GRANT SELECT,INSERT ON betatek.Diagnostico TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.CommandText = " GRANT SELECT,INSERT ON betatek.DIAGNOSTICO TO '" + Me.NOMBREUSUARIO + "'@'localhost';"
             Comando.ExecuteNonQuery()
 
-            Comando.CommandText = " GRANT SELECT ON betatek.Sintoma TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.CommandText = " GRANT SELECT ON betatek.SINTOMA TO '" + Me.NOMBREUSUARIO + "'@'localhost';"
             Comando.ExecuteNonQuery()
 
-            Comando.CommandText = " GRANT SELECT ON betatek.Patologia TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.CommandText = " GRANT SELECT ON betatek.PATOLOGIA TO '" + Me.NOMBREUSUARIO + "'@'localhost';"
             Comando.ExecuteNonQuery()
 
-            Comando.CommandText = " GRANT SELECT ON betatek.Patologia_Sintomas TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.CommandText = " GRANT SELECT ON betatek.PATOLOGIA_SINTOMAS TO '" + Me.NOMBREUSUARIO + "'@'localhost';"
             Comando.ExecuteNonQuery()
 
-            Comando.CommandText = " GRANT INSERT ON betatek.TIENE TO '" + Me.NombreUsuario + "'@'localhost';"
+            Comando.CommandText = " GRANT INSERT ON betatek.TIENE TO '" + Me.NOMBREUSUARIO + "'@'localhost';"
             Comando.ExecuteNonQuery()
 
-            Comando.CommandText = "INSERT INTO PERSONA VALUES('" + Me.NombreUsuario + "','" + Me.Nombre + "','" + Me.Apellido + "','" + Me.Edad + "','" + Me.Mail + "',DEFAULT);"
+            Comando.CommandText = "INSERT INTO PERSONA VALUES('" + Me.NOMBREUSUARIO + "','" + Me.NOMBRE + "','" + Me.APELLIDO + "','" + Me.EDAD + "','" + Me.MAIL + "',DEFAULT);"
             Comando.ExecuteNonQuery()
 
             Comando.CommandText = "COMMIT;"
@@ -181,9 +181,9 @@
 
     Public Function AutenticarPaciente()
 
-        Comando.CommandText = "SELECT COUNT(CI) FROM Persona
+        Comando.CommandText = "SELECT COUNT(CI) FROM PERSONA
                                WHERE CI='" + Me.DbUser + "'
-                               And Activo=1;"
+                               AND ACTIVO=1;"
 
 
         Return Comando.ExecuteScalar().ToString()
@@ -191,20 +191,20 @@
 
 
     Public Sub DesactivarPaciente()
-        Comando.CommandText = "update Persona set activo=0 where Ci='" + Me.NombreUsuario + "'"
+        Comando.CommandText = "update PERSONA set ACTIVO=0 where CI='" + Me.NOMBREUSUARIO + "'"
 
         Comando.ExecuteNonQuery()
     End Sub
 
     Public Sub DesactivarMedico()
-        Comando.CommandText = "update Medico set activo=0 where NombreUsuario='" + Me.NombreUsuario + "'"
+        Comando.CommandText = "update MEDICO set ACTIVO=0 where NOMBREUSUARIO='" + Me.NOMBREUSUARIO + "'"
 
         Comando.ExecuteNonQuery()
 
     End Sub
 
     Public Sub DesactivarGestor()
-        Comando.CommandText = "update Administrativo set activo=0 where NombreUsuario='" + Me.NombreUsuario + "'"
+        Comando.CommandText = "update ADMINISTRATIVO set ACTIVO=0 where NOMBREUSUARIO='" + Me.NOMBREUSUARIO + "'"
 
         Comando.ExecuteNonQuery()
     End Sub
@@ -212,142 +212,142 @@
 
 
     Public Function VerificarCedulaMedico()
-        Comando.CommandText = "SELECT COUNT(Cedula) FROM Medico
-                               WHERE Cedula='" + Me.Cedula + "';"
+        Comando.CommandText = "SELECT COUNT(CEDULA) FROM MEDICO
+                               WHERE CEDULA='" + Me.CEDULA + "';"
         Return Comando.ExecuteScalar().ToString()
     End Function
 
     Public Function VerificarCedulaGestor()
-        Comando.CommandText = "SELECT COUNT(Cedula) FROM Administrativo
-                               WHERE Cedula='" + Me.Cedula + "';"
+        Comando.CommandText = "SELECT COUNT(CEDULA) FROM ADMINISTRATIVO
+                               WHERE CEDULA='" + Me.CEDULA + "';"
         Return Comando.ExecuteScalar().ToString()
     End Function
 
     Public Function VerificarMailPaciente()
-        Comando.CommandText = "SELECT COUNT(Mail) FROM Persona
-                               WHERE Mail='" + Me.Mail + "';"
+        Comando.CommandText = "SELECT COUNT(MAIL) FROM PERSONA
+                               WHERE MAIL='" + Me.MAIL + "';"
         Return Comando.ExecuteScalar().ToString()
     End Function
 
     Public Function VerificarUsuarioMySQL()
         Comando.CommandText = "SELECT COUNT(USER) FROM mysql.user
-                               WHERE USER='" + Me.NombreUsuario + "';"
+                               WHERE USER='" + Me.NOMBREUSUARIO + "';"
 
         Return Comando.ExecuteScalar().ToString()
     End Function
 
 
     Public Function ObtenerNombrePaciente()
-        Comando.CommandText = "SELECT Nombre 
+        Comando.CommandText = "SELECT NOMBRE
                                FROM PERSONA 
-                               WHERE Ci='" + Me.NombreUsuario + "';"
+                               WHERE CI='" + Me.NOMBREUSUARIO + "';"
         Return Comando.ExecuteScalar().ToString()
     End Function
 
     Public Function ObtenerApellidoPaciente()
-        Comando.CommandText = "SELECT Apellido
+        Comando.CommandText = "SELECT APELLIDO
                                FROM PERSONA 
-                               WHERE Ci='" + Me.NombreUsuario + "';"
+                               WHERE CI='" + Me.NOMBREUSUARIO + "';"
 
         Return Comando.ExecuteScalar().ToString()
     End Function
 
     Public Function ObtenerEdadPaciente()
-        Comando.CommandText = "SELECT Edad
+        Comando.CommandText = "SELECT EDAD
                                FROM PERSONA 
-                               WHERE Ci='" + Me.NombreUsuario + "';"
+                               WHERE CI='" + Me.NOMBREUSUARIO + "';"
 
         Return Comando.ExecuteScalar().ToString()
     End Function
 
     Public Function ObtenerMailPaciente()
-        Comando.CommandText = "SELECT Mail 
+        Comando.CommandText = "SELECT MAIL 
                                FROM PERSONA 
-                               WHERE Ci='" + Me.NombreUsuario + "';"
+                               WHERE CI='" + Me.NOMBREUSUARIO + "';"
 
         Return Comando.ExecuteScalar().ToString()
     End Function
 
     Public Function ObtenerNombreMedico()
-        Comando.CommandText = "SELECT Nombre
-                               FROM Medico
-                               WHERE NombreUsuario='" + Me.NombreUsuario + "';"
+        Comando.CommandText = "SELECT NOMBRE
+                               FROM MEDICO
+                               WHERE NOMBREUSUARIO='" + Me.NOMBREUSUARIO + "';"
 
         Return Comando.ExecuteScalar().ToString()
     End Function
 
     Public Function ObtenerApellidoMedico()
-        Comando.CommandText = "SELECT Apellido
-                               FROM Medico
-                               WHERE NombreUsuario='" + Me.NombreUsuario + "';"
+        Comando.CommandText = "SELECT APELLIDO
+                               FROM MEDICO
+                               WHERE NOMBREUSUARIO='" + Me.NOMBREUSUARIO + "';"
 
         Return Comando.ExecuteScalar().ToString()
     End Function
 
     Public Function ObtenerCedulaMedico()
-        Comando.CommandText = "SELECT Cedula
-                               FROM Medico
-                               WHERE NombreUsuario='" + Me.NombreUsuario + "';"
+        Comando.CommandText = "SELECT CEDULA
+                               FROM MEDICO
+                               WHERE NOMBREUSUARIO='" + Me.NOMBREUSUARIO + "';"
 
         Return Comando.ExecuteScalar().ToString()
     End Function
 
     Public Function ObtenerNombreGestor()
-        Comando.CommandText = "SELECT Nombre
-                               FROM Administrativo
-                               WHERE NombreUsuario='" + Me.NombreUsuario + "';"
+        Comando.CommandText = "SELECT NOMBRE
+                               FROM ADMINISTRATIVO
+                               WHERE NOMBREUSUARIO='" + Me.NOMBREUSUARIO + "';"
 
         Return Comando.ExecuteScalar().ToString()
     End Function
 
     Public Function ObtenerApellidoGestor()
-        Comando.CommandText = "SELECT Apellido
-                               FROM Administrativo
-                               WHERE NombreUsuario='" + Me.NombreUsuario + "';"
+        Comando.CommandText = "SELECT APELLIDO
+                               FROM ADMINISTRATIVO
+                               WHERE NOMBREUSUARIO='" + Me.NOMBREUSUARIO + "';"
 
         Return Comando.ExecuteScalar().ToString()
     End Function
 
     Public Function ObtenerCedulaGestor()
-        Comando.CommandText = "SELECT Cedula
-                               FROM Administrativo
-                               WHERE NombreUsuario='" + Me.NombreUsuario + "';"
+        Comando.CommandText = "SELECT CEDULA
+                               FROM ADMINISTRATIVO
+                               WHERE NOMBREUSUARIO='" + Me.NOMBREUSUARIO + "';"
 
         Return Comando.ExecuteScalar().ToString()
     End Function
 
 
     Public Sub ModificarPaciente()
-        Comando.CommandText = "Update Persona set Nombre='" + Me.Nombre + "',Apellido='" + Me.Apellido + "',Edad='" + Me.Edad + "',Mail='" + Me.Mail + "' where Ci='" + Me.Cedula + "'"
+        Comando.CommandText = "Update PERSONA set NOMBRE='" + Me.NOMBRE + "',APELLIDO='" + Me.APELLIDO + "',EDAD='" + Me.EDAD + "',MAIL='" + Me.MAIL + "' where CI='" + Me.CEDULA + "'"
         Comando.ExecuteNonQuery()
     End Sub
 
     Public Sub ModificarMedico()
-        Comando.CommandText = "Update Medico set Nombre='" + Me.Nombre + "',Apellido='" + Me.Apellido + "',Cedula='" + Me.Cedula + "' where NombreUsuario='" + Me.NombreUsuario + "'"
+        Comando.CommandText = "Update MEDICO set NOMBRE='" + Me.NOMBRE + "',APELLIDO='" + Me.APELLIDO + "',CEDULA='" + Me.CEDULA + "' where NOMBREUSUARIO='" + Me.NOMBREUSUARIO + "'"
         Comando.ExecuteNonQuery()
     End Sub
 
     Public Sub ModificarGestor()
-        Comando.CommandText = "Update Administrativo set Nombre='" + Me.Nombre + "',Apellido='" + Me.Apellido + "',Cedula='" + Me.Cedula + "' where NombreUsuario='" + Me.NombreUsuario + "'"
+        Comando.CommandText = "Update ADMINISTRATIVO set NOMBRE='" + Me.NOMBRE + "',APELLIDO='" + Me.APELLIDO + "',CEDULA='" + Me.CEDULA + "' where NOMBREUSUARIO='" + Me.NOMBREUSUARIO + "'"
         Comando.ExecuteNonQuery()
     End Sub
 
     Public Function ListarPacientes()
-        Comando.CommandText = "SELECT Ci,Nombre,Apellido,Edad,Mail FROM Persona where Activo=1"
+        Comando.CommandText = "SELECT CI,NOMBRE,APELLIDO,EDAD,MAIL FROM PERSONA where ACTIVO=1"
 
         Me.Reader = Comando.ExecuteReader()
         Return Me.Reader
     End Function
 
     Public Function ListarMedicos()
-        Comando.CommandText = "SELECT NombreUsuario as Usuario,Nombre,Apellido,Cedula FROM Medico where Activo=1"
+        Comando.CommandText = "SELECT NOMBREUSUARIO as USUARIO,NOMBRE,APELLIDO,CEDULA FROM MEDICO where ACTIVO=1"
 
         Me.Reader = Comando.ExecuteReader()
         Return Me.Reader
     End Function
 
     Public Function ListarGestores()
-        Comando.CommandText = "SELECT NombreUsuario as Usuario,Nombre,Apellido,Cedula FROM Administrativo where Activo=1"
+        Comando.CommandText = "SELECT NOMBREUSUARIO as USUARIO,NOMBRE,APELLIDO,CEDULA FROM ADMINISTRATIVO where ACTIVO=1"
 
         Me.Reader = Comando.ExecuteReader()
         Return Me.Reader
@@ -355,7 +355,7 @@
 
     Public Function EstadoDePaciente()
         Try
-            Comando.CommandText = "Select Activo from persona where Ci='" + Me.NombreUsuario + "'"
+            Comando.CommandText = "Select ACTIVO from PERSONA where CI='" + Me.NOMBREUSUARIO + "'"
             Return Comando.ExecuteScalar().ToString()
         Catch ex As Exception
             Return "1"
@@ -365,7 +365,7 @@
 
     Public Function EstadoDeMedico()
         Try
-            Comando.CommandText = "Select Activo from Medico where NombreUsuario='" + Me.NombreUsuario + "'"
+            Comando.CommandText = "Select ACTIVO from MEDICO where NOMBREUSUARIO='" + Me.NOMBREUSUARIO + "'"
             Return Comando.ExecuteScalar().ToString()
         Catch ex As Exception
             Return "1"
@@ -375,7 +375,7 @@
 
     Public Function EstadoDeGestor()
         Try
-            Comando.CommandText = "Select Activo from Administrativo where NombreUsuario='" + Me.NombreUsuario + "'"
+            Comando.CommandText = "Select ACTIVO from ADMINISTRATIVO where NOMBREUSUARIO='" + Me.NOMBREUSUARIO + "'"
             Return Comando.ExecuteScalar().ToString()
         Catch ex As Exception
             Return "1"
@@ -385,19 +385,19 @@
 
 
     Public Sub ActivarPaciente()
-        Comando.CommandText = "update Persona set activo=1 where Ci='" + Me.NombreUsuario + "'"
+        Comando.CommandText = "update PERSONA set ACTIVO=1 where CI='" + Me.NOMBREUSUARIO + "'"
 
         Comando.ExecuteNonQuery()
     End Sub
 
     Public Sub ActivarMedico()
-        Comando.CommandText = "update Medico set activo=1 where NombreUsuario='" + Me.NombreUsuario + "'"
+        Comando.CommandText = "update MEDICO set ACTIVO=1 where NOMBREUSUARIO='" + Me.NOMBREUSUARIO + "'"
 
         Comando.ExecuteNonQuery()
     End Sub
 
     Public Sub ActivarGestor()
-        Comando.CommandText = "update Administrativo set activo=1 where NombreUsuario='" + Me.NombreUsuario + "'"
+        Comando.CommandText = "update ADMINISTRATIVO set ACTIVO=1 where NOMBREUSUARIO='" + Me.NOMBREUSUARIO + "'"
 
         Comando.ExecuteNonQuery()
     End Sub

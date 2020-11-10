@@ -8,19 +8,19 @@
     End Sub
 
     Public Id As String
-    Public Sesion As String
-    Public De As String
-    Public Para As String
+    Public SESION As String
+    Public DE As String
+    Public PARA As String
     Public Mensaje As String
-    Public FechaHora As String
-    Public Leido As Boolean
-    Public IdDiagnostico As String
+    Public FECHAHORA As String
+    Public LEIDO As Boolean
+    Public IDDIAGNOSTICO As String
 
     Public Sub Guardar()
         Me.Comando.CommandText =
             "
-            INSERT INTO CHATEA(Sesion,De,Para,Texto,FechaHora)
-            VALUES(" + Me.Sesion + ",'" + Me.De + "','" + Me.Para + "','" + Me.Mensaje + "',now())
+            INSERT INTO CHATEA(SESION,DE,PARA,TEXTO,FECHAHORA)
+            VALUES(" + Me.SESION + ",'" + Me.DE + "','" + Me.PARA + "','" + Me.Mensaje + "',now())
             "
 
         Me.Comando.ExecuteNonQuery()
@@ -31,18 +31,18 @@
         Me.Comando.CommandText =
             "
             SELECT 
-	           m.de, Time_Format(m.fechahora, ""%H:%i"") as fechahora, m.texto, m.idmensaje as id_mensaje, u.nombre as emisor, u.NombreUsuario, u.apellido
+	           m.DE, Time_Format(m.FECHAHORA, ""%H:%i"") as FECHAHORA, m.TEXTO, m.IDMENSAJE as id_mensaje, u.NOMBRE as emisor, u.NOMBREUSUARIO, u.APELLIDO
             FROM
-	            Chatea m 
+	            CHATEA m 
             JOIN
-                Medico u 
-                    ON m.de = u.NombreUsuario
+                MEDICO u 
+                    ON m.DE = u.NOMBREUSUARIO
             
 
             WHERE 
-	            m.para = '" + Me.Para + "' AND
-	            m.sesion = '" + Me.Sesion + "' AND 
-	            m.leido = FALSE
+	            m.PARA = '" + Me.PARA + "' AND
+	            m.SESION = '" + Me.SESION + "' AND 
+	            m.LEIDO = FALSE
             "
         Dim resultado As New DataTable
         resultado.Load(Me.Comando.ExecuteReader())
@@ -56,18 +56,18 @@
         Me.Comando.CommandText =
             "
             SELECT 
-	           m.de, Time_Format(m.fechahora, ""%H:%i"") as fechahora, m.texto, m.idmensaje as id_mensaje, u.nombre as emisor, u.apellido
+	           m.DE, Time_Format(m.FECHAHORA, ""%H:%i"") as FECHAHORA, m.TEXTO, m.IDMENSAJE as id_mensaje, u.NOMBRE as emisor, u.APELLIDO
             FROM
-	            chatea m 
+	            CHATEA m 
             JOIN
-                Persona u 
-                    ON m.de = u.Ci
+                PERSONA u 
+                    ON m.DE = u.CI
             
 
             WHERE 
-	            (m.para = '" + Me.Para + "' OR m.para ='Medico') AND
-	            m.sesion = '" + Me.Sesion + "' AND 
-	            m.leido = FALSE
+	            (m.PARA = '" + Me.PARA + "' OR m.PARA ='MEDICO') AND
+	            m.SESION = '" + Me.SESION + "' AND 
+	            m.LEIDO = FALSE
             "
         Dim resultado As New DataTable
         resultado.Load(Me.Comando.ExecuteReader())
@@ -81,7 +81,7 @@
 
     Public Sub MarcarLeido()
         Me.Comando.CommandText =
-            "UPDATE Chatea SET Leido = true where IdMensaje = " + Me.Id + ";"
+            "UPDATE CHATEA SET LEIDO = true where IDMENSAJE = " + Me.Id + ";"
         Comando.ExecuteNonQuery()
         Me.Conexion.Close()
 
@@ -90,18 +90,18 @@
     Public Function ChatsNoRespondidos()
         Me.Comando.CommandText = "
             SELECT 
-	           sesion,de As Cedula,Time_Format(fechahora, ""%H:%i"") as FechaHora,Nombre
+	           SESION,DE As CEDULA,Time_Format(FECHAHORA, ""%H:%i"") as FECHAHORA,NOMBRE
             FROM
-	            chatea m 
+	            CHATEA m 
             JOIN
-                Persona u 
-                    ON m.de = u.Ci
+                PERSONA u 
+                    ON m.DE = u.CI
             
 
             WHERE 
-                m.leido = FALSE AND
-                m.para = 'Medico'     
-            Group by Sesion
+                m.LEIDO = FALSE AND
+                m.PARA = 'MEDICO'     
+            Group by SESION
             "
 
         Reader = Comando.ExecuteReader()
@@ -111,14 +111,14 @@
 
     Public Function VerificarEstadoDelChat()
 
-        Comando.CommandText = "Select ESTADOSESION from Recibe where IdDiagnostico=" + Me.IdDiagnostico
+        Comando.CommandText = "Select ESTADOSESION from RECIBE where IDDIAGNOSTICO=" + Me.IDDIAGNOSTICO
 
         Return Comando.ExecuteScalar().ToString()
 
     End Function
 
     Public Sub TerminarChat()
-        Comando.CommandText = "Update RECIBE SET ESTADOSESION= 0 WHERE IDDIAGNOSTICO=" + Me.IdDiagnostico
+        Comando.CommandText = "Update RECIBE SET ESTADOSESION= 0 WHERE IDDIAGNOSTICO=" + Me.IDDIAGNOSTICO
 
         Comando.ExecuteNonQuery()
     End Sub
@@ -127,22 +127,22 @@
     Public Function VerChatCompleto()
         Comando.CommandText = "
         (SELECT 
-	           m.de, Time_Format(m.fechahora, ""%H:%i"") as fechahora, m.texto, m.idmensaje as id_mensaje, u.nombre as emisor, apellido
+	           m.DE, Time_Format(m.FECHAHORA, ""%H:%i"") as FECHAHORA, m.TEXTO, m.IDMENSAJE as id_mensaje, u.NOMBRE as emisor, APELLIDO
             FROM
-	            chatea m 
+	            CHATEA m 
             JOIN
-                Medico u 
-                    ON m.de = u.NombreUsuario
-                    where m.sesion=" + Me.Sesion + ")
+                MEDICO u 
+                    ON m.DE = u.NOMBREUSUARIO
+                    where m.SESION=" + Me.SESION + ")
         UNION
         (SELECT 
-	           m.de, Time_Format(m.fechahora, ""%H:%i"") as fechahora, m.texto, m.idmensaje as id_mensaje, u.nombre as emisor, apellido
+	           m.DE, Time_Format(m.FECHAHORA, ""%H:%i"") as FECHAHORA, m.TEXTO, m.IDMENSAJE as id_mensaje, u.NOMBRE as emisor, APELLIDO
             FROM
-	            chatea m 
+	            CHATEA m 
             JOIN
-                Persona u 
-                    ON m.de = u.Ci
-                    where m.sesion=" + Me.Sesion + ")
+                PERSONA u 
+                    ON m.DE = u.CI
+                    where m.SESION=" + Me.SESION + ")
          ORDER BY id_mensaje Asc;
 "
 
@@ -156,9 +156,9 @@
 
     Public Function ObtenerFechaDelChat()
 
-        Comando.CommandText = "SELECT DATE_FORMAT(FechaHora,'%d/%m/%Y')
+        Comando.CommandText = "SELECT DATE_FORMAT(FECHAHORA,'%d/%m/%Y')
                                FROM CHATEA 
-                               WHERE SESION=" + Sesion + " 
+                               WHERE SESION=" + SESION + " 
                                LIMIT 1"
 
         Return Comando.ExecuteScalar().ToString()
@@ -166,9 +166,9 @@
     End Function
 
     Public Function ObtenerSesionesDeChat()
-        Comando.CommandText = "Select Sesion,De,Para,Date(FechaHora) as Fecha 
-                               From chatea 
-                               Group by sesion"
+        Comando.CommandText = "Select SESION,DE,PARA,Date(FECHAHORA) as Fecha 
+                               From CHATEA 
+                               Group by SESION"
 
         Reader = Comando.ExecuteReader
         Return Reader

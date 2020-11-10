@@ -1,14 +1,14 @@
-﻿Public Class Diagnostico
+﻿Public Class DIAGNOSTICO
     Inherits ModeloConexion
 
-    Public Informacion As String
-    Public Prioridad As String
-    Public SolicitaChat As String
-    Public IdDiagnostico As String
+    Public INFORMACION As String
+    Public PRIORIDAD As String
+    Public SOLICITACHAT As String
+    Public IDDIAGNOSTICO As String
     Public CiPaciente As String
-    Public NombreMedico As String
-    Public IdSintoma As String
-    Public IdPatologia As String
+    Public NOMBREMEDICO As String
+    Public IDSINTOMA As String
+    Public IDPATOLOGIA As String
     Public Opcion As Integer
 
     Public Sub New(username As String, password As String)
@@ -17,45 +17,45 @@
     End Sub
 
     Public Sub CrearDiagnostico()
-        Comando.CommandText = "INSERT INTO DIAGNOSTICO VALUES(LAST_INSERT_ID(),'" + Me.Prioridad + "','" + Me.Informacion + "'," + Me.SolicitaChat + ")"
+        Comando.CommandText = "INSERT INTO DIAGNOSTICO VALUES(LAST_INSERT_ID(),'" + Me.PRIORIDAD + "','" + Me.INFORMACION + "'," + Me.SOLICITACHAT + ")"
 
         Comando.ExecuteNonQuery()
 
     End Sub
 
     Public Sub EnviarDiagnosticoAMedico()
-        Comando.CommandText = "INSERT INTO RECIBE VALUES(" + Me.IdDiagnostico + ",'Medico',1)"
+        Comando.CommandText = "INSERT INTO RECIBE VALUES(" + Me.IDDIAGNOSTICO + ",'MEDICO',1)"
 
         Comando.ExecuteNonQuery()
 
     End Sub
 
     Public Function UltimoDiagnostico()
-        Me.Comando.CommandText = "SELECT MAX(IdDiagnostico) FROM Diagnostico"
+        Me.Comando.CommandText = "SELECT MAX(IDDIAGNOSTICO) FROM DIAGNOSTICO"
 
         Return Comando.ExecuteScalar().ToString()
     End Function
 
     Public Function UltimoDiagnosticoEnRecibe()
-        Me.Comando.CommandText = "SELECT MAX(IdDiagnostico) FROM Recibe"
+        Me.Comando.CommandText = "SELECT MAX(IDDIAGNOSTICO) FROM RECIBE"
 
         Return Comando.ExecuteScalar().ToString()
     End Function
 
     Public Function ObtenerDiagnosticos()
 
-        Comando.CommandText = "Select Diagnostico.Prioridad,Recibe.IdDiagnostico As Id,Informacion,Genera.FechaHora,CiPersona
-                               From Recibe,Diagnostico,Genera
-                               Where Recibe.IdDiagnostico=Diagnostico.IdDiagnostico
-                               And EstadoSesion=1
-                               And Genera.IdDiagnostico=Diagnostico.IdDiagnostico
-                               And (NombreMedico='" + Me.NombreMedico + "' Or NombreMedico='Medico')
-                               Group by Genera.IdDiagnostico
+        Comando.CommandText = "Select DIAGNOSTICO.PRIORIDAD,RECIBE.IDDIAGNOSTICO As Id,INFORMACION,GENERA.FECHAHORA,CIPERSONA
+                               From RECIBE,DIAGNOSTICO,GENERA
+                               Where RECIBE.IDDIAGNOSTICO=DIAGNOSTICO.IDDIAGNOSTICO
+                               And ESTADOSESION=1
+                               And GENERA.IDDIAGNOSTICO=DIAGNOSTICO.IDDIAGNOSTICO
+                               And (NOMBREMEDICO='" + Me.NOMBREMEDICO + "' Or NOMBREMEDICO='MEDICO')
+                               Group by GENERA.IDDIAGNOSTICO
                                Order by
                                       Case
-                                         when Diagnostico.Prioridad= 'Alta' Then 1 
-                                         when Diagnostico.Prioridad= 'Media' Then 2
-                                         when Diagnostico.Prioridad= 'Baja' Then 3
+                                         when DIAGNOSTICO.PRIORIDAD= 'ALTA' Then 1 
+                                         when DIAGNOSTICO.PRIORIDAD= 'MEDIA' Then 2
+                                         when DIAGNOSTICO.PRIORIDAD= 'BAJA' Then 3
                                         END;"
 
         Reader = Comando.ExecuteReader()
@@ -64,33 +64,33 @@
     End Function
 
     Public Sub PacienteTieneSintomas()
-        Comando.CommandText = "INSERT INTO TIENE VALUES('" + Me.CiPaciente + "','" + Me.IdSintoma + "')"
+        Comando.CommandText = "INSERT INTO TIENE VALUES('" + Me.CiPaciente + "','" + Me.IDSINTOMA + "')"
 
         Comando.ExecuteNonQuery()
     End Sub
 
     Public Sub PacienteGeneraDiagnostico()
-        Comando.CommandText = "INSERT INTO GENERA VALUES('" + Me.CiPaciente + "',LAST_INSERT_ID(),'" + Me.IdSintoma + "',now())"
+        Comando.CommandText = "INSERT INTO GENERA VALUES('" + Me.CiPaciente + "',LAST_INSERT_ID(),'" + Me.IDSINTOMA + "',now())"
 
         Comando.ExecuteNonQuery()
     End Sub
 
     Public Sub ModificarNombreEnRecibe()
-        Comando.CommandText = "UPDATE RECIBE SET NOMBREMEDICO='" + Me.NombreMedico + "' WHERE IDDIAGNOSTICO=" + Me.IdDiagnostico + ""
+        Comando.CommandText = "UPDATE RECIBE SET NOMBREMEDICO='" + Me.NOMBREMEDICO + "' WHERE IDDIAGNOSTICO=" + Me.IDDIAGNOSTICO + ""
 
         Comando.ExecuteNonQuery()
     End Sub
 
     Public Sub AgregarPatologiaADiagnostico()
-        Comando.CommandText = "INSERT INTO PATOLOGIAS VALUES(" + Me.IdDiagnostico + "," + Me.IdPatologia + ")"
+        Comando.CommandText = "INSERT INTO PATOLOGIAS VALUES(" + Me.IDDIAGNOSTICO + "," + Me.IDPATOLOGIA + ")"
 
         Comando.ExecuteNonQuery()
 
     End Sub
 
     Public Function ListarDiagnosticos()
-        Comando.CommandText = "select Diagnostico.IdDiagnostico as Id,Informacion,Date(FechaHora) as Fecha
-                              from diagnostico,Genera 
+        Comando.CommandText = "select DIAGNOSTICO.IDDIAGNOSTICO as Id,INFORMACION,Date(FECHAHORA) as Fecha
+                              from DIAGNOSTICO,GENERA 
                               group by Id 
                               order by Id Desc;"
 
@@ -100,30 +100,30 @@
 
     Public Function ObtenerDiagnosticosAntiguos()
         If Me.Opcion = 1 Then
-            Comando.CommandText = "Select Fecha,CONCAT( Nombre, "" "", Apellido ) AS Medico ,Informacion,Sesion
-                                   From (select Sesion,date(Fechahora) as Fecha,Medico.Nombre As Nombre,Medico.Apellido As Apellido
-                                   from persona,chatea,Medico
-                                   where Ci=De 
-                                   And chatea.Para=Medico.NombreUsuario
-                                   And De='" + Me.CiPaciente + "' 
-                                   and para!='Medico' 
-                                   group by sesion) as A
+            Comando.CommandText = "Select Fecha,CONCAT( NOMBRE, "" "", APELLIDO ) AS MEDICO ,INFORMACION,SESION
+                                   From (select SESION,date(FECHAHORA) as Fecha,MEDICO.NOMBRE As NOMBRE,MEDICO.APELLIDO As APELLIDO
+                                   from PERSONA,CHATEA,MEDICO
+                                   where CI=DE 
+                                   And CHATEA.PARA=MEDICO.NOMBREUSUARIO
+                                   And DE='" + Me.CiPaciente + "' 
+                                   and PARA!='MEDICO' 
+                                   group by SESION) as A
                                    Join
                                    (Select * 
-                                   From Diagnostico) as B
-                                   On a.Sesion=B.IdDiagnostico
+                                   From DIAGNOSTICO) as B
+                                   On a.SESION=B.IDDIAGNOSTICO
                                    Order by Fecha Desc"
 
             Reader = Comando.ExecuteReader()
             Return Reader
         Else
-            Comando.CommandText = "Select Recibe.IdDiagnostico As Sesion,Diagnostico.Prioridad,Date(Genera.FechaHora) as Fecha,Informacion
-                                   From Recibe,Diagnostico,Genera
-                                   Where Recibe.IdDiagnostico=Diagnostico.IdDiagnostico
-                                   And EstadoSesion=0
-                                   And Genera.IdDiagnostico=Diagnostico.IdDiagnostico
-                                   And NombreMedico='" + Me.NombreMedico + "'
-                                   Group by Genera.IdDiagnostico
+            Comando.CommandText = "Select RECIBE.IDDIAGNOSTICO As SESION,DIAGNOSTICO.PRIORIDAD,Date(GENERA.FECHAHORA) as Fecha,INFORMACION
+                                   From RECIBE,DIAGNOSTICO,GENERA
+                                   Where RECIBE.IDDIAGNOSTICO=DIAGNOSTICO.IDDIAGNOSTICO
+                                   And ESTADOSESION=0
+                                   And GENERA.IDDIAGNOSTICO=DIAGNOSTICO.IDDIAGNOSTICO
+                                   And NOMBREMEDICO='" + Me.NOMBREMEDICO + "'
+                                   Group by GENERA.IDDIAGNOSTICO
                                    Order by Fecha;"
 
             Reader = Comando.ExecuteReader()

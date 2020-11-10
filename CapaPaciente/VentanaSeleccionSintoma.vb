@@ -83,7 +83,7 @@ Public Class VentanaSeleccionSintoma
                 Dim ResultadoFinal As String = ""
                 Dim StringSintomas As String = ""
                 Dim Prio As String
-                Dim PrioridadDiagnostico As String = "Baja"
+                Dim PrioridadDiagnostico As String = "BAJA"
 
 
                 Dim NumeroDePatologiasSeguras As Integer = -1
@@ -100,10 +100,10 @@ Public Class VentanaSeleccionSintoma
                     ResultadoFinal &= Patologia + ", "
                     Try
                         Prio = ControladorPatologia.ObtenerPrioridad(Patologia)
-                        If Prio = "Alta" Then
-                            PrioridadDiagnostico = "Alta"
-                        ElseIf Prio = "Media" And PrioridadDiagnostico IsNot "Alta" Then
-                            PrioridadDiagnostico = "Media"
+                        If Prio = "ALTA" Then
+                            PrioridadDiagnostico = "ALTA"
+                        ElseIf Prio = "MEDIA" And PrioridadDiagnostico IsNot "ALTA" Then
+                            PrioridadDiagnostico = "MEDIA"
                         End If
                     Catch
                     End Try
@@ -135,7 +135,7 @@ Public Class VentanaSeleccionSintoma
                 txtPatologiasSeguras.Text = NumeroDePatologiasSeguras
 
                 Dim SolicitarChat As DialogResult
-                SolicitarChat = MessageBox.Show(ResultadoFinal + Environment.NewLine + Environment.NewLine + "Nivel de riesgo: " + PrioridadDiagnostico.Remove(PrioridadDiagnostico.Length - 1) + "o" + Environment.NewLine + Environment.NewLine + "                  ¿Desea solicitar un chat con un medico?", "Solicitar Chat", MessageBoxButtons.YesNo)
+                SolicitarChat = MessageBox.Show(ResultadoFinal + Environment.NewLine + Environment.NewLine + "Nivel de riesgo: " + PrioridadDiagnostico.Remove(PrioridadDiagnostico.Length - 1) + "O" + Environment.NewLine + Environment.NewLine + "                  ¿Desea solicitar un chat con un medico?", "Solicitar Chat", MessageBoxButtons.YesNo)
                 If SolicitarChat = DialogResult.No Then
                     ControladorDiagnostico.CrearDiagnostico(StringSintomas, ResultadoFinal, Sesion.CI, PrioridadDiagnostico, "False", IdSintomasList)
                     Me.Dispose()

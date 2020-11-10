@@ -1,4 +1,4 @@
-Public Class Sintoma
+Public Class SINTOMA
     Inherits ModeloConexion
 
     Public Sub New(username As String, password As String)
@@ -6,13 +6,13 @@ Public Class Sintoma
 
     End Sub
 
-    Public IdSintoma As String
-    Public Nombre As String
+    Public IDSINTOMA As String
+    Public NOMBRE As String
 
 
     Public Function ObtenerSintomas()
 
-        Comando.CommandText = "SELECT IdSintoma as Id,Nombre FROM SINTOMA where activo=1"
+        Comando.CommandText = "SELECT IDSINTOMA as ID,NOMBRE FROM SINTOMA where ACTIVO=1"
 
         Me.Reader = Comando.ExecuteReader()
         Return Me.Reader
@@ -22,7 +22,7 @@ Public Class Sintoma
 
     Public Function ObtenerNombreSintomas()
 
-        Comando.CommandText = "SELECT NOMBRE as Sintomas FROM SINTOMA where activo=1"
+        Comando.CommandText = "SELECT NOMBRE as Sintomas FROM SINTOMA where ACTIVO=1"
 
         Me.Reader = Comando.ExecuteReader()
         Return Me.Reader
@@ -31,21 +31,21 @@ Public Class Sintoma
 
     Public Function ObtenerIdSintomas()
 
-        Comando.CommandText = "SELECT IDSintoma FROM SINTOMA WHERE NOMBRE='" + Me.Nombre + "'"
+        Comando.CommandText = "SELECT IDSINTOMA FROM SINTOMA WHERE NOMBRE='" + Me.NOMBRE + "'"
 
         Return Comando.ExecuteScalar().ToString()
 
     End Function
 
     Public Sub GuardarSintoma()
-        Comando.CommandText = "INSERT INTO SINTOMA VALUES(LAST_INSERT_ID(),'" + Me.Nombre + "',default)"
+        Comando.CommandText = "INSERT INTO SINTOMA VALUES(LAST_INSERT_ID(),'" + Me.NOMBRE + "',DEFAULT)"
 
         Comando.ExecuteNonQuery()
 
     End Sub
 
     Public Function EstadoSintoma()
-        Comando.CommandText = "Select Activo from Sintoma where Nombre='" + Me.Nombre + "'"
+        Comando.CommandText = "SELECT ACTIVO from SINTOMA where NOMBRE='" + Me.NOMBRE + "'"
         Try
             Return Comando.ExecuteScalar().ToString()
         Catch ex As Exception
@@ -55,7 +55,7 @@ Public Class Sintoma
     End Function
 
     Public Sub ActivarSintoma()
-        Comando.CommandText = "Update sintoma set activo=1 where Nombre='" + Me.Nombre + "'"
+        Comando.CommandText = "Update SINTOMA set ACTIVO=1 where NOMBRE='" + Me.NOMBRE + "'"
         Comando.ExecuteNonQuery()
     End Sub
 
@@ -64,9 +64,9 @@ Public Class Sintoma
         Comando.ExecuteNonQuery()
 
         Try
-            Comando.CommandText = "update sintoma set activo=0 where idsintoma=" + Me.IdSintoma
+            Comando.CommandText = "update SINTOMA set ACTIVO=0 where IDSINTOMA=" + Me.IDSINTOMA
             Comando.ExecuteNonQuery()
-            Comando.CommandText = "delete from patologia_sintomas where Sintoma=" + Me.IdSintoma
+            Comando.CommandText = "delete from PATOLOGIA_SINTOMAS where SINTOMA=" + Me.IDSINTOMA
             Comando.ExecuteNonQuery()
             Comando.CommandText = "COMMIT;"
             Comando.ExecuteNonQuery()
@@ -78,7 +78,7 @@ Public Class Sintoma
 
     Public Sub ModificarSintoma()
 
-        Comando.CommandText = "UPDATE SINTOMA SET NOMBRE = '" + Me.Nombre + "' WHERE IdSintoma = " + Me.IdSintoma
+        Comando.CommandText = "UPDATE SINTOMA SET NOMBRE = '" + Me.NOMBRE + "' WHERE IDSINTOMA = " + Me.IDSINTOMA
         Comando.ExecuteNonQuery()
     End Sub
 
